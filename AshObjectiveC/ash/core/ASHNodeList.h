@@ -22,4 +22,7 @@
 - (void)swapNode:(ASHNode *)node1
             node:(ASHNode *)node2;
 
+- (void)insertionSortUsingBlock:(float (^)(ASHNode *, ASHNode *))sortBlock;
+- (void)mergeSortUsingBlock:(float (^)(ASHNode *, ASHNode *))sortBlock;
+
 @end

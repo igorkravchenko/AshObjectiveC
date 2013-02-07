@@ -49,10 +49,10 @@
     [entity addComponent:point];
     [entity addComponent:matrix];
     
-    ASHNodeList * nodes = [engine getNodeList:[MockNodePoinMatrix class]];
+    ASHNodeList * nodes = [engine getNodeList:[MockNodePointMatrix class]];
     [engine addEntity:entity];
-    assertThat([(MockNodePoinMatrix *)nodes.head point], sameInstance(point));
-    assertThat([(MockNodePoinMatrix *)nodes.head matrix], sameInstance(matrix));
+    assertThat([(MockNodePointMatrix *)nodes.head point], sameInstance(point));
+    assertThat([(MockNodePointMatrix *)nodes.head matrix], sameInstance(matrix));
 }
 
 - (void)testCorrectEntityAddedToFamilyWhenAccessFamilyFirst
@@ -97,7 +97,7 @@
     [entity addComponent:[[PointComponent alloc] init]];
     [entity addComponent:[[MatrixComponent alloc] init]];
     [engine addEntity:entity];
-    ASHNodeList * nodes = [engine getNodeList:[MockNodePoinMatrix class]];
+    ASHNodeList * nodes = [engine getNodeList:[MockNodePointMatrix class]];
     [entity removeComponent:[PointComponent class]];
     assertThat(nodes.head, nilValue());
 }
@@ -109,7 +109,7 @@
     [entity addComponent:[[MatrixComponent alloc] init]];
     [engine addEntity:entity];
     [entity removeComponent:[PointComponent class]];
-    ASHNodeList * nodes = [engine getNodeList:[MockNodePoinMatrix class]];
+    ASHNodeList * nodes = [engine getNodeList:[MockNodePointMatrix class]];
     assertThat(nodes.head, nilValue());
 }
 
@@ -119,7 +119,7 @@
     [entity addComponent:[[PointComponent alloc] init]];
     [entity addComponent:[[MatrixComponent alloc] init]];
     [engine addEntity:entity];
-    ASHNodeList * nodes = [engine getNodeList:[MockNodePoinMatrix class]];
+    ASHNodeList * nodes = [engine getNodeList:[MockNodePointMatrix class]];
     [engine removeEntity:entity];
     assertThat(nodes.head, nilValue());
 }
@@ -131,7 +131,7 @@
     [entity addComponent:[[MatrixComponent alloc] init]];
     [engine addEntity:entity];
     [engine removeEntity:entity];
-    ASHNodeList * nodes = [engine getNodeList:[MockNodePoinMatrix class]];
+    ASHNodeList * nodes = [engine getNodeList:[MockNodePointMatrix class]];
     assertThat(nodes.head, nilValue());
 }
 
@@ -147,12 +147,12 @@
         [engine addEntity:entity];
     }
 
-    ASHNodeList * nodes = [engine getNodeList:[MockNodePoinMatrix class]];
-    MockNodePoinMatrix * node = nil;
+    ASHNodeList * nodes = [engine getNodeList:[MockNodePointMatrix class]];
+    MockNodePointMatrix * node = nil;
 
-    for (node = (MockNodePoinMatrix *)nodes.head;
+    for (node = (MockNodePointMatrix *)nodes.head;
          node != nil;
-         node = (MockNodePoinMatrix *)node.next)
+         node = (MockNodePointMatrix *)node.next)
     {
         assertThat(entities, hasItem(node.entity));
     }
@@ -170,11 +170,11 @@
         [engine addEntity:entity];
     }
 
-    ASHNodeList * nodes = [engine getNodeList:[MockNodePoinMatrix class]];
-    MockNodePoinMatrix * node = nil;
-    for (node = (MockNodePoinMatrix *)nodes.head;
+    ASHNodeList * nodes = [engine getNodeList:[MockNodePointMatrix class]];
+    MockNodePointMatrix * node = nil;
+    for (node = (MockNodePointMatrix *)nodes.head;
          node != nil;
-         node = (MockNodePoinMatrix *)node.next)
+         node = (MockNodePointMatrix *)node.next)
     {
          [entities removeObject:node.entity];
     }
@@ -188,8 +188,8 @@
     [entity addComponent:[[PointComponent alloc] init]];
     [entity addComponent:[[MatrixComponent alloc] init]];
     [engine addEntity:entity];
-    ASHNodeList * nodes = [engine getNodeList:[MockNodePoinMatrix class]];
-    [engine releaseNodeList:[MockNodePoinMatrix class]];
+    ASHNodeList * nodes = [engine getNodeList:[MockNodePointMatrix class]];
+    [engine releaseNodeList:[MockNodePointMatrix class]];
     assertThat(nodes.head, nilValue());
 }
 
@@ -204,9 +204,9 @@
         [entities addObject:entity];
         [engine addEntity:entity];
     }
-    ASHNodeList * nodes = [engine getNodeList:[MockNodePoinMatrix class]];
-    MockNodePoinMatrix * node = (MockNodePoinMatrix *)nodes.head.next;
-    [engine releaseNodeList:[MockNodePoinMatrix class]];
+    ASHNodeList * nodes = [engine getNodeList:[MockNodePointMatrix class]];
+    MockNodePointMatrix * node = (MockNodePointMatrix *)nodes.head.next;
+    [engine releaseNodeList:[MockNodePointMatrix class]];
     assertThat(node.next, nilValue());
 }
 
@@ -220,7 +220,7 @@
     [entity addComponent:[PointComponent alloc].init];
     [entity addComponent:[MatrixComponent alloc].init];
     [engine addEntity:entity];
-    ASHNodeList * nodes = [engine getNodeList:[MockNodePoinMatrix class]];
+    ASHNodeList * nodes = [engine getNodeList:[MockNodePointMatrix class]];
     [engine removeAllEntities];
     assertThat(nodes.head, nilValue());
 }

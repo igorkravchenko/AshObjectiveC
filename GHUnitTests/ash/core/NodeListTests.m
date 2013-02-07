@@ -249,4 +249,246 @@
     HCBaseMatcher * matcher = [NodeListMatcher nodeList:node3, node2, node1, nil];
     assertThat(nodes, matcher);
 }
+
+- (void)testInsertionSortCorrectlySortsSortedNodes
+{
+    MockNodeSort * node1 = [[MockNodeSort alloc] init];
+    node1.pos = 1;
+    MockNodeSort * node2 = [[MockNodeSort alloc] init];
+    node2.pos = 2;
+    MockNodeSort * node3 = [[MockNodeSort alloc] init];
+    node3.pos = 3;
+    MockNodeSort * node4 = [[MockNodeSort alloc] init];
+    node4.pos = 4;
+
+    [nodes addNode:node1];
+    [nodes addNode:node2];
+    [nodes addNode:node3];
+    [nodes addNode:node4];
+
+    __block NodeListTests * weakSelf = self;
+
+    [nodes insertionSortUsingBlock:^float(ASHNode *nodeA, ASHNode *nodeB)
+    {
+        return [weakSelf sortNode1:(MockNodeSort *)nodeA
+                             node2:(MockNodeSort *)nodeB];
+    }];
+
+    HCBaseMatcher * matcher = [NodeListMatcher nodeList:node1, node2, node3, node4, nil];
+    assertThat(nodes, matcher);
+}
+
+- (void)testInsertionSortCorrectlySortsReversedNodes
+{
+    MockNodeSort * node1 = [[MockNodeSort alloc] init];
+    node1.pos = 1;
+    MockNodeSort * node2 = [[MockNodeSort alloc] init];
+    node2.pos = 2;
+    MockNodeSort * node3 = [[MockNodeSort alloc] init];
+    node3.pos = 3;
+    MockNodeSort * node4 = [[MockNodeSort alloc] init];
+    node4.pos = 4;
+
+    [nodes addNode:node4];
+    [nodes addNode:node3];
+    [nodes addNode:node2];
+    [nodes addNode:node1];
+
+    __block NodeListTests * weakSelf = self;
+
+    [nodes insertionSortUsingBlock:^float(ASHNode *nodeA, ASHNode *nodeB)
+    {
+        return [weakSelf sortNode1:(MockNodeSort *)nodeA
+                             node2:(MockNodeSort *)nodeB];
+    }];
+
+    HCBaseMatcher * matcher = [NodeListMatcher nodeList:node1, node2, node3, node4, nil];
+    assertThat(nodes, matcher);
+}
+
+- (void)testInsertionSortCorrectlySortsMixedNodes
+{
+    MockNodeSort * node1 = [[MockNodeSort alloc] init];
+    node1.pos = 1;
+    MockNodeSort * node2 = [[MockNodeSort alloc] init];
+    node2.pos = 2;
+    MockNodeSort * node3 = [[MockNodeSort alloc] init];
+    node3.pos = 3;
+    MockNodeSort * node4 = [[MockNodeSort alloc] init];
+    node4.pos = 4;
+    MockNodeSort * node5 = [[MockNodeSort alloc] init];
+    node5.pos = 5;
+
+    [nodes addNode:node3];
+    [nodes addNode:node4];
+    [nodes addNode:node1];
+    [nodes addNode:node5];
+    [nodes addNode:node2];
+
+    __block NodeListTests * weakSelf = self;
+
+    [nodes insertionSortUsingBlock:^float(ASHNode *nodeA, ASHNode *nodeB)
+    {
+        return [weakSelf sortNode1:(MockNodeSort *)nodeA
+                             node2:(MockNodeSort *)nodeB];
+    }];
+
+    HCBaseMatcher * matcher = [NodeListMatcher nodeList:node1, node2, node3, node4, node5, nil];
+    assertThat(nodes, matcher);
+}
+
+- (void)testInsertionSortRetainsTheOrderOfEquivalentNodes
+{
+    MockNodeSort * node1 = [[MockNodeSort alloc] init];
+    node1.pos = 1;
+    MockNodeSort * node2 = [[MockNodeSort alloc] init];
+    node2.pos = 2;
+    MockNodeSort * node3 = [[MockNodeSort alloc] init];
+    node3.pos = 3;
+    MockNodeSort * node4 = [[MockNodeSort alloc] init];
+    node4.pos = 4;
+    MockNodeSort * node5 = [[MockNodeSort alloc] init];
+    node5.pos = 4;
+
+    [nodes addNode:node3];
+    [nodes addNode:node4];
+    [nodes addNode:node1];
+    [nodes addNode:node5];
+    [nodes addNode:node2];
+
+    __block NodeListTests * weakSelf = self;
+
+    [nodes insertionSortUsingBlock:^float(ASHNode *nodeA, ASHNode *nodeB)
+    {
+        return [weakSelf sortNode1:(MockNodeSort *)nodeA
+                             node2:(MockNodeSort *)nodeB];
+    }];
+
+    HCBaseMatcher * matcher = [NodeListMatcher nodeList:node1, node2, node3, node4, node5, nil];
+    assertThat(nodes, matcher);
+}
+
+- (void)testMergeSortCorrectlySortsSortedNodes
+{
+    MockNodeSort * node1 = [[MockNodeSort alloc] init];
+    node1.pos = 1;
+    MockNodeSort * node2 = [[MockNodeSort alloc] init];
+    node2.pos = 2;
+    MockNodeSort * node3 = [[MockNodeSort alloc] init];
+    node3.pos = 3;
+    MockNodeSort * node4 = [[MockNodeSort alloc] init];
+    node4.pos = 4;
+
+    [nodes addNode:node1];
+    [nodes addNode:node2];
+    [nodes addNode:node3];
+    [nodes addNode:node4];
+
+    __block NodeListTests * weakSelf = self;
+    [nodes mergeSortUsingBlock:^float(ASHNode *nodeA, ASHNode *nodeB)
+    {
+        return [weakSelf sortNode1:(MockNodeSort *)nodeA
+                             node2:(MockNodeSort *)nodeB];
+    }];
+
+    HCBaseMatcher * matcher = [NodeListMatcher nodeList:node1, node2, node3, node4, nil];
+    assertThat(nodes, matcher);
+}
+
+- (void)testMergeSortCorrectlySortsReversedNodes
+{
+    MockNodeSort * node1 = [[MockNodeSort alloc] init];
+    node1.pos = 1;
+    MockNodeSort * node2 = [[MockNodeSort alloc] init];
+    node2.pos = 2;
+    MockNodeSort * node3 = [[MockNodeSort alloc] init];
+    node3.pos = 3;
+    MockNodeSort * node4 = [[MockNodeSort alloc] init];
+    node4.pos = 4;
+
+    [nodes addNode:node3];
+    [nodes addNode:node4];
+    [nodes addNode:node1];
+    [nodes addNode:node2];
+
+    __block NodeListTests * weakSelf = self;
+    [nodes mergeSortUsingBlock:^float(ASHNode *nodeA, ASHNode *nodeB)
+    {
+        return [weakSelf sortNode1:(MockNodeSort *)nodeA
+                             node2:(MockNodeSort *)nodeB];
+    }];
+
+    HCBaseMatcher * matcher = [NodeListMatcher nodeList:node1, node2, node3, node4, nil];
+    assertThat(nodes, matcher);
+}
+
+- (void)testMergeSortCorrectlySortsMixedNodes
+{
+    MockNodeSort * node1 = [[MockNodeSort alloc] init];
+    node1.pos = 1;
+    MockNodeSort * node2 = [[MockNodeSort alloc] init];
+    node2.pos = 2;
+    MockNodeSort * node3 = [[MockNodeSort alloc] init];
+    node3.pos = 3;
+    MockNodeSort * node4 = [[MockNodeSort alloc] init];
+    node4.pos = 4;
+    MockNodeSort * node5 = [[MockNodeSort alloc] init];
+    node5.pos = 5;
+
+    [nodes addNode:node3];
+    [nodes addNode:node4];
+    [nodes addNode:node1];
+    [nodes addNode:node5];
+    [nodes addNode:node2];
+
+    __block NodeListTests * weakSelf = self;
+
+    [nodes insertionSortUsingBlock:^float(ASHNode *nodeA, ASHNode *nodeB)
+    {
+        return [weakSelf sortNode1:(MockNodeSort *)nodeA
+                             node2:(MockNodeSort *)nodeB];
+    }];
+
+    HCBaseMatcher * matcher = [NodeListMatcher nodeList:node1, node2, node3, node4, node5, nil];
+    assertThat(nodes, matcher);
+}
+
+- (void)testMergeSortRetainsTheOrderOfEquivalentNodes
+{
+    MockNodeSort * node1 = [[MockNodeSort alloc] init];
+    node1.pos = 1;
+    MockNodeSort * node2 = [[MockNodeSort alloc] init];
+    node2.pos = 2;
+    MockNodeSort * node3 = [[MockNodeSort alloc] init];
+    node3.pos = 3;
+    MockNodeSort * node4 = [[MockNodeSort alloc] init];
+    node4.pos = 4;
+    MockNodeSort * node5 = [[MockNodeSort alloc] init];
+    node5.pos = 4;
+
+    [nodes addNode:node3];
+    [nodes addNode:node4];
+    [nodes addNode:node1];
+    [nodes addNode:node5];
+    [nodes addNode:node2];
+
+    __block NodeListTests * weakSelf = self;
+
+    [nodes mergeSortUsingBlock:^float(ASHNode *nodeA, ASHNode *nodeB)
+    {
+        return [weakSelf sortNode1:(MockNodeSort *)nodeA
+                             node2:(MockNodeSort *)nodeB];
+    }];
+
+    HCBaseMatcher * matcher = [NodeListMatcher nodeList:node1, node2, node3, node4, node5, nil];
+    assertThat(nodes, matcher);
+}
+
+
+- (float)sortNode1:(MockNodeSort *)node1
+             node2:(MockNodeSort *)node2
+{
+    return node1.pos - node2.pos;
+}
+
 @end

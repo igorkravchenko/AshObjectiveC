@@ -110,5 +110,8 @@ static NSMutableArray * _instances = nil;
 @implementation MockComponentExtended
 @end
 
-@implementation MockNodePoinMatrix
+@implementation MockNodePointMatrix
+@end
+
+@implementation MockNodeSort
 @end

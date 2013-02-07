@@ -30,7 +30,7 @@
 @end
 
 
-@interface MockNodePoinMatrix : ASHNode
+@interface MockNodePointMatrix : ASHNode
 
 @property (nonatomic, strong) PointComponent * point;
 @property (nonatomic, strong) MatrixComponent * matrix;
@@ -71,5 +71,11 @@
 @interface MockComponentExtended : MockComponent
 
 @property (nonatomic, assign) NSInteger other;
+
+@end
+
+@interface MockNodeSort : ASHNode
+
+@property (nonatomic, assign) NSInteger pos;
 
 @end

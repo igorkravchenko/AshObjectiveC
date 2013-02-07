@@ -26,7 +26,6 @@
 + (HCBaseMatcher *)wrapInEqualToIfNotMatcher:(id)item
 {
     return [item isKindOfClass:[HCBaseMatcher class]] ? item : equalTo(item);
-;
 }
 
 + (HCBaseMatcher *)nodeList:(id)matcherOrMatchersArray, ...
@@ -74,7 +73,7 @@
     }
     
     ASHNodeList *  nodes = item;
-    NSInteger index = 0;
+    NSUInteger index = 0;
     for (ASHNode * node = nodes.head; node != nil; node = node.next)
     {
         if (index >= _elementMatchers.count)
@@ -86,17 +85,13 @@
             return NO;
         }
         ++index;
-
     }
 
     return YES;
 }
 
-
-
 - (void)describeTo:(id<HCDescription>)description
 {
-    
     [description appendList:_elementMatchers
                       start:@"<(\n\""
                   separator:@"\",\n\""
