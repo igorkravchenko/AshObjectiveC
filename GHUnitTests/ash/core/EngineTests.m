@@ -101,8 +101,8 @@
     [engine addEntity:entity];
     [entity addComponent:[[PointComponent alloc] init]];
     [entity removeComponent:[PointComponent class]];
-    assertThatUnsignedInteger([MockFamily.instances[0] componentAddedCalls], equalToUnsignedInteger(1));
-    assertThatUnsignedInteger([MockFamily.instances[1] componentAddedCalls], equalToUnsignedInteger(1));
+    assertThatUnsignedInteger([MockFamily.instances[0] componentRemovedCalls], equalToUnsignedInteger(1));
+    assertThatUnsignedInteger([MockFamily.instances[1] componentRemovedCalls], equalToUnsignedInteger(1));
 }
                                
 - (void)testGetNodeListCreatesFamily
