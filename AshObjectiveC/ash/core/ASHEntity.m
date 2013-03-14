@@ -95,33 +95,4 @@
     return components[NSStringFromClass(componentClass)] != nil;
 }
 
-- (ASHEntity *)clone
-{
-    ASHEntity * clone = [[ASHEntity alloc] init];
-    
-    for (NSString * componentClassKey in components)
-    {
-        id originalComponent = components[componentClassKey];
-        Class componentClass = NSClassFromString(componentClassKey);
-        id componentCopy = [[componentClass alloc] init];
-        [clone addComponent:componentCopy];
-        
-        u_int count;
-        objc_property_t * properties = class_copyPropertyList(componentClass, &count);
-        
-        for (NSUInteger i = 0; i < count; i++)
-        {
-            NSString * propertyName = [NSString stringWithCString:property_getName(properties[i])
-                                                         encoding:NSUTF8StringEncoding];            
-            [componentCopy setValue:[originalComponent valueForKey:propertyName]
-                             forKey:propertyName];
-             
-        }
-        
-        free(properties);
-    }
-    
-    return clone;
-}
-
 @end

@@ -212,36 +212,6 @@
       forSelector:@selector(testComponentRemovedSignalContainsCorrectParameters)];
 }
 
-- (void)testCloneIsNewReference
-{
-    [entity addComponent:[[MockComponent alloc] init]];
-    ASHEntity * clone = entity.clone;
-    assertThatBool(clone == entity, equalToBool(NO));
-}
-
-- (void)testCloneHasChildComponent
-{
-    [entity addComponent:[[MockComponent alloc] init]];
-    ASHEntity * clone = entity.clone;
-    assertThatBool([clone hasComponent:[MockComponent class]], equalToBool(YES));
-}
-
-- (void)testCloneChildComponentIsNewReference
-{
-    [entity addComponent:[[MockComponent alloc] init]];
-    ASHEntity * clone = entity.clone;
-    assertThatBool([clone getComponent:[MockComponent class]] == [entity getComponent:[MockComponent class]], equalToBool(NO));
-}
-
-- (void)testCloneChildComponentHasSameProperties
-{
-    MockComponent * component = [[MockComponent alloc] init];
-    component.value = 5;
-    [entity addComponent:component];
-    ASHEntity * clone = entity.clone;
-    assertThatInteger([(MockComponent *)[clone getComponent:[MockComponent class]] value], equalToInteger(5));
-}
-
 - (void)doTestSignalContent:(ASHEntity *)signalEntity
              componentClass:(Class)componentClass
 {

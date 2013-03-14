@@ -24,6 +24,4 @@
 
 - (BOOL)hasComponent:(Class)componentClass;
 
-- (ASHEntity *)clone;
-
 @end
