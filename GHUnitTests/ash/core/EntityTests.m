@@ -219,4 +219,46 @@
     assertThat(componentClass, sameInstance([MockComponent class]));
 }
 
+- (void)testEntityHasNameByDefault
+{
+    entity = [[ASHEntity alloc] init];
+    assertThat(@(entity.name.length), greaterThan(@0));
+}
+
+- (void)testEntityNameStoredAndReturned
+{
+    NSString * name = @"anything";
+    entity = [[ASHEntity alloc] initWithName:name];
+    assertThat(entity.name, equalTo(name));
+}
+
+- (void)testEntityNameCanBeChanged
+{
+    entity = [[ASHEntity alloc] initWithName:@"anything"];
+    entity.name = @"otherThing";
+    assertThat(entity.name, equalTo(@"otherThing"));
+}
+
+- (void)testChangingEntityNameDispatchesSignal
+{
+    [super prepare];
+    entity = [[ASHEntity alloc] initWithName:@"anything"];
+    [entity.nameChanged addListener:self
+                             action:@selector(doTestNameChangedSignal:oldName:)];
+    entity.name = @"otherThing";
+    [super waitForStatus:kGHUnitWaitStatusSuccess
+                 timeout:kCallbackTimout];
+}
+
+- (void)doTestNameChangedSignal:(ASHEntity *)signalEntity
+                        oldName:(NSString *)oldName
+{
+    assertThat(signalEntity, sameInstance(entity));
+    assertThat(entity.name, equalTo(@"otherThing"));
+    assertThat(oldName, equalTo(@"anything"));
+
+    [super notify:kGHUnitWaitStatusSuccess
+      forSelector:@selector(testChangingEntityNameDispatchesSignal)];
+}
+
 @end

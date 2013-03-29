@@ -8,8 +8,9 @@
 
 @implementation ASHEngine
 {
-    ASHEntityList * entities;
-    ASHSystemList * systems;
+    NSMutableDictionary * entityNames;
+    ASHEntityList * entityList;
+    ASHSystemList * systemList;
     NSMutableDictionary * families;
 }
 
@@ -24,8 +25,9 @@
     
     if(self != nil)
     {
-        entities = [[ASHEntityList alloc] init];
-        systems = [[ASHSystemList alloc] init];
+        entityList = [[ASHEntityList alloc] init];
+        entityNames = [NSMutableDictionary dictionary];
+        systemList = [[ASHSystemList alloc] init];
         families = [NSMutableDictionary dictionary];
         updateComplete = [[ASHSignal0 alloc] init];
         familyClass = ASHComponentMatchingFamily.class;
@@ -36,11 +38,21 @@
 
 - (void)addEntity:(ASHEntity *)entity
 {
-    [entities addEntity:entity];
+    if(entityNames[entity.name] != nil)
+    {
+        @throw [NSException exceptionWithName:nil
+                                       reason:[NSString stringWithFormat:@"The entity name %@ is already in use by another entity.", entity.name]
+                                     userInfo:nil];
+    }
+
+    [entityList addEntity:entity];
+    entityNames[ entity.name ] = entity;
     [entity.componentAdded addListener:self 
                                 action:@selector(componentAdded:componentClass:)];
     [entity.componentRemoved addListener:self
                                   action:@selector(componentRemoved:componentClass:)];
+    [entity.nameChanged addListener:self
+                             action:@selector(entityNameChanged:oldName:)];
     for (NSString * nodeKey in families)
     {
         id <ASHFamily> family = families[nodeKey];
@@ -54,32 +66,50 @@
                                    action:@selector(componentAdded:componentClass:)];
     [entity.componentRemoved removeListener:self
                                      action:@selector(componentRemoved:componentClass:)];
+    [entity.nameChanged removeListener:self
+                                action:@selector(entityNameChanged:oldName:)];
     for (NSString * nodeKey in families) 
     {
         id <ASHFamily> family = families[nodeKey];
         [family removeEntity:entity];
     }
-    [entities removeEntity:entity];
+    [entityNames removeObjectForKey:entity.name];
+    [entityList removeEntity:entity];
+}
+
+- (void)entityNameChanged:(ASHEntity *)entity
+                  oldName:(NSString *)oldName
+{
+    if(entityNames[oldName] == entity)
+    {
+        [entityNames removeObjectForKey:oldName];
+        entityNames[entity.name] = entity;
+    }
+}
+
+- (ASHEntity *)getEntityByName:(NSString *)name
+{
+    return entityNames[name];
 }
 
 - (void)removeAllEntities
 {
-    while (entities.head != nil)
+    while (entityList.head != nil)
     {
-        [self removeEntity:entities.head];
+        [self removeEntity:entityList.head];
     }
 }
 
 - (NSArray *)allEntities
 {
-    NSMutableArray * entityList = NSMutableArray.array;
+    NSMutableArray * entities = NSMutableArray.array;
     
-    for (ASHEntity * entity = entities.head; entity != nil; entity = entity.next)
+    for (ASHEntity * entity = entityList.head; entity != nil; entity = entity.next)
     {
-        [entityList addObject:entity];
+        [entities addObject:entity];
     }
     
-    return entityList;
+    return entities;
 }
 
 - (void)componentAdded:(ASHEntity *)entity
@@ -121,7 +151,7 @@
 
     ASHEntity * entity = nil;
     
-    for (entity = entities.head; entity != nil; entity = entity.next) 
+    for (entity = entityList.head; entity != nil; entity = entity.next)
     {
         [family newEntity:entity];
     }
@@ -147,37 +177,37 @@
 {
     system.priority = priority;
     [system addToEngine:self];
-    [systems addSystem:system];
+    [systemList addSystem:system];
 }
 
 - (ASHSystem *)getSystem:(Class)type
 {
-    return [systems getSystem:type];
+    return [systemList getSystem:type];
 }
 
 - (NSArray *)allSystems
 {
-    NSMutableArray * systemList = [NSMutableArray array];
+    NSMutableArray * systems = [NSMutableArray array];
     
-    for (ASHSystem * system = systems.head; system != nil; system = system.next)
+    for (ASHSystem * system = systemList.head; system != nil; system = system.next)
     {
-        [systemList addObject:system];
+        [systems addObject:system];
     }
     
-    return systemList;
+    return systems;
 }
 
 - (void)removeSystem:(ASHSystem *)system
 {
-    [systems removeSystem:system];
+    [systemList removeSystem:system];
     [system removeFromEngine:self];
 }
 
 - (void)removeAllSystems
 {
-    while(systems.head != nil)
+    while(systemList.head != nil)
     {
-        [self removeSystem:systems.head];
+        [self removeSystem:systemList.head];
     }
 }
 
@@ -185,7 +215,7 @@
 {
     updating = YES;
     
-    for (ASHSystem * system = systems.head; system != nil; system = system.next)
+    for (ASHSystem * system = systemList.head; system != nil; system = system.next)
     {
         [system update:time];
     }

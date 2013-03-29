@@ -126,4 +126,36 @@
     assertThatUnsignedInteger([MockFamily.instances[0] cleanUpCalls], equalToUnsignedInteger(1));
 }
 
+- (void)testEntityCanBeObtainedByName
+{
+    ASHEntity * entity = [[ASHEntity alloc] initWithName:@"anything"];
+    [engine addEntity:entity];
+    ASHEntity * other = [engine getEntityByName:@"anything"];
+    assertThat(other, sameInstance(entity));
+}
+
+- (void)testGetEntityByInvalidNameReturnsNull
+{
+    ASHEntity * entity = [engine getEntityByName:@"anything"];
+    assertThat(entity, nilValue());
+}
+
+- (void)testEntityCanBeObtainedByNameAfterRenaming
+{
+    ASHEntity * entity = [[ASHEntity alloc] initWithName:@"anything"];
+    [engine addEntity:entity];
+    entity.name = @"otherName";
+    ASHEntity * other = [engine getEntityByName:@"otherName"];
+    assertThat(other, sameInstance(entity));
+}
+
+- (void)testEntityCannotBeObtainedByOldNameAfterRenaming
+{
+    ASHEntity * entity = [[ASHEntity alloc] initWithName:@"anything"];
+    [engine addEntity:entity];
+    entity.name = @"otherName";
+    ASHEntity * other = [engine getEntityByName:@"anything"];
+    assertThat(other, nilValue());
+}
+
 @end

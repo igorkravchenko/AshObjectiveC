@@ -2,15 +2,20 @@
 #import "ASHEntity.h"
 #import <objc/runtime.h>
 
-@implementation ASHEntity
+static NSInteger nameCount = 0;
 
-@synthesize name;
+@implementation ASHEntity
+{
+    NSString * _name;
+}
+
 @synthesize componentAdded;
 @synthesize componentRemoved;
 
 @synthesize previous;
 @synthesize next;
 @synthesize components;
+@synthesize nameChanged;
 
 - (id)init
 {
@@ -21,8 +26,26 @@
         componentAdded = [[ASHSignal2 alloc] init] ;
         componentRemoved = [[ASHSignal2 alloc] init];
         components = [NSMutableDictionary dictionary];
+        nameChanged = [[ASHSignal2 alloc] init];
+        _name = [@"_entity" stringByAppendingFormat:@"%i", ++nameCount];
     }
     
+    return self;
+}
+
+- (id)initWithName:(NSString *)name
+{
+    self = [super init];
+
+    if(self != nil)
+    {
+        componentAdded = [[ASHSignal2 alloc] init] ;
+        componentRemoved = [[ASHSignal2 alloc] init];
+        components = [NSMutableDictionary dictionary];
+        nameChanged = [[ASHSignal2 alloc] init];
+        _name = name != nil ? name : [@"_entity" stringByAppendingFormat:@"%i", ++nameCount];
+    }
+
     return self;
 }
 
@@ -93,6 +116,22 @@
 - (BOOL)hasComponent:(Class)componentClass
 {    
     return components[NSStringFromClass(componentClass)] != nil;
+}
+
+- (NSString *)name
+{
+    return _name;
+}
+
+- (void)setName:(NSString *)value
+{
+    if(_name != value)
+    {
+        NSString * previousName = _name;
+        _name = value;
+        [nameChanged dispatchWithObject:self
+                             withObject:previousName];
+    }
 }
 
 @end

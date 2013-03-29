@@ -25,5 +25,6 @@
 - (void)removeSystem:(ASHSystem *)system;
 - (void)removeAllSystems;
 - (void)update:(double)time;
+- (ASHEntity *)getEntityByName:(NSString *)name;
 
 @end
