@@ -1,9 +1,8 @@
-
 #import "ASHStateComponentMapping.h"
 #import "ASHEntityState.h"
-#import "ASHComponentProvider.h"
 #import "ASHComponentTypeProvider.h"
 #import "ASHComponentSingletonProvider.h"
+#import "ASHDynamicComponentProvider.h"
 
 @implementation ASHStateComponentMapping
 {
@@ -39,9 +38,28 @@ Class componentType;
     return self;
 }
 
+- (ASHStateComponentMapping *)withSingleton
+{
+    [self setProvider:[[ASHComponentSingletonProvider alloc] initWithType:componentType]];
+    return self;
+}
+
 - (ASHStateComponentMapping *)withSingletonForType:(Class)type
 {
+    if(type == nil)
+    {
+        type = componentType;
+    }
+
     [self setProvider:[[ASHComponentSingletonProvider alloc] initWithType:type]];
+    return self;
+}
+
+- (ASHStateComponentMapping *)withTarget:(id)target
+                                  method:(SEL)method
+{
+    [self setProvider:[[ASHDynamicComponentProvider alloc] initWithTarget:target
+                                                                  closure:method]];
     return self;
 }
 

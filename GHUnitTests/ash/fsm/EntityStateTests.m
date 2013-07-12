@@ -7,6 +7,7 @@
 #import "ASHComponentTypeProvider.h"
 #import "ASHStateComponentMapping.h"
 #import "ASHComponentSingletonProvider.h"
+#import "ASHDynamicComponentProvider.h"
 
 @interface EntityStateTests : GHAsyncTestCase
 
@@ -69,6 +70,20 @@
     id <ASHComponentProvider> provider = state.providers[NSStringFromClass([MockComponent class])];
     assertThat(provider, instanceOf([ASHComponentSingletonProvider class]));
     assertThat([provider getComponent], instanceOf([MockComponent class]));
+}
+
+- (void)testAddWithMethodQualifierCreatesDynamicProvider
+{
+    [[state add:[MockComponent class]] withTarget:self
+                                           method:@selector(dynamicProviderMethod)];
+    id <ASHComponentProvider> provider = state.providers[NSStringFromClass([MockComponent class])];
+    assertThat(provider, instanceOf([ASHDynamicComponentProvider class]));
+    assertThat([provider getComponent], instanceOf([MockComponent class]));
+}
+
+- (id)dynamicProviderMethod
+{
+    return [[MockComponent alloc] init];
 }
 
 @end

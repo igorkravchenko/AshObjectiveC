@@ -142,6 +142,9 @@
 		5C7AF756168F1F4A00D58233 /* ASHComponentPool.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C7AF720168F1F4A00D58233 /* ASHComponentPool.m */; };
 		5C7AF757168F1F4A00D58233 /* ASHListIteratingSystem.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C7AF722168F1F4A00D58233 /* ASHListIteratingSystem.m */; };
 		5C7AF758168F1F4A00D58233 /* ASHListIteratingSystem.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C7AF722168F1F4A00D58233 /* ASHListIteratingSystem.m */; };
+		CD5D75A8AF1E52745B6D02CD /* ASHDynamicComponentProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = CD5D7467F53393456EC50188 /* ASHDynamicComponentProvider.m */; };
+		CD5D7C6D07C425C5DA946300 /* ASHDynamicComponentProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = CD5D7467F53393456EC50188 /* ASHDynamicComponentProvider.m */; };
+		CD5D7FB83C6F7CC2E6929539 /* DynamicComponentProviderTests.m in Sources */ = {isa = PBXBuildFile; fileRef = CD5D74626B554C73E9824F18 /* DynamicComponentProviderTests.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -335,6 +338,9 @@
 		5C7AF720168F1F4A00D58233 /* ASHComponentPool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ASHComponentPool.m; sourceTree = "<group>"; };
 		5C7AF721168F1F4A00D58233 /* ASHListIteratingSystem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ASHListIteratingSystem.h; sourceTree = "<group>"; };
 		5C7AF722168F1F4A00D58233 /* ASHListIteratingSystem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ASHListIteratingSystem.m; sourceTree = "<group>"; };
+		CD5D740163FCF08DCED85376 /* ASHDynamicComponentProvider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ASHDynamicComponentProvider.h; sourceTree = "<group>"; };
+		CD5D74626B554C73E9824F18 /* DynamicComponentProviderTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DynamicComponentProviderTests.m; sourceTree = "<group>"; };
+		CD5D7467F53393456EC50188 /* ASHDynamicComponentProvider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ASHDynamicComponentProvider.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -619,6 +625,7 @@
 				5C7AF6C8168F1DD500D58233 /* ComponentTypeProviderTests.m */,
 				5C7AF6C9168F1DD500D58233 /* EntityStateMachineTests.m */,
 				5C7AF6CA168F1DD500D58233 /* EntityStateTests.m */,
+				CD5D74626B554C73E9824F18 /* DynamicComponentProviderTests.m */,
 			);
 			path = fsm;
 			sourceTree = "<group>";
@@ -703,6 +710,8 @@
 				5C7AF704168F1F4A00D58233 /* ASHEntityStateMachine.m */,
 				5C7AF705168F1F4A00D58233 /* ASHStateComponentMapping.h */,
 				5C7AF706168F1F4A00D58233 /* ASHStateComponentMapping.m */,
+				CD5D7467F53393456EC50188 /* ASHDynamicComponentProvider.m */,
+				CD5D740163FCF08DCED85376 /* ASHDynamicComponentProvider.h */,
 			);
 			path = fsm;
 			sourceTree = "<group>";
@@ -920,6 +929,7 @@
 				5C7AF753168F1F4A00D58233 /* ASHFrameTickProvider.m in Sources */,
 				5C7AF755168F1F4A00D58233 /* ASHComponentPool.m in Sources */,
 				5C7AF757168F1F4A00D58233 /* ASHListIteratingSystem.m in Sources */,
+				CD5D75A8AF1E52745B6D02CD /* ASHDynamicComponentProvider.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -971,6 +981,8 @@
 				5C7AF754168F1F4A00D58233 /* ASHFrameTickProvider.m in Sources */,
 				5C7AF756168F1F4A00D58233 /* ASHComponentPool.m in Sources */,
 				5C7AF758168F1F4A00D58233 /* ASHListIteratingSystem.m in Sources */,
+				CD5D7C6D07C425C5DA946300 /* ASHDynamicComponentProvider.m in Sources */,
+				CD5D7FB83C6F7CC2E6929539 /* DynamicComponentProviderTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
