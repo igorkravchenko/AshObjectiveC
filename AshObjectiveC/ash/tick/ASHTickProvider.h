@@ -3,6 +3,7 @@
 
 @protocol ASHTickProvider <NSObject>
 
+- (BOOL)playing;
 - (void)addListener:(id)target
              action:(SEL)action;
 

@@ -62,4 +62,9 @@
      @(frameTime * timeAdjustment)];
 }
 
+- (BOOL)playing
+{
+    return timer == nil ? NO : timer.isValid;
+}
+
 @end
