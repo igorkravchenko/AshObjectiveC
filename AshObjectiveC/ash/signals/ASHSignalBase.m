@@ -27,6 +27,7 @@
     {
         nodes = [NSMutableDictionary dictionary];
         listenerNodePool = [[ASHListenerNodePool alloc] init];
+        _numListeners = 0;
     }
     
     return self;
@@ -124,6 +125,7 @@
             self.tail = node;
         }
     }
+    _numListeners++;
 }
 
 - (void)removeListener:(id)target 
@@ -174,7 +176,8 @@
         else 
         {
             [listenerNodePool dispose:node];
-        } 
+        }
+        _numListeners--;
     }
 }
 
@@ -182,14 +185,17 @@
 {
     while (head != nil) 
     {
-        ASHListenerNode * listener = head;
+        ASHListenerNode *node = head;
         self.head = head.next;
-        listener.previous = nil;
-        listener.next = nil;
+        [nodes removeObjectForKey:GET_TARGET_ACTION_KEY(node.target, node.listener)];
+        [listenerNodePool dispose:node];
+        node.previous = nil;
+        node.next = nil;
     }
     self.tail = nil;
     toAddHead = nil;
     toAddTail = nil;
+    _numListeners = 0;
 }
 
 @end

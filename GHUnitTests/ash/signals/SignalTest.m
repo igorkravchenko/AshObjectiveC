@@ -40,9 +40,14 @@
     self.signal = nil;
 }
 
-- (void)testNewSignalHasNoListeners
+- (void)testNewSignalHasNullHead
 {
     assertThat(signal.head, nilValue());
+}
+
+- (void)testNewSignalHasListenersCountZero
+{
+    assertThatUnsignedInteger(signal.numListeners, equalToUnsignedInteger(0));
 }
 
 - (void)testAddListenerThenDispatchShouldCallIt
@@ -56,6 +61,13 @@
                  timeout:kCallbackTimout];
 }
 
+- (void)testAddListenerThenListenersCountIsOne
+{
+    [signal addListener:self
+                 action:@selector(newEmptyHandler)];
+    assertThatUnsignedInteger(signal.numListeners, equalToUnsignedInteger(1));
+}
+
 - (void)testAddListenerThenRemoveThenDispatchShouldNotCallListener
 {
     [signal addListener:self
@@ -63,6 +75,15 @@
     [signal removeListener:self
                     action:@selector(failIfCalled)];
     [self dispatchSignal];
+}
+
+- (void)testAddListenerThenRemoveThenListenersCountIsZero
+{
+    [signal addListener:self
+                 action:@selector(failIfCalled)];
+    [signal removeListener:self
+                    action:@selector(failIfCalled)];
+    assertThatUnsignedInteger(signal.numListeners, equalToUnsignedInteger(0));
 }
 
 - (void)testRemoveFunctionNotInListenersShouldNotThrowError
@@ -112,6 +133,15 @@
     }
 }
 
+- (void)testAdd2ListenersThenListenersCountIsTwo
+{
+    [signal addListener:self
+                 action:@selector(newEmptyHandler)];
+    [signal addListener:self
+                 action:@selector(newEmptyHandler2)];
+    assertThatUnsignedInteger(signal.numListeners, equalToUnsignedInteger(2));
+}
+
 - (void)testAdd2ListenersRemove1stThenDispatchShouldCall2ndNot1stListener
 {
     [super prepare];
@@ -142,6 +172,17 @@
                  timeout:kCallbackTimout];
 }
 
+- (void)testAdd2ListenersThenRemove1ThenListenersCountIsOne
+{
+    [signal addListener:self
+                 action:@selector(newEmptyHandler)];
+    [signal addListener:self
+                 action:@selector(failIfCalled)];
+    [signal removeListener:self
+                    action:@selector(failIfCalled)];
+    assertThatUnsignedInteger(signal.numListeners, equalToUnsignedInteger(1));
+}
+
 - (void)testAddSameListenerTwiceShouldOnlyAddItOnce
 {
     _addSameListenerTwiceShouldOnlyAddItOnceCount = 0;
@@ -156,6 +197,15 @@
 - (void)callbackAddSameListenerTwiceShouldOnlyAddItOnce
 {
     ++_addSameListenerTwiceShouldOnlyAddItOnceCount;
+}
+
+- (void)testAddSameListenerTwiceThenListenersCountIsOne
+{
+    [signal addListener:self
+                 action:@selector(failIfCalled)];
+    [signal addListener:self
+                 action:@selector(failIfCalled)];
+    assertThatUnsignedInteger(signal.numListeners, equalToUnsignedInteger(1));
 }
 
 - (void)testAddTheSameListenerTwiceShouldNotThrowError
@@ -198,6 +248,22 @@
                  action:@selector(failIfCalled)];
 }
 
+- (void)testAddingAListenerDuringDispatchIncrementsListenersCount
+{
+    [signal addListener:self
+                 action:@selector(addListenerDuringDispatchToTestCount)];
+    [self dispatchSignal];
+    assertThatUnsignedInteger(signal.numListeners, equalToUnsignedInteger(2));
+}
+
+- (void)addListenerDuringDispatchToTestCount
+{
+    assertThatUnsignedInteger(signal.numListeners, equalToUnsignedInteger(1));
+    [signal addListener:self
+                 action:@selector(newEmptyHandler)];
+    assertThatUnsignedInteger(signal.numListeners, equalToUnsignedInteger(2));
+}
+
 - (void)testDispatch2Listeners2ndListenerRemoves1stThen1stListenerIsNotCalled
 {
     [signal addListener:self
@@ -221,6 +287,27 @@
                  action:@selector(failIfCalled)];
     [signal removeAll];
     assertThat(signal.head, nilValue());
+}
+
+- (void)testAddListenerThenRemoveAllThenAddAgainShouldAddListener
+{
+    SEL handler = @selector(newEmptyHandler);
+    [signal addListener:self
+                 action:handler];
+    [signal removeAll];
+    [signal addListener:self
+                 action:handler];
+    assertThatUnsignedInteger(signal.numListeners, equalToUnsignedInteger(1));
+}
+
+- (void)testAdd2ListenersThenRemoveAllThenListenerCountIsZero
+{
+    [signal addListener:self
+                 action:@selector(newEmptyHandler)];
+    [signal addListener:self
+                 action:@selector(newEmptyHandler2)];
+    [signal removeAll];
+    assertThatUnsignedInteger(signal.numListeners, equalToUnsignedInteger(0));
 }
 
 - (void)testRemoveAllDuringDispatchShouldStopAll
@@ -278,6 +365,16 @@
     [super failWithException:[NSException exceptionWithName:@"Failure"
                                                      reason:@"This function should not have been called."
                                                    userInfo:nil]];
+}
+
+- (void)newEmptyHandler
+{
+
+}
+
+- (void)newEmptyHandler2
+{
+
 }
 
 @end

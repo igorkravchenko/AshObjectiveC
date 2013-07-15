@@ -6,6 +6,7 @@
 
 @property (nonatomic, strong) ASHListenerNode * head;
 @property (nonatomic, strong) ASHListenerNode * tail;
+@property (nonatomic, readonly) NSUInteger numListeners;
 
 - (void)startDispatch;
 - (void)endDispatch;
