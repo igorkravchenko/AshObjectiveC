@@ -35,7 +35,8 @@ static const char * property_getTypeString( objc_property_t property );
 
 - (void)create
 {
-    nodePool = [[ASHNodePool alloc] initWithNodeClass:nodeClass];
+    nodePool = [[ASHNodePool alloc] initWithNodeClass:nodeClass
+                                           components:components];
     nodes = [[ASHNodeList alloc] init];
     entities = [NSMutableDictionary dictionary];
     components = [NSMutableDictionary dictionary];

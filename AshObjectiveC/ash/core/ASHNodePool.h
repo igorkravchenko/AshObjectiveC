@@ -4,7 +4,8 @@
 
 @interface ASHNodePool : NSObject
 
-- (id)initWithNodeClass:(Class)nodeClass;
+- (id)initWithNodeClass:(Class)nodeClass
+             components:(NSMutableDictionary *)components;
 - (ASHNode *)getNode;
 - (void)disposeNode:(ASHNode *)node;
 - (void)cacheNode:(ASHNode *)node;

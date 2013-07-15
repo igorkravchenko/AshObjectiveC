@@ -1,27 +1,23 @@
 
 #import "ASHNodePool.h"
 
-@interface ASHNodePool ()
-
-@property (nonatomic, strong) ASHNode * tail;
-@property (nonatomic, assign) Class nodeClass;
-@property (nonatomic, strong) ASHNode * cacheTail;
-
-@end
-
 @implementation ASHNodePool
-
-@synthesize tail;
-@synthesize nodeClass;
-@synthesize cacheTail;
+{
+    ASHNode * _tail;
+    Class _nodeClass;
+    ASHNode * _cacheTail;
+    NSMutableDictionary * _components;
+}
 
 - (id)initWithNodeClass:(Class)aNodeClass
+             components:(NSMutableDictionary *)components
 {
     self = [super init];
     
     if(self != nil)
     {
-        self.nodeClass = aNodeClass;
+        _nodeClass = aNodeClass;
+        _components = components;
     }
     
     return self;
@@ -29,41 +25,48 @@
 
 - (ASHNode *)getNode
 {
-    if(tail != nil)
+    if(_tail != nil)
     {
-        ASHNode * node = tail;
-        self.tail = tail.previous;
+        ASHNode * node = _tail;
+        _tail = _tail.previous;
         node.previous = nil;
         return node;
     }
     else
     {
-        return [[nodeClass alloc] init];
+        return [[_nodeClass alloc] init];
     }
 }
 
 - (void)disposeNode:(ASHNode *)node
 {
+    for (NSString * componentClass in _components)
+    {
+        NSString * propertyName = _components[componentClass];
+        [node setValue:nil
+                forKey:propertyName];
+    }
+
+    node.entity = nil;
+
     node.next = nil;
-    node.previous = tail;
-    self.tail = node;
+    node.previous = _tail;
+    _tail = node;
 }
 
 - (void)cacheNode:(ASHNode *)node
 {
-    node.previous = cacheTail;
-    self.cacheTail = node;
+    node.previous = _cacheTail;
+    _cacheTail = node;
 }
 
 - (void)releaseCache
 {
-    while (cacheTail != nil) 
+    while (_cacheTail != nil)
     {
-        ASHNode * node = cacheTail;
-        self.cacheTail = node.previous;
-        node.next = nil;
-        node.previous = tail;
-        self.tail = node;
+        ASHNode * node = _cacheTail;
+        _cacheTail = node.previous;
+        [self disposeNode:node];
     }
 }
 
