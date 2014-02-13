@@ -40,7 +40,7 @@
 - (void)changeState:(NSString *)name
 {
     ASHEntityState * newState = states[name];
-    if (states == nil)
+    if (newState == nil)
     {
         @throw [NSException exceptionWithName:@"EntityStateMachineException"
                                        reason:[NSString stringWithFormat:@"ASHEntity state %@ doesn't exist", name]
