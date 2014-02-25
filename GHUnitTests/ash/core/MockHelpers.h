@@ -79,3 +79,15 @@
 @property (nonatomic, assign) NSInteger pos;
 
 @end
+
+@interface MockSystem : ASHSystem
+
+@property (nonatomic, assign) BOOL wasRemoved;
+
+@end
+
+@interface MockSystem2 : ASHSystem
+
+@property (nonatomic, strong) NSString * value;
+
+@end

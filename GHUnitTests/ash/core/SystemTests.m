@@ -8,7 +8,7 @@
 
 @class SystemTests;
 
-@interface MockSystem : ASHSystem
+@interface MockSystem0 : ASHSystem
 
 @property (nonatomic, strong) SystemTests * tests;
 
@@ -21,8 +21,8 @@
 
 @property (nonatomic, strong) ASHEngine * engine;
 
-@property (nonatomic, strong) MockSystem * system1;
-@property (nonatomic, strong) MockSystem * system2;
+@property (nonatomic, strong) MockSystem0 * system1;
+@property (nonatomic, strong) MockSystem0 * system2;
 
 @property (nonatomic, assign) SEL asyncCallback;
 @property (nonatomic, weak) id asyncTarget;
@@ -68,7 +68,7 @@
 
 - (void)testAddSystemCallsAddToEngine
 {
-    ASHSystem * system = [[MockSystem alloc] initWithSystemTests:self];
+    ASHSystem * system = [[MockSystem0 alloc] initWithSystemTests:self];
     self.asyncCallback = @selector(addedCallbackMethod:action:systemEngine:);
     self.asyncTarget = self;
     [engine addSystem:system
@@ -77,7 +77,7 @@
 
 - (void)testRemoveSystemCallsRemovedFromEngine
 {
-    ASHSystem * system = [[MockSystem alloc] initWithSystemTests:self];
+    ASHSystem * system = [[MockSystem0 alloc] initWithSystemTests:self];
     [engine addSystem:system
              priority:0];
     self.asyncCallback = @selector(removedCallbackMethod:action:systemEngine:);
@@ -87,7 +87,7 @@
 
 - (void)testEngineCallsUpdateOnSystems
 {
-    ASHSystem * system = [[MockSystem alloc] initWithSystemTests:self];
+    ASHSystem * system = [[MockSystem0 alloc] initWithSystemTests:self];
     [engine addSystem:system
              priority:0];
     self.asyncCallback = @selector(updateCallbackMethod:action:time:);
@@ -97,13 +97,13 @@
 
 - (void)testDefaultPriorityIsZero
 {
-    ASHSystem * system = [[MockSystem alloc] initWithSystemTests:self];
+    ASHSystem * system = [[MockSystem0 alloc] initWithSystemTests:self];
     assertThatInteger(system.priority, equalToInteger(0));
 }
 
 - (void)testCanSetPriorityWhenAddingSystem
 {
-    ASHSystem * system = [[MockSystem alloc] initWithSystemTests:self];
+    ASHSystem * system = [[MockSystem0 alloc] initWithSystemTests:self];
     [engine addSystem:system
              priority:10];
     assertThatInteger(system.priority, equalToInteger(10));
@@ -111,10 +111,10 @@
 
 - (void)testSystemsUpdatedInPriorityOrderIfSameAsAddOrder
 {
-    self.system1 = [[MockSystem alloc] initWithSystemTests:self];
+    self.system1 = [[MockSystem0 alloc] initWithSystemTests:self];
     [engine addSystem:_system1
              priority:10];
-    self.system2 = [[MockSystem alloc] initWithSystemTests:self];
+    self.system2 = [[MockSystem0 alloc] initWithSystemTests:self];
     [engine addSystem:_system2
              priority:20];
     self.asyncTarget = self;
@@ -125,10 +125,10 @@
 
 - (void)testSystemsUpdatedInPriorityOrderIfPrioritiesAreNegative
 {
-    self.system2 = [[MockSystem alloc] initWithSystemTests:self];
+    self.system2 = [[MockSystem0 alloc] initWithSystemTests:self];
     [engine addSystem:_system2
              priority:10];
-    self.system1 = [[MockSystem alloc] initWithSystemTests:self];
+    self.system1 = [[MockSystem0 alloc] initWithSystemTests:self];
     [engine addSystem:_system1
              priority:-20];
     self.asyncTarget = self;
@@ -143,7 +143,7 @@
 
 - (void)testUpdatingIsTrueDuringUpdate
 {
-    ASHSystem * system = [[MockSystem alloc] initWithSystemTests:self];
+    ASHSystem * system = [[MockSystem0 alloc] initWithSystemTests:self];
     [engine addSystem:system
              priority:0];
     self.asyncTarget = self;
@@ -162,7 +162,7 @@
 {
     [super prepare];
 
-    ASHSystem * system = [[MockSystem alloc] initWithSystemTests:self];
+    ASHSystem * system = [[MockSystem0 alloc] initWithSystemTests:self];
     [engine addSystem:system
              priority:0];
     self.asyncCallback = @selector(listensForUpdateComplete:action:time:);
@@ -176,28 +176,28 @@
 
 - (void)testGetSystemReturnsTheSystem
 {
-    ASHSystem * system1 = [[MockSystem alloc] initWithSystemTests:self];
+    ASHSystem * system1 = [[MockSystem0 alloc] initWithSystemTests:self];
     [engine addSystem:system1
              priority:0];
     [engine addSystem:[[ASHSystem alloc] init]
              priority:0];
-    assertThat([engine getSystem:[MockSystem class]], sameInstance(system1));
+    assertThat([engine getSystem:[MockSystem0 class]], sameInstance(system1));
 }
 
 - (void)testGetSystemReturnsNullIfNoSuchSystem
 {
     [engine addSystem:[[ASHSystem alloc] init]
              priority:0];
-    assertThat([engine getSystem:[MockSystem class]], nilValue());
+    assertThat([engine getSystem:[MockSystem0 class]], nilValue());
 }
 
 - (void)testRemoveAllSystemsDoesWhatItSays
 {
     [engine addSystem:[[ASHSystem alloc] init] priority:0];
-    [engine addSystem:[[MockSystem alloc] initWithSystemTests:self]
+    [engine addSystem:[[MockSystem0 alloc] initWithSystemTests:self]
              priority:0];
     [engine removeAllSystems];
-    assertThat([engine getSystem:[MockSystem class]], nilValue());
+    assertThat([engine getSystem:[MockSystem0 class]], nilValue());
     assertThat([engine getSystem:[ASHSystem class]], nilValue());
 }
 
@@ -279,7 +279,7 @@
 
 @end
 
-@implementation MockSystem
+@implementation MockSystem0
 @synthesize tests = tests;
 
 - (id)initWithSystemTests:(SystemTests *)systemTests

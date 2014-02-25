@@ -25,12 +25,11 @@
 - (id)getComponent
 {
     return objc_msgSend(_target, _closure);
-
 }
 
 - (id)identifier
 {
-    return NSStringFromSelector(_closure);
+    return [NSStringFromSelector(_closure) stringByAppendingFormat:@"%i", [_target hash]];
 }
 
 @end

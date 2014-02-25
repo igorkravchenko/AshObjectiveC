@@ -115,3 +115,15 @@ static NSMutableArray * _instances = nil;
 
 @implementation MockNodeSort
 @end
+
+@implementation MockSystem
+
+- (void)removeFromEngine:(ASHEngine *)engine
+{
+    self.wasRemoved = YES;
+}
+
+@end
+
+@implementation MockSystem2
+@end

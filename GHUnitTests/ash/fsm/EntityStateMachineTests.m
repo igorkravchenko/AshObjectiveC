@@ -96,7 +96,7 @@
     [fsm addState:@"test1"
             state:state1];
     [fsm changeState:@"test1"];
-    
+
     ASHEntityState * state2 = [[ASHEntityState alloc] init];
     MockComponent2 * component2 = [[MockComponent2 alloc] init];
     [[state2 add:[MockComponent class]] withInstance:component1];
@@ -115,7 +115,7 @@
     [fsm addState:@"test1"
             state:state1];
     [fsm changeState:@"test1"];
-    
+
     ASHEntityState * state2 = [[ASHEntityState alloc] init];
     MockComponent * component3 = [[MockComponent alloc] init];
     MockComponent2 * component2 = [[MockComponent2 alloc] init];

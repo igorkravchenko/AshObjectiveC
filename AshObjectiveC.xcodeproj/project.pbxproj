@@ -142,6 +142,23 @@
 		5C7AF756168F1F4A00D58233 /* ASHComponentPool.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C7AF720168F1F4A00D58233 /* ASHComponentPool.m */; };
 		5C7AF757168F1F4A00D58233 /* ASHListIteratingSystem.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C7AF722168F1F4A00D58233 /* ASHListIteratingSystem.m */; };
 		5C7AF758168F1F4A00D58233 /* ASHListIteratingSystem.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C7AF722168F1F4A00D58233 /* ASHListIteratingSystem.m */; };
+		CD03800A6B4185315C96AD82 /* ASHSystemInstanceProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = CD03801E3CAFDFDEFE5E8DE5 /* ASHSystemInstanceProvider.m */; };
+		CD03811C1B7258EC01423D14 /* ASHSystemSingletonProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = CD0386106AD00BA620FF37EE /* ASHSystemSingletonProvider.m */; };
+		CD03818990EA28E0AD9613E4 /* ASHStateSystemMapping.m in Sources */ = {isa = PBXBuildFile; fileRef = CD0385B4D7A0D36CFC8547C5 /* ASHStateSystemMapping.m */; };
+		CD0381F0A405345E65CCDE1F /* SystemSingletonProviderTests.m in Sources */ = {isa = PBXBuildFile; fileRef = CD038168AB8E6E602792B883 /* SystemSingletonProviderTests.m */; };
+		CD038285E24F313076734FFF /* ASHSystemSingletonProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = CD0386106AD00BA620FF37EE /* ASHSystemSingletonProvider.m */; };
+		CD0383900073870A01F1D764 /* ASHEngineStateMachine.m in Sources */ = {isa = PBXBuildFile; fileRef = CD03876BA3A6FBE9447C04B1 /* ASHEngineStateMachine.m */; };
+		CD0383BFC0816169648A3506 /* SystemStateTests.m in Sources */ = {isa = PBXBuildFile; fileRef = CD038F794526F8BADFA42C0D /* SystemStateTests.m */; };
+		CD0384244B41A2DF08FE51EB /* ASHDynamicSystemProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = CD038A17EED0688023B0BFCB /* ASHDynamicSystemProvider.m */; };
+		CD038468C490D24A11B108DF /* ASHSystemInstanceProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = CD03801E3CAFDFDEFE5E8DE5 /* ASHSystemInstanceProvider.m */; };
+		CD0384A3BEE10C9EC68077E7 /* ASHEngineState.m in Sources */ = {isa = PBXBuildFile; fileRef = CD038FA2C43A21CE90DC8083 /* ASHEngineState.m */; };
+		CD0386664EA48978103CE987 /* ASHEngineState.m in Sources */ = {isa = PBXBuildFile; fileRef = CD038FA2C43A21CE90DC8083 /* ASHEngineState.m */; };
+		CD03869FD3B32874ABB0D78F /* EngineStateMachineTests.m in Sources */ = {isa = PBXBuildFile; fileRef = CD0382319DF2D65A1AD0F057 /* EngineStateMachineTests.m */; };
+		CD038A3472905E60DE4D6CAB /* ASHDynamicSystemProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = CD038A17EED0688023B0BFCB /* ASHDynamicSystemProvider.m */; };
+		CD038AD132B67908022C66EF /* ASHEngineStateMachine.m in Sources */ = {isa = PBXBuildFile; fileRef = CD03876BA3A6FBE9447C04B1 /* ASHEngineStateMachine.m */; };
+		CD038BF37D39AE333D70ACBF /* ASHStateSystemMapping.m in Sources */ = {isa = PBXBuildFile; fileRef = CD0385B4D7A0D36CFC8547C5 /* ASHStateSystemMapping.m */; };
+		CD038E9A02728D9EC7CE48D8 /* SystemMethodProviderTests.m in Sources */ = {isa = PBXBuildFile; fileRef = CD038B6BA877F6B944052D6A /* SystemMethodProviderTests.m */; };
+		CD038FF5A093E920BBFB4C9F /* SystemInstanceProviderTests.m in Sources */ = {isa = PBXBuildFile; fileRef = CD03843E247A0450566BBB2B /* SystemInstanceProviderTests.m */; };
 		CD5D75A8AF1E52745B6D02CD /* ASHDynamicComponentProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = CD5D7467F53393456EC50188 /* ASHDynamicComponentProvider.m */; };
 		CD5D7C6D07C425C5DA946300 /* ASHDynamicComponentProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = CD5D7467F53393456EC50188 /* ASHDynamicComponentProvider.m */; };
 		CD5D7FB83C6F7CC2E6929539 /* DynamicComponentProviderTests.m in Sources */ = {isa = PBXBuildFile; fileRef = CD5D74626B554C73E9824F18 /* DynamicComponentProviderTests.m */; };
@@ -338,6 +355,24 @@
 		5C7AF720168F1F4A00D58233 /* ASHComponentPool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ASHComponentPool.m; sourceTree = "<group>"; };
 		5C7AF721168F1F4A00D58233 /* ASHListIteratingSystem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ASHListIteratingSystem.h; sourceTree = "<group>"; };
 		5C7AF722168F1F4A00D58233 /* ASHListIteratingSystem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ASHListIteratingSystem.m; sourceTree = "<group>"; };
+		CD03801E3CAFDFDEFE5E8DE5 /* ASHSystemInstanceProvider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ASHSystemInstanceProvider.m; sourceTree = "<group>"; };
+		CD0380514342FD13838F7411 /* ASHEngineStateMachine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ASHEngineStateMachine.h; sourceTree = "<group>"; };
+		CD038134F7BE7318041958CE /* ASHDynamicSystemProvider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ASHDynamicSystemProvider.h; sourceTree = "<group>"; };
+		CD038168AB8E6E602792B883 /* SystemSingletonProviderTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SystemSingletonProviderTests.m; sourceTree = "<group>"; };
+		CD0381C2AFECE22C66D0D4BC /* ASHSystemProvider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ASHSystemProvider.h; sourceTree = "<group>"; };
+		CD0382319DF2D65A1AD0F057 /* EngineStateMachineTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EngineStateMachineTests.m; sourceTree = "<group>"; };
+		CD038281A57704C8BB1AB656 /* ASHEngineState.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ASHEngineState.h; sourceTree = "<group>"; };
+		CD03843E247A0450566BBB2B /* SystemInstanceProviderTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SystemInstanceProviderTests.m; sourceTree = "<group>"; };
+		CD0385669167E9FB52E037E2 /* ASHSystemInstanceProvider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ASHSystemInstanceProvider.h; sourceTree = "<group>"; };
+		CD0385B4D7A0D36CFC8547C5 /* ASHStateSystemMapping.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ASHStateSystemMapping.m; sourceTree = "<group>"; };
+		CD0386106AD00BA620FF37EE /* ASHSystemSingletonProvider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ASHSystemSingletonProvider.m; sourceTree = "<group>"; };
+		CD03876BA3A6FBE9447C04B1 /* ASHEngineStateMachine.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ASHEngineStateMachine.m; sourceTree = "<group>"; };
+		CD0389B7D8CE07B5050F503B /* ASHSystemSingletonProvider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ASHSystemSingletonProvider.h; sourceTree = "<group>"; };
+		CD038A17EED0688023B0BFCB /* ASHDynamicSystemProvider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ASHDynamicSystemProvider.m; sourceTree = "<group>"; };
+		CD038ACB99737E220216B24E /* ASHStateSystemMapping.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ASHStateSystemMapping.h; sourceTree = "<group>"; };
+		CD038B6BA877F6B944052D6A /* SystemMethodProviderTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SystemMethodProviderTests.m; sourceTree = "<group>"; };
+		CD038F794526F8BADFA42C0D /* SystemStateTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SystemStateTests.m; sourceTree = "<group>"; };
+		CD038FA2C43A21CE90DC8083 /* ASHEngineState.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ASHEngineState.m; sourceTree = "<group>"; };
 		CD5D740163FCF08DCED85376 /* ASHDynamicComponentProvider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ASHDynamicComponentProvider.h; sourceTree = "<group>"; };
 		CD5D74626B554C73E9824F18 /* DynamicComponentProviderTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DynamicComponentProviderTests.m; sourceTree = "<group>"; };
 		CD5D7467F53393456EC50188 /* ASHDynamicComponentProvider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ASHDynamicComponentProvider.m; sourceTree = "<group>"; };
@@ -626,6 +661,11 @@
 				5C7AF6C9168F1DD500D58233 /* EntityStateMachineTests.m */,
 				5C7AF6CA168F1DD500D58233 /* EntityStateTests.m */,
 				CD5D74626B554C73E9824F18 /* DynamicComponentProviderTests.m */,
+				CD0382319DF2D65A1AD0F057 /* EngineStateMachineTests.m */,
+				CD03843E247A0450566BBB2B /* SystemInstanceProviderTests.m */,
+				CD038B6BA877F6B944052D6A /* SystemMethodProviderTests.m */,
+				CD038168AB8E6E602792B883 /* SystemSingletonProviderTests.m */,
+				CD038F794526F8BADFA42C0D /* SystemStateTests.m */,
 			);
 			path = fsm;
 			sourceTree = "<group>";
@@ -712,6 +752,19 @@
 				5C7AF706168F1F4A00D58233 /* ASHStateComponentMapping.m */,
 				CD5D7467F53393456EC50188 /* ASHDynamicComponentProvider.m */,
 				CD5D740163FCF08DCED85376 /* ASHDynamicComponentProvider.h */,
+				CD0381C2AFECE22C66D0D4BC /* ASHSystemProvider.h */,
+				CD03801E3CAFDFDEFE5E8DE5 /* ASHSystemInstanceProvider.m */,
+				CD0385669167E9FB52E037E2 /* ASHSystemInstanceProvider.h */,
+				CD0386106AD00BA620FF37EE /* ASHSystemSingletonProvider.m */,
+				CD0389B7D8CE07B5050F503B /* ASHSystemSingletonProvider.h */,
+				CD0385B4D7A0D36CFC8547C5 /* ASHStateSystemMapping.m */,
+				CD038ACB99737E220216B24E /* ASHStateSystemMapping.h */,
+				CD038FA2C43A21CE90DC8083 /* ASHEngineState.m */,
+				CD038281A57704C8BB1AB656 /* ASHEngineState.h */,
+				CD038A17EED0688023B0BFCB /* ASHDynamicSystemProvider.m */,
+				CD038134F7BE7318041958CE /* ASHDynamicSystemProvider.h */,
+				CD03876BA3A6FBE9447C04B1 /* ASHEngineStateMachine.m */,
+				CD0380514342FD13838F7411 /* ASHEngineStateMachine.h */,
 			);
 			path = fsm;
 			sourceTree = "<group>";
@@ -930,6 +983,12 @@
 				5C7AF755168F1F4A00D58233 /* ASHComponentPool.m in Sources */,
 				5C7AF757168F1F4A00D58233 /* ASHListIteratingSystem.m in Sources */,
 				CD5D75A8AF1E52745B6D02CD /* ASHDynamicComponentProvider.m in Sources */,
+				CD038468C490D24A11B108DF /* ASHSystemInstanceProvider.m in Sources */,
+				CD038285E24F313076734FFF /* ASHSystemSingletonProvider.m in Sources */,
+				CD038BF37D39AE333D70ACBF /* ASHStateSystemMapping.m in Sources */,
+				CD0384A3BEE10C9EC68077E7 /* ASHEngineState.m in Sources */,
+				CD038A3472905E60DE4D6CAB /* ASHDynamicSystemProvider.m in Sources */,
+				CD0383900073870A01F1D764 /* ASHEngineStateMachine.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -983,6 +1042,17 @@
 				5C7AF758168F1F4A00D58233 /* ASHListIteratingSystem.m in Sources */,
 				CD5D7C6D07C425C5DA946300 /* ASHDynamicComponentProvider.m in Sources */,
 				CD5D7FB83C6F7CC2E6929539 /* DynamicComponentProviderTests.m in Sources */,
+				CD03800A6B4185315C96AD82 /* ASHSystemInstanceProvider.m in Sources */,
+				CD03811C1B7258EC01423D14 /* ASHSystemSingletonProvider.m in Sources */,
+				CD03818990EA28E0AD9613E4 /* ASHStateSystemMapping.m in Sources */,
+				CD0386664EA48978103CE987 /* ASHEngineState.m in Sources */,
+				CD0384244B41A2DF08FE51EB /* ASHDynamicSystemProvider.m in Sources */,
+				CD038AD132B67908022C66EF /* ASHEngineStateMachine.m in Sources */,
+				CD03869FD3B32874ABB0D78F /* EngineStateMachineTests.m in Sources */,
+				CD038FF5A093E920BBFB4C9F /* SystemInstanceProviderTests.m in Sources */,
+				CD038E9A02728D9EC7CE48D8 /* SystemMethodProviderTests.m in Sources */,
+				CD0381F0A405345E65CCDE1F /* SystemSingletonProviderTests.m in Sources */,
+				CD0383BFC0816169648A3506 /* SystemStateTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
