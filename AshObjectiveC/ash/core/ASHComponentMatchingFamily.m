@@ -1,6 +1,7 @@
 
 #import "ASHComponentMatchingFamily.h"
 #import "ASHNodePool.h"
+#import "ASHMacro.h"
 #import <objc/runtime.h>
 
 @implementation ASHComponentMatchingFamily
@@ -16,7 +17,6 @@
 @synthesize next;
 @synthesize entities;
 
-static const char * property_getTypeString( objc_property_t property );
 
 - (id)initWithNodeClass:(Class)aNodeClass
                    engine:(ASHEngine *)engine
@@ -162,24 +162,6 @@ static const char * property_getTypeString( objc_property_t property );
     }
     
     [nodes removeAll];
-}
-
-static const char * property_getTypeString( objc_property_t property )
-{
-	const char * attrs = property_getAttributes( property );
-	if ( attrs == NULL )
-		return ( NULL );
-    
-	static char buffer[256];
-	const char * e = strchr( attrs, ',' );
-	if ( e == NULL )
-		return ( NULL );
-    
-	int len = (int)(e - attrs);
-	memcpy( buffer, attrs, len );
-	buffer[len] = '\0';
-    
-	return ( buffer );
 }
 
 @end

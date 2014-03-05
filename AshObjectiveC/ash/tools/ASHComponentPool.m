@@ -3,24 +3,25 @@
 
 @interface ASHComponentPool ()
 
-@property (nonatomic, retain) NSCache * pools;
+@property (nonatomic, strong) NSCache * pools;
 
 @end
 
-static id __sharedInstance = nil;
 
 @implementation ASHComponentPool
 
 @synthesize pools;
 
-+ (id)sharedInstance
++ (instancetype)sharedPool
 {
-    if(__sharedInstance == nil)
-    {
-        __sharedInstance = [[self alloc] init];
-    }
-    
-    return __sharedInstance;
+    static id sharedInstance = nil;
+    static dispatch_once_t onceToken;
+
+    dispatch_once(&onceToken, ^{
+        sharedInstance = [[self alloc] init];
+    });
+
+    return sharedInstance;
 }
 
 - (id)init

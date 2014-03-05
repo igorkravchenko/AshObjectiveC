@@ -143,21 +143,43 @@
 		5C7AF757168F1F4A00D58233 /* ASHListIteratingSystem.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C7AF722168F1F4A00D58233 /* ASHListIteratingSystem.m */; };
 		5C7AF758168F1F4A00D58233 /* ASHListIteratingSystem.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C7AF722168F1F4A00D58233 /* ASHListIteratingSystem.m */; };
 		CD03800A6B4185315C96AD82 /* ASHSystemInstanceProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = CD03801E3CAFDFDEFE5E8DE5 /* ASHSystemInstanceProvider.m */; };
+		CD0380DEBCDBBE8BE209E25D /* ASHObjectEngineCodec.m in Sources */ = {isa = PBXBuildFile; fileRef = CD038788831A71A707CC47EF /* ASHObjectEngineCodec.m */; };
+		CD038112A165D04774F38D0B /* ASHEngineEncoder.m in Sources */ = {isa = PBXBuildFile; fileRef = CD0385854C584F6A58C2C671 /* ASHEngineEncoder.m */; };
 		CD03811C1B7258EC01423D14 /* ASHSystemSingletonProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = CD0386106AD00BA620FF37EE /* ASHSystemSingletonProvider.m */; };
+		CD03816369DDEC04C7EA7F83 /* ASHObjectEngineCodec.m in Sources */ = {isa = PBXBuildFile; fileRef = CD038788831A71A707CC47EF /* ASHObjectEngineCodec.m */; };
 		CD03818990EA28E0AD9613E4 /* ASHStateSystemMapping.m in Sources */ = {isa = PBXBuildFile; fileRef = CD0385B4D7A0D36CFC8547C5 /* ASHStateSystemMapping.m */; };
+		CD0381A47784F9C5EFF72CB2 /* ASHClassObjectCodec.m in Sources */ = {isa = PBXBuildFile; fileRef = CD038BB14DF168A4B6BF0299 /* ASHClassObjectCodec.m */; };
 		CD0381F0A405345E65CCDE1F /* SystemSingletonProviderTests.m in Sources */ = {isa = PBXBuildFile; fileRef = CD038168AB8E6E602792B883 /* SystemSingletonProviderTests.m */; };
 		CD038285E24F313076734FFF /* ASHSystemSingletonProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = CD0386106AD00BA620FF37EE /* ASHSystemSingletonProvider.m */; };
 		CD0383900073870A01F1D764 /* ASHEngineStateMachine.m in Sources */ = {isa = PBXBuildFile; fileRef = CD03876BA3A6FBE9447C04B1 /* ASHEngineStateMachine.m */; };
+		CD0383B85F6175D80D2BFD60 /* ASHEngineDecoder.m in Sources */ = {isa = PBXBuildFile; fileRef = CD038AA6F74159F13284AF03 /* ASHEngineDecoder.m */; };
 		CD0383BFC0816169648A3506 /* SystemStateTests.m in Sources */ = {isa = PBXBuildFile; fileRef = CD038F794526F8BADFA42C0D /* SystemStateTests.m */; };
+		CD0383D394CE841DA8C62E84 /* ASHJsonEngineCodec.m in Sources */ = {isa = PBXBuildFile; fileRef = CD038F56E9BBC62DCD90FAE9 /* ASHJsonEngineCodec.m */; };
 		CD0384244B41A2DF08FE51EB /* ASHDynamicSystemProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = CD038A17EED0688023B0BFCB /* ASHDynamicSystemProvider.m */; };
 		CD038468C490D24A11B108DF /* ASHSystemInstanceProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = CD03801E3CAFDFDEFE5E8DE5 /* ASHSystemInstanceProvider.m */; };
+		CD03846C41B675A08C5165D2 /* ASHArrayObjectCodec.m in Sources */ = {isa = PBXBuildFile; fileRef = CD038B6F11648B709C5A3C41 /* ASHArrayObjectCodec.m */; };
+		CD0384906D3E375F9E1660D7 /* ASHObjectReflectionFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = CD03864AE2498B9AF1F79CA8 /* ASHObjectReflectionFactory.m */; };
 		CD0384A3BEE10C9EC68077E7 /* ASHEngineState.m in Sources */ = {isa = PBXBuildFile; fileRef = CD038FA2C43A21CE90DC8083 /* ASHEngineState.m */; };
 		CD0386664EA48978103CE987 /* ASHEngineState.m in Sources */ = {isa = PBXBuildFile; fileRef = CD038FA2C43A21CE90DC8083 /* ASHEngineState.m */; };
 		CD03869FD3B32874ABB0D78F /* EngineStateMachineTests.m in Sources */ = {isa = PBXBuildFile; fileRef = CD0382319DF2D65A1AD0F057 /* EngineStateMachineTests.m */; };
+		CD0386E2A0F4797DA55B34E9 /* ASHEngineDecoder.m in Sources */ = {isa = PBXBuildFile; fileRef = CD038AA6F74159F13284AF03 /* ASHEngineDecoder.m */; };
+		CD038707C80DDDB77FF8A673 /* ASHObjectReflection.m in Sources */ = {isa = PBXBuildFile; fileRef = CD03847B4A4A4A3507D97604 /* ASHObjectReflection.m */; };
+		CD03888998F979FC52A2710C /* ASHEngineEncoder.m in Sources */ = {isa = PBXBuildFile; fileRef = CD0385854C584F6A58C2C671 /* ASHEngineEncoder.m */; };
+		CD03892AE514C7B353314FB5 /* ASHCodecManager.m in Sources */ = {isa = PBXBuildFile; fileRef = CD0382E10CC3B50C0E566A75 /* ASHCodecManager.m */; };
+		CD03893E6CE887FB94DF9BCB /* ASHReflectionObjectCodec.m in Sources */ = {isa = PBXBuildFile; fileRef = CD038DC1629BFBCBB2CBBBB7 /* ASHReflectionObjectCodec.m */; };
+		CD0389A5B5FBC08080D6044F /* ASHArrayObjectCodec.m in Sources */ = {isa = PBXBuildFile; fileRef = CD038B6F11648B709C5A3C41 /* ASHArrayObjectCodec.m */; };
 		CD038A3472905E60DE4D6CAB /* ASHDynamicSystemProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = CD038A17EED0688023B0BFCB /* ASHDynamicSystemProvider.m */; };
 		CD038AD132B67908022C66EF /* ASHEngineStateMachine.m in Sources */ = {isa = PBXBuildFile; fileRef = CD03876BA3A6FBE9447C04B1 /* ASHEngineStateMachine.m */; };
+		CD038B1E531A3D8B2B5F63FF /* ASHJsonEngineCodec.m in Sources */ = {isa = PBXBuildFile; fileRef = CD038F56E9BBC62DCD90FAE9 /* ASHJsonEngineCodec.m */; };
+		CD038BC6B657C67EA6F831D6 /* ASHClassObjectCodec.m in Sources */ = {isa = PBXBuildFile; fileRef = CD038BB14DF168A4B6BF0299 /* ASHClassObjectCodec.m */; };
+		CD038BD8DB3B5C4ED23B1DEA /* ASHObjectReflection.m in Sources */ = {isa = PBXBuildFile; fileRef = CD03847B4A4A4A3507D97604 /* ASHObjectReflection.m */; };
 		CD038BF37D39AE333D70ACBF /* ASHStateSystemMapping.m in Sources */ = {isa = PBXBuildFile; fileRef = CD0385B4D7A0D36CFC8547C5 /* ASHStateSystemMapping.m */; };
+		CD038C39FCB054B47AB3137D /* ASHCodecManager.m in Sources */ = {isa = PBXBuildFile; fileRef = CD0382E10CC3B50C0E566A75 /* ASHCodecManager.m */; };
 		CD038E9A02728D9EC7CE48D8 /* SystemMethodProviderTests.m in Sources */ = {isa = PBXBuildFile; fileRef = CD038B6BA877F6B944052D6A /* SystemMethodProviderTests.m */; };
+		CD038E9B4FFA1F7B86FA3A5D /* ASHNativeObjectCodec.m in Sources */ = {isa = PBXBuildFile; fileRef = CD038ED8B8B69A0B91636A68 /* ASHNativeObjectCodec.m */; };
+		CD038EAB9F08EF02B0DF330C /* ASHNativeObjectCodec.m in Sources */ = {isa = PBXBuildFile; fileRef = CD038ED8B8B69A0B91636A68 /* ASHNativeObjectCodec.m */; };
+		CD038EC94A7D869D4908C169 /* ASHReflectionObjectCodec.m in Sources */ = {isa = PBXBuildFile; fileRef = CD038DC1629BFBCBB2CBBBB7 /* ASHReflectionObjectCodec.m */; };
+		CD038ECE5D107711DA958305 /* ASHObjectReflectionFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = CD03864AE2498B9AF1F79CA8 /* ASHObjectReflectionFactory.m */; };
 		CD038FF5A093E920BBFB4C9F /* SystemInstanceProviderTests.m in Sources */ = {isa = PBXBuildFile; fileRef = CD03843E247A0450566BBB2B /* SystemInstanceProviderTests.m */; };
 		CD5D75A8AF1E52745B6D02CD /* ASHDynamicComponentProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = CD5D7467F53393456EC50188 /* ASHDynamicComponentProvider.m */; };
 		CD5D7C6D07C425C5DA946300 /* ASHDynamicComponentProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = CD5D7467F53393456EC50188 /* ASHDynamicComponentProvider.m */; };
@@ -355,22 +377,47 @@
 		5C7AF720168F1F4A00D58233 /* ASHComponentPool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ASHComponentPool.m; sourceTree = "<group>"; };
 		5C7AF721168F1F4A00D58233 /* ASHListIteratingSystem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ASHListIteratingSystem.h; sourceTree = "<group>"; };
 		5C7AF722168F1F4A00D58233 /* ASHListIteratingSystem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ASHListIteratingSystem.m; sourceTree = "<group>"; };
+		9AD7F51818BCE9B2007B5823 /* ASHMacro.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ASHMacro.h; sourceTree = "<group>"; };
 		CD03801E3CAFDFDEFE5E8DE5 /* ASHSystemInstanceProvider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ASHSystemInstanceProvider.m; sourceTree = "<group>"; };
 		CD0380514342FD13838F7411 /* ASHEngineStateMachine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ASHEngineStateMachine.h; sourceTree = "<group>"; };
+		CD0380F59A663A2CB4540B09 /* ASHArrayObjectCodec.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ASHArrayObjectCodec.h; sourceTree = "<group>"; };
 		CD038134F7BE7318041958CE /* ASHDynamicSystemProvider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ASHDynamicSystemProvider.h; sourceTree = "<group>"; };
 		CD038168AB8E6E602792B883 /* SystemSingletonProviderTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SystemSingletonProviderTests.m; sourceTree = "<group>"; };
 		CD0381C2AFECE22C66D0D4BC /* ASHSystemProvider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ASHSystemProvider.h; sourceTree = "<group>"; };
 		CD0382319DF2D65A1AD0F057 /* EngineStateMachineTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EngineStateMachineTests.m; sourceTree = "<group>"; };
 		CD038281A57704C8BB1AB656 /* ASHEngineState.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ASHEngineState.h; sourceTree = "<group>"; };
+		CD0382E10CC3B50C0E566A75 /* ASHCodecManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ASHCodecManager.m; sourceTree = "<group>"; };
+		CD03835F4EDCC69817D1D2E5 /* ASHReflectionObjectCodec.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ASHReflectionObjectCodec.h; sourceTree = "<group>"; };
+		CD0383DAE03286BA96222B42 /* ASHNativeObjectCodec.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ASHNativeObjectCodec.h; sourceTree = "<group>"; };
 		CD03843E247A0450566BBB2B /* SystemInstanceProviderTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SystemInstanceProviderTests.m; sourceTree = "<group>"; };
+		CD03847B4A4A4A3507D97604 /* ASHObjectReflection.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ASHObjectReflection.m; sourceTree = "<group>"; };
+		CD0384EE43B8C0434B0C85AC /* ASHCodecManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ASHCodecManager.h; sourceTree = "<group>"; };
+		CD0385218BE4820CD41AF462 /* ASHObjectReflection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ASHObjectReflection.h; sourceTree = "<group>"; };
 		CD0385669167E9FB52E037E2 /* ASHSystemInstanceProvider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ASHSystemInstanceProvider.h; sourceTree = "<group>"; };
+		CD0385854C584F6A58C2C671 /* ASHEngineEncoder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ASHEngineEncoder.m; sourceTree = "<group>"; };
 		CD0385B4D7A0D36CFC8547C5 /* ASHStateSystemMapping.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ASHStateSystemMapping.m; sourceTree = "<group>"; };
+		CD0386035B43D585EC0408EA /* ASHObjectCodec.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ASHObjectCodec.h; sourceTree = "<group>"; };
 		CD0386106AD00BA620FF37EE /* ASHSystemSingletonProvider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ASHSystemSingletonProvider.m; sourceTree = "<group>"; };
+		CD03864AE2498B9AF1F79CA8 /* ASHObjectReflectionFactory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ASHObjectReflectionFactory.m; sourceTree = "<group>"; };
+		CD038669F7F8B5A434E4E739 /* ASHEngineDecoder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ASHEngineDecoder.h; sourceTree = "<group>"; };
+		CD0386E238F1010049DE1755 /* ASHEngineCodec.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ASHEngineCodec.h; sourceTree = "<group>"; };
 		CD03876BA3A6FBE9447C04B1 /* ASHEngineStateMachine.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ASHEngineStateMachine.m; sourceTree = "<group>"; };
+		CD038788831A71A707CC47EF /* ASHObjectEngineCodec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ASHObjectEngineCodec.m; sourceTree = "<group>"; };
+		CD0388439C3BA6EFB3E96CCF /* ASHObjectReflectionFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ASHObjectReflectionFactory.h; sourceTree = "<group>"; };
 		CD0389B7D8CE07B5050F503B /* ASHSystemSingletonProvider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ASHSystemSingletonProvider.h; sourceTree = "<group>"; };
 		CD038A17EED0688023B0BFCB /* ASHDynamicSystemProvider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ASHDynamicSystemProvider.m; sourceTree = "<group>"; };
+		CD038A3FB3401A2C0D55EDDB /* ASHEngineEncoder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ASHEngineEncoder.h; sourceTree = "<group>"; };
+		CD038AA6F74159F13284AF03 /* ASHEngineDecoder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ASHEngineDecoder.m; sourceTree = "<group>"; };
 		CD038ACB99737E220216B24E /* ASHStateSystemMapping.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ASHStateSystemMapping.h; sourceTree = "<group>"; };
 		CD038B6BA877F6B944052D6A /* SystemMethodProviderTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SystemMethodProviderTests.m; sourceTree = "<group>"; };
+		CD038B6F11648B709C5A3C41 /* ASHArrayObjectCodec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ASHArrayObjectCodec.m; sourceTree = "<group>"; };
+		CD038BA0412C7D6708B3FE72 /* ASHObjectEngineCodec.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ASHObjectEngineCodec.h; sourceTree = "<group>"; };
+		CD038BB14DF168A4B6BF0299 /* ASHClassObjectCodec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ASHClassObjectCodec.m; sourceTree = "<group>"; };
+		CD038D6BEDF441606750253A /* ASHClassObjectCodec.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ASHClassObjectCodec.h; sourceTree = "<group>"; };
+		CD038D9E6BC88E1FDE8FBC3B /* ASHJsonEngineCodec.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ASHJsonEngineCodec.h; sourceTree = "<group>"; };
+		CD038DC1629BFBCBB2CBBBB7 /* ASHReflectionObjectCodec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ASHReflectionObjectCodec.m; sourceTree = "<group>"; };
+		CD038ED8B8B69A0B91636A68 /* ASHNativeObjectCodec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ASHNativeObjectCodec.m; sourceTree = "<group>"; };
+		CD038F56E9BBC62DCD90FAE9 /* ASHJsonEngineCodec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ASHJsonEngineCodec.m; sourceTree = "<group>"; };
 		CD038F794526F8BADFA42C0D /* SystemStateTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SystemStateTests.m; sourceTree = "<group>"; };
 		CD038FA2C43A21CE90DC8083 /* ASHEngineState.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ASHEngineState.m; sourceTree = "<group>"; };
 		CD5D740163FCF08DCED85376 /* ASHDynamicComponentProvider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ASHDynamicComponentProvider.h; sourceTree = "<group>"; };
@@ -633,6 +680,7 @@
 				5C7AF6CB168F1DD500D58233 /* matchers */,
 				5C7AF6CE168F1DD500D58233 /* signals */,
 				5C7AF6D0168F1DD500D58233 /* tools */,
+				CD038A65634D7E6E0A4BDB33 /* io */,
 			);
 			path = ash;
 			sourceTree = "<group>";
@@ -704,6 +752,8 @@
 				5C7AF707168F1F4A00D58233 /* signals */,
 				5C7AF718168F1F4A00D58233 /* tick */,
 				5C7AF71E168F1F4A00D58233 /* tools */,
+				CD0385F98B9C672B9C5B2B43 /* io */,
+				CD038B6BFFCA179C0C645438 /* macro */,
 			);
 			path = ash;
 			sourceTree = "<group>";
@@ -813,6 +863,68 @@
 				5C7AF722168F1F4A00D58233 /* ASHListIteratingSystem.m */,
 			);
 			path = tools;
+			sourceTree = "<group>";
+		};
+		CD0383D500146CC622ECE9D3 /* enginecodecs */ = {
+			isa = PBXGroup;
+			children = (
+				CD038AA6F74159F13284AF03 /* ASHEngineDecoder.m */,
+				CD038669F7F8B5A434E4E739 /* ASHEngineDecoder.h */,
+				CD0385854C584F6A58C2C671 /* ASHEngineEncoder.m */,
+				CD038A3FB3401A2C0D55EDDB /* ASHEngineEncoder.h */,
+				CD0386E238F1010049DE1755 /* ASHEngineCodec.h */,
+				CD038788831A71A707CC47EF /* ASHObjectEngineCodec.m */,
+				CD038BA0412C7D6708B3FE72 /* ASHObjectEngineCodec.h */,
+				CD038F56E9BBC62DCD90FAE9 /* ASHJsonEngineCodec.m */,
+				CD038D9E6BC88E1FDE8FBC3B /* ASHJsonEngineCodec.h */,
+			);
+			path = enginecodecs;
+			sourceTree = "<group>";
+		};
+		CD0385F98B9C672B9C5B2B43 /* io */ = {
+			isa = PBXGroup;
+			children = (
+				CD0388C096769BDE10FF95CD /* objectcodecs */,
+				CD0383D500146CC622ECE9D3 /* enginecodecs */,
+			);
+			path = io;
+			sourceTree = "<group>";
+		};
+		CD0388C096769BDE10FF95CD /* objectcodecs */ = {
+			isa = PBXGroup;
+			children = (
+				CD0386035B43D585EC0408EA /* ASHObjectCodec.h */,
+				CD03847B4A4A4A3507D97604 /* ASHObjectReflection.m */,
+				CD0385218BE4820CD41AF462 /* ASHObjectReflection.h */,
+				CD03864AE2498B9AF1F79CA8 /* ASHObjectReflectionFactory.m */,
+				CD0388439C3BA6EFB3E96CCF /* ASHObjectReflectionFactory.h */,
+				CD038ED8B8B69A0B91636A68 /* ASHNativeObjectCodec.m */,
+				CD0383DAE03286BA96222B42 /* ASHNativeObjectCodec.h */,
+				CD038BB14DF168A4B6BF0299 /* ASHClassObjectCodec.m */,
+				CD038D6BEDF441606750253A /* ASHClassObjectCodec.h */,
+				CD038B6F11648B709C5A3C41 /* ASHArrayObjectCodec.m */,
+				CD0380F59A663A2CB4540B09 /* ASHArrayObjectCodec.h */,
+				CD038DC1629BFBCBB2CBBBB7 /* ASHReflectionObjectCodec.m */,
+				CD03835F4EDCC69817D1D2E5 /* ASHReflectionObjectCodec.h */,
+				CD0382E10CC3B50C0E566A75 /* ASHCodecManager.m */,
+				CD0384EE43B8C0434B0C85AC /* ASHCodecManager.h */,
+			);
+			path = objectcodecs;
+			sourceTree = "<group>";
+		};
+		CD038A65634D7E6E0A4BDB33 /* io */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = io;
+			sourceTree = "<group>";
+		};
+		CD038B6BFFCA179C0C645438 /* macro */ = {
+			isa = PBXGroup;
+			children = (
+				9AD7F51818BCE9B2007B5823 /* ASHMacro.h */,
+			);
+			path = macro;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -989,6 +1101,17 @@
 				CD0384A3BEE10C9EC68077E7 /* ASHEngineState.m in Sources */,
 				CD038A3472905E60DE4D6CAB /* ASHDynamicSystemProvider.m in Sources */,
 				CD0383900073870A01F1D764 /* ASHEngineStateMachine.m in Sources */,
+				CD038707C80DDDB77FF8A673 /* ASHObjectReflection.m in Sources */,
+				CD0384906D3E375F9E1660D7 /* ASHObjectReflectionFactory.m in Sources */,
+				CD038EAB9F08EF02B0DF330C /* ASHNativeObjectCodec.m in Sources */,
+				CD038BC6B657C67EA6F831D6 /* ASHClassObjectCodec.m in Sources */,
+				CD03846C41B675A08C5165D2 /* ASHArrayObjectCodec.m in Sources */,
+				CD03893E6CE887FB94DF9BCB /* ASHReflectionObjectCodec.m in Sources */,
+				CD038C39FCB054B47AB3137D /* ASHCodecManager.m in Sources */,
+				CD0383B85F6175D80D2BFD60 /* ASHEngineDecoder.m in Sources */,
+				CD03888998F979FC52A2710C /* ASHEngineEncoder.m in Sources */,
+				CD03816369DDEC04C7EA7F83 /* ASHObjectEngineCodec.m in Sources */,
+				CD0383D394CE841DA8C62E84 /* ASHJsonEngineCodec.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1053,6 +1176,17 @@
 				CD038E9A02728D9EC7CE48D8 /* SystemMethodProviderTests.m in Sources */,
 				CD0381F0A405345E65CCDE1F /* SystemSingletonProviderTests.m in Sources */,
 				CD0383BFC0816169648A3506 /* SystemStateTests.m in Sources */,
+				CD038BD8DB3B5C4ED23B1DEA /* ASHObjectReflection.m in Sources */,
+				CD038ECE5D107711DA958305 /* ASHObjectReflectionFactory.m in Sources */,
+				CD038E9B4FFA1F7B86FA3A5D /* ASHNativeObjectCodec.m in Sources */,
+				CD0381A47784F9C5EFF72CB2 /* ASHClassObjectCodec.m in Sources */,
+				CD0389A5B5FBC08080D6044F /* ASHArrayObjectCodec.m in Sources */,
+				CD038EC94A7D869D4908C169 /* ASHReflectionObjectCodec.m in Sources */,
+				CD03892AE514C7B353314FB5 /* ASHCodecManager.m in Sources */,
+				CD0386E2A0F4797DA55B34E9 /* ASHEngineDecoder.m in Sources */,
+				CD038112A165D04774F38D0B /* ASHEngineEncoder.m in Sources */,
+				CD0380DEBCDBBE8BE209E25D /* ASHObjectEngineCodec.m in Sources */,
+				CD038B1E531A3D8B2B5F63FF /* ASHJsonEngineCodec.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1209,6 +1343,7 @@
 				5C7AF5AF168F14B900D58233 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		5C7AF6B4168F187A00D58233 /* Build configuration list for PBXNativeTarget "GHUnitTests" */ = {
 			isa = XCConfigurationList;
@@ -1217,6 +1352,7 @@
 				5C7AF6B6168F187A00D58233 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

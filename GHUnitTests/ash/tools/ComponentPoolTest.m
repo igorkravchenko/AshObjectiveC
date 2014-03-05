@@ -30,28 +30,28 @@
 
 - (void)destroyPool
 {
-    [[ASHComponentPool sharedInstance] empty];
+    [[ASHComponentPool sharedPool] empty];
 }
 
 - (void)testGetRetrievesObjectOfAppropriateClass
 {
-    assertThat([[ASHComponentPool sharedInstance] getComponent:[MockComponent class]], instanceOf([MockComponent class]));
+    assertThat([[ASHComponentPool sharedPool] getComponent:[MockComponent class]], instanceOf([MockComponent class]));
 }
 
 - (void)testDisposedComponentsAreRetrievedByGet
 {
     MockComponent * mockComponent = [[MockComponent alloc] init];
-    [[ASHComponentPool sharedInstance] disposeComponent:mockComponent];
-    MockComponent * retrievedComponent = [[ASHComponentPool sharedInstance] getComponent:[MockComponent class]];
+    [[ASHComponentPool sharedPool] disposeComponent:mockComponent];
+    MockComponent * retrievedComponent = [[ASHComponentPool sharedPool] getComponent:[MockComponent class]];
     assertThat(retrievedComponent, sameInstance(mockComponent));
 }
 
 - (void)testEmptyPreventsRetrievalOfPreviouslyDisposedComponents
 {
     MockComponent * mockComponent = [[MockComponent alloc] init];
-    [[ASHComponentPool sharedInstance] disposeComponent:mockComponent];
-    [[ASHComponentPool sharedInstance] empty];
-    MockComponent * retrievedComponent = [[ASHComponentPool sharedInstance] getComponent:[MockComponent class]];
+    [[ASHComponentPool sharedPool] disposeComponent:mockComponent];
+    [[ASHComponentPool sharedPool] empty];
+    MockComponent * retrievedComponent = [[ASHComponentPool sharedPool] getComponent:[MockComponent class]];
     assertThat(retrievedComponent, isNot(sameInstance(mockComponent)));
 }
 

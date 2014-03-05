@@ -3,7 +3,7 @@
 
 @interface ASHComponentPool : NSObject
 
-+ (id)sharedInstance;
++ (instancetype)sharedPool;
 - (id)getComponent:(Class)componentClass;
 - (void)disposeComponent:(id)component;
 - (void)empty;
