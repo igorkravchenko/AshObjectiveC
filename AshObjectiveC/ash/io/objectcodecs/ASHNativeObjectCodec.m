@@ -1,20 +1,19 @@
 #import <objc/message.h>
 #import "ASHNativeObjectCodec.h"
-
-static NSString * const typeKey = @"type";
-static NSString * const valueKey = @"value";
+#import "ASHCodecManager.h"
+#import "ASHTypeAssociations.h"
 
 @implementation ASHNativeObjectCodec
 {
 
 }
 
-- (NSDictionary *)encode:(NSObject *)object
+- (NSDictionary *)encode:(id)object
             codecManager:(ASHCodecManager *)codecManager
 {
 
     return @{
-                typeKey : NSStringFromClass(object.class),
+                typeKey : [[ASHTypeAssociations instance] associationForType:[object class]],
                 valueKey : object
     };
 }

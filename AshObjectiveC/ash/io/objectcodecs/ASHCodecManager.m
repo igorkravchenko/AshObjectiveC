@@ -4,6 +4,7 @@
 #import "ASHReflectionObjectCodec.h"
 #import "ASHArrayObjectCodec.h"
 #import "ASHClassObjectCodec.h"
+#import "ASHTypeAssociations.h"
 
 @interface ASHClass : NSObject
 
@@ -13,16 +14,12 @@
 
 @end;
 
-
-static NSString * const valueKey = @"value";
-static NSString * const typeKey = @"type";
-static NSString * const classType = @"Class";
-
 @implementation ASHCodecManager
 {
     NSMutableDictionary * _codecs;
     ASHReflectionObjectCodec * _reflectionCodec;
     ASHArrayObjectCodec * _arrayCodec;
+
 }
 
 - (id)init
@@ -33,11 +30,14 @@ static NSString * const classType = @"Class";
     {
         _codecs = [NSMutableDictionary dictionary];
         ASHNativeObjectCodec * nativeCodec = [[ASHNativeObjectCodec alloc] init];
+
         [self addCustomCodec:nativeCodec type:[NSNumber class]];
         [self addCustomCodec:nativeCodec type:[NSString class]];
+        [self addCustomCodec:nativeCodec type:[NSMutableString class]];
         _reflectionCodec = [[ASHReflectionObjectCodec alloc] init];
         _arrayCodec = [[ASHArrayObjectCodec alloc] init];
         [self addCustomCodec:_arrayCodec type:[NSArray class]];
+        [self addCustomCodec:_arrayCodec type:[NSMutableArray class]];
         [self addCustomCodec:[[ASHClassObjectCodec alloc] init]
                         type:[ASHClass class]];
 
@@ -46,16 +46,20 @@ static NSString * const classType = @"Class";
     return self;
 }
 
+
+
 - (id <ASHObjectCodec>) getCodecForObject:(id)object
 {
     Class type = [object class];
-    NSString * typeString = NSStringFromClass(type);
+    ASHTypeAssociations * associations = [ASHTypeAssociations instance];
+    NSString * typeString = [associations associationForType:type];
     return  _codecs[typeString];
 }
 
 - (id <ASHObjectCodec>)getCodecForType:(Class)type
 {
-    NSString * typeString = NSStringFromClass(type);
+    ASHTypeAssociations * associations = [ASHTypeAssociations instance];
+    NSString * typeString = [associations associationForType:type];
     return  _codecs[typeString];
 }
 
@@ -83,8 +87,14 @@ static NSString * const classType = @"Class";
 - (void)addCustomCodec:(id <ASHObjectCodec>)codec
                   type:(Class)type
 {
+    ASHTypeAssociations * associations = [ASHTypeAssociations instance];
 
-    _codecs[NSStringFromClass(type)] = codec;
+    if([associations associationForType:type])
+    {
+        _codecs[[associations associationForType:type]] = codec;
+    }
+    NSString * typeString = NSStringFromClass(type);
+    _codecs[typeString] = codec;
 }
 
 - (NSDictionary *)encodeComponent:(NSObject *)object
@@ -106,6 +116,8 @@ static NSString * const classType = @"Class";
 
 - (NSDictionary *)encodeObject:(NSObject *)object
 {
+
+
     if(object == nil)
     {
         return @{valueKey:[NSNull null]};

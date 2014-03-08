@@ -4,15 +4,12 @@
 #import "ASHObjectReflectionFactory.h"
 #import "ASHCodecManager.h"
 
-static NSString * const typeKey = @"type";
-static NSString * const propertiesKey = @"properties";
-
 @implementation ASHReflectionObjectCodec
 {
 
 }
 
-- (NSDictionary *)encode:(NSObject *)object
+- (NSDictionary *)encode:(id)object
             codecManager:(ASHCodecManager *)codecManager
 {
     ASHObjectReflection * reflection = [[ASHObjectReflectionFactory sharedFactory] reflection:object];

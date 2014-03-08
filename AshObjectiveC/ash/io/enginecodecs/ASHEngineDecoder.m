@@ -1,4 +1,3 @@
-#import <__functional_base_03>
 #import "ASHEngineDecoder.h"
 #import "ASHCodecManager.h"
 #import "ASHEngine.h"
@@ -8,7 +7,6 @@ static NSString * const componentsKey = @"components";
 static NSString * const entitiesKey = @"entities";
 static NSString * const idKey = @"id";
 static NSString * const nameKey = @"name";
-static NSString * const typeKey = @"type";
 
 @implementation ASHEngineDecoder
 {

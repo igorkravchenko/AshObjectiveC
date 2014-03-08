@@ -1,18 +1,17 @@
 
 #import "ASHClassObjectCodec.h"
-
-static NSString * const typeKey = @"type";
-static NSString * const valueKey = @"value";
+#import "ASHCodecManager.h"
+#import "ASHTypeAssociations.h"
 
 @implementation ASHClassObjectCodec
 {
 
 }
 
-- (NSDictionary *)encode:(NSObject *)object
+- (NSDictionary *)encode:(id)object
             codecManager:(ASHCodecManager *)codecManager
 {
-    return @{typeKey:@"Class", valueKey:NSStringFromClass(object.class)};
+    return @{typeKey:classKey, valueKey: [[ASHTypeAssociations instance] associationForType:[object class]]};
 }
 
 - (NSObject *)decode:(NSDictionary *)object
@@ -37,6 +36,5 @@ static NSString * const valueKey = @"value";
                     object:object
               codecManager:codecManager];
 }
-
 
 @end

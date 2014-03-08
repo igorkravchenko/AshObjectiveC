@@ -1,6 +1,8 @@
 
 #import <Foundation/Foundation.h>
 
+@protocol ASHObjectCodec;
+
 @interface ASHCodecManager : NSObject
 
 - (id <ASHObjectCodec>)getCodecForComponent:(NSObject *)component;

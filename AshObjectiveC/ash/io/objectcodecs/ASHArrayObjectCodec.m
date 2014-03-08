@@ -1,19 +1,17 @@
 
 #import "ASHArrayObjectCodec.h"
 #import "ASHCodecManager.h"
-
-static NSString * const typeKey = @"type";
-static NSString * const valuesKey = @"values";
+#import "ASHTypeAssociations.h"
 
 @implementation ASHArrayObjectCodec
 {
 
 }
 
-- (NSDictionary *)encode:(NSObject *)object
+- (NSDictionary *)encode:(id)object
             codecManager:(ASHCodecManager *)codecManager
 {
-    NSString * type = NSStringFromClass(object.class);
+    NSString * type = [[ASHTypeAssociations instance] associationForType:[object class]];
     NSMutableArray * values = [NSMutableArray array];
     for (id obj in (NSArray *)object)
     {
@@ -27,7 +25,7 @@ static NSString * const valuesKey = @"values";
         codecManager:(ASHCodecManager *)codecManager
 {
     Class type = NSClassFromString(object[typeKey]);
-    NSMutableArray * decoded = [[type alloc] init];
+    NSMutableArray * decoded = [[[type alloc] init] mutableCopy];
     NSArray * values = object[valuesKey];
 
     for (id obj in values)
@@ -35,7 +33,7 @@ static NSString * const valuesKey = @"values";
         [decoded addObject:[codecManager decodeObject:obj]];
     }
 
-    return decoded;
+    return [type isEqual:[NSMutableArray class]] ? decoded : [NSArray arrayWithArray:decoded];
 }
 
 - (void)decodeIntoObject:(NSObject *)target
