@@ -3,11 +3,13 @@
 #import "ASHCodecManager.h"
 #import "ASHTypeAssociations.h"
 
-typedef NSString * (^valueToStringBlock)(NSValue * value);
+typedef NSString * (^ASHValueEncodeBlock)(NSValue * value);
+typedef NSValue * (^ASHValueDecodeBlock)(NSDictionary * encodedValue);
 
 @implementation ASHValueCodec
 {
-    NSMutableDictionary * _blocks;
+    NSMutableDictionary *_encodeBlocks;
+    NSMutableDictionary *_decodeBlocks;
 }
 
 - (id)init
@@ -15,12 +17,21 @@ typedef NSString * (^valueToStringBlock)(NSValue * value);
     self = [super init];
     if (self)
     {
-        _blocks = [NSMutableDictionary dictionary];
+        _encodeBlocks = [NSMutableDictionary dictionary];
+        _decodeBlocks = [NSMutableDictionary dictionary];
         NSString * cgPointObjCType = @"{CGPoint=ff}";
-        [self addConversionBlock:^NSString *(NSValue *value)
+        NSString * cgRectObjCType = @"{CGRect={CGPoint=ff}{CGSize=ff}}";
+
+        [self addEncodeBlock:^NSString *(NSValue *value)
         {
             return NSStringFromCGPoint([value CGPointValue]);
+        }        forObjCType:cgPointObjCType];
+
+        [self addDecodeBlock:^NSValue *(NSDictionary *encodedValue)
+        {
+            return [NSValue valueWithCGPoint:CGPointFromString(encodedValue[valueKey])];
         } forObjCType:cgPointObjCType];
+
 
 
 
@@ -30,11 +41,18 @@ typedef NSString * (^valueToStringBlock)(NSValue * value);
     return self;
 }
 
-- (void)addConversionBlock:(valueToStringBlock)convertionBlock
-               forObjCType:(NSString *)objCType
+- (void)addEncodeBlock:(ASHValueEncodeBlock)encodeBlock
+           forObjCType:(NSString *)objCType
 {
-    _blocks[objCType] = [convertionBlock copy];
+    _encodeBlocks[objCType] = [encodeBlock copy];
 }
+
+- (void)addDecodeBlock:(ASHValueDecodeBlock)decodeBlock
+           forObjCType:(NSString *)objCType
+{
+    _decodeBlocks[objCType] = [decodeBlock copy];
+}
+
 
 
 - (NSDictionary *)encode:(id)object
@@ -44,20 +62,27 @@ typedef NSString * (^valueToStringBlock)(NSValue * value);
     NSString * objCType = @(value.objCType);
     ASHTypeAssociations * associations = [ASHTypeAssociations instance];
 
-    valueToStringBlock conversionBlock = _blocks[objCType];
-    if(conversionBlock)
+    ASHValueEncodeBlock encodeBlock = _encodeBlocks[objCType];
+    if(encodeBlock)
     {
-
-        NSDictionary * dictionary = @{typeKey: [associations associationForType:value.class], objCTypeKey : objCType, valueKey:conversionBlock(value)};
-        NSLog(@"%@", dictionary);
+        NSDictionary * encoded = @{typeKey: [associations associationForType:value.class], objCTypeKey : objCType, valueKey: encodeBlock(value)};
+        return encoded;
     }
 
-
-    return nil;
+    return @{typeKey: [associations associationForType:value.class], objCTypeKey : objCType, valueKey: [NSNull null]};
 }
 
 - (NSObject *)decode:(NSDictionary *)object codecManager:(ASHCodecManager *)codecManager
 {
+    NSString * objCType = object[objCTypeKey];
+
+    ASHValueDecodeBlock decodeBlock = _decodeBlocks[objCType];
+
+    if(decodeBlock)
+    {
+        return decodeBlock(object);
+    }
+
     return nil;
 }
 
