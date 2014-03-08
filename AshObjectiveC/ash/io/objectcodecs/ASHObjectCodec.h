@@ -6,8 +6,7 @@ static NSString * const valueKey = @"value";
 static NSString * const valuesKey = @"values";
 static NSString * const propertiesKey = @"properties";
 static NSString * const classKey = @"Class";
-static NSString * const structKey = @"struct";
-static NSString * const structValueKey = @"structValue";
+static NSString * const objCTypeKey = @"objCType";
 
 @class ASHCodecManager;
 
