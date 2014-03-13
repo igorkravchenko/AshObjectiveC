@@ -29,7 +29,6 @@
 
 - (id)identifier
 {
-
     return [NSStringFromSelector(_closure) stringByAppendingFormat:@"%ld", (unsigned long)[_target hash]];
 }
 
