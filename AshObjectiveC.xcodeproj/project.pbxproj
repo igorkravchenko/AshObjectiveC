@@ -376,7 +376,6 @@
 		CD03819EBE9E5A9A25466A37 /* LICENSE */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
 		CD0381EB41834E60C5976BE7 /* ASHTickProvider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ASHTickProvider.h; sourceTree = "<group>"; };
 		CD0381EDCFCB52ADE8E895C8 /* ASHEngineEncoder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ASHEngineEncoder.m; sourceTree = "<group>"; };
-		CD0381F89164A398FAF4428E /* AshObjectiveC.podspec */ = {isa = PBXFileReference; lastKnownFileType = file.podspec; path = AshObjectiveC.podspec; sourceTree = "<group>"; };
 		CD03820F1A80A44C16B77DC3 /* ASHDynamicComponentProvider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ASHDynamicComponentProvider.m; sourceTree = "<group>"; };
 		CD0382245FC77FC0C9C405AE /* ASHSignal0.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ASHSignal0.m; sourceTree = "<group>"; };
 		CD0382319DF2D65A1AD0F057 /* EngineStateMachineTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EngineStateMachineTests.m; sourceTree = "<group>"; };
@@ -546,7 +545,6 @@
 				5C7AF592168F14B900D58233 /* Frameworks */,
 				5C7AF590168F14B900D58233 /* Products */,
 				CD03819EBE9E5A9A25466A37 /* LICENSE */,
-				CD0381F89164A398FAF4428E /* AshObjectiveC.podspec */,
 			);
 			sourceTree = "<group>";
 		};
