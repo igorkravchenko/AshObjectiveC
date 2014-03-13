@@ -382,6 +382,7 @@
 		CD0382727D54E92EA39E2E9B /* ASHDynamicSystemProvider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ASHDynamicSystemProvider.m; sourceTree = "<group>"; };
 		CD03828EAFC4243FE6018566 /* ASHFrameTickProvider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ASHFrameTickProvider.h; sourceTree = "<group>"; };
 		CD03829F5C9383E82DCD009B /* ASHListIteratingSystem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ASHListIteratingSystem.h; sourceTree = "<group>"; };
+		CD0382A64AC3842523AB4909 /* AshObjectiveC.podspec */ = {isa = PBXFileReference; lastKnownFileType = file.podspec; path = AshObjectiveC.podspec; sourceTree = "<group>"; };
 		CD0382CFEAC318A3E4A75BC1 /* ASHFrameTickProvider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ASHFrameTickProvider.m; sourceTree = "<group>"; };
 		CD0382F9CFFC67B43AE0DB50 /* ASHEngineStateMachine.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ASHEngineStateMachine.m; sourceTree = "<group>"; };
 		CD0382FCA944A305B0F23CD1 /* ASHSystemList.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ASHSystemList.m; sourceTree = "<group>"; };
@@ -545,6 +546,7 @@
 				5C7AF592168F14B900D58233 /* Frameworks */,
 				5C7AF590168F14B900D58233 /* Products */,
 				CD03819EBE9E5A9A25466A37 /* LICENSE */,
+				CD0382A64AC3842523AB4909 /* AshObjectiveC.podspec */,
 			);
 			sourceTree = "<group>";
 		};
