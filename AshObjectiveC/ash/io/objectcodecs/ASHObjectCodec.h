@@ -14,8 +14,8 @@ static NSString * const objCTypeKey = @"objCType";
 
 - (NSDictionary *)encode:(id)object
             codecManager:(ASHCodecManager *)codecManager;
-- (NSObject *)decode:(NSDictionary *)object
-        codecManager:(ASHCodecManager *)codecManager;
+- (id)decode:(NSDictionary *)object
+codecManager:(ASHCodecManager *)codecManager;
 - (void)decodeIntoObject:(NSObject *)target
                   object:(NSDictionary *)object
             codecManager:(ASHCodecManager *)codecManager;

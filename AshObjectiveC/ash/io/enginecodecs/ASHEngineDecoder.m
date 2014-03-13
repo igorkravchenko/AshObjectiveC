@@ -11,8 +11,8 @@ static NSString * const nameKey = @"name";
 @implementation ASHEngineDecoder
 {
     ASHCodecManager * _codecManager;
-    NSMutableArray * _componentMap;
-    NSMutableArray * _encodedComponentMap;
+    NSMutableDictionary * _componentMap;
+    NSMutableDictionary * _encodedComponentMap;
 }
 
 - (instancetype)initWithCodecManager:(ASHCodecManager *)codecManager
@@ -21,8 +21,8 @@ static NSString * const nameKey = @"name";
     if (self)
     {
         _codecManager = codecManager;
-        _componentMap = [NSMutableArray array];
-        _encodedComponentMap = [NSMutableArray array];
+        _componentMap = [NSMutableDictionary dictionary];
+        _encodedComponentMap = [NSMutableDictionary dictionary];
     }
 
     return self;
@@ -30,8 +30,8 @@ static NSString * const nameKey = @"name";
 
 - (void)reset
 {
-    [_componentMap removeAllObjects];
-    [_encodedComponentMap removeAllObjects];
+    _componentMap = [NSMutableDictionary dictionary];
+    _encodedComponentMap = [NSMutableDictionary dictionary];
 }
 
 - (void)decodeEngine:(NSDictionary *)encodedData
@@ -58,7 +58,7 @@ static NSString * const nameKey = @"name";
     NSArray * components = encodedData[componentsKey];
     for (NSDictionary * encodedComponent in components)
     {
-        _encodedComponentMap[(NSUInteger)[encodedComponent[idKey] integerValue]] = encodedComponent;
+        _encodedComponentMap[encodedComponent[idKey]] = encodedComponent;
         [self decodeComponent:encodedComponent];
     }
 
@@ -86,10 +86,9 @@ static NSString * const nameKey = @"name";
     NSArray * components = encodedEntity[componentsKey];
     for (NSNumber * componentId in components)
     {
-        NSInteger compID = componentId.integerValue;
-        if(compID >= 0 && compID < components.count)
+        if(_componentMap[componentId])
         {
-            NSDictionary * newComponent = _componentMap[(NSUInteger) compID];
+            NSDictionary * newComponent = _componentMap[componentId];
             if(newComponent)
             {
                 Class type = [newComponent class];
@@ -97,7 +96,7 @@ static NSString * const nameKey = @"name";
                 if(existingComponent)
                 {
                     [_codecManager decodeIntoComponent:existingComponent
-                                                object:_encodedComponentMap[(NSUInteger) compID]];
+                                                object:_encodedComponentMap[componentId]];
                 }
                 else
                 {
@@ -120,26 +119,14 @@ static NSString * const nameKey = @"name";
 
     for (NSNumber * componentId in components)
     {
-        NSInteger compID = componentId.integerValue;
-        if(compID >= 0 && compID < components.count)
+        if(_componentMap[componentId])
         {
-            [entity addComponent:_componentMap[(NSUInteger) compID]];
+            [entity addComponent:_componentMap[componentId]];
         }
     }
 
     return entity;
 }
-
-/*
-private function decodeComponent( encodedComponent : Object ) : void
-		{
-			var codec : IObjectCodec = codecManager.getCodecForComponent( getDefinitionByName( encodedComponent.type ) );
-			if( codec )
-			{
-				componentMap[encodedComponent.id] = codecManager.decodeComponent( encodedComponent );
-			}
-		}
- */
 
 - (void)decodeComponent:(NSDictionary *)encodedComponent
 {
@@ -147,7 +134,7 @@ private function decodeComponent( encodedComponent : Object ) : void
     id <ASHObjectCodec> codec = [_codecManager getCodecForComponent:(id)type];
     if(codec)
     {
-        _componentMap[(NSUInteger) [encodedComponent[idKey] integerValue]] = [_codecManager decodeComponent:encodedComponent];
+        _componentMap[encodedComponent[idKey]] = [_codecManager decodeComponent:encodedComponent];
     }
 }
 

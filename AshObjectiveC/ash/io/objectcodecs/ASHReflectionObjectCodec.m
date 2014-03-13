@@ -31,7 +31,7 @@
     NSDictionary * properties = object[propertiesKey];
     for (NSString * name in properties)
     {
-        if([decoded respondsToSelector:@selector(name)])
+        if([decoded respondsToSelector:NSSelectorFromString(name)])
         {
             [decoded setValue:[codecManager decodeObject:object[propertiesKey][name]] forKey:name];
         }
@@ -46,7 +46,7 @@
     NSDictionary * properties = object[propertiesKey];
     for (NSString * name in properties)
     {
-        if([target respondsToSelector:@selector(name)])
+        if([target respondsToSelector:NSSelectorFromString(name)])
         {
             if([target valueForKey:name])
             {
@@ -72,6 +72,5 @@
               codecManager:codecManager];
 
 }
-
 
 @end

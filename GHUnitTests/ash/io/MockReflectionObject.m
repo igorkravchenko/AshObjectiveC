@@ -1,5 +1,7 @@
 
 #import "MockReflectionObject.h"
+#import "MockPoint.h"
+#import "MockRectangle.h"
 
 @implementation MockReflectionObject
 {

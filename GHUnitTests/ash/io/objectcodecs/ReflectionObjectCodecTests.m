@@ -4,7 +4,9 @@
 #import "MockReflectionObject.h"
 #import "ASHCodecManager.h"
 #import "ASHReflectionObjectCodec.h"
-#import "ASHValueCodec.h"
+#import "ASHValueObjectCodec.h"
+#import "MockPoint.h"
+#import "MockRectangle.h"
 
 @interface ReflectionObjectCodecTests : GHTestCase
 @end
@@ -25,17 +27,13 @@
     _object.stringVariable = @"A test string";
     _object.booleanVariable = YES;
     _object.fullAccessor = 13;
-    _object.pointVariable = CGPointMake(2, 3);
-    _object.rectVariable = CGRectMake(1, 2, 3, 4);
+    _object.pointVariable = [MockPoint pointWithX:2 y:3];
+    _object.rectVariable = [MockRectangle rectangleWithX:1 y:2 width:3 height:4];
     ASHCodecManager * codecManager = [[ASHCodecManager alloc] init];
-    ASHReflectionObjectCodec * encoder = [[ASHReflectionObjectCodec alloc] init];
     [codecManager addCustomCodec:[[ASHReflectionObjectCodec alloc] init]
-                            type:[NSValue class]];
+                            type:[MockPoint class]];
+    ASHReflectionObjectCodec * encoder = [[ASHReflectionObjectCodec alloc] init];
 
-    //// testing
-    [codecManager addCustomCodec:[[ASHValueCodec alloc] init]
-                            type:[NSValue class]];
-    ////
     _encoded = [encoder encode:_object
                   codecManager:codecManager];
     _decoded = [encoder decode:_encoded
@@ -91,11 +89,61 @@
 
 - (void)testEncodingReturnsReflectableObjectVariable
 {
-    NSLog(@"%@", _encoded);
-    assertThat(_encoded[propertiesKey][@"pointVariable"][typeKey], equalTo(NSStringFromClass([NSValue class])));
+    assertThat(_encoded[propertiesKey][@"pointVariable"][typeKey], equalTo(NSStringFromClass([MockPoint class])));
+    assertThat(_encoded[propertiesKey][@"pointVariable"][propertiesKey][@"x"][valueKey], equalToFloat(_object.pointVariable.x));
+    assertThat(_encoded[propertiesKey][@"pointVariable"][propertiesKey][@"y"][valueKey], equalToFloat(_object.pointVariable.y));
 }
 
+- (void)testEncodingReturnsNullObjectForReflectableNullVariable
+{
+    assertThat(_encoded[propertiesKey][@"point2Variable"][valueKey], equalTo([NSNull null]));
+}
 
+- (void)testEncodingReturnsNilForNonReflectableVariable
+{
+    assertThat(_encoded[propertiesKey][@"rectVariable"][valueKey], equalTo(nil));
+}
+// TODO: ask Richard about this test
+- (void)testEncodingDoesntReturnsNullForNonReflectableNullVariable
+{
+    assertThat(_encoded[propertiesKey][@"rect2Variable"][valueKey], equalTo([NSNull null]));
+}
 
+- (void)testDecodingReturnsCorrectType
+{
+    assertThat(_decoded, instanceOf([MockReflectionObject class]));
+}
+
+- (void)testDecodingReturnsIntVariable
+{
+    assertThatInteger([_decoded intVariable], equalToInteger(_object.intVariable));
+}
+
+- (void)testDecodingReturnsUintVariable
+{
+    assertThatUnsignedInteger([_decoded uintVariable], equalToUnsignedInteger(_object.uintVariable));
+}
+
+- (void)testDecodingReturnsBooleanVariable
+{
+    assertThatBool([_decoded booleanVariable], equalToBool(_object.booleanVariable));
+}
+
+- (void)testDecodingReturnsStringVariable
+{
+    assertThat([_decoded stringVariable], equalTo(_object.stringVariable));
+}
+
+- (void)testDecodingReturnsReflectableObjectVariable
+{
+    assertThat([_decoded pointVariable], instanceOf([MockPoint class]));
+    assertThatFloat([_decoded pointVariable].x, equalToFloat(_object.pointVariable.x));
+    assertThatFloat([_decoded pointVariable].y, equalToFloat(_object.pointVariable.y));
+}
+
+- (void)testDecodingReturnsFullAccessor
+{
+    assertThatInteger([_decoded fullAccessor], equalToInteger(_object.fullAccessor));
+}
 
 @end

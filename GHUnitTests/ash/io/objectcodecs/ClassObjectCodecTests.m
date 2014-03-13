@@ -72,6 +72,8 @@
                                codecManager:_codecManager];
     id decoded = [_codec decode:encoded
                    codecManager:_codecManager];
+
+
     assertThat(decoded, equalTo(input));
 }
 

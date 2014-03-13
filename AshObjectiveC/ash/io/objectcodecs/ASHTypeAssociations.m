@@ -33,6 +33,7 @@
         NSString * immutableString = @"__NSCFConstantString";
         NSString * mutableString = @"__NSCFString";
         NSString * value = @"NSConcreteValue";
+        NSString * boolean = @"__NSCFBoolean";
 
 
         [self addTypeAssociation:[NSArray class] association:immutableArray];
@@ -43,6 +44,7 @@
 
         [self addTypeAssociation:[NSNumber class] association:number];
         [self addTypeAssociation:NSClassFromString(number) association:NSStringFromClass([NSNumber class])];
+        [self addTypeAssociation:NSClassFromString(boolean) association:NSStringFromClass([NSNumber class])];
 
         [self addTypeAssociation:[NSString class] association:immutableString];
         [self addTypeAssociation:NSClassFromString(immutableString) association:NSStringFromClass([NSString class])];

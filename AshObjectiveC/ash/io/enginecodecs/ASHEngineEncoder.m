@@ -3,15 +3,12 @@
 #import "ASHCodecManager.h"
 #import "ASHEngine.h"
 
-static NSString * const entitiesKey = @"entities";
-static NSString * const componentsKey = @"components";
-static NSString * const nameKey = @"name";
-static NSString * const idKey = @"id";
+
 
 @implementation ASHEngineEncoder
 {
     ASHCodecManager * _codecManager;
-    NSMutableDictionary * _componentEncodingMap;
+    NSMapTable * _componentEncodingMap;
     NSMutableArray * _encodedEntities;
     NSMutableArray * _encodedComponents;
     NSInteger _nextComponentId;
@@ -35,7 +32,8 @@ static NSString * const idKey = @"id";
     _nextComponentId = 1;
     _encodedEntities = [NSMutableArray array];
     _encodedComponents = [NSMutableArray array];
-    _componentEncodingMap = [NSMutableDictionary dictionary];
+    _componentEncodingMap = [NSMapTable mapTableWithKeyOptions:NSMapTableObjectPointerPersonality | NSMapTableStrongMemory
+                                                  valueOptions:NSMapTableObjectPointerPersonality | NSMapTableStrongMemory];
     _encoded = @{entitiesKey : _encodedEntities, componentsKey : _encodedComponents}.mutableCopy;
 }
 
@@ -58,38 +56,39 @@ static NSString * const idKey = @"id";
     for (id component in components)
     {
         NSNumber * encodedComponent = @([self encodeComponent:component]);
-        if(encodedComponent)
+
+        if(encodedComponent.unsignedIntegerValue != 0)
         {
             [componentIds addObject:encodedComponent];
         }
-        [_encodedEntities addObject:
-                @{
-                        nameKey: entity.name,
-                        componentsKey : componentIds
-                }];
     }
+
+    [_encodedEntities addObject:
+                              @{
+                                      nameKey: entity.name,
+                                      componentsKey : componentIds
+                              }];
 }
 
 - (NSInteger)encodeComponent:(id)component
 {
-    if(_componentEncodingMap[component])
+    if([_componentEncodingMap objectForKey:component])
     {
-        return [_componentEncodingMap[component][idKey] integerValue];
+        return [[_componentEncodingMap objectForKey:component][idKey] integerValue];
     }
     NSMutableDictionary * encoded = [_codecManager encodeComponent:component].mutableCopy;
+
     if(encoded)
     {
         encoded[idKey] = @(_nextComponentId++);
-        _componentEncodingMap[component] = encoded;
+        [_componentEncodingMap setObject:encoded
+                                  forKey:component];
         [_encodedComponents addObject:encoded];
-        return [_encoded[idKey] integerValue];
+
+        return [encoded[idKey] integerValue];
     }
 
     return 0;
 }
-
-
-
-
 
 @end

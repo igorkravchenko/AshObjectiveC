@@ -1,11 +1,9 @@
 
-#import "ASHClassObjectCodec.h"
-#import "ASHCodecManager.h"
 #import "MockReflectionObject.h"
 #import "ASHObjectReflection.h"
 #import "ASHObjectReflectionFactory.h"
+#import "MockPoint.h"
 #import <GHUnitIOS/GHUnit.h>
-
 #define HC_SHORTHAND
 #import <OCHamcrestIOS/OCHamcrestIOS.h>
 
@@ -72,7 +70,7 @@
 
 - (void)testReflectionReturnsObjectVariable
 {
-    assertThat(_reflection.propertyTypes[@"pointVariable"], equalTo(NSStringFromClass([NSValue class])));
+    assertThat(_reflection.propertyTypes[@"pointVariable"], equalTo(NSStringFromClass([MockPoint class])));
 }
 
 - (void)testReflectionReturnsFullAccessor

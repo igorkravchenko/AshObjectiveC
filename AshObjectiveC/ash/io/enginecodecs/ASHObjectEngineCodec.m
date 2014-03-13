@@ -21,8 +21,8 @@
     if (self)
     {
         _codecManager = [[ASHCodecManager alloc] init];
-        _encoder = [[ASHEngineEncoder alloc] init];
-        _decoder = [[ASHEngineDecoder alloc] init];
+        _encoder = [[ASHEngineEncoder alloc] initWithCodecManager:_codecManager];
+        _decoder = [[ASHEngineDecoder alloc] initWithCodecManager:_codecManager];
         _encodeCompleteSignal = [[ASHSignal1 alloc] init];
         _decodeCompleteSignal = [[ASHSignal1 alloc] init];
     }

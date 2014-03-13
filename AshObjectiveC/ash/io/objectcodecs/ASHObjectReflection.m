@@ -1,7 +1,6 @@
 #import <objc/runtime.h>
 #import "ASHObjectReflection.h"
 #import "ASHMacro.h"
-#import "ASHCodecManager.h"
 #import "ASHTypeAssociations.h"
 
 @implementation ASHObjectReflection
@@ -74,11 +73,8 @@
                 }
             }
 
-            NSLog(@"%@:%@", propertyName, propertyTypeString);
+            //NSLog(@"%@:%@", propertyName, propertyTypeString);
             propertyTypes[propertyName] = propertyTypeString;
-
-
-
         }
         _propertyTypes = propertyTypes;
         free(properties);

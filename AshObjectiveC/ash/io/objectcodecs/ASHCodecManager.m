@@ -1,10 +1,11 @@
-
+#import <objc/runtime.h>
 #import "ASHCodecManager.h"
 #import "ASHNativeObjectCodec.h"
 #import "ASHReflectionObjectCodec.h"
 #import "ASHArrayObjectCodec.h"
 #import "ASHClassObjectCodec.h"
 #import "ASHTypeAssociations.h"
+#import "ASHValueObjectCodec.h"
 
 @interface ASHClass : NSObject
 
@@ -40,6 +41,8 @@
         [self addCustomCodec:_arrayCodec type:[NSMutableArray class]];
         [self addCustomCodec:[[ASHClassObjectCodec alloc] init]
                         type:[ASHClass class]];
+        [self addCustomCodec:[[ASHValueObjectCodec alloc] init]
+                        type:[NSValue class]];
 
     }
 
@@ -50,7 +53,8 @@
 
 - (id <ASHObjectCodec>) getCodecForObject:(id)object
 {
-    Class type = [object class];
+    BOOL isClass = class_isMetaClass(object_getClass(object));
+    Class type = isClass ? [ASHClass class] : [object class];
     ASHTypeAssociations * associations = [ASHTypeAssociations instance];
     NSString * typeString = [associations associationForType:type];
     return  _codecs[typeString];
@@ -63,7 +67,7 @@
     return  _codecs[typeString];
 }
 
-- (id <ASHObjectCodec>)getCodecForComponent:(NSObject *)component
+- (id <ASHObjectCodec>)getCodecForComponent:(id)component
 {
     id <ASHObjectCodec> codec = [self getCodecForObject:component];
     if(codec == nil)

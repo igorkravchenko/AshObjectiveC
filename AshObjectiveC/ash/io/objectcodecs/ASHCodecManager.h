@@ -5,7 +5,9 @@
 
 @interface ASHCodecManager : NSObject
 
-- (id <ASHObjectCodec>)getCodecForComponent:(NSObject *)component;
+- (id <ASHObjectCodec>)getCodecForObject:(id)object;
+
+- (id <ASHObjectCodec>)getCodecForComponent:(id)component;
 
 - (void)addCustomCodec:(id <ASHObjectCodec>)codec
                   type:(Class)type;

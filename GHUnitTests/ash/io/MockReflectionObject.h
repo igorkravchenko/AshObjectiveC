@@ -1,6 +1,9 @@
 
 #import <Foundation/Foundation.h>
 
+@class MockPoint;
+@class MockRectangle;
+
 @interface MockReflectionObject : NSObject
 
 @property (nonatomic, assign) NSInteger intVariable;
@@ -8,11 +11,11 @@
 @property (nonatomic, assign) float numberVariable;
 @property (nonatomic, assign) BOOL booleanVariable;
 @property (nonatomic, strong) NSString * stringVariable;
-@property (nonatomic, assign) CGPoint pointVariable;
-@property (nonatomic, assign) CGPoint point2Variable;
-@property (nonatomic, assign) CGRect rectVariable;
-@property (nonatomic, assign) CGRect rect2Variable;
-@property (nonatomic, assign) NSArray * arrayVariable;
+@property (nonatomic, strong) MockPoint * pointVariable;
+@property (nonatomic, strong) MockPoint * point2Variable;
+@property (nonatomic, strong) MockRectangle * rectVariable;
+@property (nonatomic, strong) MockRectangle * rect2Variable;
+@property (nonatomic, strong) NSArray * arrayVariable;
 
 @property (nonatomic, readwrite) NSInteger fullAccessor;
 
