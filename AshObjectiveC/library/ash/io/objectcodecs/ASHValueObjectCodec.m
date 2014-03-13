@@ -202,7 +202,8 @@
     return @{typeKey: [associations associationForType:value.class], objCTypeKey : objCType, valueKey: [NSNull null]};
 }
 
-- (id)decode:(NSDictionary *)object codecManager:(ASHCodecManager *)codecManager
+- (id)decode:(NSDictionary *)object
+codecManager:(ASHCodecManager *)codecManager
 {
     NSString * objCType = object[objCTypeKey];
 

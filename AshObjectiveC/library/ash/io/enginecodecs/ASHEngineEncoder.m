@@ -3,8 +3,6 @@
 #import "ASHCodecManager.h"
 #import "ASHEngine.h"
 
-
-
 @implementation ASHEngineEncoder
 {
     ASHCodecManager * _codecManager;

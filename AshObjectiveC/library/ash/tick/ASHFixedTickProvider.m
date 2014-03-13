@@ -9,7 +9,7 @@
 
 @synthesize timeAdjustment;
 
-- (id)initWithFrameTime:(double)aFrameTime
+- (id)initWithFrameTime:(CGFloat)aFrameTime
 {
     self = [super init];
     

@@ -38,7 +38,6 @@
     _endec = [[ASHJsonEngineCodec alloc] init];
     _original = [[ASHEngine alloc] init];
     _firstComponent1 = [[MockComponent1IO alloc] initWithX:1 y:2];
-    _firstComponent1.cgPoint = CGPointMake(100, 200);
     _secondComponent1 = [[MockComponent1IO alloc] initWithX:3 y:4];
     _onlyComponent2 = [[MockComponent2IO alloc] initWithX:5 y:6];
     ASHEntity * entity = [[ASHEntity alloc] init];

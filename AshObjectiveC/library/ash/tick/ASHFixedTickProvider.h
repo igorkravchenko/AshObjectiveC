@@ -4,8 +4,8 @@
 
 @interface ASHFixedTickProvider : ASHSignal1 <ASHTickProvider>
 
-@property (nonatomic, assign) double timeAdjustment;
+@property (nonatomic, assign) CGFloat timeAdjustment;
 
-- (id)initWithFrameTime:(double)frameTime;
+- (id)initWithFrameTime:(CGFloat)frameTime;
 
 @end

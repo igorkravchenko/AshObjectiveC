@@ -1,3 +1,4 @@
+
 #import <objc/runtime.h>
 #import "ASHObjectReflection.h"
 #import "ASHMacro.h"
@@ -73,7 +74,6 @@
                 }
             }
 
-            //NSLog(@"%@:%@", propertyName, propertyTypeString);
             propertyTypes[propertyName] = propertyTypeString;
         }
         _propertyTypes = propertyTypes;
