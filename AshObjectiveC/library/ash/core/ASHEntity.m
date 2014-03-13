@@ -27,7 +27,7 @@ static NSInteger nameCount = 0;
         componentRemoved = [[ASHSignal2 alloc] init];
         components = [NSMutableDictionary dictionary];
         nameChanged = [[ASHSignal2 alloc] init];
-        _name = [@"_entity" stringByAppendingFormat:@"%i", ++nameCount];
+        _name = [@"_entity" stringByAppendingFormat:@"%ld", (long)++nameCount];
     }
     
     return self;
@@ -43,7 +43,7 @@ static NSInteger nameCount = 0;
         componentRemoved = [[ASHSignal2 alloc] init];
         components = [NSMutableDictionary dictionary];
         nameChanged = [[ASHSignal2 alloc] init];
-        _name = name != nil ? name : [@"_entity" stringByAppendingFormat:@"%i", ++nameCount];
+        _name = name != nil ? name : [@"_entity" stringByAppendingFormat:@"%ld", (long)++nameCount];
     }
 
     return self;

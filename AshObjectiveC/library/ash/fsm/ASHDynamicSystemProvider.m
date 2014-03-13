@@ -31,7 +31,7 @@
 
 - (id)identifier
 {
-    return [NSStringFromSelector(_method) stringByAppendingFormat:@"%i", [_target hash]];
+    return [NSStringFromSelector(_method) stringByAppendingFormat:@"%ld", (long)[_target hash]];
 }
 
 - (NSInteger)priority

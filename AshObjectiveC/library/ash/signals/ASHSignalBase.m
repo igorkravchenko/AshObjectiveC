@@ -3,7 +3,7 @@
 #import "ASHListenerNodePool.h"
 #import "ASHListenerNode.h"
 
-#define GET_TARGET_ACTION_KEY(object, selector) [NSString stringWithFormat:@"%@%u", NSStringFromSelector(selector), [(NSObject *)object hash]]
+#define GET_TARGET_ACTION_KEY(object, selector) [NSString stringWithFormat:@"%@%ld", NSStringFromSelector(selector), (long)[(NSObject *)object hash]]
 
 @implementation ASHSignalBase
 {
