@@ -7,23 +7,20 @@
 #import "ASHEngine.h"
 #import "MockComponent1IO.h"
 #import "MockComponent2IO.h"
-#import "MockHelpers.h"
+#import "ASHJsonEngineCodec.h"
 
-@interface DecoderTests : GHAsyncTestCase
-
-@property(nonatomic) SEL currentCall;
-
+@interface JsonEngineCodecTests : GHTestCase
 @end
 
-@implementation DecoderTests
+@implementation JsonEngineCodecTests
 {
-    ASHObjectEngineCodec * _endec;
+    ASHJsonEngineCodec * _endec;
     ASHEngine * _original;
-    id _encodedData;
     ASHEngine * _engine;
     MockComponent1IO * _firstComponent1;
     MockComponent1IO * _secondComponent1;
     MockComponent2IO * _onlyComponent2;
+    id _encodedData;
 }
 
 - (void)setUp
@@ -38,9 +35,10 @@
 
 - (void)createDecoder
 {
-    _endec = [[ASHObjectEngineCodec alloc] init];
+    _endec = [[ASHJsonEngineCodec alloc] init];
     _original = [[ASHEngine alloc] init];
     _firstComponent1 = [[MockComponent1IO alloc] initWithX:1 y:2];
+    _firstComponent1.cgPoint = CGPointMake(100, 200);
     _secondComponent1 = [[MockComponent1IO alloc] initWithX:3 y:4];
     _onlyComponent2 = [[MockComponent2IO alloc] initWithX:5 y:6];
     ASHEntity * entity = [[ASHEntity alloc] init];
@@ -57,15 +55,12 @@
     [entity addComponent:_secondComponent1];
     [_original addEntity:entity];
     _encodedData = [_endec encodeEngine:_original];
-
     _engine = [[ASHEngine alloc] init];
-    [_endec decodeEngine:_encodedData
-                  engine:_engine];
+    [_endec decodeEngine:_encodedData engine:_engine];
 }
 
 - (void)deleteEncoder
 {
-    [_endec.decodeComplete removeAll];
     _endec = nil;
     _original = nil;
     _engine = nil;
@@ -74,9 +69,9 @@
     _onlyComponent2 = nil;
 }
 
-- (void)testDecodedHasCorrectNumberOfEntities
+- (void)testEncodedDataIsAString
 {
-    assertThat(_engine.allEntities, hasCountOf(3));
+    assertThat(_encodedData, instanceOf([NSString class]));
 }
 
 - (void)testDecodedHasCorrectEntityNames
@@ -215,23 +210,6 @@
     assertThatFloat(component1.y, equalToFloat(_secondComponent1.y));
 }
 
-- (void)testDecodingTriggersCompleteSignal
-{
-    [super prepare];
-    self.currentCall = _cmd;
-    [_endec.encodeComplete addListener:self
-                                action:@selector(handleCall:)];
-    _encodedData = [_endec encodeEngine:_engine];
-
-    [super waitForStatus:kGHUnitWaitStatusSuccess
-                 timeout:kCallbackTimout];
-}
-
-- (void)handleCall:(ASHEngine *)engine
-{
-    [super notify:kGHUnitWaitStatusSuccess
-      forSelector:self.currentCall];
-}
 
 
 @end

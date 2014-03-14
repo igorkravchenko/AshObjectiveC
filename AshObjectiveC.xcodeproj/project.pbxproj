@@ -8,9 +8,10 @@
 
 /* Begin PBXBuildFile section */
 		22BFA017DDB9B0F511F0297A /* ReflectionObjectCodecTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 22BFA81C674449B4F1993D76 /* ReflectionObjectCodecTests.m */; };
+		22BFA05C953C4F82C8D12E13 /* JsonEngineCodecTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 22BFAC736C7BDB3F5B6CC87B /* JsonEngineCodecTests.m */; };
 		22BFA0733DA0251BCF783DB0 /* EncoderTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 22BFAF0B29E453789DE2CBB9 /* EncoderTests.m */; };
 		22BFA36BF7B708A59F906015 /* MockComponent1IO.m in Sources */ = {isa = PBXBuildFile; fileRef = 22BFAF0523FE6C268926071B /* MockComponent1IO.m */; };
-		22BFA4218D30CC210A2998E7 /* ValueObjectTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 22BFA494B381BE74C58305CA /* ValueObjectTests.m */; };
+		22BFA4218D30CC210A2998E7 /* ValueObjectCodecTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 22BFA494B381BE74C58305CA /* ValueObjectCodecTests.m */; };
 		22BFA4BCBE65A25B721CE14D /* ArrayObjectCodecTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 22BFA76D6E1EFF27F5894363 /* ArrayObjectCodecTests.m */; };
 		22BFA4BE18D573165E534E9E /* CodecManagerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 22BFA5C8D28DBF162D057B2A /* CodecManagerTests.m */; };
 		22BFA532DC7257137836CE18 /* DecoderTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 22BFA6E84F049B365131FAAF /* DecoderTests.m */; };
@@ -207,7 +208,7 @@
 		22BFA08D637701CF3048533B /* MockPoint.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MockPoint.m; sourceTree = "<group>"; };
 		22BFA1FACB2650ED86AE3B53 /* ASHValueObjectCodec.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ASHValueObjectCodec.h; sourceTree = "<group>"; };
 		22BFA367593907581662272D /* MockComponent1IO.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MockComponent1IO.h; sourceTree = "<group>"; };
-		22BFA494B381BE74C58305CA /* ValueObjectTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ValueObjectTests.m; sourceTree = "<group>"; };
+		22BFA494B381BE74C58305CA /* ValueObjectCodecTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ValueObjectCodecTests.m; sourceTree = "<group>"; };
 		22BFA58B3B38AEC23A0FB714 /* MockComponent2IO.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MockComponent2IO.m; sourceTree = "<group>"; };
 		22BFA5C8D28DBF162D057B2A /* CodecManagerTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CodecManagerTests.m; sourceTree = "<group>"; };
 		22BFA6E84F049B365131FAAF /* DecoderTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DecoderTests.m; sourceTree = "<group>"; };
@@ -217,6 +218,7 @@
 		22BFA8EC99A0FC03A05619C0 /* MockRectangle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MockRectangle.h; sourceTree = "<group>"; };
 		22BFAAC80956C14F8AF6EB22 /* MockRectangle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MockRectangle.m; sourceTree = "<group>"; };
 		22BFAB0674AE45682BD65FB4 /* MockComponent2IO.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MockComponent2IO.h; sourceTree = "<group>"; };
+		22BFAC736C7BDB3F5B6CC87B /* JsonEngineCodecTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JsonEngineCodecTests.m; sourceTree = "<group>"; };
 		22BFADA36C8C6E9E14512AF3 /* ObjectReflectionTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ObjectReflectionTests.m; sourceTree = "<group>"; };
 		22BFADF33BFAEA34D3A15885 /* ASHTypeAssociations.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ASHTypeAssociations.m; sourceTree = "<group>"; };
 		22BFAE473AA5D665F9B5C5FD /* ASHTypeAssociations.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ASHTypeAssociations.h; sourceTree = "<group>"; };
@@ -500,7 +502,7 @@
 				22BFADA36C8C6E9E14512AF3 /* ObjectReflectionTests.m */,
 				22BFA81C674449B4F1993D76 /* ReflectionObjectCodecTests.m */,
 				22BFA5C8D28DBF162D057B2A /* CodecManagerTests.m */,
-				22BFA494B381BE74C58305CA /* ValueObjectTests.m */,
+				22BFA494B381BE74C58305CA /* ValueObjectCodecTests.m */,
 			);
 			path = objectcodecs;
 			sourceTree = "<group>";
@@ -529,6 +531,7 @@
 			children = (
 				22BFAF0B29E453789DE2CBB9 /* EncoderTests.m */,
 				22BFA6E84F049B365131FAAF /* DecoderTests.m */,
+				22BFAC736C7BDB3F5B6CC87B /* JsonEngineCodecTests.m */,
 			);
 			path = enginecodecs;
 			sourceTree = "<group>";
@@ -1278,9 +1281,10 @@
 				22BFA54B53840373EC265817 /* MockRectangle.m in Sources */,
 				22BFAA01CEA254734AE1A3C9 /* MockPoint.m in Sources */,
 				22BFA4BE18D573165E534E9E /* CodecManagerTests.m in Sources */,
-				22BFA4218D30CC210A2998E7 /* ValueObjectTests.m in Sources */,
+				22BFA4218D30CC210A2998E7 /* ValueObjectCodecTests.m in Sources */,
 				22BFA0733DA0251BCF783DB0 /* EncoderTests.m in Sources */,
 				22BFA532DC7257137836CE18 /* DecoderTests.m in Sources */,
+				22BFA05C953C4F82C8D12E13 /* JsonEngineCodecTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

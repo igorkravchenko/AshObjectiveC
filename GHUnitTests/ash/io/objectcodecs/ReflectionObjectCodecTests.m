@@ -4,7 +4,6 @@
 #import "MockReflectionObject.h"
 #import "ASHCodecManager.h"
 #import "ASHReflectionObjectCodec.h"
-#import "ASHValueObjectCodec.h"
 #import "MockPoint.h"
 #import "MockRectangle.h"
 

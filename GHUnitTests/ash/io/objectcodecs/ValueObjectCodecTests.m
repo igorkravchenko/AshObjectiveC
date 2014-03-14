@@ -6,11 +6,11 @@
 #define HC_SHORTHAND
 #import <OCHamcrestIOS/OCHamcrestIOS.h>
 
-@interface ValueObjectTests : GHTestCase
+@interface ValueObjectCodecTests : GHTestCase
 
 @end
 
-@implementation ValueObjectTests
+@implementation ValueObjectCodecTests
 {
     ASHValueObjectCodec * _codec;
     ASHCodecManager * _codecManager;

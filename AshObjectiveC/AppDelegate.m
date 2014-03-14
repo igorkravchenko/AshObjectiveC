@@ -31,7 +31,7 @@
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     // Override point for customization after application launch.
     [self.window makeKeyAndVisible];
-    _window.backgroundColor = [UIColor grayColor];
+    _window.backgroundColor = [UIColor blackColor];
     
     UIButton * leftButton = [self makeButton:@"Left"];
     leftButton.tag = TriggerLeft;
@@ -50,14 +50,14 @@
     accelerateButton.tag = TriggerAccelerate;
     
     [_window addSubview:accelerateButton];
-    UIVIEW_MOVE(accelerateButton, UIVIEW_GET_X(leftButton) + UIVIEW_GET_WIDTH(leftButton), UIVIEW_GET_HEIGHT(_window) -
+    UIVIEW_MOVE(accelerateButton, UIVIEW_GET_X(leftButton) + UIVIEW_GET_WIDTH(leftButton) + 40, UIVIEW_GET_HEIGHT(_window) -
                 UIVIEW_GET_HEIGHT(accelerateButton));
     
     UIButton * gunButton = [self makeButton:@"Fire"];
     gunButton.tag = TriggerGun;
     
     [_window addSubview:gunButton];
-    UIVIEW_MOVE(gunButton, UIVIEW_GET_X(accelerateButton) + UIVIEW_GET_WIDTH(accelerateButton), UIVIEW_GET_HEIGHT(_window) -
+    UIVIEW_MOVE(gunButton, UIVIEW_GET_X(accelerateButton) + UIVIEW_GET_WIDTH(accelerateButton) + 20, UIVIEW_GET_HEIGHT(_window) -
                 UIVIEW_GET_HEIGHT(gunButton));
     UIVIEW_SET_WIDTH(gunButton, UIVIEW_GET_WIDTH(accelerateButton) - 6);
     
@@ -98,10 +98,10 @@
 
 - (UIButton *)makeButton:(NSString *)title
 {
-    UIButton * button = [UIButton buttonWithType:UIButtonTypeRoundedRect];
+    UIButton * button = [UIButton buttonWithType:UIButtonTypeCustom];
     [button setTitle:title
             forState:UIControlStateNormal];
-    [button setTitleColor:[UIColor grayColor]
+    [button setTitleColor:[UIColor whiteColor]
                  forState:UIControlStateNormal];
     button.tintColor = [UIColor grayColor];
     [button sizeToFit];

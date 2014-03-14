@@ -220,12 +220,14 @@
                   object:(NSDictionary *)object
             codecManager:(ASHCodecManager *)codecManager
 {
-    // TODO: complete implementation
+    
 }
 
 - (void)decodeIntoProperty:(NSObject *)parent property:(NSString *)property object:(NSDictionary *)object codecManager:(ASHCodecManager *)codecManager
 {
-    // TODO: complete implementation
+    [parent setValue:[self decode:object
+                     codecManager:codecManager]
+              forKey:property];
 }
 
 
