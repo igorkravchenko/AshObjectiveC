@@ -1,7 +1,6 @@
 
 #import <GHUnitIOS/GHUnit.h>
 #define HC_SHORTHAND
-#import <OCHamcrestIOS/OCHamcrestIOS.h>
 #import "ASHEngine.h"
 #import "ASHFamily.h"
 #import "MockHelpers.h"

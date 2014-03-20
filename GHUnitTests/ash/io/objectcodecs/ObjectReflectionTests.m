@@ -4,8 +4,6 @@
 #import "ASHObjectReflectionFactory.h"
 #import "MockPoint.h"
 #import <GHUnitIOS/GHUnit.h>
-#define HC_SHORTHAND
-#import <OCHamcrestIOS/OCHamcrestIOS.h>
 
 @interface ObjectReflectionTests : GHTestCase
 @end

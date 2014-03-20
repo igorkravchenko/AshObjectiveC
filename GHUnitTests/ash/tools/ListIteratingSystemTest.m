@@ -1,9 +1,6 @@
 
 #import <GHUnitIOS/GHUnit.h>
-#define HC_SHORTHAND
-#import <OCHamcrestIOS/OCHamcrestIOS.h>
 #import "MockHelpers.h"
-#import "ASHEngine.h"
 #import "ASHListIteratingSystem.h"
 
 @interface ListIteratingSystemTest : GHTestCase

@@ -1,10 +1,8 @@
+
 #import "ASHClassObjectCodec.h"
 #import "ASHCodecManager.h"
 #import "ASHValueObjectCodec.h"
 #import <GHUnitIOS/GHUnit.h>
-
-#define HC_SHORTHAND
-#import <OCHamcrestIOS/OCHamcrestIOS.h>
 
 @interface ValueObjectCodecTests : GHTestCase
 
@@ -237,12 +235,14 @@
 
 - (void)testEncodesValueWithCGVector
 {
-    CGVector vector = CGVectorMake(100.44f, 200.14f);
+
+    CGVector vector = CGVectorMake(100.14, 200.14);
     NSValue * value = [NSValue valueWithBytes:&vector
                                      objCType:@encode(CGVector)];
     NSDictionary * encoded = [_codec encode:value
                                codecManager:_codecManager];
-    assertThat(encoded[valueKey], equalTo([NSString stringWithFormat:@"{%g, %g}", vector.dx, vector.dy]));
+    assertThat(encoded[valueKey], equalTo(NSStringFromCGPoint(CGPointMake(vector.dx, vector.dy))));
+
 }
 
 - (void)testDecodesValueWithCGVector

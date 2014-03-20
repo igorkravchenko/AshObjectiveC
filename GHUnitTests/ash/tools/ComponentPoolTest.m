@@ -2,7 +2,6 @@
 #import <GHUnitIOS/GHUnit.h>
 #import "ASHComponentPool.h"
 #define HC_SHORTHAND
-#import <OCHamcrestIOS/OCHamcrestIOS.h>
 #import "MockHelpers.h"
 
 

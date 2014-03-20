@@ -1,7 +1,6 @@
 
 #import <GHUnitIOS/GHUnit.h>
 #define HC_SHORTHAND
-#import <OCHamcrestIOS/OCHamcrestIOS.h>
 #import "ASHEngine.h"
 #import "ASHComponentMatchingFamily.h"
 #import "MockHelpers.h"
@@ -173,7 +172,7 @@
         NSUInteger i = [entities indexOfObject:node.entity];
         [entities removeObjectAtIndex:i];
     }
-    assertThat(entities, empty());
+    assertThat(entities, isEmpty());
 }
 
 - (void)testCleanUpEmptiesNodeList

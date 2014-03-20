@@ -1,7 +1,6 @@
 
 #import "NodeListMatcher.h"
 #import "ASHNodeList.h"
-#import <OCHamcrestIOS/HCDescription.h>
 
 @implementation ASHNodeList (Description)
 

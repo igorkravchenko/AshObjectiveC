@@ -1,10 +1,6 @@
 
 #import <GHUnitIOS/GHUnit.h>
-#define HC_SHORTHAND
-#import <OCHamcrestIOS/OCHamcrestIOS.h>
-#import "ASHEngineStateMachine.h"
 #import "ASHEngine.h"
-#import "ASHEngineState.h"
 #import "MockHelpers.h"
 #import "ASHSystemInstanceProvider.h"
 

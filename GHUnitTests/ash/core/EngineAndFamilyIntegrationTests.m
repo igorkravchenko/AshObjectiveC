@@ -3,7 +3,6 @@
 #import "ASHEngine.h"
 #import "MockHelpers.h"
 #define HC_SHORTHAND
-#import <OCHamcrestIOS/OCHamcrestIOS.h>
 
 @interface EngineAndFamilyIntegrationTests : GHAsyncTestCase
 
@@ -179,7 +178,7 @@
          [entities removeObject:node.entity];
     }
 
-    assertThat(entities, empty());
+    assertThat(entities, isEmpty());
 }
 
 - (void)testReleaseFamilyEmptiesNodeList

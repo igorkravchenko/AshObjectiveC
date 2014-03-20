@@ -1,9 +1,7 @@
+
 #import "ASHClassObjectCodec.h"
 #import "ASHCodecManager.h"
 #import <GHUnitIOS/GHUnit.h>
-
-#define HC_SHORTHAND
-#import <OCHamcrestIOS/OCHamcrestIOS.h>
 #import <objc/runtime.h>
 
 

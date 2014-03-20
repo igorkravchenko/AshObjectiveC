@@ -2,8 +2,6 @@
 #import <GHUnitIOS/GHUnit.h>
 #import "MockHelpers.h"
 #define HC_SHORTHAND
-#import <OCHamcrestIOS/OCHamcrestIOS.h>
-#import "ASHEngine.h"
 #import <objc/message.h>
 
 @class SystemTests;

@@ -1,7 +1,5 @@
 
 #import <GHUnitIOS/GHUnit.h>
-#define HC_SHORTHAND
-#import <OCHamcrestIOS/OCHamcrestIOS.h>
 #import <objc/runtime.h>
 #import "ASHObjectEngineCodec.h"
 #import "ASHEngine.h"

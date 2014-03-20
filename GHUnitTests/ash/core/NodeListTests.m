@@ -1,8 +1,6 @@
 
 #import <GHUnitIOS/GHUnit.h>
 #import "MockHelpers.h"
-#define HC_SHORTHAND
-#import <OCHamcrestIOS/OCHamcrestIOS.h>
 #import "NodeListMatcher.h"
 
 @interface NodeListTests : GHAsyncTestCase
@@ -88,7 +86,7 @@
     {
         [nodeArray removeObject:node];
     }
-    assertThat(nodeArray, empty());
+    assertThat(nodeArray, isEmpty());
 }
 
 - (void)testRemovingCurrentNodeDuringIterationIsValid
@@ -111,7 +109,7 @@
             [nodes removeNode:node];
         }
     }
-    assertThat(nodeArray, empty());
+    assertThat(nodeArray, isEmpty());
 }
 
 - (void)testRemovingNextNodeDuringIterationIsValid

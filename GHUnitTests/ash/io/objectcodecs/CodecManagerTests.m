@@ -1,7 +1,5 @@
 
 #import "MockReflectionObject.h"
-#import "ASHObjectReflection.h"
-#import "ASHObjectReflectionFactory.h"
 #import "MockPoint.h"
 #import "ASHCodecManager.h"
 #import "ASHObjectCodec.h"
@@ -11,8 +9,6 @@
 #import "ASHArrayObjectCodec.h"
 #import "ASHValueObjectCodec.h"
 #import <GHUnitIOS/GHUnit.h>
-#define HC_SHORTHAND
-#import <OCHamcrestIOS/OCHamcrestIOS.h>
 
 @interface MockCodec : NSObject <ASHObjectCodec>
 

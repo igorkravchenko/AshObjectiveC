@@ -1,6 +1,5 @@
+
 #import <GHUnitIOS/GHUnit.h>
-#define HC_SHORTHAND
-#import <OCHamcrestIOS/OCHamcrestIOS.h>
 #import "MockReflectionObject.h"
 #import "ASHCodecManager.h"
 #import "ASHReflectionObjectCodec.h"
