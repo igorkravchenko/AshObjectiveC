@@ -98,7 +98,7 @@
     {
         for (ASHNode * node = nodeList.head; node != nil; node = node.next)
         {
-            objc_msgSend(nodeAddedTarget, nodeAddedSelector, node);
+            ((void(*)(id, SEL, id))objc_msgSend)(nodeAddedTarget, nodeAddedSelector, node);
         }
         
         [nodeList.nodeAdded addListener:nodeAddedTarget 
@@ -133,8 +133,8 @@
 {
     NSNumber * timeContainer = @(time);
     for (ASHNode * node = nodeList.head; node != nil; node = node.next)
-    {       
-        objc_msgSend(nodeUpdateTarget, nodeUpdateSelector, node, timeContainer);
+    {
+        ((void(*)(id, SEL, id, id))objc_msgSend)(nodeUpdateTarget, nodeUpdateSelector, node, timeContainer);
     }
 }
 

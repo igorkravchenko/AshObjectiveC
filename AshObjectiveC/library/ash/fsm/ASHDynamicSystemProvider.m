@@ -26,7 +26,7 @@
 
 - (ASHSystem *)getSystem
 {
-    return objc_msgSend(_target, _method);
+    return ((id(*)(id, SEL))objc_msgSend)(_target, _method);
 }
 
 - (id)identifier

@@ -24,7 +24,7 @@
 
 - (id)getComponent
 {
-    return objc_msgSend(_target, _closure);
+    return ((id(*)(id, SEL))objc_msgSend)(_target, _closure);
 }
 
 - (id)identifier

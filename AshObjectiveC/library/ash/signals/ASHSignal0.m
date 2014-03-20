@@ -11,7 +11,7 @@
     ASHListenerNode * node = nil;
     for (node = super.head; node != nil; node = node.next)
     {
-        objc_msgSend(node.target, node.listener);
+        ((void(*)(id, SEL))objc_msgSend)(node.target, node.listener);
 
         if(node.once)
         {

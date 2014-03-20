@@ -298,7 +298,7 @@
 {
     if(tests.asyncCallback != nil && tests.asyncTarget != nil)
     {
-        objc_msgSend(tests.asyncTarget, tests.asyncCallback, self, @"added", engine);
+        ((void(*)(id, SEL, id, id, id))objc_msgSend)(tests.asyncTarget, tests.asyncCallback, self, @"added", engine);
     }
 }
 
@@ -306,7 +306,7 @@
 {
     if(tests.asyncCallback != nil && tests.asyncTarget != nil)
     {
-        objc_msgSend(tests.asyncTarget, tests.asyncCallback, self, @"removed", engine);
+        ((void(*)(id, SEL, id, id, id))objc_msgSend)(tests.asyncTarget, tests.asyncCallback, self, @"removed", engine);
     }
 }
 
@@ -314,7 +314,7 @@
 {
     if(tests.asyncCallback != nil && tests.asyncTarget != nil)
     {
-        objc_msgSend(tests.asyncTarget, tests.asyncCallback, self, @"update", @(time));
+        ((void(*)(id, SEL, id, id, id))objc_msgSend)(tests.asyncTarget, tests.asyncCallback, self, @"update", @(time));
     }
 }
 

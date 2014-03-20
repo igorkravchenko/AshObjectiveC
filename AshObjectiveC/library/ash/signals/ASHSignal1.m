@@ -12,7 +12,7 @@
     
     for (node = super.head; node != nil; node = node.next) 
     {
-        objc_msgSend(node.target, node.listener, object);
+        ((void(*)(id, SEL, id))objc_msgSend)(node.target, node.listener, object);
         
         if(node.once)
         {

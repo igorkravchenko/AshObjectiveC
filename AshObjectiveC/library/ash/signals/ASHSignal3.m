@@ -12,7 +12,7 @@
     ASHListenerNode * node = nil;
     for (node = super.head; node != nil; node = node.next) 
     {
-        objc_msgSend(node.target, node.listener, anObject1, anObject2, anObject3);
+        ((void(*)(id, SEL, id, id, id))objc_msgSend)(node.target, node.listener, anObject1, anObject2, anObject3);
         if(node.once)
         {
             [super removeListener:node.target 
