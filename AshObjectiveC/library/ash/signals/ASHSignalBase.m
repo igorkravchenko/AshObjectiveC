@@ -189,8 +189,6 @@
         self.head = head.next;
         [nodes removeObjectForKey:GET_TARGET_ACTION_KEY(node.target, node.listener)];
         [listenerNodePool dispose:node];
-        node.previous = nil;
-        node.next = nil;
     }
     self.tail = nil;
     toAddHead = nil;
