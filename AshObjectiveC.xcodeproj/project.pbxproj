@@ -83,7 +83,6 @@
 		5C7AF6AF168F187A00D58233 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 5C7AF6AE168F187A00D58233 /* Default.png */; };
 		5C7AF6B1168F187A00D58233 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5C7AF6B0168F187A00D58233 /* Default@2x.png */; };
 		5C7AF6B3168F187A00D58233 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5C7AF6B2168F187A00D58233 /* Default-568h@2x.png */; };
-		5C7AF6B9168F194300D58233 /* GHUnitIOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5C7AF6B7168F194300D58233 /* GHUnitIOS.framework */; };
 		5C7AF6D3168F1DD600D58233 /* ComponentMatchingFamilyTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C7AF6BD168F1DD500D58233 /* ComponentMatchingFamilyTests.m */; };
 		5C7AF6D4168F1DD600D58233 /* EngineAndFamilyIntegrationTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C7AF6BE168F1DD500D58233 /* EngineAndFamilyIntegrationTests.m */; };
 		5C7AF6D5168F1DD600D58233 /* EngineTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C7AF6BF168F1DD500D58233 /* EngineTests.m */; };
@@ -337,7 +336,6 @@
 		5C7AF6AE168F187A00D58233 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
 		5C7AF6B0168F187A00D58233 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
 		5C7AF6B2168F187A00D58233 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
-		5C7AF6B7168F194300D58233 /* GHUnitIOS.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = GHUnitIOS.framework; sourceTree = "<group>"; };
 		5C7AF6BD168F1DD500D58233 /* ComponentMatchingFamilyTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ComponentMatchingFamilyTests.m; sourceTree = "<group>"; };
 		5C7AF6BE168F1DD500D58233 /* EngineAndFamilyIntegrationTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EngineAndFamilyIntegrationTests.m; sourceTree = "<group>"; };
 		5C7AF6BF168F1DD500D58233 /* EngineTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EngineTests.m; sourceTree = "<group>"; };
@@ -488,7 +486,6 @@
 				5C7AF69F168F187A00D58233 /* UIKit.framework in Frameworks */,
 				5C7AF6A0168F187A00D58233 /* Foundation.framework in Frameworks */,
 				5C7AF6A1168F187A00D58233 /* CoreGraphics.framework in Frameworks */,
-				5C7AF6B9168F194300D58233 /* GHUnitIOS.framework in Frameworks */,
 				5C7AF6E3168F1E9200D58233 /* QuartzCore.framework in Frameworks */,
 				B149F2863F724DB78C7BD7C7 /* libPods-GHUnitTests.a in Frameworks */,
 			);
@@ -564,7 +561,6 @@
 		5C7AF592168F14B900D58233 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				5C7AF6B7168F194300D58233 /* GHUnitIOS.framework */,
 				5C7AF697168F160700D58233 /* QuartzCore.framework */,
 				5C7AF593168F14B900D58233 /* UIKit.framework */,
 				5C7AF595168F14B900D58233 /* Foundation.framework */,
@@ -1079,8 +1075,6 @@
 			mainGroup = 5C7AF584168F14B900D58233;
 			productRefGroup = 5C7AF590168F14B900D58233 /* Products */;
 			projectDirPath = "";
-			projectReferences = (
-			);
 			projectRoot = "";
 			targets = (
 				5C7AF58E168F14B900D58233 /* AshObjectiveC */,
@@ -1445,10 +1439,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "GHUnitTests/GHUnitTests-Prefix.pch";
 				INFOPLIST_FILE = "GHUnitTests/GHUnitTests-Info.plist";
-				OTHER_LDFLAGS = (
-					"-ObjC",
-					"-all_load",
-				);
+				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -1466,10 +1457,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "GHUnitTests/GHUnitTests-Prefix.pch";
 				INFOPLIST_FILE = "GHUnitTests/GHUnitTests-Info.plist";
-				OTHER_LDFLAGS = (
-					"-ObjC",
-					"-all_load",
-				);
+				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};

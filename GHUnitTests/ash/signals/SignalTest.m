@@ -1,5 +1,4 @@
 
-#import <GHUnitIOS/GHUnit.h>
 #import "ASHSignal0.h"
 #import "MockHelpers.h"
 

@@ -1,5 +1,4 @@
 
-#import <GHUnitIOS/GHUnit.h>
 #import "ASHEntityState.h"
 #import "MockHelpers.h"
 #import "ASHComponentTypeProvider.h"

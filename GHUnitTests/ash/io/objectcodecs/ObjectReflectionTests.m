@@ -3,7 +3,6 @@
 #import "ASHObjectReflection.h"
 #import "ASHObjectReflectionFactory.h"
 #import "MockPoint.h"
-#import <GHUnitIOS/GHUnit.h>
 
 @interface ObjectReflectionTests : GHTestCase
 @end

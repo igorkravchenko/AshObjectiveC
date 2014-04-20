@@ -2,7 +2,6 @@
 #import "ASHClassObjectCodec.h"
 #import "ASHCodecManager.h"
 #import "ASHValueObjectCodec.h"
-#import <GHUnitIOS/GHUnit.h>
 
 @interface ValueObjectCodecTests : GHTestCase
 

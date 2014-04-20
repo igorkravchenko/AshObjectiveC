@@ -1,5 +1,4 @@
 
-#import <GHUnitIOS/GHUnit.h>
 #import "MockHelpers.h"
 #import "ASHListIteratingSystem.h"
 

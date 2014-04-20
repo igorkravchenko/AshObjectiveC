@@ -1,5 +1,4 @@
 
-#import <GHUnitIOS/GHUnit.h>
 #import "MockHelpers.h"
 #define HC_SHORTHAND
 #import <objc/message.h>

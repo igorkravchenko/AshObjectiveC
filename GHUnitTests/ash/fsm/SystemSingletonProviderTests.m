@@ -1,5 +1,4 @@
 
-#import <GHUnitIOS/GHTestCase.h>
 #define HC_SHORTHAND
 #import "ASHSystem.h"
 #import "ASHSystemSingletonProvider.h"

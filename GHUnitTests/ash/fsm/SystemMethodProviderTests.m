@@ -1,5 +1,4 @@
 
-#import <GHUnitIOS/GHTestCase.h>
 #import "MockHelpers.h"
 #import "ASHDynamicSystemProvider.h"
 

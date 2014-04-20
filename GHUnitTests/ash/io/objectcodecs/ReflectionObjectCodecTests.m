@@ -1,5 +1,4 @@
 
-#import <GHUnitIOS/GHUnit.h>
 #import "MockReflectionObject.h"
 #import "ASHCodecManager.h"
 #import "ASHReflectionObjectCodec.h"

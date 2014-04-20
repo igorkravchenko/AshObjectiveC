@@ -13,4 +13,5 @@
     #import <Foundation/Foundation.h>
     #define HC_SHORTHAND
     #import "OCHamcrest.h"
+    #import "GHUnit.h"
 #endif

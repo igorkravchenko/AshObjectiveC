@@ -1,5 +1,4 @@
 
-#import <GHUnitIOS/GHUnit.h>
 #define HC_SHORTHAND
 #import "ASHEngine.h"
 #import "ASHComponentMatchingFamily.h"

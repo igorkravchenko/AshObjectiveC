@@ -8,7 +8,6 @@
 #import "ASHClassObjectCodec.h"
 #import "ASHArrayObjectCodec.h"
 #import "ASHValueObjectCodec.h"
-#import <GHUnitIOS/GHUnit.h>
 
 @interface MockCodec : NSObject <ASHObjectCodec>
 
