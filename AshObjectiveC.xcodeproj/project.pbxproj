@@ -354,8 +354,9 @@
 		5C7AF6CF168F1DD500D58233 /* SignalTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SignalTest.m; sourceTree = "<group>"; };
 		5C7AF6D1168F1DD600D58233 /* ComponentPoolTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ComponentPoolTest.m; sourceTree = "<group>"; };
 		5C7AF6D2168F1DD600D58233 /* ListIteratingSystemTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ListIteratingSystemTest.m; sourceTree = "<group>"; };
+		7F3311FB8081EC3C0FC26957 /* Pods-GHUnitTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GHUnitTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-GHUnitTests/Pods-GHUnitTests.debug.xcconfig"; sourceTree = "<group>"; };
 		9BE0BD54A62741F08A1D354F /* libPods-GHUnitTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-GHUnitTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		BA956A92C21C43329B593509 /* Pods-GHUnitTests.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GHUnitTests.xcconfig"; path = "Pods/Pods-GHUnitTests.xcconfig"; sourceTree = "<group>"; };
+		A43828ECF72123161F6A023B /* Pods-GHUnitTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GHUnitTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-GHUnitTests/Pods-GHUnitTests.release.xcconfig"; sourceTree = "<group>"; };
 		CD03801A74136B2C5B617902 /* ASHDynamicComponentProvider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ASHDynamicComponentProvider.h; sourceTree = "<group>"; };
 		CD03805CE6077CB9D4F62D61 /* ASHStateSystemMapping.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ASHStateSystemMapping.m; sourceTree = "<group>"; };
 		CD03807365B1951740231D1F /* ASHEntityState.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ASHEntityState.m; sourceTree = "<group>"; };
@@ -545,7 +546,7 @@
 				5C7AF590168F14B900D58233 /* Products */,
 				CD03819EBE9E5A9A25466A37 /* LICENSE */,
 				CD0382A64AC3842523AB4909 /* AshObjectiveC.podspec */,
-				BA956A92C21C43329B593509 /* Pods-GHUnitTests.xcconfig */,
+				888C715BE6914B7FCBD4510D /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -827,6 +828,15 @@
 				5C7AF6D2168F1DD600D58233 /* ListIteratingSystemTest.m */,
 			);
 			path = tools;
+			sourceTree = "<group>";
+		};
+		888C715BE6914B7FCBD4510D /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				7F3311FB8081EC3C0FC26957 /* Pods-GHUnitTests.debug.xcconfig */,
+				A43828ECF72123161F6A023B /* Pods-GHUnitTests.release.xcconfig */,
+			);
+			name = Pods;
 			sourceTree = "<group>";
 		};
 		CD038028767411B827063B7A /* enginecodecs */ = {
@@ -1121,7 +1131,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Pods-GHUnitTests-resources.sh\"\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-GHUnitTests/Pods-GHUnitTests-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		6408A83E3FFD4828892583BE /* Check Pods Manifest.lock */ = {
@@ -1429,7 +1439,7 @@
 		};
 		5C7AF6B5168F187A00D58233 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = BA956A92C21C43329B593509 /* Pods-GHUnitTests.xcconfig */;
+			baseConfigurationReference = 7F3311FB8081EC3C0FC26957 /* Pods-GHUnitTests.debug.xcconfig */;
 			buildSettings = {
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
@@ -1439,7 +1449,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "GHUnitTests/GHUnitTests-Prefix.pch";
 				INFOPLIST_FILE = "GHUnitTests/GHUnitTests-Info.plist";
-				OTHER_LDFLAGS = "-ObjC";
+				OTHER_LDFLAGS = "$(inherited)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -1447,7 +1457,7 @@
 		};
 		5C7AF6B6168F187A00D58233 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = BA956A92C21C43329B593509 /* Pods-GHUnitTests.xcconfig */;
+			baseConfigurationReference = A43828ECF72123161F6A023B /* Pods-GHUnitTests.release.xcconfig */;
 			buildSettings = {
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
@@ -1457,7 +1467,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "GHUnitTests/GHUnitTests-Prefix.pch";
 				INFOPLIST_FILE = "GHUnitTests/GHUnitTests-Info.plist";
-				OTHER_LDFLAGS = "-ObjC";
+				OTHER_LDFLAGS = "$(inherited)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
