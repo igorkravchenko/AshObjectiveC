@@ -207,8 +207,14 @@
 {
     while(systemList.head != nil)
     {
-        [self removeSystem:systemList.head];
+        ASHSystem * system = systemList.head;
+        systemList.head = systemList.head.next;
+        system.previous = nil;
+        system.next = nil;
+        [system removeFromEngine:self];
     }
+
+    systemList.tail = nil;
 }
 
 - (void)update:(double)time

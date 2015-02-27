@@ -198,6 +198,17 @@
     assertThat([engine getSystem:[ASHSystem class]], nilValue());
 }
 
+- (void)testRemoveAllSystemsSetsNextToNull
+{
+    ASHSystem * system1 = [[ASHSystem alloc] init];
+    [engine addSystem:system1 priority:1];
+    ASHSystem * system2 = [[ASHSystem alloc] init];
+    [engine addSystem:system2 priority:2];
+    assertThat(system1.next, sameInstance(system2));
+    [engine removeAllSystems];
+    assertThat(system1.next, nilValue());
+}
+
 - (void)testRemoveSystemAndAddItAgainDontCauseInvalidLinkedList
 {
     ASHSystem * systemB = [[ASHSystem alloc] init];
