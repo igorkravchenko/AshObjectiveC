@@ -94,9 +94,9 @@
 
 - (void)removeAllEntities
 {
-    while (entityList.head != nil)
+    while (entityList->head != nil)
     {
-        [self removeEntity:entityList.head];
+        [self removeEntity:entityList->head];
     }
 }
 
@@ -104,7 +104,7 @@
 {
     NSMutableArray * entities = NSMutableArray.array;
     
-    for (ASHEntity * entity = entityList.head; entity != nil; entity = entity.next)
+    for (ASHEntity * entity = entityList->head; entity != nil; entity = entity->next)
     {
         [entities addObject:entity];
     }
@@ -151,7 +151,7 @@
 
     ASHEntity * entity = nil;
     
-    for (entity = entityList.head; entity != nil; entity = entity.next)
+    for (entity = entityList->head; entity != nil; entity = entity->next)
     {
         [family newEntity:entity];
     }

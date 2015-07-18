@@ -12,8 +12,6 @@ static NSInteger nameCount = 0;
 @synthesize componentAdded;
 @synthesize componentRemoved;
 
-@synthesize previous;
-@synthesize next;
 @synthesize components;
 @synthesize nameChanged;
 

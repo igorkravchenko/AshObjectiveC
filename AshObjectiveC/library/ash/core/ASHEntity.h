@@ -3,11 +3,14 @@
 #import "ASHSignal2.h"
 
 @interface ASHEntity : NSObject
+{
+    @package
+    __weak ASHEntity * previous;
+    __strong ASHEntity * next;
+}
 
 @property (nonatomic, readonly) ASHSignal2 * componentAdded;
 @property (nonatomic, readonly) ASHSignal2 * componentRemoved;
-@property (nonatomic, weak) ASHEntity * previous;
-@property (nonatomic, strong) ASHEntity * next;
 @property (nonatomic, readonly) NSMutableDictionary * components;
 @property (nonatomic, readonly) ASHSignal2 * nameChanged;
 
