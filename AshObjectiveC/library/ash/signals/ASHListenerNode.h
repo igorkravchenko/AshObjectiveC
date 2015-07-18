@@ -1,11 +1,14 @@
 
 #import <Foundation/Foundation.h>
-@interface ASHListenerNode : NSObject
 
-@property (nonatomic, weak) ASHListenerNode * previous;
-@property (nonatomic, strong) ASHListenerNode * next;
-@property (nonatomic, assign) SEL listener;
-@property (nonatomic, strong) id target;
-@property (nonatomic, assign) BOOL once;
+@interface ASHListenerNode : NSObject
+{
+    @package
+    __weak ASHListenerNode * previous;
+    __strong ASHListenerNode * next;
+    SEL listener;
+    __weak id target;
+    BOOL once;
+}
 
 @end

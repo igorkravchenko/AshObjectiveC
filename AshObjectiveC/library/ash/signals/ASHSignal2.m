@@ -10,14 +10,14 @@
     [super startDispatch];
    
     ASHListenerNode * node = nil;
-    for (node = super.head; node != nil; node = node.next) 
+    for (node = head; node != nil; node = node->next)
     {
-        ((void(*)(id, SEL, id, id))objc_msgSend)(node.target, node.listener, object1, object2);
+        ((void(*)(id, SEL, id, id))objc_msgSend)(node->target, node->listener, object1, object2);
 
-        if(node.once)
+        if(node->once)
         {
-            [super removeListener:node.target 
-                           action:node.listener];
+            [super removeListener:node->target
+                           action:node->listener];
         }
     }
     [super endDispatch];

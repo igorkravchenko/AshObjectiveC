@@ -46,14 +46,14 @@
     {
         if(head == nil)
         {
-            self.head = toAddHead;
-            self.tail = toAddTail;
+            head = toAddHead;
+            tail = toAddTail;
         }
         else
         {
-            tail.next = toAddHead;
-            toAddHead.previous = tail;
-            self.tail = toAddTail;
+            tail->next = toAddHead;
+            toAddHead->previous = tail;
+            tail = toAddTail;
         }
         
         toAddHead = nil;
@@ -71,8 +71,8 @@
     }
     
     ASHListenerNode * node = [listenerNodePool get];
-    node.target = target;
-    node.listener = action;
+    node->target = target;
+    node->listener = action;
     [nodes setObject:node 
               forKey:GET_TARGET_ACTION_KEY(target, action)];
     [self addNode:node];
@@ -87,9 +87,9 @@
     }
     
     ASHListenerNode * node = [listenerNodePool get];
-    node.target = target;
-    node.listener = action;
-    node.once = YES;
+    node->target = target;
+    node->listener = action;
+    node->once = YES;
     [nodes setObject:node 
               forKey:GET_TARGET_ACTION_KEY(target, action)];
     [self addNode:node];
@@ -106,8 +106,8 @@
         }
         else
         {
-            toAddTail.next = node;
-            node.previous = toAddTail;
+            toAddTail->next = node;
+            node->previous = toAddTail;
             toAddTail = node;
         }
     }
@@ -115,14 +115,14 @@
     {
         if(head == nil)
         {
-            self.head = node;
-            self.tail = node;
+            head = node;
+            tail = node;
         }
         else
         {
-            tail.next = node;
-            node.previous = tail;
-            self.tail = node;
+            tail->next = node;
+            node->previous = tail;
+            tail = node;
         }
     }
     _numListeners++;
@@ -139,32 +139,32 @@
     {
         if(head == node)
         {
-            self.head = head.next;
+            head = head->next;
         }
         
         if(tail == node)
         {
-            self.tail = tail.previous;
+            tail = tail->previous;
         }
         
         if(toAddHead == node)
         {
-            toAddHead = toAddHead.next;
+            toAddHead = toAddHead->next;
         }
         
         if(toAddTail == node)
         {
-            toAddTail = toAddTail.previous;
+            toAddTail = toAddTail->previous;
         }
         
-        if(node.previous != nil)
+        if(node->previous != nil)
         {
-            node.previous.next = node.next;
+            node->previous->next = node->next;
         }
         
-        if (node.next != nil) 
+        if (node->next != nil)
         {
-            node.next.previous = node.previous;
+            node->next->previous = node->previous;
         }
                 
         [nodes removeObjectForKey:listenerKey];
@@ -185,12 +185,12 @@
 {
     while (head != nil) 
     {
-        ASHListenerNode *node = head;
-        self.head = head.next;
-        [nodes removeObjectForKey:GET_TARGET_ACTION_KEY(node.target, node.listener)];
+        ASHListenerNode * node = head;
+        head = head->next;
+        [nodes removeObjectForKey:GET_TARGET_ACTION_KEY(node->target, node->listener)];
         [listenerNodePool dispose:node];
     }
-    self.tail = nil;
+    tail = nil;
     toAddHead = nil;
     toAddTail = nil;
     _numListeners = 0;

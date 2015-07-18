@@ -12,8 +12,8 @@
     if(tail != nil)
     {
         ASHListenerNode * node = tail;
-        tail = tail.previous;
-        node.previous = nil;
+        tail = tail->previous;
+        node->previous = nil;
         return node;
     }
     else
@@ -24,19 +24,19 @@
 
 - (void)dispose:(ASHListenerNode *)node
 {
-    node.listener = nil;
-    node.target = nil;
-    node.once = NO;
-    node.next = nil;
-    node.previous = tail;
+    node->listener = nil;
+    node->target = nil;
+    node->once = NO;
+    node->next = nil;
+    node->previous = tail;
     tail = node;
 }
 
 - (void)cache:(ASHListenerNode *)node
 {
-    node.listener = nil;
-    node.target = nil;
-    node.previous = cacheTail;
+    node->listener = nil;
+    node->target = nil;
+    node->previous = cacheTail;
     cacheTail = node;
 }
 
@@ -45,9 +45,9 @@
     while (cacheTail != nil) 
     {
         ASHListenerNode * node = cacheTail;
-        cacheTail = node.previous;
-        node.next = nil;
-        node.previous = tail;
+        cacheTail = node->previous;
+        node->next = nil;
+        node->previous = tail;
         tail = node;
     }
 }

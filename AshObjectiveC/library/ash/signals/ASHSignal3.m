@@ -9,16 +9,18 @@
                 withObject:(id)anObject3
 {
     [super startDispatch];
+
     ASHListenerNode * node = nil;
-    for (node = super.head; node != nil; node = node.next) 
+    for (node = head; node != nil; node = node->next)
     {
-        ((void(*)(id, SEL, id, id, id))objc_msgSend)(node.target, node.listener, anObject1, anObject2, anObject3);
-        if(node.once)
+        ((void(*)(id, SEL, id, id, id))objc_msgSend)(node->target, node->listener, anObject1, anObject2, anObject3);
+        if(node->once)
         {
-            [super removeListener:node.target 
-                           action:node.listener];
+            [super removeListener:node->target
+                           action:node->listener];
         }
     }
+
     [super endDispatch];
 }
 

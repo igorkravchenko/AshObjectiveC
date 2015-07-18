@@ -3,6 +3,11 @@
 #import "ASHListenerNode.h"
 
 @interface ASHSignalBase : NSObject
+{
+    @package
+    __strong ASHListenerNode * head;
+    __strong ASHListenerNode * tail;
+}
 
 @property (nonatomic, strong) ASHListenerNode * head;
 @property (nonatomic, strong) ASHListenerNode * tail;

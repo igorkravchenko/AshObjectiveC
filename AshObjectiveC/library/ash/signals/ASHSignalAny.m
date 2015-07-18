@@ -7,17 +7,18 @@
 {
     [super startDispatch];
     ASHListenerNode * node = nil;
-    for (node = super.head; node != nil; node = node.next)
+    NSNull * null = [NSNull null];
+    for (node = head; node != nil; node = node->next)
     {
-        NSMethodSignature * methodSignature = [node.target methodSignatureForSelector:node.listener];
+        NSMethodSignature * methodSignature = [node->target methodSignatureForSelector:node->listener];
         NSInvocation * invocation = [NSInvocation invocationWithMethodSignature:methodSignature];
         
-        invocation.target = node.target;
-        invocation.selector = node.listener;
+        invocation.target = node->target;
+        invocation.selector = node->listener;
         
         NSInteger i = 2;
         
-        if(object != [NSNull null])
+        if(object != null)
         {
             [invocation setArgument:&object
                             atIndex:i];
@@ -30,7 +31,7 @@
         id nextObject = nil;
         while((nextObject = va_arg(args, id)))
         {
-            if(nextObject != [NSNull null])
+            if(nextObject != null)
             {
                 [invocation setArgument:&nextObject
                                 atIndex:i];
@@ -42,10 +43,10 @@
         
         [invocation invoke];
         
-        if(node.once)
+        if(node->once)
         {
-            [super removeListener:node.target
-                           action:node.listener];
+            [super removeListener:node->target
+                           action:node->listener];
         }
     }
     
