@@ -17,8 +17,6 @@
 @synthesize head;
 @synthesize tail;
 
-
-
 - (id)init
 {
     self = [super init];
@@ -65,7 +63,8 @@
 - (void)addListener:(id)target 
              action:(SEL)action
 {
-    if ([nodes objectForKey:GET_TARGET_ACTION_KEY(target, action)] != nil) 
+    NSString * const key = GET_TARGET_ACTION_KEY(target, action);
+    if (nodes[key] != nil)
     {
         return;
     }
@@ -73,15 +72,15 @@
     ASHListenerNode * node = [listenerNodePool get];
     node->target = target;
     node->listener = action;
-    [nodes setObject:node 
-              forKey:GET_TARGET_ACTION_KEY(target, action)];
+    nodes[key] = node;
     [self addNode:node];
 }
 
 - (void)addListenerOnce:(id)target 
                  action:(SEL)action
 {
-    if([nodes objectForKey:GET_TARGET_ACTION_KEY(target, action)] != nil)
+    NSString * const key = GET_TARGET_ACTION_KEY(target, action);
+    if(nodes[key] != nil)
     {
         return;
     }
@@ -90,8 +89,7 @@
     node->target = target;
     node->listener = action;
     node->once = YES;
-    [nodes setObject:node 
-              forKey:GET_TARGET_ACTION_KEY(target, action)];
+    nodes[key] = node;
     [self addNode:node];
 }
 
@@ -131,9 +129,9 @@
 - (void)removeListener:(id)target 
                 action:(SEL)action
 {
-    NSString * listenerKey = GET_TARGET_ACTION_KEY(target, action);
+    NSString * const listenerKey = GET_TARGET_ACTION_KEY(target, action);
     
-    ASHListenerNode * node = [nodes objectForKey:listenerKey];
+    ASHListenerNode * node = nodes[listenerKey];
         
     if(node != nil)
     {
