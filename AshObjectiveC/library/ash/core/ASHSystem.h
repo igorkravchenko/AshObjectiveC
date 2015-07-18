@@ -3,10 +3,13 @@
 #import "ASHEngine.h"
 
 @interface ASHSystem : NSObject
+{
+    @package
+    __weak ASHSystem * previous;
+    __strong ASHSystem * next;
+    NSInteger priority;
+}
 
-@property (nonatomic, weak) ASHSystem * previous;
-
-@property (nonatomic, strong) ASHSystem * next;
 
 @property (nonatomic, assign) NSInteger priority;
 

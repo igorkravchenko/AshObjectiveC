@@ -204,9 +204,9 @@
     [engine addSystem:system1 priority:1];
     ASHSystem * system2 = [[ASHSystem alloc] init];
     [engine addSystem:system2 priority:2];
-    assertThat(system1.next, sameInstance(system2));
+    assertThat(system1->next, sameInstance(system2));
     [engine removeAllSystems];
-    assertThat(system1.next, nilValue());
+    assertThat(system1->next, nilValue());
 }
 
 - (void)testRemoveSystemAndAddItAgainDontCauseInvalidLinkedList
@@ -220,8 +220,8 @@
     [engine removeSystem:systemB];
     [engine addSystem:systemB
              priority:0];
-    assertThat(systemC.previous, nilValue());
-    assertThat(systemB.next, nilValue());
+    assertThat(systemC->previous, nilValue());
+    assertThat(systemB->next, nilValue());
 }
 
 - (void)addedCallbackMethod:(ASHSystem *)system

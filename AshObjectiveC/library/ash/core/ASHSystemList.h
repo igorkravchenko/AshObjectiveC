@@ -3,6 +3,11 @@
 #import "ASHSystem.h"
 
 @interface ASHSystemList : NSObject
+{
+    @package
+    __strong ASHSystem * head;
+    __strong ASHSystem * tail;
+}
 
 @property (nonatomic, strong) ASHSystem * head;
 @property (nonatomic, strong) ASHSystem * tail;

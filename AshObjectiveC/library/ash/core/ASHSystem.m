@@ -3,8 +3,6 @@
 
 @implementation ASHSystem
 
-@synthesize previous;
-@synthesize next;
 @synthesize priority;
 
 - (void)addToEngine:(ASHEngine *)engine

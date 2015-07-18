@@ -10,18 +10,18 @@
 {
     if(head == nil)
     {
-        self.head = system;
-        self.tail = system;
-        system.next = nil;
-        system.previous = nil;
+        head = system;
+        tail = system;
+        system->next = nil;
+        system->previous = nil;
     }
     else
     {
         ASHSystem * node = nil;
         
-        for (node = tail; node != nil; node = node.previous) 
+        for (node = tail; node != nil; node = node->previous)
         {
-            if(node.priority <= system.priority)
+            if(node->priority <= system->priority)
             {
                 break;
             }
@@ -29,24 +29,24 @@
         
         if(node == tail)
         {
-            tail.next = system;
-            system.previous = tail;
-            system.next = nil;
-            self.tail = system;
+            tail->next = system;
+            system->previous = tail;
+            system->next = nil;
+            tail = system;
         }
         else if(node == nil)
         {
-            system.next = head;
-            system.previous = nil;
-            head.previous = system;
-            self.head = system;
+            system->next = head;
+            system->previous = nil;
+            head->previous = system;
+            head = system;
         }
         else
         {
-            system.next = node.next;
-            system.previous = node;
-            node.next.previous = system;
-            node.next = system;
+            system->next = node->next;
+            system->previous = node;
+            node->next->previous = system;
+            node->next = system;
         }
     }
 }
@@ -55,22 +55,22 @@
 {
     if(head == system)
     {
-        self.head = head.next;
+        head = head->next;
     }
     
     if(tail == system)
     {
-        self.tail = tail.previous;
+        tail = tail->previous;
     }
     
-    if(system.previous != nil)
+    if(system->previous != nil)
     {
-        system.previous.next = system.next;
+        system->previous->next = system->next;
     }
     
-    if(system.next != nil)
+    if(system->next != nil)
     {
-        system.next.previous = system.previous;
+        system->next->previous = system->previous;
     }
     
     // N.B. Don't set system.next and system.previous to null because that will break the list iteration if node is the current node in the iteration.
@@ -81,18 +81,18 @@
     while (head != nil) 
     {
         ASHSystem * system = head;
-        self.head = head.next;
-        system.previous = nil;
-        system.next = nil;
+        head = head->next;
+        system->previous = nil;
+        system->next = nil;
     }
-    self.tail = nil;
+    tail = nil;
 }
 
 - (ASHSystem *)getSystem:(Class)type
 {
     ASHSystem * system = nil;
     
-    for (system = head; system != nil; system = system.next) 
+    for (system = head; system != nil; system = system->next)
     {
         if([system class] == type)
         {

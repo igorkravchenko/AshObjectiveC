@@ -189,7 +189,7 @@
 {
     NSMutableArray * systems = [NSMutableArray array];
     
-    for (ASHSystem * system = systemList.head; system != nil; system = system.next)
+    for (ASHSystem * system = systemList->head; system != nil; system = system->next)
     {
         [systems addObject:system];
     }
@@ -207,21 +207,21 @@
 {
     while(systemList.head != nil)
     {
-        ASHSystem * system = systemList.head;
-        systemList.head = systemList.head.next;
-        system.previous = nil;
-        system.next = nil;
+        ASHSystem * system = systemList->head;
+        systemList->head = systemList->head->next;
+        system->previous = nil;
+        system->next = nil;
         [system removeFromEngine:self];
     }
 
-    systemList.tail = nil;
+    systemList->tail = nil;
 }
 
 - (void)update:(double)time
 {
     updating = YES;
     
-    for (ASHSystem * system = systemList.head; system != nil; system = system.next)
+    for (ASHSystem * system = systemList->head; system != nil; system = system->next)
     {
         [system update:time];
     }
