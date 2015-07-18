@@ -3,4 +3,8 @@
 
 @implementation ASHNode
 
+@synthesize entity;
+@synthesize previous;
+@synthesize next;
+
 @end

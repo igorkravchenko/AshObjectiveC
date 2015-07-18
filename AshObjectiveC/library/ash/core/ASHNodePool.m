@@ -28,13 +28,13 @@
     if(_tail != nil)
     {
         ASHNode * node = _tail;
-        _tail = _tail.previous;
-        node.previous = nil;
+        _tail = _tail->previous;
+        node->previous = nil;
         return node;
     }
     else
     {
-        return [[_nodeClass alloc] init];
+        return (ASHNode *) [[_nodeClass alloc] init];
     }
 }
 
@@ -47,16 +47,16 @@
                 forKey:propertyName];
     }
 
-    node.entity = nil;
+    node->entity = nil;
 
-    node.next = nil;
-    node.previous = _tail;
+    node->next = nil;
+    node->previous = _tail;
     _tail = node;
 }
 
 - (void)cacheNode:(ASHNode *)node
 {
-    node.previous = _cacheTail;
+    node->previous = _cacheTail;
     _cacheTail = node;
 }
 
@@ -65,7 +65,7 @@
     while (_cacheTail != nil)
     {
         ASHNode * node = _cacheTail;
-        _cacheTail = node.previous;
+        _cacheTail = node->previous;
         [self disposeNode:node];
     }
 }
