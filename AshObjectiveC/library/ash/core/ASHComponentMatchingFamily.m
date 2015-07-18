@@ -13,10 +13,7 @@
     ASHNodeList * nodes;
 }
 
-@synthesize previous;
-@synthesize next;
 @synthesize entities;
-
 
 - (id)initWithNodeClass:(Class)aNodeClass
                    engine:(ASHEngine *)engine
