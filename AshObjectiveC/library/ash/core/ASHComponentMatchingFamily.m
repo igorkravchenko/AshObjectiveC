@@ -53,9 +53,7 @@
             [[[NSString stringWithCString:propType 
                                   encoding:NSUTF8StringEncoding] stringByReplacingOccurrencesOfString:@"T@" 
               withString:@""] stringByReplacingOccurrencesOfString:@"\"" withString:@""];            
-            [components setObject:propertyName 
-                           forKey:stringClass];
-            
+            components[stringClass] = propertyName;
         }
     }
     
@@ -115,8 +113,7 @@
                     forKey:components[componentClassString]];
         }
         
-        [entities setObject:node
-                     forKey:@(entity.hash)];
+        entities[@(entity.hash)] = node;
         [nodes addNode:node];        
     }
 }
@@ -125,7 +122,7 @@
 {
     NSNumber * entityID = @(entity.hash);
     
-    if([entities objectForKey:entityID] != nil)
+    if(entities[entityID] != nil)
     {
         ASHNode * node = entities[entityID];
         [entities removeObjectForKey:entityID];
