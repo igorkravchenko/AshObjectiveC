@@ -162,7 +162,7 @@
 - (void)releaseNodeList:(Class)nodeClass
 {
     NSString * nodeClassKey = NSStringFromClass(nodeClass);
-    id <ASHFamily> family = [families objectForKey:nodeClassKey];
+    id <ASHFamily> family = families[nodeClassKey];
     
     if(family != nil)
     {
