@@ -30,50 +30,6 @@
 		5C7AF5A6168F14B900D58233 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 5C7AF5A5168F14B900D58233 /* Default.png */; };
 		5C7AF5A8168F14B900D58233 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5C7AF5A7168F14B900D58233 /* Default@2x.png */; };
 		5C7AF5AA168F14B900D58233 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5C7AF5A9168F14B900D58233 /* Default-568h@2x.png */; };
-		5C7AF66B168F15C200D58233 /* Asteroids.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C7AF5F2168F15C200D58233 /* Asteroids.m */; };
-		5C7AF66C168F15C200D58233 /* Animation.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C7AF5F5168F15C200D58233 /* Animation.m */; };
-		5C7AF66D168F15C200D58233 /* Asteroid.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C7AF5F7168F15C200D58233 /* Asteroid.m */; };
-		5C7AF66E168F15C200D58233 /* Bullet.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C7AF5F9168F15C200D58233 /* Bullet.m */; };
-		5C7AF66F168F15C200D58233 /* Collision.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C7AF5FB168F15C200D58233 /* Collision.m */; };
-		5C7AF670168F15C200D58233 /* DeathThroes.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C7AF5FD168F15C200D58233 /* DeathThroes.m */; };
-		5C7AF671168F15C200D58233 /* Display.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C7AF5FF168F15C200D58233 /* Display.m */; };
-		5C7AF672168F15C200D58233 /* GameState.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C7AF601168F15C200D58233 /* GameState.m */; };
-		5C7AF673168F15C200D58233 /* Gun.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C7AF603168F15C200D58233 /* Gun.m */; };
-		5C7AF674168F15C200D58233 /* GunControls.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C7AF605168F15C200D58233 /* GunControls.m */; };
-		5C7AF675168F15C200D58233 /* Motion.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C7AF607168F15C200D58233 /* Motion.m */; };
-		5C7AF676168F15C200D58233 /* MotionControls.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C7AF609168F15C200D58233 /* MotionControls.m */; };
-		5C7AF677168F15C200D58233 /* Position.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C7AF60B168F15C200D58233 /* Position.m */; };
-		5C7AF678168F15C200D58233 /* Spaceship.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C7AF60D168F15C200D58233 /* Spaceship.m */; };
-		5C7AF679168F15C200D58233 /* EntityCreator.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C7AF60F168F15C200D58233 /* EntityCreator.m */; };
-		5C7AF67A168F15C200D58233 /* GameConfig.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C7AF611168F15C200D58233 /* GameConfig.m */; };
-		5C7AF67B168F15C200D58233 /* AsteroidView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C7AF615168F15C200D58233 /* AsteroidView.m */; };
-		5C7AF67C168F15C200D58233 /* BulletView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C7AF617168F15C200D58233 /* BulletView.m */; };
-		5C7AF67D168F15C200D58233 /* Shape1.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C7AF619168F15C200D58233 /* Shape1.m */; };
-		5C7AF67E168F15C200D58233 /* Shape2.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C7AF61B168F15C200D58233 /* Shape2.m */; };
-		5C7AF67F168F15C200D58233 /* SpaceshipDeathView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C7AF61D168F15C200D58233 /* SpaceshipDeathView.m */; };
-		5C7AF680168F15C200D58233 /* SpaceshipView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C7AF61F168F15C200D58233 /* SpaceshipView.m */; };
-		5C7AF681168F15C200D58233 /* AnimationNode.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C7AF622168F15C200D58233 /* AnimationNode.m */; };
-		5C7AF682168F15C200D58233 /* AsteroidCollisionNode.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C7AF624168F15C200D58233 /* AsteroidCollisionNode.m */; };
-		5C7AF683168F15C200D58233 /* BulletAgeNode.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C7AF626168F15C200D58233 /* BulletAgeNode.m */; };
-		5C7AF684168F15C200D58233 /* BulletCollisionNode.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C7AF628168F15C200D58233 /* BulletCollisionNode.m */; };
-		5C7AF685168F15C200D58233 /* DeathThroesNode.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C7AF62A168F15C200D58233 /* DeathThroesNode.m */; };
-		5C7AF686168F15C200D58233 /* GameNode.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C7AF62C168F15C200D58233 /* GameNode.m */; };
-		5C7AF687168F15C200D58233 /* GunControlNode.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C7AF62E168F15C200D58233 /* GunControlNode.m */; };
-		5C7AF688168F15C200D58233 /* MotionControlNode.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C7AF630168F15C200D58233 /* MotionControlNode.m */; };
-		5C7AF689168F15C200D58233 /* MovementNode.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C7AF632168F15C200D58233 /* MovementNode.m */; };
-		5C7AF68A168F15C200D58233 /* RenderNode.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C7AF634168F15C200D58233 /* RenderNode.m */; };
-		5C7AF68B168F15C200D58233 /* SpaceshipCollisionNode.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C7AF636168F15C200D58233 /* SpaceshipCollisionNode.m */; };
-		5C7AF68C168F15C200D58233 /* SpaceshipNode.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C7AF638168F15C200D58233 /* SpaceshipNode.m */; };
-		5C7AF68D168F15C200D58233 /* AnimationSystem.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C7AF63B168F15C200D58233 /* AnimationSystem.m */; };
-		5C7AF68E168F15C200D58233 /* BulletAgeSystem.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C7AF63D168F15C200D58233 /* BulletAgeSystem.m */; };
-		5C7AF68F168F15C200D58233 /* CollisionSystem.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C7AF63F168F15C200D58233 /* CollisionSystem.m */; };
-		5C7AF690168F15C200D58233 /* DeathThroesSystem.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C7AF641168F15C200D58233 /* DeathThroesSystem.m */; };
-		5C7AF691168F15C200D58233 /* GameManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C7AF643168F15C200D58233 /* GameManager.m */; };
-		5C7AF692168F15C200D58233 /* GunControlSystem.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C7AF645168F15C200D58233 /* GunControlSystem.m */; };
-		5C7AF693168F15C200D58233 /* MotionControlSystem.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C7AF647168F15C200D58233 /* MotionControlSystem.m */; };
-		5C7AF694168F15C200D58233 /* MovementSystem.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C7AF649168F15C200D58233 /* MovementSystem.m */; };
-		5C7AF695168F15C200D58233 /* RenderSystem.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C7AF64B168F15C200D58233 /* RenderSystem.m */; };
-		5C7AF696168F15C200D58233 /* TriggerPoll.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C7AF64F168F15C200D58233 /* TriggerPoll.m */; };
 		5C7AF698168F160700D58233 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5C7AF697168F160700D58233 /* QuartzCore.framework */; };
 		5C7AF69F168F187A00D58233 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5C7AF593168F14B900D58233 /* UIKit.framework */; };
 		5C7AF6A0168F187A00D58233 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5C7AF595168F14B900D58233 /* Foundation.framework */; };
@@ -101,10 +57,8 @@
 		5C7AF6E2168F1DD600D58233 /* ListIteratingSystemTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C7AF6D2168F1DD600D58233 /* ListIteratingSystemTest.m */; };
 		5C7AF6E3168F1E9200D58233 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5C7AF697168F160700D58233 /* QuartzCore.framework */; };
 		9AB4126F1B5F8FE70000E90A /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9AB4126E1B5F8FE70000E90A /* AVFoundation.framework */; };
-		9AC3C6D11B654E7E00632C2A /* images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9AC3C6D01B654E7E00632C2A /* images.xcassets */; };
 		B149F2863F724DB78C7BD7C7 /* libPods-GHUnitTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 9BE0BD54A62741F08A1D354F /* libPods-GHUnitTests.a */; };
 		CD03803FBB9A9C7610D1D03B /* ASHEngineStateMachine.m in Sources */ = {isa = PBXBuildFile; fileRef = CD0382F9CFFC67B43AE0DB50 /* ASHEngineStateMachine.m */; };
-		CD038085FEB8620923CB842F /* WaitForStartView.m in Sources */ = {isa = PBXBuildFile; fileRef = CD038BD01BB8A131FDB890C3 /* WaitForStartView.m */; };
 		CD0380BB9E1A791C53E5E8A2 /* ASHStateComponentMapping.m in Sources */ = {isa = PBXBuildFile; fileRef = CD0383376362EB2373715356 /* ASHStateComponentMapping.m */; };
 		CD0380CE042A9DED5058281E /* ASHNode.m in Sources */ = {isa = PBXBuildFile; fileRef = CD03884582E84FE2E6A056AD /* ASHNode.m */; };
 		CD0380DC3612D0F32B9844DC /* ASHObjectEngineCodec.m in Sources */ = {isa = PBXBuildFile; fileRef = CD0386DFBFD9FBA10C0D7205 /* ASHObjectEngineCodec.m */; };
@@ -114,7 +68,6 @@
 		CD03810B3D3E1BCD41E48F60 /* ASHEngineEncoder.m in Sources */ = {isa = PBXBuildFile; fileRef = CD0381EDCFCB52ADE8E895C8 /* ASHEngineEncoder.m */; };
 		CD0381942193B778D5C51ED5 /* ASHEngineDecoder.m in Sources */ = {isa = PBXBuildFile; fileRef = CD038F4A5D9321CDAC55B6CD /* ASHEngineDecoder.m */; };
 		CD0381F0A405345E65CCDE1F /* SystemSingletonProviderTests.m in Sources */ = {isa = PBXBuildFile; fileRef = CD038168AB8E6E602792B883 /* SystemSingletonProviderTests.m */; };
-		CD0381F515CF5CD80ECC3122 /* AsteroidDeathView.m in Sources */ = {isa = PBXBuildFile; fileRef = CD0383450B006C9F38339D40 /* AsteroidDeathView.m */; };
 		CD0382576DC726709D00AF85 /* ASHNodePool.m in Sources */ = {isa = PBXBuildFile; fileRef = CD03875D5B9334EAA605E1D6 /* ASHNodePool.m */; };
 		CD0382F02FBDF77532DE2833 /* ASHFrameTickProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = CD0382CFEAC318A3E4A75BC1 /* ASHFrameTickProvider.m */; };
 		CD0382F83A9C9B18A1587079 /* ASHJsonEngineCodec.m in Sources */ = {isa = PBXBuildFile; fileRef = CD038380606AF6B1599DC9E7 /* ASHJsonEngineCodec.m */; };
@@ -126,16 +79,13 @@
 		CD03845394AA38693FEDC6C2 /* ASHNativeObjectCodec.m in Sources */ = {isa = PBXBuildFile; fileRef = CD038B9759A07CCE3353ED0E /* ASHNativeObjectCodec.m */; };
 		CD038476EBE2B77501E5CEC1 /* ASHSignalBase.m in Sources */ = {isa = PBXBuildFile; fileRef = CD0388436B0D6A1DFCF4FC8B /* ASHSignalBase.m */; };
 		CD0384858F0930207EAAB145 /* ASHObjectReflectionFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = CD03863F73F90ECA1156F5FE /* ASHObjectReflectionFactory.m */; };
-		CD03849ECCD6542F6DD968FD /* HudNode.m in Sources */ = {isa = PBXBuildFile; fileRef = CD038C34D4CF2B05DD9A375D /* HudNode.m */; };
 		CD0384ADF95182E6AB2ABFC4 /* ASHNodeList.m in Sources */ = {isa = PBXBuildFile; fileRef = CD038685FD3865CA068E9BCA /* ASHNodeList.m */; };
 		CD0384DC43AECC60C0DEE273 /* ASHComponentMatchingFamily.m in Sources */ = {isa = PBXBuildFile; fileRef = CD03874F97C012B61187057C /* ASHComponentMatchingFamily.m */; };
 		CD0385217098C5E4200B8ED6 /* ASHObjectReflection.m in Sources */ = {isa = PBXBuildFile; fileRef = CD038DD3EAF9B86C873A2663 /* ASHObjectReflection.m */; };
-		CD03853E1444709DDCE7BE67 /* WaitForStartSystem.m in Sources */ = {isa = PBXBuildFile; fileRef = CD0385E113EEB9CFC706B441 /* WaitForStartSystem.m */; };
 		CD038547CF9D63A43A8BADEA /* ASHEntityStateMachine.m in Sources */ = {isa = PBXBuildFile; fileRef = CD038CA257EABC214FA91F19 /* ASHEntityStateMachine.m */; };
 		CD03854924A8881EE6B8F4F0 /* ASHSignal0.m in Sources */ = {isa = PBXBuildFile; fileRef = CD0382245FC77FC0C9C405AE /* ASHSignal0.m */; };
 		CD038549ECA7AC929AB935AE /* ASHSignal3.m in Sources */ = {isa = PBXBuildFile; fileRef = CD0385039BFAE93A2F82AD75 /* ASHSignal3.m */; };
 		CD03859B3CDE3625C8EC9EBD /* ASHComponentTypeProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = CD038D64875A857ACA02BDC6 /* ASHComponentTypeProvider.m */; };
-		CD03859FCC2E8384373CCF1F /* WaitForStart.m in Sources */ = {isa = PBXBuildFile; fileRef = CD0388C88817FEBD8D5ABCDB /* WaitForStart.m */; };
 		CD0385CFB4A846FB22C006E0 /* ASHSystemSingletonProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = CD038978B5DD324663E6B800 /* ASHSystemSingletonProvider.m */; };
 		CD0385D582E45F38EA8023C0 /* ASHSignal2.m in Sources */ = {isa = PBXBuildFile; fileRef = CD038F97B6E9DEC292CB00E4 /* ASHSignal2.m */; };
 		CD0385F679DF0112E02B8141 /* ASHEngineState.m in Sources */ = {isa = PBXBuildFile; fileRef = CD038D71FBA4656765362985 /* ASHEngineState.m */; };
@@ -152,7 +102,6 @@
 		CD038749EE3D1E59339B55C5 /* ASHValueObjectCodec.m in Sources */ = {isa = PBXBuildFile; fileRef = CD03883DEC2E0AF79D4C5E50 /* ASHValueObjectCodec.m */; };
 		CD03875E9E822A3FDAC83841 /* ASHArrayObjectCodec.m in Sources */ = {isa = PBXBuildFile; fileRef = CD038A25D9C426416F3373E7 /* ASHArrayObjectCodec.m */; };
 		CD03878E0AF9119035C9055F /* ASHSystemInstanceProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = CD038A355CED74447BC1D7CE /* ASHSystemInstanceProvider.m */; };
-		CD038795C882F8DA00BD8912 /* asteroid.wav in Resources */ = {isa = PBXBuildFile; fileRef = CD0388BE71A98E0AD88F9E77 /* asteroid.wav */; };
 		CD0387CE074EBA33E41412A5 /* ASHSignalAny.m in Sources */ = {isa = PBXBuildFile; fileRef = CD038BE0E1D0E9E1356E46A7 /* ASHSignalAny.m */; };
 		CD0387E634DCE75E545F8BDD /* ASHEntityList.m in Sources */ = {isa = PBXBuildFile; fileRef = CD038FDCB27408D5165D4374 /* ASHEntityList.m */; };
 		CD038801C701EFD3B224FF61 /* ASHReflectionObjectCodec.m in Sources */ = {isa = PBXBuildFile; fileRef = CD0389034DB91F03E70F7419 /* ASHReflectionObjectCodec.m */; };
@@ -161,7 +110,6 @@
 		CD0388472CDE132D69D14142 /* ASHFrameTickProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = CD0382CFEAC318A3E4A75BC1 /* ASHFrameTickProvider.m */; };
 		CD03884D7439CF627363E3D5 /* ASHStateSystemMapping.m in Sources */ = {isa = PBXBuildFile; fileRef = CD03805CE6077CB9D4F62D61 /* ASHStateSystemMapping.m */; };
 		CD0388509BCBC6795F55F965 /* ASHComponentSingletonProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = CD038D5488EE029C08E8E1EE /* ASHComponentSingletonProvider.m */; };
-		CD038858BA4BAB6FE822F251 /* AudioSystem.m in Sources */ = {isa = PBXBuildFile; fileRef = CD038EF9DCA2EDE047ECF296 /* AudioSystem.m */; };
 		CD0388606DAED4E247641A82 /* ASHSystem.m in Sources */ = {isa = PBXBuildFile; fileRef = CD038A4995108125E6FD3CCA /* ASHSystem.m */; };
 		CD03886592A224F223AC383A /* ASHSystemList.m in Sources */ = {isa = PBXBuildFile; fileRef = CD0382FCA944A305B0F23CD1 /* ASHSystemList.m */; };
 		CD038880D69E14FBEEBA6652 /* ASHComponentTypeProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = CD038D64875A857ACA02BDC6 /* ASHComponentTypeProvider.m */; };
@@ -174,13 +122,11 @@
 		CD038923EC6B62C90586EF26 /* ASHDynamicSystemProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = CD0382727D54E92EA39E2E9B /* ASHDynamicSystemProvider.m */; };
 		CD03892E906A6D5E560E15B3 /* ASHTypeAssociations.m in Sources */ = {isa = PBXBuildFile; fileRef = CD038412AF17DAAA9A2D028E /* ASHTypeAssociations.m */; };
 		CD038959F76A5D3EF03C0E3F /* ASHEntityState.m in Sources */ = {isa = PBXBuildFile; fileRef = CD03807365B1951740231D1F /* ASHEntityState.m */; };
-		CD03897A25EE0F8256E81776 /* Audio.m in Sources */ = {isa = PBXBuildFile; fileRef = CD038DC1198176E7B570A3ED /* Audio.m */; };
 		CD038AB17993636A3E49D416 /* ASHArrayObjectCodec.m in Sources */ = {isa = PBXBuildFile; fileRef = CD038A25D9C426416F3373E7 /* ASHArrayObjectCodec.m */; };
 		CD038AB3BD643934E025608A /* ASHListenerNode.m in Sources */ = {isa = PBXBuildFile; fileRef = CD0388FD083D3BD7F86F6B35 /* ASHListenerNode.m */; };
 		CD038ACBB163AAE4F8DBC809 /* ASHEntity.m in Sources */ = {isa = PBXBuildFile; fileRef = CD0380E61AA7A869D9535D74 /* ASHEntity.m */; };
 		CD038AD739B0A72C2B615B48 /* ASHDynamicSystemProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = CD0382727D54E92EA39E2E9B /* ASHDynamicSystemProvider.m */; };
 		CD038AE3F6422D253E15F9D7 /* ASHComponentMatchingFamily.m in Sources */ = {isa = PBXBuildFile; fileRef = CD03874F97C012B61187057C /* ASHComponentMatchingFamily.m */; };
-		CD038B0BC8EC1D6A73A2CF8D /* shoot.wav in Resources */ = {isa = PBXBuildFile; fileRef = CD038D0591463F36A6FA37F2 /* shoot.wav */; };
 		CD038B1D0F631A02EF5B889D /* ASHClassObjectCodec.m in Sources */ = {isa = PBXBuildFile; fileRef = CD038B47CC18B87985B69E70 /* ASHClassObjectCodec.m */; };
 		CD038B2CA1A940747156D380 /* ASHCodecManager.m in Sources */ = {isa = PBXBuildFile; fileRef = CD0380B94F1686FA99823E74 /* ASHCodecManager.m */; };
 		CD038B93EBED4B0DCB4D3EC4 /* ASHSignal2.m in Sources */ = {isa = PBXBuildFile; fileRef = CD038F97B6E9DEC292CB00E4 /* ASHSignal2.m */; };
@@ -191,18 +137,13 @@
 		CD038C33DD059C4090B7A60A /* ASHReflectionObjectCodec.m in Sources */ = {isa = PBXBuildFile; fileRef = CD0389034DB91F03E70F7419 /* ASHReflectionObjectCodec.m */; };
 		CD038C6C620528BC17068F57 /* ASHStateSystemMapping.m in Sources */ = {isa = PBXBuildFile; fileRef = CD03805CE6077CB9D4F62D61 /* ASHStateSystemMapping.m */; };
 		CD038C75B2937D2B02BEB8FD /* ASHListenerNodePool.m in Sources */ = {isa = PBXBuildFile; fileRef = CD038D456DEB1D6BB152B1F0 /* ASHListenerNodePool.m */; };
-		CD038C7F97D6D80913446E80 /* AudioNode.m in Sources */ = {isa = PBXBuildFile; fileRef = CD03826DE056226BE26D6E81 /* AudioNode.m */; };
 		CD038C84747384307DA6E19C /* ASHComponentPool.m in Sources */ = {isa = PBXBuildFile; fileRef = CD038147A0C6600C6C419FA2 /* ASHComponentPool.m */; };
 		CD038C85C95F9121F3BD8645 /* ASHListenerNode.m in Sources */ = {isa = PBXBuildFile; fileRef = CD0388FD083D3BD7F86F6B35 /* ASHListenerNode.m */; };
-		CD038CC12DE5DA9BC32E63BB /* ship.wav in Resources */ = {isa = PBXBuildFile; fileRef = CD0388F38C34CC739120578F /* ship.wav */; };
 		CD038CC284DCFA020781D66B /* ASHJsonEngineCodec.m in Sources */ = {isa = PBXBuildFile; fileRef = CD038380606AF6B1599DC9E7 /* ASHJsonEngineCodec.m */; };
 		CD038CF13CABAEB012FC2C99 /* ASHObjectEngineCodec.m in Sources */ = {isa = PBXBuildFile; fileRef = CD0386DFBFD9FBA10C0D7205 /* ASHObjectEngineCodec.m */; };
 		CD038CFB7761D186BC2AB19C /* ASHNodeList.m in Sources */ = {isa = PBXBuildFile; fileRef = CD038685FD3865CA068E9BCA /* ASHNodeList.m */; };
 		CD038D12426BDBF5E0C26D70 /* ASHSignalAny.m in Sources */ = {isa = PBXBuildFile; fileRef = CD038BE0E1D0E9E1356E46A7 /* ASHSignalAny.m */; };
-		CD038D1A03A1AD7018B0FE6A /* HudSystem.m in Sources */ = {isa = PBXBuildFile; fileRef = CD0387CFCF8FD7D17B6EDE5C /* HudSystem.m */; };
 		CD038D5B2E12F8CAA279A6CA /* ASHEngineDecoder.m in Sources */ = {isa = PBXBuildFile; fileRef = CD038F4A5D9321CDAC55B6CD /* ASHEngineDecoder.m */; };
-		CD038D6098CFB85D2EACBB52 /* WaitForStartNode.m in Sources */ = {isa = PBXBuildFile; fileRef = CD03845E2D3F8A02AB4000C1 /* WaitForStartNode.m */; };
-		CD038D7EF3C3EF39DFBBB50D /* Hud.m in Sources */ = {isa = PBXBuildFile; fileRef = CD0384D548F25A1282EF8848 /* Hud.m */; };
 		CD038DA2F04B304A955AE9D4 /* ASHComponentPool.m in Sources */ = {isa = PBXBuildFile; fileRef = CD038147A0C6600C6C419FA2 /* ASHComponentPool.m */; };
 		CD038DAC1D3E4B102BE60C50 /* ASHEntityList.m in Sources */ = {isa = PBXBuildFile; fileRef = CD038FDCB27408D5165D4374 /* ASHEntityList.m */; };
 		CD038DBD938AC2856517494F /* ASHValueObjectCodec.m in Sources */ = {isa = PBXBuildFile; fileRef = CD03883DEC2E0AF79D4C5E50 /* ASHValueObjectCodec.m */; };
@@ -211,7 +152,6 @@
 		CD038ED812F78BBFFDE82CA4 /* ASHEngine.m in Sources */ = {isa = PBXBuildFile; fileRef = CD0388E852543DD1CFCE95A1 /* ASHEngine.m */; };
 		CD038F38FA8E88DF11B03442 /* ASHListenerNodePool.m in Sources */ = {isa = PBXBuildFile; fileRef = CD038D456DEB1D6BB152B1F0 /* ASHListenerNodePool.m */; };
 		CD038F4676DD67AFBCE53EBC /* ASHNodePool.m in Sources */ = {isa = PBXBuildFile; fileRef = CD03875D5B9334EAA605E1D6 /* ASHNodePool.m */; };
-		CD038F62458D29F186257962 /* HudView.m in Sources */ = {isa = PBXBuildFile; fileRef = CD038192A382A47324CCB09D /* HudView.m */; };
 		CD038F9C78D5F04944BB3856 /* ASHListIteratingSystem.m in Sources */ = {isa = PBXBuildFile; fileRef = CD03860BC7FA656EE1339FC4 /* ASHListIteratingSystem.m */; };
 		CD038FBE563040B039AAE930 /* ASHSignalBase.m in Sources */ = {isa = PBXBuildFile; fileRef = CD0388436B0D6A1DFCF4FC8B /* ASHSignalBase.m */; };
 		CD038FE37D394408C867FD49 /* ASHEngine.m in Sources */ = {isa = PBXBuildFile; fileRef = CD0388E852543DD1CFCE95A1 /* ASHEngine.m */; };
@@ -253,97 +193,6 @@
 		5C7AF5A5168F14B900D58233 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
 		5C7AF5A7168F14B900D58233 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
 		5C7AF5A9168F14B900D58233 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
-		5C7AF5F1168F15C200D58233 /* Asteroids.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Asteroids.h; sourceTree = "<group>"; };
-		5C7AF5F2168F15C200D58233 /* Asteroids.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Asteroids.m; sourceTree = "<group>"; };
-		5C7AF5F4168F15C200D58233 /* Animation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Animation.h; sourceTree = "<group>"; };
-		5C7AF5F5168F15C200D58233 /* Animation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Animation.m; sourceTree = "<group>"; };
-		5C7AF5F6168F15C200D58233 /* Asteroid.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Asteroid.h; sourceTree = "<group>"; };
-		5C7AF5F7168F15C200D58233 /* Asteroid.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Asteroid.m; sourceTree = "<group>"; };
-		5C7AF5F8168F15C200D58233 /* Bullet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Bullet.h; sourceTree = "<group>"; };
-		5C7AF5F9168F15C200D58233 /* Bullet.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Bullet.m; sourceTree = "<group>"; };
-		5C7AF5FA168F15C200D58233 /* Collision.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Collision.h; sourceTree = "<group>"; };
-		5C7AF5FB168F15C200D58233 /* Collision.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Collision.m; sourceTree = "<group>"; };
-		5C7AF5FC168F15C200D58233 /* DeathThroes.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DeathThroes.h; sourceTree = "<group>"; };
-		5C7AF5FD168F15C200D58233 /* DeathThroes.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DeathThroes.m; sourceTree = "<group>"; };
-		5C7AF5FE168F15C200D58233 /* Display.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Display.h; sourceTree = "<group>"; };
-		5C7AF5FF168F15C200D58233 /* Display.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Display.m; sourceTree = "<group>"; };
-		5C7AF600168F15C200D58233 /* GameState.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameState.h; sourceTree = "<group>"; };
-		5C7AF601168F15C200D58233 /* GameState.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GameState.m; sourceTree = "<group>"; };
-		5C7AF602168F15C200D58233 /* Gun.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Gun.h; sourceTree = "<group>"; };
-		5C7AF603168F15C200D58233 /* Gun.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Gun.m; sourceTree = "<group>"; };
-		5C7AF604168F15C200D58233 /* GunControls.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GunControls.h; sourceTree = "<group>"; };
-		5C7AF605168F15C200D58233 /* GunControls.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GunControls.m; sourceTree = "<group>"; };
-		5C7AF606168F15C200D58233 /* Motion.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Motion.h; sourceTree = "<group>"; };
-		5C7AF607168F15C200D58233 /* Motion.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Motion.m; sourceTree = "<group>"; };
-		5C7AF608168F15C200D58233 /* MotionControls.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MotionControls.h; sourceTree = "<group>"; };
-		5C7AF609168F15C200D58233 /* MotionControls.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MotionControls.m; sourceTree = "<group>"; };
-		5C7AF60A168F15C200D58233 /* Position.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Position.h; sourceTree = "<group>"; };
-		5C7AF60B168F15C200D58233 /* Position.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Position.m; sourceTree = "<group>"; };
-		5C7AF60C168F15C200D58233 /* Spaceship.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Spaceship.h; sourceTree = "<group>"; };
-		5C7AF60D168F15C200D58233 /* Spaceship.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Spaceship.m; sourceTree = "<group>"; };
-		5C7AF60E168F15C200D58233 /* EntityCreator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EntityCreator.h; sourceTree = "<group>"; };
-		5C7AF60F168F15C200D58233 /* EntityCreator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EntityCreator.m; sourceTree = "<group>"; };
-		5C7AF610168F15C200D58233 /* GameConfig.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameConfig.h; sourceTree = "<group>"; };
-		5C7AF611168F15C200D58233 /* GameConfig.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GameConfig.m; sourceTree = "<group>"; };
-		5C7AF613168F15C200D58233 /* Animatable.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Animatable.h; sourceTree = "<group>"; };
-		5C7AF614168F15C200D58233 /* AsteroidView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AsteroidView.h; sourceTree = "<group>"; };
-		5C7AF615168F15C200D58233 /* AsteroidView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AsteroidView.m; sourceTree = "<group>"; };
-		5C7AF616168F15C200D58233 /* BulletView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BulletView.h; sourceTree = "<group>"; };
-		5C7AF617168F15C200D58233 /* BulletView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BulletView.m; sourceTree = "<group>"; };
-		5C7AF618168F15C200D58233 /* Shape1.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Shape1.h; sourceTree = "<group>"; };
-		5C7AF619168F15C200D58233 /* Shape1.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Shape1.m; sourceTree = "<group>"; };
-		5C7AF61A168F15C200D58233 /* Shape2.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Shape2.h; sourceTree = "<group>"; };
-		5C7AF61B168F15C200D58233 /* Shape2.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Shape2.m; sourceTree = "<group>"; };
-		5C7AF61C168F15C200D58233 /* SpaceshipDeathView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SpaceshipDeathView.h; sourceTree = "<group>"; };
-		5C7AF61D168F15C200D58233 /* SpaceshipDeathView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SpaceshipDeathView.m; sourceTree = "<group>"; };
-		5C7AF61E168F15C200D58233 /* SpaceshipView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SpaceshipView.h; sourceTree = "<group>"; };
-		5C7AF61F168F15C200D58233 /* SpaceshipView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SpaceshipView.m; sourceTree = "<group>"; };
-		5C7AF621168F15C200D58233 /* AnimationNode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AnimationNode.h; sourceTree = "<group>"; };
-		5C7AF622168F15C200D58233 /* AnimationNode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AnimationNode.m; sourceTree = "<group>"; };
-		5C7AF623168F15C200D58233 /* AsteroidCollisionNode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AsteroidCollisionNode.h; sourceTree = "<group>"; };
-		5C7AF624168F15C200D58233 /* AsteroidCollisionNode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AsteroidCollisionNode.m; sourceTree = "<group>"; };
-		5C7AF625168F15C200D58233 /* BulletAgeNode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BulletAgeNode.h; sourceTree = "<group>"; };
-		5C7AF626168F15C200D58233 /* BulletAgeNode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BulletAgeNode.m; sourceTree = "<group>"; };
-		5C7AF627168F15C200D58233 /* BulletCollisionNode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BulletCollisionNode.h; sourceTree = "<group>"; };
-		5C7AF628168F15C200D58233 /* BulletCollisionNode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BulletCollisionNode.m; sourceTree = "<group>"; };
-		5C7AF629168F15C200D58233 /* DeathThroesNode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DeathThroesNode.h; sourceTree = "<group>"; };
-		5C7AF62A168F15C200D58233 /* DeathThroesNode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DeathThroesNode.m; sourceTree = "<group>"; };
-		5C7AF62B168F15C200D58233 /* GameNode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameNode.h; sourceTree = "<group>"; };
-		5C7AF62C168F15C200D58233 /* GameNode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GameNode.m; sourceTree = "<group>"; };
-		5C7AF62D168F15C200D58233 /* GunControlNode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GunControlNode.h; sourceTree = "<group>"; };
-		5C7AF62E168F15C200D58233 /* GunControlNode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GunControlNode.m; sourceTree = "<group>"; };
-		5C7AF62F168F15C200D58233 /* MotionControlNode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MotionControlNode.h; sourceTree = "<group>"; };
-		5C7AF630168F15C200D58233 /* MotionControlNode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MotionControlNode.m; sourceTree = "<group>"; };
-		5C7AF631168F15C200D58233 /* MovementNode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MovementNode.h; sourceTree = "<group>"; };
-		5C7AF632168F15C200D58233 /* MovementNode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MovementNode.m; sourceTree = "<group>"; };
-		5C7AF633168F15C200D58233 /* RenderNode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RenderNode.h; sourceTree = "<group>"; };
-		5C7AF634168F15C200D58233 /* RenderNode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RenderNode.m; sourceTree = "<group>"; };
-		5C7AF635168F15C200D58233 /* SpaceshipCollisionNode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SpaceshipCollisionNode.h; sourceTree = "<group>"; };
-		5C7AF636168F15C200D58233 /* SpaceshipCollisionNode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SpaceshipCollisionNode.m; sourceTree = "<group>"; };
-		5C7AF637168F15C200D58233 /* SpaceshipNode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SpaceshipNode.h; sourceTree = "<group>"; };
-		5C7AF638168F15C200D58233 /* SpaceshipNode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SpaceshipNode.m; sourceTree = "<group>"; };
-		5C7AF63A168F15C200D58233 /* AnimationSystem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AnimationSystem.h; sourceTree = "<group>"; };
-		5C7AF63B168F15C200D58233 /* AnimationSystem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AnimationSystem.m; sourceTree = "<group>"; };
-		5C7AF63C168F15C200D58233 /* BulletAgeSystem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BulletAgeSystem.h; sourceTree = "<group>"; };
-		5C7AF63D168F15C200D58233 /* BulletAgeSystem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BulletAgeSystem.m; sourceTree = "<group>"; };
-		5C7AF63E168F15C200D58233 /* CollisionSystem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CollisionSystem.h; sourceTree = "<group>"; };
-		5C7AF63F168F15C200D58233 /* CollisionSystem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CollisionSystem.m; sourceTree = "<group>"; };
-		5C7AF640168F15C200D58233 /* DeathThroesSystem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DeathThroesSystem.h; sourceTree = "<group>"; };
-		5C7AF641168F15C200D58233 /* DeathThroesSystem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DeathThroesSystem.m; sourceTree = "<group>"; };
-		5C7AF642168F15C200D58233 /* GameManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameManager.h; sourceTree = "<group>"; };
-		5C7AF643168F15C200D58233 /* GameManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GameManager.m; sourceTree = "<group>"; };
-		5C7AF644168F15C200D58233 /* GunControlSystem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GunControlSystem.h; sourceTree = "<group>"; };
-		5C7AF645168F15C200D58233 /* GunControlSystem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GunControlSystem.m; sourceTree = "<group>"; };
-		5C7AF646168F15C200D58233 /* MotionControlSystem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MotionControlSystem.h; sourceTree = "<group>"; };
-		5C7AF647168F15C200D58233 /* MotionControlSystem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MotionControlSystem.m; sourceTree = "<group>"; };
-		5C7AF648168F15C200D58233 /* MovementSystem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MovementSystem.h; sourceTree = "<group>"; };
-		5C7AF649168F15C200D58233 /* MovementSystem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MovementSystem.m; sourceTree = "<group>"; };
-		5C7AF64A168F15C200D58233 /* RenderSystem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RenderSystem.h; sourceTree = "<group>"; };
-		5C7AF64B168F15C200D58233 /* RenderSystem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RenderSystem.m; sourceTree = "<group>"; };
-		5C7AF64C168F15C200D58233 /* SystemPriorities.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SystemPriorities.h; sourceTree = "<group>"; };
-		5C7AF64D168F15C200D58233 /* Trigger.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Trigger.h; sourceTree = "<group>"; };
-		5C7AF64E168F15C200D58233 /* TriggerPoll.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TriggerPoll.h; sourceTree = "<group>"; };
-		5C7AF64F168F15C200D58233 /* TriggerPoll.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TriggerPoll.m; sourceTree = "<group>"; };
 		5C7AF697168F160700D58233 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		5C7AF69D168F187A00D58233 /* GHUnitTests.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GHUnitTests.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5C7AF6A4168F187A00D58233 /* GHUnitTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "GHUnitTests-Info.plist"; sourceTree = "<group>"; };
@@ -373,7 +222,6 @@
 		5C7AF6D2168F1DD600D58233 /* ListIteratingSystemTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ListIteratingSystemTest.m; sourceTree = "<group>"; };
 		7F3311FB8081EC3C0FC26957 /* Pods-GHUnitTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GHUnitTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-GHUnitTests/Pods-GHUnitTests.debug.xcconfig"; sourceTree = "<group>"; };
 		9AB4126E1B5F8FE70000E90A /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
-		9AC3C6D01B654E7E00632C2A /* images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = images.xcassets; sourceTree = "<group>"; };
 		9BE0BD54A62741F08A1D354F /* libPods-GHUnitTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-GHUnitTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		A43828ECF72123161F6A023B /* Pods-GHUnitTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GHUnitTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-GHUnitTests/Pods-GHUnitTests.release.xcconfig"; sourceTree = "<group>"; };
 		CD03801A74136B2C5B617902 /* ASHDynamicComponentProvider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ASHDynamicComponentProvider.h; sourceTree = "<group>"; };
@@ -384,7 +232,6 @@
 		CD0380B94F1686FA99823E74 /* ASHCodecManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ASHCodecManager.m; sourceTree = "<group>"; };
 		CD0380E11ADD673FC90DF5EA /* ASHSignal0.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ASHSignal0.h; sourceTree = "<group>"; };
 		CD0380E61AA7A869D9535D74 /* ASHEntity.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ASHEntity.m; sourceTree = "<group>"; };
-		CD03814718C7C344A55FB763 /* HudView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HudView.h; sourceTree = "<group>"; };
 		CD038147A0C6600C6C419FA2 /* ASHComponentPool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ASHComponentPool.m; sourceTree = "<group>"; };
 		CD03814909A5BF55E57C7543 /* ASHSystem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ASHSystem.h; sourceTree = "<group>"; };
 		CD0381641DEB4DDB59052F25 /* ASHStateSystemMapping.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ASHStateSystemMapping.h; sourceTree = "<group>"; };
@@ -392,7 +239,6 @@
 		CD038169CA07982A9BA67D07 /* ASHDynamicSystemProvider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ASHDynamicSystemProvider.h; sourceTree = "<group>"; };
 		CD03816C00F75CE3067A1BF6 /* ASHComponentMatchingFamily.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ASHComponentMatchingFamily.h; sourceTree = "<group>"; };
 		CD03817BECE6A59E69B33686 /* ASHNode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ASHNode.h; sourceTree = "<group>"; };
-		CD038192A382A47324CCB09D /* HudView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HudView.m; sourceTree = "<group>"; };
 		CD03819BFF2E680B3A074A78 /* ASHComponentInstanceProvider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ASHComponentInstanceProvider.h; sourceTree = "<group>"; };
 		CD03819EBE9E5A9A25466A37 /* LICENSE */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
 		CD0381EB41834E60C5976BE7 /* ASHTickProvider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ASHTickProvider.h; sourceTree = "<group>"; };
@@ -400,7 +246,6 @@
 		CD03820F1A80A44C16B77DC3 /* ASHDynamicComponentProvider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ASHDynamicComponentProvider.m; sourceTree = "<group>"; };
 		CD0382245FC77FC0C9C405AE /* ASHSignal0.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ASHSignal0.m; sourceTree = "<group>"; };
 		CD0382319DF2D65A1AD0F057 /* EngineStateMachineTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EngineStateMachineTests.m; sourceTree = "<group>"; };
-		CD03826DE056226BE26D6E81 /* AudioNode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AudioNode.m; sourceTree = "<group>"; };
 		CD0382727D54E92EA39E2E9B /* ASHDynamicSystemProvider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ASHDynamicSystemProvider.m; sourceTree = "<group>"; };
 		CD03828EAFC4243FE6018566 /* ASHFrameTickProvider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ASHFrameTickProvider.h; sourceTree = "<group>"; };
 		CD03829F5C9383E82DCD009B /* ASHListIteratingSystem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ASHListIteratingSystem.h; sourceTree = "<group>"; };
@@ -411,7 +256,6 @@
 		CD038303FFB5817376AC0741 /* ASHEngineCodec.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ASHEngineCodec.h; sourceTree = "<group>"; };
 		CD0383161342554CAA718368 /* ASHArrayObjectCodec.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ASHArrayObjectCodec.h; sourceTree = "<group>"; };
 		CD0383376362EB2373715356 /* ASHStateComponentMapping.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ASHStateComponentMapping.m; sourceTree = "<group>"; };
-		CD0383450B006C9F38339D40 /* AsteroidDeathView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AsteroidDeathView.m; sourceTree = "<group>"; };
 		CD038367E8737E7ED2A34F90 /* ASHEntityList.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ASHEntityList.h; sourceTree = "<group>"; };
 		CD03838015070DA13F0F58F5 /* ASHSignal1.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ASHSignal1.m; sourceTree = "<group>"; };
 		CD038380606AF6B1599DC9E7 /* ASHJsonEngineCodec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ASHJsonEngineCodec.m; sourceTree = "<group>"; };
@@ -422,9 +266,6 @@
 		CD038412AF17DAAA9A2D028E /* ASHTypeAssociations.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ASHTypeAssociations.m; sourceTree = "<group>"; };
 		CD03841CC08838E2A13FA8E6 /* ASHSignal3.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ASHSignal3.h; sourceTree = "<group>"; };
 		CD03843E247A0450566BBB2B /* SystemInstanceProviderTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SystemInstanceProviderTests.m; sourceTree = "<group>"; };
-		CD038446FAA8AFC0C816D91F /* AsteroidDeathView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AsteroidDeathView.h; sourceTree = "<group>"; };
-		CD03845E2D3F8A02AB4000C1 /* WaitForStartNode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WaitForStartNode.m; sourceTree = "<group>"; };
-		CD0384D548F25A1282EF8848 /* Hud.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Hud.m; sourceTree = "<group>"; };
 		CD0384E2509C4C9B7E0B095A /* ASHSystemInstanceProvider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ASHSystemInstanceProvider.h; sourceTree = "<group>"; };
 		CD0384E44495ADEFA48D4B4B /* ASHComponentTypeProvider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ASHComponentTypeProvider.h; sourceTree = "<group>"; };
 		CD0385039BFAE93A2F82AD75 /* ASHSignal3.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ASHSignal3.m; sourceTree = "<group>"; };
@@ -433,13 +274,10 @@
 		CD0385B812CEF92FA5F52DC0 /* ASHSystemList.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ASHSystemList.h; sourceTree = "<group>"; };
 		CD0385B8A1AA3EA4BD281B47 /* ASHFamily.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ASHFamily.h; sourceTree = "<group>"; };
 		CD0385E08EB2AC4C47A45EAC /* ASHEngineDecoder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ASHEngineDecoder.h; sourceTree = "<group>"; };
-		CD0385E113EEB9CFC706B441 /* WaitForStartSystem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WaitForStartSystem.m; sourceTree = "<group>"; };
 		CD03860BC7FA656EE1339FC4 /* ASHListIteratingSystem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ASHListIteratingSystem.m; sourceTree = "<group>"; };
 		CD03863F73F90ECA1156F5FE /* ASHObjectReflectionFactory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ASHObjectReflectionFactory.m; sourceTree = "<group>"; };
 		CD038660BF85EE2708D2331E /* ASHEngine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ASHEngine.h; sourceTree = "<group>"; };
-		CD03867ED5445C812E831338 /* AudioSystem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AudioSystem.h; sourceTree = "<group>"; };
 		CD038685FD3865CA068E9BCA /* ASHNodeList.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ASHNodeList.m; sourceTree = "<group>"; };
-		CD0386DBB72A9F0A3B205E7F /* AudioNode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AudioNode.h; sourceTree = "<group>"; };
 		CD0386DFBFD9FBA10C0D7205 /* ASHObjectEngineCodec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ASHObjectEngineCodec.m; sourceTree = "<group>"; };
 		CD03870AAB2E131EA609162C /* ASHStateComponentMapping.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ASHStateComponentMapping.h; sourceTree = "<group>"; };
 		CD03874AB622E6DF994CD2F1 /* ASHSignalAny.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ASHSignalAny.h; sourceTree = "<group>"; };
@@ -447,17 +285,11 @@
 		CD03875D5B9334EAA605E1D6 /* ASHNodePool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ASHNodePool.m; sourceTree = "<group>"; };
 		CD03877CA75FDBE42934A3FA /* ASHSystemSingletonProvider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ASHSystemSingletonProvider.h; sourceTree = "<group>"; };
 		CD0387C59D43054892A1C17D /* ASHNodePool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ASHNodePool.h; sourceTree = "<group>"; };
-		CD0387CFCF8FD7D17B6EDE5C /* HudSystem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HudSystem.m; sourceTree = "<group>"; };
-		CD03881E57401B5704E374C4 /* WaitForStart.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WaitForStart.h; sourceTree = "<group>"; };
 		CD0388286A6641799094792B /* ASHClassObjectCodec.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ASHClassObjectCodec.h; sourceTree = "<group>"; };
 		CD03883DEC2E0AF79D4C5E50 /* ASHValueObjectCodec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ASHValueObjectCodec.m; sourceTree = "<group>"; };
 		CD0388436B0D6A1DFCF4FC8B /* ASHSignalBase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ASHSignalBase.m; sourceTree = "<group>"; };
 		CD03884582E84FE2E6A056AD /* ASHNode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ASHNode.m; sourceTree = "<group>"; };
-		CD0388A7718E51CA500C9A4A /* HudSystem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HudSystem.h; sourceTree = "<group>"; };
-		CD0388BE71A98E0AD88F9E77 /* asteroid.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = asteroid.wav; sourceTree = "<group>"; };
-		CD0388C88817FEBD8D5ABCDB /* WaitForStart.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WaitForStart.m; sourceTree = "<group>"; };
 		CD0388E852543DD1CFCE95A1 /* ASHEngine.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ASHEngine.m; sourceTree = "<group>"; };
-		CD0388F38C34CC739120578F /* ship.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = ship.wav; sourceTree = "<group>"; };
 		CD0388FD083D3BD7F86F6B35 /* ASHListenerNode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ASHListenerNode.m; sourceTree = "<group>"; };
 		CD0389034DB91F03E70F7419 /* ASHReflectionObjectCodec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ASHReflectionObjectCodec.m; sourceTree = "<group>"; };
 		CD038961882B39447FF808EF /* ASHComponentInstanceProvider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ASHComponentInstanceProvider.m; sourceTree = "<group>"; };
@@ -475,39 +307,28 @@
 		CD038B7BA16B8240B4C867FF /* ASHSystemProvider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ASHSystemProvider.h; sourceTree = "<group>"; };
 		CD038B7E35536F7C10804778 /* ASHNodeList.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ASHNodeList.h; sourceTree = "<group>"; };
 		CD038B9759A07CCE3353ED0E /* ASHNativeObjectCodec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ASHNativeObjectCodec.m; sourceTree = "<group>"; };
-		CD038BD01BB8A131FDB890C3 /* WaitForStartView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WaitForStartView.m; sourceTree = "<group>"; };
 		CD038BE0E1D0E9E1356E46A7 /* ASHSignalAny.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ASHSignalAny.m; sourceTree = "<group>"; };
 		CD038BEF75C4D6B4133EE6AB /* ASHEngineEncoder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ASHEngineEncoder.h; sourceTree = "<group>"; };
 		CD038C17BE1051884FEACDF3 /* ASHFixedTickProvider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ASHFixedTickProvider.m; sourceTree = "<group>"; };
 		CD038C247BD3A5BDFB32DD7E /* ASHObjectReflectionFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ASHObjectReflectionFactory.h; sourceTree = "<group>"; };
-		CD038C34D4CF2B05DD9A375D /* HudNode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HudNode.m; sourceTree = "<group>"; };
 		CD038C409437BB0695BA6D00 /* ASHMacro.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ASHMacro.h; sourceTree = "<group>"; };
 		CD038C436460235371ABFAE3 /* ASHSignal2.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ASHSignal2.h; sourceTree = "<group>"; };
-		CD038C8292E5B7DBCC824508 /* WaitForStartSystem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WaitForStartSystem.h; sourceTree = "<group>"; };
-		CD038C93F6F9272574120FDE /* WaitForStartView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WaitForStartView.h; sourceTree = "<group>"; };
-		CD038C9D8FE8264E0EFA90AF /* HudNode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HudNode.h; sourceTree = "<group>"; };
 		CD038CA257EABC214FA91F19 /* ASHEntityStateMachine.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ASHEntityStateMachine.m; sourceTree = "<group>"; };
-		CD038D0591463F36A6FA37F2 /* shoot.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = shoot.wav; sourceTree = "<group>"; };
 		CD038D456DEB1D6BB152B1F0 /* ASHListenerNodePool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ASHListenerNodePool.m; sourceTree = "<group>"; };
 		CD038D5488EE029C08E8E1EE /* ASHComponentSingletonProvider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ASHComponentSingletonProvider.m; sourceTree = "<group>"; };
 		CD038D64875A857ACA02BDC6 /* ASHComponentTypeProvider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ASHComponentTypeProvider.m; sourceTree = "<group>"; };
 		CD038D71FBA4656765362985 /* ASHEngineState.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ASHEngineState.m; sourceTree = "<group>"; };
 		CD038D92E04DF1FA38F67A0F /* ASHComponentPool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ASHComponentPool.h; sourceTree = "<group>"; };
 		CD038DAAF793C284D918D40B /* ASHSignalBase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ASHSignalBase.h; sourceTree = "<group>"; };
-		CD038DC1198176E7B570A3ED /* Audio.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Audio.m; sourceTree = "<group>"; };
-		CD038DC6AF7A2C244AF1AD89 /* Audio.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Audio.h; sourceTree = "<group>"; };
 		CD038DD3EAF9B86C873A2663 /* ASHObjectReflection.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ASHObjectReflection.m; sourceTree = "<group>"; };
 		CD038E198390809A62A93EBF /* ASHObjectReflection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ASHObjectReflection.h; sourceTree = "<group>"; };
 		CD038E2914EBF8C764BC7C96 /* ASHEngineState.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ASHEngineState.h; sourceTree = "<group>"; };
 		CD038E4C144C5E82AEAC9A65 /* ASHEngineStateMachine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ASHEngineStateMachine.h; sourceTree = "<group>"; };
-		CD038ED9292A127C6FA1FFED /* WaitForStartNode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WaitForStartNode.h; sourceTree = "<group>"; };
-		CD038EF9DCA2EDE047ECF296 /* AudioSystem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AudioSystem.m; sourceTree = "<group>"; };
 		CD038F1646F4EB961F633F73 /* ASHEntity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ASHEntity.h; sourceTree = "<group>"; };
 		CD038F4A5D9321CDAC55B6CD /* ASHEngineDecoder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ASHEngineDecoder.m; sourceTree = "<group>"; };
 		CD038F680DF2F05B3DF0D5E3 /* ASHValueObjectCodec.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ASHValueObjectCodec.h; sourceTree = "<group>"; };
 		CD038F729289EE3F1EC392C1 /* ASHJsonEngineCodec.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ASHJsonEngineCodec.h; sourceTree = "<group>"; };
 		CD038F794526F8BADFA42C0D /* SystemStateTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SystemStateTests.m; sourceTree = "<group>"; };
-		CD038F8E0678CB8AC41EA610 /* Hud.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Hud.h; sourceTree = "<group>"; };
 		CD038F97B6E9DEC292CB00E4 /* ASHSignal2.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ASHSignal2.m; sourceTree = "<group>"; };
 		CD038FD747D62B38D3F769EA /* ASHObjectEngineCodec.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ASHObjectEngineCodec.h; sourceTree = "<group>"; };
 		CD038FDCB27408D5165D4374 /* ASHEntityList.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ASHEntityList.m; sourceTree = "<group>"; };
@@ -622,7 +443,6 @@
 		5C7AF599168F14B900D58233 /* AshObjectiveC */ = {
 			isa = PBXGroup;
 			children = (
-				5C7AF5EF168F15C200D58233 /* examples */,
 				5C7AF5A2168F14B900D58233 /* AppDelegate.h */,
 				5C7AF5A3168F14B900D58233 /* AppDelegate.m */,
 				5C7AF59A168F14B900D58233 /* Supporting Files */,
@@ -643,169 +463,6 @@
 				5C7AF5A9168F14B900D58233 /* Default-568h@2x.png */,
 			);
 			name = "Supporting Files";
-			sourceTree = "<group>";
-		};
-		5C7AF5EF168F15C200D58233 /* examples */ = {
-			isa = PBXGroup;
-			children = (
-				5C7AF5F0168F15C200D58233 /* asteroids */,
-			);
-			path = examples;
-			sourceTree = "<group>";
-		};
-		5C7AF5F0168F15C200D58233 /* asteroids */ = {
-			isa = PBXGroup;
-			children = (
-				5C7AF5F1168F15C200D58233 /* Asteroids.h */,
-				5C7AF5F2168F15C200D58233 /* Asteroids.m */,
-				5C7AF5F3168F15C200D58233 /* components */,
-				5C7AF60E168F15C200D58233 /* EntityCreator.h */,
-				5C7AF60F168F15C200D58233 /* EntityCreator.m */,
-				5C7AF610168F15C200D58233 /* GameConfig.h */,
-				5C7AF611168F15C200D58233 /* GameConfig.m */,
-				5C7AF612168F15C200D58233 /* graphics */,
-				5C7AF620168F15C200D58233 /* nodes */,
-				5C7AF639168F15C200D58233 /* systems */,
-				5C7AF64D168F15C200D58233 /* Trigger.h */,
-				5C7AF64E168F15C200D58233 /* TriggerPoll.h */,
-				5C7AF64F168F15C200D58233 /* TriggerPoll.m */,
-				CD0383A54646D8B015DD0363 /* assets */,
-			);
-			path = asteroids;
-			sourceTree = "<group>";
-		};
-		5C7AF5F3168F15C200D58233 /* components */ = {
-			isa = PBXGroup;
-			children = (
-				5C7AF5F4168F15C200D58233 /* Animation.h */,
-				5C7AF5F5168F15C200D58233 /* Animation.m */,
-				5C7AF5F6168F15C200D58233 /* Asteroid.h */,
-				5C7AF5F7168F15C200D58233 /* Asteroid.m */,
-				5C7AF5F8168F15C200D58233 /* Bullet.h */,
-				5C7AF5F9168F15C200D58233 /* Bullet.m */,
-				5C7AF5FA168F15C200D58233 /* Collision.h */,
-				5C7AF5FB168F15C200D58233 /* Collision.m */,
-				5C7AF5FC168F15C200D58233 /* DeathThroes.h */,
-				5C7AF5FD168F15C200D58233 /* DeathThroes.m */,
-				5C7AF5FE168F15C200D58233 /* Display.h */,
-				5C7AF5FF168F15C200D58233 /* Display.m */,
-				5C7AF600168F15C200D58233 /* GameState.h */,
-				5C7AF601168F15C200D58233 /* GameState.m */,
-				5C7AF602168F15C200D58233 /* Gun.h */,
-				5C7AF603168F15C200D58233 /* Gun.m */,
-				5C7AF604168F15C200D58233 /* GunControls.h */,
-				5C7AF605168F15C200D58233 /* GunControls.m */,
-				5C7AF606168F15C200D58233 /* Motion.h */,
-				5C7AF607168F15C200D58233 /* Motion.m */,
-				5C7AF608168F15C200D58233 /* MotionControls.h */,
-				5C7AF609168F15C200D58233 /* MotionControls.m */,
-				5C7AF60A168F15C200D58233 /* Position.h */,
-				5C7AF60B168F15C200D58233 /* Position.m */,
-				5C7AF60C168F15C200D58233 /* Spaceship.h */,
-				5C7AF60D168F15C200D58233 /* Spaceship.m */,
-				CD0384D548F25A1282EF8848 /* Hud.m */,
-				CD038F8E0678CB8AC41EA610 /* Hud.h */,
-				CD0388C88817FEBD8D5ABCDB /* WaitForStart.m */,
-				CD03881E57401B5704E374C4 /* WaitForStart.h */,
-				CD038DC1198176E7B570A3ED /* Audio.m */,
-				CD038DC6AF7A2C244AF1AD89 /* Audio.h */,
-			);
-			path = components;
-			sourceTree = "<group>";
-		};
-		5C7AF612168F15C200D58233 /* graphics */ = {
-			isa = PBXGroup;
-			children = (
-				5C7AF613168F15C200D58233 /* Animatable.h */,
-				5C7AF614168F15C200D58233 /* AsteroidView.h */,
-				5C7AF615168F15C200D58233 /* AsteroidView.m */,
-				5C7AF616168F15C200D58233 /* BulletView.h */,
-				5C7AF617168F15C200D58233 /* BulletView.m */,
-				5C7AF618168F15C200D58233 /* Shape1.h */,
-				5C7AF619168F15C200D58233 /* Shape1.m */,
-				5C7AF61A168F15C200D58233 /* Shape2.h */,
-				5C7AF61B168F15C200D58233 /* Shape2.m */,
-				5C7AF61C168F15C200D58233 /* SpaceshipDeathView.h */,
-				5C7AF61D168F15C200D58233 /* SpaceshipDeathView.m */,
-				5C7AF61E168F15C200D58233 /* SpaceshipView.h */,
-				5C7AF61F168F15C200D58233 /* SpaceshipView.m */,
-				CD0383450B006C9F38339D40 /* AsteroidDeathView.m */,
-				CD038446FAA8AFC0C816D91F /* AsteroidDeathView.h */,
-				CD038192A382A47324CCB09D /* HudView.m */,
-				CD03814718C7C344A55FB763 /* HudView.h */,
-				CD038BD01BB8A131FDB890C3 /* WaitForStartView.m */,
-				CD038C93F6F9272574120FDE /* WaitForStartView.h */,
-			);
-			path = graphics;
-			sourceTree = "<group>";
-		};
-		5C7AF620168F15C200D58233 /* nodes */ = {
-			isa = PBXGroup;
-			children = (
-				5C7AF621168F15C200D58233 /* AnimationNode.h */,
-				5C7AF622168F15C200D58233 /* AnimationNode.m */,
-				5C7AF623168F15C200D58233 /* AsteroidCollisionNode.h */,
-				5C7AF624168F15C200D58233 /* AsteroidCollisionNode.m */,
-				5C7AF625168F15C200D58233 /* BulletAgeNode.h */,
-				5C7AF626168F15C200D58233 /* BulletAgeNode.m */,
-				5C7AF627168F15C200D58233 /* BulletCollisionNode.h */,
-				5C7AF628168F15C200D58233 /* BulletCollisionNode.m */,
-				5C7AF629168F15C200D58233 /* DeathThroesNode.h */,
-				5C7AF62A168F15C200D58233 /* DeathThroesNode.m */,
-				5C7AF62B168F15C200D58233 /* GameNode.h */,
-				5C7AF62C168F15C200D58233 /* GameNode.m */,
-				5C7AF62D168F15C200D58233 /* GunControlNode.h */,
-				5C7AF62E168F15C200D58233 /* GunControlNode.m */,
-				5C7AF62F168F15C200D58233 /* MotionControlNode.h */,
-				5C7AF630168F15C200D58233 /* MotionControlNode.m */,
-				5C7AF631168F15C200D58233 /* MovementNode.h */,
-				5C7AF632168F15C200D58233 /* MovementNode.m */,
-				5C7AF633168F15C200D58233 /* RenderNode.h */,
-				5C7AF634168F15C200D58233 /* RenderNode.m */,
-				5C7AF635168F15C200D58233 /* SpaceshipCollisionNode.h */,
-				5C7AF636168F15C200D58233 /* SpaceshipCollisionNode.m */,
-				5C7AF637168F15C200D58233 /* SpaceshipNode.h */,
-				5C7AF638168F15C200D58233 /* SpaceshipNode.m */,
-				CD03826DE056226BE26D6E81 /* AudioNode.m */,
-				CD0386DBB72A9F0A3B205E7F /* AudioNode.h */,
-				CD038C34D4CF2B05DD9A375D /* HudNode.m */,
-				CD038C9D8FE8264E0EFA90AF /* HudNode.h */,
-				CD03845E2D3F8A02AB4000C1 /* WaitForStartNode.m */,
-				CD038ED9292A127C6FA1FFED /* WaitForStartNode.h */,
-			);
-			path = nodes;
-			sourceTree = "<group>";
-		};
-		5C7AF639168F15C200D58233 /* systems */ = {
-			isa = PBXGroup;
-			children = (
-				5C7AF63A168F15C200D58233 /* AnimationSystem.h */,
-				5C7AF63B168F15C200D58233 /* AnimationSystem.m */,
-				5C7AF63C168F15C200D58233 /* BulletAgeSystem.h */,
-				5C7AF63D168F15C200D58233 /* BulletAgeSystem.m */,
-				5C7AF63E168F15C200D58233 /* CollisionSystem.h */,
-				5C7AF63F168F15C200D58233 /* CollisionSystem.m */,
-				5C7AF640168F15C200D58233 /* DeathThroesSystem.h */,
-				5C7AF641168F15C200D58233 /* DeathThroesSystem.m */,
-				5C7AF642168F15C200D58233 /* GameManager.h */,
-				5C7AF643168F15C200D58233 /* GameManager.m */,
-				5C7AF644168F15C200D58233 /* GunControlSystem.h */,
-				5C7AF645168F15C200D58233 /* GunControlSystem.m */,
-				5C7AF646168F15C200D58233 /* MotionControlSystem.h */,
-				5C7AF647168F15C200D58233 /* MotionControlSystem.m */,
-				5C7AF648168F15C200D58233 /* MovementSystem.h */,
-				5C7AF649168F15C200D58233 /* MovementSystem.m */,
-				5C7AF64A168F15C200D58233 /* RenderSystem.h */,
-				5C7AF64B168F15C200D58233 /* RenderSystem.m */,
-				5C7AF64C168F15C200D58233 /* SystemPriorities.h */,
-				CD038EF9DCA2EDE047ECF296 /* AudioSystem.m */,
-				CD03867ED5445C812E831338 /* AudioSystem.h */,
-				CD0385E113EEB9CFC706B441 /* WaitForStartSystem.m */,
-				CD038C8292E5B7DBCC824508 /* WaitForStartSystem.h */,
-				CD0387CFCF8FD7D17B6EDE5C /* HudSystem.m */,
-				CD0388A7718E51CA500C9A4A /* HudSystem.h */,
-			);
-			path = systems;
 			sourceTree = "<group>";
 		};
 		5C7AF6A2168F187A00D58233 /* GHUnitTests */ = {
@@ -928,31 +585,12 @@
 			path = enginecodecs;
 			sourceTree = "<group>";
 		};
-		CD03818B4972E3286A92BC39 /* sounds */ = {
-			isa = PBXGroup;
-			children = (
-				CD038D0591463F36A6FA37F2 /* shoot.wav */,
-				CD0388F38C34CC739120578F /* ship.wav */,
-				CD0388BE71A98E0AD88F9E77 /* asteroid.wav */,
-			);
-			path = sounds;
-			sourceTree = "<group>";
-		};
 		CD0381D1950E8CFADB762472 /* library */ = {
 			isa = PBXGroup;
 			children = (
 				CD038662E639AE84408AE3A8 /* ash */,
 			);
 			path = library;
-			sourceTree = "<group>";
-		};
-		CD0383A54646D8B015DD0363 /* assets */ = {
-			isa = PBXGroup;
-			children = (
-				CD03818B4972E3286A92BC39 /* sounds */,
-				9AC3C6D01B654E7E00632C2A /* images.xcassets */,
-			);
-			path = assets;
 			sourceTree = "<group>";
 		};
 		CD0383E7622A9532745A611B /* io */ = {
@@ -1191,13 +829,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				5C7AF59E168F14B900D58233 /* InfoPlist.strings in Resources */,
-				9AC3C6D11B654E7E00632C2A /* images.xcassets in Resources */,
 				5C7AF5A6168F14B900D58233 /* Default.png in Resources */,
 				5C7AF5A8168F14B900D58233 /* Default@2x.png in Resources */,
 				5C7AF5AA168F14B900D58233 /* Default-568h@2x.png in Resources */,
-				CD038B0BC8EC1D6A73A2CF8D /* shoot.wav in Resources */,
-				CD038CC12DE5DA9BC32E63BB /* ship.wav in Resources */,
-				CD038795C882F8DA00BD8912 /* asteroid.wav in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1254,50 +888,6 @@
 			files = (
 				5C7AF5A0168F14B900D58233 /* main.m in Sources */,
 				5C7AF5A4168F14B900D58233 /* AppDelegate.m in Sources */,
-				5C7AF66B168F15C200D58233 /* Asteroids.m in Sources */,
-				5C7AF66C168F15C200D58233 /* Animation.m in Sources */,
-				5C7AF66D168F15C200D58233 /* Asteroid.m in Sources */,
-				5C7AF66E168F15C200D58233 /* Bullet.m in Sources */,
-				5C7AF66F168F15C200D58233 /* Collision.m in Sources */,
-				5C7AF670168F15C200D58233 /* DeathThroes.m in Sources */,
-				5C7AF671168F15C200D58233 /* Display.m in Sources */,
-				5C7AF672168F15C200D58233 /* GameState.m in Sources */,
-				5C7AF673168F15C200D58233 /* Gun.m in Sources */,
-				5C7AF674168F15C200D58233 /* GunControls.m in Sources */,
-				5C7AF675168F15C200D58233 /* Motion.m in Sources */,
-				5C7AF676168F15C200D58233 /* MotionControls.m in Sources */,
-				5C7AF677168F15C200D58233 /* Position.m in Sources */,
-				5C7AF678168F15C200D58233 /* Spaceship.m in Sources */,
-				5C7AF679168F15C200D58233 /* EntityCreator.m in Sources */,
-				5C7AF67A168F15C200D58233 /* GameConfig.m in Sources */,
-				5C7AF67B168F15C200D58233 /* AsteroidView.m in Sources */,
-				5C7AF67C168F15C200D58233 /* BulletView.m in Sources */,
-				5C7AF67D168F15C200D58233 /* Shape1.m in Sources */,
-				5C7AF67E168F15C200D58233 /* Shape2.m in Sources */,
-				5C7AF67F168F15C200D58233 /* SpaceshipDeathView.m in Sources */,
-				5C7AF680168F15C200D58233 /* SpaceshipView.m in Sources */,
-				5C7AF681168F15C200D58233 /* AnimationNode.m in Sources */,
-				5C7AF682168F15C200D58233 /* AsteroidCollisionNode.m in Sources */,
-				5C7AF683168F15C200D58233 /* BulletAgeNode.m in Sources */,
-				5C7AF684168F15C200D58233 /* BulletCollisionNode.m in Sources */,
-				5C7AF685168F15C200D58233 /* DeathThroesNode.m in Sources */,
-				5C7AF686168F15C200D58233 /* GameNode.m in Sources */,
-				5C7AF687168F15C200D58233 /* GunControlNode.m in Sources */,
-				5C7AF688168F15C200D58233 /* MotionControlNode.m in Sources */,
-				5C7AF689168F15C200D58233 /* MovementNode.m in Sources */,
-				5C7AF68A168F15C200D58233 /* RenderNode.m in Sources */,
-				5C7AF68B168F15C200D58233 /* SpaceshipCollisionNode.m in Sources */,
-				5C7AF68C168F15C200D58233 /* SpaceshipNode.m in Sources */,
-				5C7AF68D168F15C200D58233 /* AnimationSystem.m in Sources */,
-				5C7AF68E168F15C200D58233 /* BulletAgeSystem.m in Sources */,
-				5C7AF68F168F15C200D58233 /* CollisionSystem.m in Sources */,
-				5C7AF690168F15C200D58233 /* DeathThroesSystem.m in Sources */,
-				5C7AF691168F15C200D58233 /* GameManager.m in Sources */,
-				5C7AF692168F15C200D58233 /* GunControlSystem.m in Sources */,
-				5C7AF693168F15C200D58233 /* MotionControlSystem.m in Sources */,
-				5C7AF694168F15C200D58233 /* MovementSystem.m in Sources */,
-				5C7AF695168F15C200D58233 /* RenderSystem.m in Sources */,
-				5C7AF696168F15C200D58233 /* TriggerPoll.m in Sources */,
 				CD038AE3F6422D253E15F9D7 /* ASHComponentMatchingFamily.m in Sources */,
 				CD038FE37D394408C867FD49 /* ASHEngine.m in Sources */,
 				CD03860F5BA917F3B1C99B65 /* ASHEntity.m in Sources */,
@@ -1345,18 +935,6 @@
 				CD0383A84196A17C97D4FFCE /* ASHEngineEncoder.m in Sources */,
 				CD038CF13CABAEB012FC2C99 /* ASHObjectEngineCodec.m in Sources */,
 				CD038CC284DCFA020781D66B /* ASHJsonEngineCodec.m in Sources */,
-				CD038D7EF3C3EF39DFBBB50D /* Hud.m in Sources */,
-				CD03859FCC2E8384373CCF1F /* WaitForStart.m in Sources */,
-				CD03897A25EE0F8256E81776 /* Audio.m in Sources */,
-				CD0381F515CF5CD80ECC3122 /* AsteroidDeathView.m in Sources */,
-				CD038F62458D29F186257962 /* HudView.m in Sources */,
-				CD038085FEB8620923CB842F /* WaitForStartView.m in Sources */,
-				CD038C7F97D6D80913446E80 /* AudioNode.m in Sources */,
-				CD03849ECCD6542F6DD968FD /* HudNode.m in Sources */,
-				CD038D6098CFB85D2EACBB52 /* WaitForStartNode.m in Sources */,
-				CD038858BA4BAB6FE822F251 /* AudioSystem.m in Sources */,
-				CD03853E1444709DDCE7BE67 /* WaitForStartSystem.m in Sources */,
-				CD038D1A03A1AD7018B0FE6A /* HudSystem.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

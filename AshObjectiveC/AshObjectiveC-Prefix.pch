@@ -10,6 +10,5 @@
     #import <Foundation/Foundation.h>
 #endif
 
-#define MathRandom() ((arc4random() % 1000) / 1000.f)
 
 
