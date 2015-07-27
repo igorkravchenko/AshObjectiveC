@@ -4,6 +4,6 @@
 
 @interface GameNode : ASHNode
 
-@property (nonatomic, strong) GameState * state;
+@property (nonatomic, weak) GameState * state;
 
 @end

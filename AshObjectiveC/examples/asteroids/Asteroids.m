@@ -14,6 +14,9 @@
 #import "CollisionSystem.h"
 #import "AnimationSystem.h"
 #import "RenderSystem.h"
+#import "WaitForStartSystem.h"
+#import "HudSystem.h"
+#import "AudioSystem.h"
 
 @implementation Asteroids
 {
@@ -47,12 +50,16 @@
                   height:(float)height
 {
     engine = [[ASHEngine alloc] init];
-    creator = [[EntityCreator alloc] initWithEngine:engine];
-    triggerPoll = [[TriggerPoll alloc] init];
     config = [[GameConfig alloc] init];
     config.width = width;
     config.height = height;
-    
+    creator = [[EntityCreator alloc] initWithEngine:engine
+                                         gameConfig:config];
+    triggerPoll = [[TriggerPoll alloc] init];
+
+    [engine addSystem:[[WaitForStartSystem alloc] initWithCreator:creator]
+             priority:preUpdate];
+
     [engine addSystem:[[GameManager alloc] initWithCreator:creator
                                                     config:config]
              priority:preUpdate];
@@ -76,11 +83,18 @@
     [engine addSystem:[[CollisionSystem alloc] initWithCreator:creator]
              priority:resolveCollisions];
     
-    [engine addSystem:[[AnimationSystem alloc] initSystem] priority:animate];
+    [engine addSystem:[[AnimationSystem alloc] init] priority:animate];
+
+    [engine addSystem:[[HudSystem alloc] init]
+             priority:animate];
     
     [engine addSystem:[[RenderSystem alloc] initWithContainer:container]
              priority:render];
+
+    [engine addSystem:[[AudioSystem alloc] init]
+             priority:render];
     
+    [creator createWaitForClick];
     [creator createGame];
 }
 

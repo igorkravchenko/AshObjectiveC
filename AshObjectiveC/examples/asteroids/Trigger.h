@@ -2,13 +2,13 @@
 #ifndef Ash_Trigger_h
 #define Ash_Trigger_h
 
-typedef enum
+typedef NS_ENUM(NSInteger, Trigger)
 {
-    TriggerLeft,
+    TriggerLeft = 0xFF,
     TriggerRight,
     TriggerAccelerate,
     TriggerGun,
     
-} Trigger;
+};
 
 #endif

@@ -3,39 +3,34 @@
 
 @implementation AsteroidView
 {
-    float _radius;
 }
 
 - (id)initWithRadius:(float)radius
 {
-    self = [super initWithFrame:CGRectZero];
+    self = [super init];
     
     if (self != nil)
     {
-        _radius = radius;
-        self.backgroundColor = [UIColor clearColor];
-        self.bounds = CGRectMake(-radius, -radius, radius * 2, radius * 2);
+        float angle = 0;
+        CGMutablePathRef path = CGPathCreateMutable();
+        CGPathMoveToPoint(path, NULL, radius, 0);
+        while (angle < M_PI * 2)
+        {
+            float length = (0.75f + MathRandom() * 0.25f) * radius;
+            float posX = cosf(angle) * length;
+            float posY = sinf(angle) * length;
+            CGPathAddLineToPoint(path, NULL, posX, posY);
+            angle += MathRandom() * 0.5;
+        }
+        CGPathAddLineToPoint(path, NULL, radius, 0);
+        CAShapeLayer * layer = [CAShapeLayer layer];
+        layer.fillColor = [UIColor whiteColor].CGColor;
+        layer.path = path;
+        [super.layer addSublayer:layer];
+        CGPathRelease(path);
     }
     
     return self;
-}
-
-- (void)drawRect:(CGRect)rect
-{
-    float angle = 0;
-    CGContextRef context = UIGraphicsGetCurrentContext();
-    CGContextSetFillColorWithColor(context, [UIColor whiteColor].CGColor);
-    CGContextMoveToPoint(context, _radius, 0);
-    while (angle < M_PI * 2)
-    {
-        float length = (0.75 + MathRandom() * 0.25) * _radius;
-        float posX = cosf(angle) * length;
-        float posY = sinf(angle) * length;
-        CGContextAddLineToPoint(context, posX, posY);
-        angle += MathRandom() * 0.5;
-    }
-    CGContextAddLineToPoint(context, _radius, 0);
-    CGContextFillPath(context);
 }
 
 @end

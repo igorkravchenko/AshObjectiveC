@@ -5,4 +5,6 @@
 
 @property (nonatomic, strong) UIView * displayObject;
 
+- (instancetype)initWithDisplayObject:(UIView *)displayObject;
+
 @end

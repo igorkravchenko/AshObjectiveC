@@ -3,6 +3,4 @@
 
 @interface BulletView : UIView
 
-- (id)initBullet;
-
 @end

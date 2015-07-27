@@ -3,29 +3,27 @@
 
 @implementation Shape1
 
-- (id)initView
+- (id)init
 {
-    self = [super initWithFrame:CGRectZero];
+    self = [super init];
     
     if (self != nil)
     {
-        self.bounds = CGRectMake(-10, -10, 20, 20);
-        self.backgroundColor = [UIColor clearColor];
+        CAShapeLayer * layer = [CAShapeLayer layer];
+        [super.layer addSublayer:layer];
+        CGMutablePathRef path = CGPathCreateMutable();
+
+        CGPathMoveToPoint   (path, NULL, 10, 0);
+        CGPathAddLineToPoint(path, NULL, -7, 7);
+        CGPathAddLineToPoint(path, NULL, -4, 0);
+        CGPathAddLineToPoint(path, NULL, 10, 0);
+
+        layer.fillColor = [UIColor whiteColor].CGColor;
+        layer.path = path;
+        CGPathRelease(path);
     }
     
     return self;
-}
-
-
-- (void)drawRect:(CGRect)rect
-{
-    CGContextRef context = UIGraphicsGetCurrentContext();
-    CGContextSetFillColorWithColor(context, [UIColor whiteColor].CGColor);
-    CGContextMoveToPoint(context, 10, 0);
-    CGContextAddLineToPoint(context, -7, 7);
-    CGContextAddLineToPoint(context, -4, 0);
-    CGContextAddLineToPoint(context, 10, 0);
-    CGContextFillPath(context);
 }
 
 @end

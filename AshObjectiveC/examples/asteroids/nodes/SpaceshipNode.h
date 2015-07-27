@@ -5,7 +5,7 @@
 
 @interface SpaceshipNode : ASHNode
 
-@property (nonatomic, strong) Spaceship * spaceship;
-@property (nonatomic, strong) Position * position;
+@property (nonatomic, weak) Spaceship * spaceship;
+@property (nonatomic, weak) Position * position;
 
 @end

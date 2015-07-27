@@ -25,13 +25,13 @@
     
     if(self != nil)
     {
-        self.nodeClass = aNodeClass;
-        self.nodeUpdateTarget = aNodeUpdateTarget;
-        self.nodeUpdateSelector = aNodeUpdateSelector;
-        self.nodeAddedTarget = aNodeAddedTarget;
-        self.nodeAddedSelector = aNodeAddedSelector;
-        self.nodeRemovedTarget = aNodeRemovedTarget;
-        self.nodeAddedSelector = aNodeRemovedSelector;
+        nodeClass = aNodeClass;
+        nodeUpdateTarget = aNodeUpdateTarget;
+        nodeUpdateSelector = aNodeUpdateSelector;
+        nodeAddedTarget = aNodeAddedTarget;
+        nodeAddedSelector = aNodeAddedSelector;
+        nodeRemovedTarget = aNodeRemovedTarget;
+        nodeAddedSelector = aNodeRemovedSelector;
     }
     
     return self;
@@ -45,9 +45,9 @@
     
     if(self != nil)
     {
-        self.nodeClass = aNodeClass;
-        self.nodeUpdateTarget = aNodeUpdateTarget;
-        self.nodeUpdateSelector = aNodeUpdateSelector;
+        nodeClass = aNodeClass;
+        nodeUpdateTarget = aNodeUpdateTarget;
+        nodeUpdateSelector = aNodeUpdateSelector;
     }
     
     return self;
@@ -62,13 +62,13 @@
     
     if(self != nil)
     {
-        self.nodeClass = aNodeClass;
-        self.nodeUpdateTarget = self;
-        self.nodeUpdateSelector = aNodeUpdateSelector;
-        self.nodeAddedTarget = self;
-        self.nodeAddedSelector = aNodeAddedSelector;
-        self.nodeRemovedTarget = self;
-        self.nodeRemovedSelector = aNodeRemovedSelector;
+        nodeClass = aNodeClass;
+        nodeUpdateTarget = self;
+        nodeUpdateSelector = aNodeUpdateSelector;
+        nodeAddedTarget = self;
+        nodeAddedSelector = aNodeAddedSelector;
+        nodeRemovedTarget = self;
+        nodeRemovedSelector = aNodeRemovedSelector;
     }
     
     return self;
@@ -81,9 +81,9 @@
     
     if (self != nil)
     {
-        self.nodeClass = aNodeClass;
-        self.nodeUpdateTarget = self;
-        self.nodeUpdateSelector = aNodeUpdateSelector;
+        nodeClass = aNodeClass;
+        nodeUpdateTarget = self;
+        nodeUpdateSelector = aNodeUpdateSelector;
     }
     
     return self;
@@ -92,23 +92,23 @@
 
 - (void)addToEngine:(ASHEngine *)game
 {
-    self.nodeList = [game getNodeList:self.nodeClass];
+    nodeList = [game getNodeList:nodeClass];
     
     if(nodeAddedTarget != nil && nodeAddedSelector != nil)
     {
-        for (ASHNode * node = nodeList.head; node != nil; node = node.next)
+        for (ASHNode * node = nodeList->head; node != nil; node = node->next)
         {
             ((void(*)(id, SEL, id))objc_msgSend)(nodeAddedTarget, nodeAddedSelector, node);
         }
         
-        [nodeList.nodeAdded addListener:nodeAddedTarget 
-                                 action:nodeAddedSelector];
+        [nodeList->nodeAdded addListener:nodeAddedTarget
+                                  action:nodeAddedSelector];
     }
     
     if(nodeRemovedTarget != nil && nodeRemovedSelector != nil)
     {
-        [nodeList.nodeRemoved addListener:nodeRemovedTarget 
-                                   action:nodeRemovedSelector];
+        [nodeList->nodeRemoved addListener:nodeRemovedTarget
+                                    action:nodeRemovedSelector];
     }
 }
 
@@ -116,23 +116,23 @@
 {
     if(nodeAddedTarget != nil && nodeAddedSelector != nil)
     {
-        [nodeList.nodeAdded removeListener:nodeAddedTarget 
-                                    action:nodeAddedSelector];
+        [nodeList->nodeAdded removeListener:nodeAddedTarget
+                                     action:nodeAddedSelector];
     }
     
     if(nodeRemovedTarget != nil && nodeRemovedSelector != nil)
     {
-        [nodeList.nodeRemoved removeListener:nodeAddedTarget 
-                                      action:nodeAddedSelector];
+        [nodeList->nodeRemoved removeListener:nodeAddedTarget
+                                       action:nodeAddedSelector];
     }
     
-    self.nodeList = nil;
+    nodeList = nil;
 }
 
 - (void)update:(double)time
 {
     NSNumber * timeContainer = @(time);
-    for (ASHNode * node = nodeList.head; node != nil; node = node.next)
+    for (ASHNode * node = nodeList->head; node != nil; node = node->next)
     {
         ((void(*)(id, SEL, id, id))objc_msgSend)(nodeUpdateTarget, nodeUpdateSelector, node, timeContainer);
     }

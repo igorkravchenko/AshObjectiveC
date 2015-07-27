@@ -3,6 +3,8 @@
 
 @interface Bullet : NSObject
 
-@property (nonatomic, assign) double lifeRemaining;
+@property (nonatomic, assign) float lifeRemaining;
+
+- (instancetype)initWithLifeRemaining:(float)lifetime;
 
 @end

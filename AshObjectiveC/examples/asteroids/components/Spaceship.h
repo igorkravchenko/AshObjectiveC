@@ -6,4 +6,7 @@
 
 @property (nonatomic, strong) ASHEntityStateMachine * fsm;
 
+- (instancetype)initWithFsm:(ASHEntityStateMachine *)fsm;
+
+
 @end

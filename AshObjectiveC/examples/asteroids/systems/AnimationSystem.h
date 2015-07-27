@@ -3,6 +3,4 @@
 
 @interface AnimationSystem : ASHListIteratingSystem
 
-- (id)initSystem;
-
 @end

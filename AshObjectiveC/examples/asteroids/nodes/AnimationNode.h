@@ -4,6 +4,6 @@
 
 @interface AnimationNode : ASHNode
 
-@property (nonatomic, strong) Animation * animation;
+@property (nonatomic, weak) Animation * animation;
 
 @end

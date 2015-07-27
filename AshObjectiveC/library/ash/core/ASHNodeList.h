@@ -4,6 +4,13 @@
 #import "ASHNode.h"
 
 @interface ASHNodeList : NSObject
+{
+    @package
+    __strong ASHNode * head;
+    __strong ASHNode * tail;
+    __strong ASHSignal1 * nodeAdded;
+    __strong ASHSignal1 * nodeRemoved;
+}
 
 @property (nonatomic, strong) ASHNode * head;
 

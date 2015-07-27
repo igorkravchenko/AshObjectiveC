@@ -5,4 +5,6 @@
 
 @property (nonatomic, assign) float radius;
 
+- (instancetype)initWithRadius:(float)radius;
+
 @end

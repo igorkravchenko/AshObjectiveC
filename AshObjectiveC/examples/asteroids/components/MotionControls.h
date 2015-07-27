@@ -10,4 +10,10 @@
 @property (nonatomic, assign) float accelerationRate;
 @property (nonatomic, assign) float rotationRate;
 
+- (instancetype)initWithLeft:(NSUInteger)left
+                       right:(NSUInteger)right
+                  accelerate:(NSUInteger)accelerate
+            accelerationRate:(float)accelerationRate
+                rotationRate:(float)rotationRate;
+
 @end

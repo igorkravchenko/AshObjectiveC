@@ -3,7 +3,7 @@
 
 @interface GameConfig : NSObject
 
-@property(nonatomic, assign) double width;
-@property(nonatomic, assign) double height;
+@property(nonatomic, assign) float width;
+@property(nonatomic, assign) float height;
 
 @end

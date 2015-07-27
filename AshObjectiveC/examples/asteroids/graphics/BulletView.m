@@ -3,26 +3,22 @@
 
 @implementation BulletView
 
-- (id)initBullet
+- (id)init
 {
-    self = [super initWithFrame:CGRectZero];
+    self = [super init];
     
     if (self != nil)
     {
-        self.bounds = CGRectMake(-2, -2, 4, 4);
-        self.backgroundColor = [UIColor clearColor];
+        CAShapeLayer * layer = [CAShapeLayer layer];
+        CGMutablePathRef path = CGPathCreateMutable();
+        CGPathAddEllipseInRect(path, NULL, CGRectMake(-2, -2, 4, 4));
+        layer.fillColor = [UIColor whiteColor].CGColor;
+        layer.path = path;
+        [super.layer addSublayer:layer];
+        CGPathRelease(path);
     }
     
     return self;
-}
-
-
-- (void)drawRect:(CGRect)rect
-{
-    CGContextRef context = UIGraphicsGetCurrentContext();
-    CGContextSetFillColorWithColor(context, [UIColor whiteColor].CGColor);
-    CGContextAddEllipseInRect(context, self.bounds);
-    CGContextFillPath(context);
 }
 
 @end

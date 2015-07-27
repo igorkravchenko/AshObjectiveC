@@ -6,8 +6,8 @@
 
 @interface MotionControlNode : ASHNode
 
-@property (nonatomic, strong) MotionControls * control;
-@property (nonatomic, strong) Position * position;
-@property (nonatomic, strong) Motion * motion;
+@property (nonatomic, weak) MotionControls * control;
+@property (nonatomic, weak) Position * position;
+@property (nonatomic, weak) Motion * motion;
 
 @end

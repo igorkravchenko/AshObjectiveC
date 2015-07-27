@@ -6,8 +6,8 @@
 
 @interface BulletCollisionNode : ASHNode
 
-@property (nonatomic, strong) Bullet * bullet;
-@property (nonatomic, strong) Position * position;
-@property (nonatomic, strong) Collision * collision;
+@property (nonatomic, weak) Bullet * bullet;
+@property (nonatomic, weak) Position * position;
+@property (nonatomic, weak) Collision * collision;
 
 @end

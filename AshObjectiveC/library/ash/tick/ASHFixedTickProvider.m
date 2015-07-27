@@ -16,7 +16,7 @@
     if (self != nil)
     {
         frameTime = aFrameTime;
-        timeAdjustment = 1.;
+        timeAdjustment = 1.f;
     }
     
     return self;
@@ -44,7 +44,7 @@
     }
 }
 
-- (void)dispatchTick:(NSTimer *)timer
+- (void)dispatchTick:(NSTimer *)aTimer
 {
     [super dispatchWithObject:@(frameTime * timeAdjustment)];
 }

@@ -6,4 +6,7 @@
 
 @property (nonatomic, strong) id <Animatable> animation;
 
+- (instancetype)initWithAnimation:(id <Animatable>)animation;
+
+
 @end

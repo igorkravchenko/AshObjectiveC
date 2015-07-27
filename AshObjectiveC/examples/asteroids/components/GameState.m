@@ -9,12 +9,21 @@
     
     if (self != nil)
     {
-        _lives = 3;
+        _lives = 0;
         _level = 0;
-        _points = 0;
+        _hits = 0;
+        _playing = NO;
     }
     
     return self;
+}
+
+- (void)setForStart
+{
+    _lives = 3;
+    _level = 0;
+    _hits = 0;
+    _playing = YES;
 }
 
 @end

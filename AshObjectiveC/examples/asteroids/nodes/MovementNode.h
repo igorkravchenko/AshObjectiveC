@@ -5,7 +5,7 @@
 
 @interface MovementNode : ASHNode
 
-@property (nonatomic, strong) Position * position;
-@property (nonatomic, strong) Motion * motion;
+@property (nonatomic, weak) Position * position;
+@property (nonatomic, weak) Motion * motion;
 
 @end

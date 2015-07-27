@@ -24,10 +24,10 @@
               time:(NSNumber *)time
 {
     Bullet * bullet = node.bullet;
-    bullet.lifeRemaining -= time.doubleValue;
+    bullet.lifeRemaining -= time.floatValue;
     if (bullet.lifeRemaining <= 0.)
     {
-        [creator destroyEntity:node.entity];
+        [creator destroyEntity:node->entity];
     }
 }
 

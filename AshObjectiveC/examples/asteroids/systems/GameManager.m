@@ -41,20 +41,18 @@
 
 - (void)update:(double)time
 {
-    GameNode * node = nil;
-    for (node = (GameNode *)gameNodes.head;
-         node != nil;
-         node = (GameNode *)node.next)
+    GameNode * node = (GameNode *) gameNodes.head;
+    if (node && node.state.playing)
     {
         if ([spaceships isEmpty])
         {
             if (node.state.lives > 0)
             {
-                CGPoint newSpaceshipPosition = CGPointMake(config.width * 0.5,
-                                                           config.height * 0.5);
+                CGPoint newSpaceshipPosition = CGPointMake(config.width * 0.5f,
+                                                           config.height * 0.5f);
                 BOOL clearToAddSpaceship = YES;
-                for (AsteroidCollisionNode * asteroid = (AsteroidCollisionNode *)asteroids.head; asteroid != nil;
-                     asteroid = (AsteroidCollisionNode *)asteroid.next)
+                for (AsteroidCollisionNode * asteroid = (AsteroidCollisionNode *)asteroids->head; asteroid != nil;
+                     asteroid = (AsteroidCollisionNode *)asteroid->next)
                 {
                     float dx = asteroid.position.position.x - newSpaceshipPosition.x;
                     float dy = asteroid.position.position.y - newSpaceshipPosition.y;
@@ -70,20 +68,19 @@
                 if (clearToAddSpaceship)
                 {
                     [creator createSpaceship];
-                    node.state.lives--;
                 }
             }
             else
             {
-                // game over
-                NSLog(@"%@", @"game over");
+                node.state.playing = NO;
+                [creator createWaitForClick];
             }
         }
         
         if ([asteroids isEmpty] && [bullets isEmpty] && ![spaceships isEmpty])
         {
             // next level
-            SpaceshipNode * spaceship = (SpaceshipNode *)spaceships.head;
+            SpaceshipNode * spaceship = (SpaceshipNode *)spaceships->head;
             node.state.level++;
             NSInteger asteroidCount = 2 + node.state.level;
             for (NSInteger i = 0; i < asteroidCount; ++i)

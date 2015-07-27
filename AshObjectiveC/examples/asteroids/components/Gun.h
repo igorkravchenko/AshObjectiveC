@@ -9,4 +9,6 @@
 @property (nonatomic, assign) float minimumShotInterval;
 @property (nonatomic, assign) float bulletLifetime;
 
+
+
 @end

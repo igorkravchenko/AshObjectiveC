@@ -4,10 +4,13 @@
 #import "Gun.h"
 #import "Position.h"
 
+@class Audio;
+
 @interface GunControlNode : ASHNode
 
-@property (nonatomic, strong) GunControls * control;
-@property (nonatomic, strong) Gun * gun;
-@property (nonatomic, strong) Position * position;
+@property (nonatomic, weak) GunControls * control;
+@property (nonatomic, weak) Gun * gun;
+@property (nonatomic, weak) Position * position;
+@property (nonatomic, weak) Audio * audio;
 
 @end

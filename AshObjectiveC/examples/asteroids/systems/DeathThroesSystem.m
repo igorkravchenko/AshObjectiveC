@@ -4,7 +4,7 @@
 
 @implementation DeathThroesSystem
 {
-    EntityCreator * creator;
+    __weak EntityCreator * creator;
 }
 
 - (id)initEntityCreator:(EntityCreator *)aCreator
@@ -26,7 +26,7 @@
     node.death.countdown -= time.doubleValue;
     if (node.death.countdown <= 0)
     {
-        [creator destroyEntity:node.entity];
+        [creator destroyEntity:node->entity];
     }
 }
 

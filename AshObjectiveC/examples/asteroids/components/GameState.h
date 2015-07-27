@@ -5,6 +5,9 @@
 
 @property (nonatomic, assign) NSInteger lives;
 @property (nonatomic, assign) NSInteger level;
-@property (nonatomic, assign) NSInteger points;
+@property (nonatomic, assign) NSInteger hits;
+@property (nonatomic, assign) BOOL playing;
+
+- (void)setForStart;
 
 @end

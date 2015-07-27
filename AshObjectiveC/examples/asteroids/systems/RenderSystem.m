@@ -23,9 +23,9 @@
 - (void)addToEngine:(ASHEngine *)engine
 {
     nodes = [engine getNodeList:[RenderNode class]];
-    for (RenderNode * node = (RenderNode *)nodes.head;
+    for (RenderNode * node = (RenderNode *)nodes->head;
          node != nil;
-         node = (RenderNode *)node.next)
+         node = (RenderNode *)node->next)
     {
         [self addToDisplay:node];
     }
@@ -52,9 +52,9 @@
     Display * display = nil;
     UIView * displayObject = nil;
 
-    for (node = (RenderNode *)nodes.head;
+    for (node = (RenderNode *)nodes->head;
          node != nil;
-         node = (RenderNode *)node.next)
+         node = (RenderNode *)node->next)
     {
         display = node.display;
         displayObject = display.displayObject;

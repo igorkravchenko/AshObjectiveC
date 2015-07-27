@@ -9,6 +9,7 @@
 #import "AsteroidView.h"
 #import "ASHEntityStateMachine.h"
 #import "MotionControls.h"
+#import "GameConfig.h"
 #import "ASHStateComponentMapping.h"
 #import "Gun.h"
 #import "GunControls.h"
@@ -20,19 +21,29 @@
 #import "Spaceship.h"
 #import "Bullet.h"
 #import "BulletView.h"
+#import "WaitForStartView.h"
+#import "WaitForStart.h"
+#import "AsteroidDeathView.h"
+#import "Audio.h"
+#import "Hud.h"
+#import "HudView.h"
 
 @implementation EntityCreator
 {
     ASHEngine * engine;
+    ASHEntity * waitEntity;
+    GameConfig * gameConfig;
 }
 
 - (id)initWithEngine:(ASHEngine *)anEngine
+          gameConfig:(GameConfig *)aGameConfig
 {
     self = [super init];
     
     if(self != nil)
     {
         engine = anEngine;
+        gameConfig = aGameConfig;
     }
     
     return self;
@@ -45,10 +56,33 @@
 
 - (ASHEntity *)createGame
 {
-    ASHEntity * gameEntity = [[[ASHEntity alloc] init]
+    HudView * hud = [[HudView alloc] initWithSize:CGSizeMake(gameConfig.width, gameConfig.height)];
+    ASHEntity * gameEntity = [[[ASHEntity alloc] initWithName:@"game"]
                            addComponent:[[GameState alloc] init]];
+    [gameEntity addComponent:[[Hud alloc] initWithView:hud]];
+    [gameEntity addComponent:[[Display alloc] initWithDisplayObject:hud]];
+    [gameEntity addComponent:[[Position alloc] initWithX:0 y:0 rotation:0]];
     [engine addEntity:gameEntity];
     return gameEntity;
+}
+
+- (ASHEntity *)createWaitForClick
+{
+    if(!waitEntity)
+    {
+        CGRect screenRect = CGRectMake(0, 0, gameConfig.width, gameConfig.height);
+        WaitForStartView * waitView = [[WaitForStartView alloc] initWithSize:CGSizeMake(gameConfig.width, gameConfig.height)];
+
+        waitEntity = [[ASHEntity alloc] initWithName:@"wait"];
+        [waitEntity addComponent:[[WaitForStart alloc] initWithWaitForStart:waitView]];
+        [waitEntity addComponent:[[Display alloc] initWithDisplayObject:waitView]];
+        [waitEntity addComponent:[[Position alloc] initWithX:CGRectGetMidX(screenRect)
+                                                           y:CGRectGetMidY(screenRect)
+                                                    rotation:0]];
+    }
+    ((WaitForStart *) [waitEntity getComponent:WaitForStart.class]).startGame = NO;
+    [engine addEntity:waitEntity];
+    return waitEntity;
 }
 
 - (ASHEntity *)createAsteroidWithRadius:(float)radius
@@ -56,25 +90,37 @@
                                    y:(float)y
 {
     ASHEntity * asteroid = [[ASHEntity alloc] init];
-    [asteroid addComponent:[[Asteroid alloc] init]];
-    Position * position = [[Position alloc] init];
-    position.position = CGPointMake(x, y);
-    position.rotation = 0;
-    [asteroid addComponent:position];
-    Collision * collision = [[Collision alloc] init];
-    collision.radius = radius;
-    [asteroid addComponent:collision];
-    Motion * motion = [[Motion alloc] init];
-    motion.velocity = CGPointMake(
-            ( MathRandom() - 0.5f ) * 4.f * ( 50 - radius),
-            ( MathRandom() - 0.5f ) * 4.f * ( 50 - radius));
-    motion.angularVelocity = MathRandom() * 2 - 1;
-    motion.damping = 0;
-    [asteroid addComponent:motion];
-    Display * display = [[Display alloc] init];
-    display.displayObject = [[AsteroidView alloc] initWithRadius:radius];
-    [asteroid addComponent:display];
+
+    ASHEntityStateMachine * fsm = [[ASHEntityStateMachine alloc] initWithEntity:asteroid];
+
+    ASHEntityState * aliveState = [fsm createState:@"alive"];
+    Motion * motion = [[Motion alloc] initWithVelocityX:( MathRandom() - 0.5f ) * 4.f * ( 50 - radius)
+                                              velocityY:( MathRandom() - 0.5f ) * 4.f * ( 50 - radius)
+                                        angularVelocity:MathRandom() * 2.f - 1.f
+                                                damping:0];
+    [[aliveState add:motion.class] withInstance:motion];
+    Collision * collision = [[Collision alloc] initWithRadius:radius];
+    [[aliveState add:collision.class] withInstance:collision];
+    Display * display = [[Display alloc] initWithDisplayObject:[[AsteroidView alloc] initWithRadius:radius]];
+    [[aliveState add:display.class] withInstance:display];
+
+    AsteroidDeathView * asteroidDeathView = [[AsteroidDeathView alloc] initWithRadius:radius];
+    ASHEntityState  * destroyedState = [fsm createState:@"destroyed"];
+    DeathThroes * deathThroes = [[DeathThroes alloc] initWithCountdown:3];
+    [[destroyedState add:deathThroes.class] withInstance:deathThroes];
+    Display * displayDeathView = [[Display alloc] initWithDisplayObject:asteroidDeathView];
+    [[destroyedState add:display.class] withInstance:displayDeathView];
+    Animation * animation = [[Animation alloc] initWithAnimation:asteroidDeathView];
+    [[destroyedState add:animation.class] withInstance:animation];
+
+    [asteroid addComponent:[[Asteroid alloc] initWithFsm:fsm]];
+    [asteroid addComponent:[[Position alloc] initWithX:x y:y rotation:0]];
+    [asteroid addComponent:[[Audio alloc] init]];
+
+    [fsm changeState:@"alive"];
+
     [engine addEntity:asteroid];
+
     return asteroid;
 }
 
@@ -82,15 +128,15 @@
 {
     ASHEntity * spaceship = [[ASHEntity alloc] init];
     ASHEntityStateMachine * fsm = [[ASHEntityStateMachine alloc] initWithEntity:spaceship];
-    
+
     ASHEntityState * playingState = [fsm createState:@"playing"];
-   
+
     Motion * motion = [[Motion alloc] init];
     motion.velocity = CGPointMake(0, 0);
     motion.angularVelocity = 0;
     motion.damping = 15;
     [[playingState add:[Motion class]] withInstance:motion];
-    
+
     MotionControls * motionControls = [[MotionControls alloc] init];
     motionControls.left = TriggerLeft;
     motionControls.right = TriggerRight;
@@ -110,10 +156,10 @@
     collision.radius = 9;
     [[playingState add:[Collision class]] withInstance:collision];
     Display * display = [[Display alloc] init];
-    display.displayObject = [[SpaceshipView alloc] initSpaceship];
+    display.displayObject = [[SpaceshipView alloc] init];
     [[playingState add:[Display class]] withInstance:display];
-    
-    SpaceshipDeathView * deathView = [[SpaceshipDeathView alloc] initView];
+
+    SpaceshipDeathView * deathView = [[SpaceshipDeathView alloc] init];
     ASHEntityState * destroyedState = [fsm createState:@"destroyed"];
     DeathThroes * deathThroes = [[DeathThroes alloc] init];
     deathThroes.countdown = 5;
@@ -124,16 +170,20 @@
     Animation * animation = [[Animation alloc] init];
     animation.animation = deathView;
     [[destroyedState add:[Animation class]] withInstance:animation];
-    
+
     Spaceship * spaceshipComponent = [[Spaceship alloc] init];
     spaceshipComponent.fsm = fsm;
     [spaceship addComponent:spaceshipComponent];
-    
+
     Position * position = [[Position alloc] init];
-    position.position = CGPointMake(160, 240);
+    CGRect screenRect = CGRectMake(0, 0, gameConfig.width, gameConfig.height);
+    position.position = CGPointMake(CGRectGetMidX(screenRect), CGRectGetMidY(screenRect));
     position.rotation = 0;
     [spaceship addComponent:position];
-    
+
+    Audio * audio = [[Audio alloc] init];
+    [spaceship addComponent:audio];
+
     [fsm changeState:@"playing"];
     [engine addEntity:spaceship];
     return spaceship;
@@ -165,10 +215,9 @@
     motion.damping = 0;
     [bullet addComponent:motion];
     Display * display = [[Display alloc] init];
-    display.displayObject = [[BulletView alloc] initBullet];
+    display.displayObject = [[BulletView alloc] init];
     [bullet addComponent:display];
     [engine addEntity:bullet];
     return bullet;
 }
-
 @end

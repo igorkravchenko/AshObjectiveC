@@ -3,6 +3,4 @@
 
 @interface Shape1 : UIView
 
-- (id)initView;
-
 @end

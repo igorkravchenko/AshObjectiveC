@@ -3,6 +3,4 @@
 
 @interface SpaceshipView : UIView
 
-- (id)initSpaceship;
-
 @end

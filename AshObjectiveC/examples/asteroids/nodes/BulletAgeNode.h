@@ -4,6 +4,6 @@
 
 @interface BulletAgeNode : ASHNode
 
-@property (nonatomic, strong) Bullet * bullet;
+@property (nonatomic, weak) Bullet * bullet;
 
 @end

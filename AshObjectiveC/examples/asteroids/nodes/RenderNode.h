@@ -5,7 +5,7 @@
 
 @interface RenderNode : ASHNode
 
-@property (nonatomic, strong) Position * position;
-@property (nonatomic, strong) Display * display;
+@property (nonatomic, weak) Position * position;
+@property (nonatomic, weak) Display * display;
 
 @end

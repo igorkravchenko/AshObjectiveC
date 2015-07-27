@@ -3,27 +3,26 @@
 
 @implementation SpaceshipView
 
-- (id)initSpaceship
+- (id)init
 {
-    self = [super initWithFrame:CGRectZero];
+    self = [super init];
+
     if (self)
     {
-        self.bounds = CGRectMake(-7, -7, 17, 14);
-        self.backgroundColor = [UIColor clearColor];
+        CGMutablePathRef path = CGPathCreateMutable();
+        CGPathMoveToPoint(path, NULL, 10, 0);
+        CGPathAddLineToPoint(path, NULL, -7, 7);
+        CGPathAddLineToPoint(path, NULL, -4, 0);
+        CGPathAddLineToPoint(path, NULL, -7, -7);
+        CGPathAddLineToPoint(path, NULL, 10, 0);
+        CAShapeLayer * layer = [CAShapeLayer layer];
+        layer.fillColor = [UIColor whiteColor].CGColor;
+        layer.path = path;
+        CGPathRelease(path);
+        [super.layer addSublayer:layer];
     }
-    return self;
-}
 
-- (void)drawRect:(CGRect)rect
-{
-    CGContextRef context = UIGraphicsGetCurrentContext();
-    CGContextSetFillColorWithColor(context, [UIColor whiteColor].CGColor);
-    CGContextMoveToPoint(context, 10, 0);
-    CGContextAddLineToPoint(context, -7, 7);
-    CGContextAddLineToPoint(context, -4, 0);
-    CGContextAddLineToPoint(context, -7, -7);
-    CGContextAddLineToPoint(context, 10, 0);
-    CGContextFillPath(context);
+    return self;
 }
 
 @end

@@ -4,6 +4,4 @@
 
 @interface SpaceshipDeathView : UIView <Animatable>
 
-- (id)initView;
-
 @end

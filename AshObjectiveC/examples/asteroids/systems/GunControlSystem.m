@@ -1,6 +1,7 @@
 
 #import "GunControlSystem.h"
 #import "GunControlNode.h"
+#import "Audio.h"
 
 @implementation GunControlSystem
 {
@@ -29,13 +30,14 @@
     Position * position = node.position;
     Gun * gun = node.gun;
     
-    gun.shooting = [triggerPoll isActive:control.trigger];
-    gun.timeSinceLastShot += time.doubleValue;
+    gun.shooting = [triggerPoll isActive:(Trigger) control.trigger];
+    gun.timeSinceLastShot += time.floatValue;
     if(gun.shooting && gun.timeSinceLastShot >= gun.minimumShotInterval)
     {
 
         [creator createUserBullet:gun
                    parentPosition:position];
+        [node.audio play:ShootGun];
         gun.timeSinceLastShot = 0;
     }
 }

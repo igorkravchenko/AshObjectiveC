@@ -3,23 +3,285 @@
 #import "Trigger.h"
 #import "Asteroids.h"
 
-// UIView helpers
-#define UIVIEW_MOVE(uiview, x, y) uiview.frame = CGRectMake(x, y, CGRectGetWidth(uiview.frame), CGRectGetHeight(uiview.frame))
+#define SYSTEM_VERSION_LESS_THAN(v) ([[[UIDevice currentDevice] systemVersion] compare:v options:NSNumericSearch] == NSOrderedAscending)
 
-#define UIVIEW_GET_SIZE(uiview) uiview.frame.size;
-#define UIVIEW_GET_X(uiview) uiview.frame.origin.x
-#define UIVIEW_GET_Y(uiview) uiview.frame.origin.y
-#define UIVIEW_SET_X(uiview, x) UIVIEW_MOVE(uiview, x, UIVIEW_GET_Y(uiview))
-#define UIVIEW_SET_Y(uiview, y) UIVIEW_MOVE(uiview, UIVIEW_GET_X(uiview), y)
-#define UIVIEW_ADD_X(uiview, addX) UIVIEW_SET_X(uiview, UIVIEW_GET_X(uiview) + addX)
-#define UIVIEW_ADD_Y(uiview, addY) UIVIEW_SET_Y(uiview, UIVIEW_GET_Y(uiview) + addY)
+@interface RootViewController : UIViewController
 
-#define UIVIEW_RESIZE(uiview, w, h) uiview.frame = CGRectMake(uiview.frame.origin.x, uiview.frame.origin.y, w, h)
-#define UIVIEW_GET_WIDTH(uiview) CGRectGetWidth(uiview.frame)
-#define UIVIEW_GET_HEIGHT(uiview) CGRectGetHeight(uiview.frame)
-#define UIVIEW_SET_WIDTH(uiview, w) UIVIEW_RESIZE(uiview, w, UIVIEW_GET_HEIGHT(uiview))
-#define UIVIEW_SET_HEIGHT(uiview, h) UIVIEW_RESIZE(uiview, UIVIEW_GET_WIDTH(uiview), h)
+@end
 
+@implementation RootViewController
+
+@end
+
+@class TriggerControllerView;
+
+typedef void (^TriggerControllerViewDidAddTrigger)(TriggerControllerView * controllerView, Trigger trigger);
+typedef void (^TriggerControllerViewDidRemoveTrigger)(TriggerControllerView * controllerView, Trigger trigger);
+
+@interface TriggerControllerView : UIView
+
+@property (nonatomic, copy) TriggerControllerViewDidAddTrigger didAddTrigger;
+@property (nonatomic, copy) TriggerControllerViewDidRemoveTrigger didRemoveTrigger;
+
+@end
+
+typedef void (^touchHandler)(NSSet * touches, UIEvent * event);
+
+@interface TouchView : UIView
+
+@property (nonatomic, copy) touchHandler touchesBegan;
+@property (nonatomic, copy) touchHandler touchesMoved;
+@property (nonatomic, copy) touchHandler touchesEnded;
+@property (nonatomic, copy) touchHandler touchesCancelled;
+
+@end
+
+@implementation TouchView
+
+- (void)touchesBegan:(NSSet *)touches
+           withEvent:(UIEvent *)event
+{
+    [super touchesBegan:touches withEvent:event];
+    if(_touchesBegan)
+    {
+        _touchesBegan(touches, event);
+    }
+}
+
+- (void)touchesMoved:(NSSet *)touches
+           withEvent:(UIEvent *)event
+{
+    [super touchesMoved:touches withEvent:event];
+    if(_touchesMoved)
+    {
+        _touchesMoved(touches, event);
+    }
+}
+
+- (void)touchesEnded:(NSSet *)touches
+           withEvent:(UIEvent *)event
+{
+    [super touchesEnded:touches withEvent:event];
+    if(_touchesEnded)
+    {
+        _touchesEnded(touches, event);
+    }
+}
+
+- (void)touchesCancelled:(NSSet *)touches
+               withEvent:(UIEvent *)event
+{
+    [super touchesCancelled:touches withEvent:event];
+    if(_touchesCancelled)
+    {
+        _touchesCancelled(touches, event);
+    }
+}
+
+@end
+
+
+@implementation TriggerControllerView
+{
+
+}
+
+- (instancetype)initWithFrame:(CGRect)frame
+{
+    self = [super initWithFrame:frame];
+    if (self)
+    {
+        CGFloat h = CGRectGetHeight(frame);
+        TouchView * rotationContainer = [[TouchView alloc] initWithFrame:CGRectMake(h * .5f, 0, h * 2.5f, h)];
+        rotationContainer.multipleTouchEnabled = NO;
+        [super addSubview:rotationContainer];
+        TouchView * shootAndAccelerateContainer = [[TouchView alloc] initWithFrame:CGRectMake(CGRectGetWidth(frame) - h * 2.5f - h * .5f, 0, h * 2.5f, h)];
+        shootAndAccelerateContainer.multipleTouchEnabled = YES;
+        [super addSubview:shootAndAccelerateContainer];
+        UIButton * (^createButton)(NSString *imageName, Trigger trigger, UIView * container) = ^UIButton *(NSString *imageName, Trigger trigger, UIView * container)
+        {
+            UIButton * control = [[UIButton alloc] init];
+            [control setImage:[UIImage imageNamed:imageName] forState:UIControlStateNormal];
+            control.tag = trigger;
+            [control sizeToFit];
+            [container addSubview:control];
+            control.userInteractionEnabled = NO;
+            return control;
+        };
+
+        UIButton * leftButton = createButton(@"left-button", TriggerLeft, rotationContainer);
+        leftButton.center = CGPointMake(.5f * h , h / 2.f);
+        UIButton * rightButton = createButton(@"right-button", TriggerRight, rotationContainer);
+        rightButton.center = CGPointMake(h * 2.f, h / 2.f);
+        UIButton * shootButton = createButton(@"shoot-button", TriggerGun, shootAndAccelerateContainer);
+        shootButton.center = CGPointMake(.5f * h , h / 2.f);
+        UIButton * accelerateButton = createButton(@"accelerate-button", TriggerAccelerate, shootAndAccelerateContainer);
+        accelerateButton.center = CGPointMake(h * 2.f, h / 2.f);
+        CGRect rotationRect = rotationContainer.frame;
+        CGFloat w = CGRectGetWidth(rotationRect);
+        __weak typeof(rotationContainer) weakRotationContainer = rotationContainer;
+        __weak typeof(self) weakSelf = self;
+
+        touchHandler rotationTouchHandler = ^(NSSet *touches, UIEvent *event)
+        {
+            for (UITouch * touch in touches)
+            {
+                CGPoint touchPoint = [touch locationInView:weakRotationContainer];
+                float xRatio = touchPoint.x / w;
+                rightButton.highlighted = xRatio > 0.5f;
+                leftButton.highlighted = !rightButton.highlighted;
+
+                if(weakSelf.didAddTrigger)
+                {
+                    if(leftButton.highlighted)
+                    {
+                        weakSelf.didAddTrigger(weakSelf, (Trigger) leftButton.tag);
+                        weakSelf.didRemoveTrigger(weakSelf, (Trigger) rightButton.tag);
+                    }
+                    else if(rightButton.highlighted)
+                    {
+                        weakSelf.didAddTrigger(weakSelf, (Trigger) rightButton.tag);
+                        weakSelf.didRemoveTrigger(weakSelf, (Trigger) leftButton.tag);
+                    }
+                }
+            }
+        };
+
+        rotationContainer.touchesBegan = rotationContainer.touchesMoved = rotationTouchHandler;
+        rotationContainer.touchesCancelled = rotationContainer.touchesEnded = ^(NSSet *touches, UIEvent *event)
+        {
+            leftButton.highlighted = rightButton.highlighted = NO;
+            if(weakSelf.didRemoveTrigger)
+            {
+                weakSelf.didRemoveTrigger(weakSelf, (Trigger) leftButton.tag);
+                weakSelf.didRemoveTrigger(weakSelf, (Trigger) rightButton.tag);
+            }
+        };
+
+        __weak typeof(rotationContainer) weakShootAndAccelerateContainer = shootAndAccelerateContainer;
+        NSArray * buttons = @[shootButton, accelerateButton];
+        NSMapTable * touchToButtonMap = [NSMapTable mapTableWithKeyOptions:NSMapTableObjectPointerPersonality
+                                                              valueOptions:NSMapTableObjectPointerPersonality];
+        shootAndAccelerateContainer.touchesBegan = shootAndAccelerateContainer.touchesMoved = ^(NSSet *touches, UIEvent *event)
+        {
+            for (UITouch * touch in touches)
+            {
+                CGPoint touchPoint = [touch locationInView:weakShootAndAccelerateContainer];
+
+                for (UIButton * button in buttons)
+                {
+                    CGRect rect = button.frame;
+                    if(CGRectContainsPoint(rect, touchPoint))
+                    {
+                        button.highlighted = YES;
+                        NSMutableSet * mappedButtons = [touchToButtonMap objectForKey:touch];
+                        if(!mappedButtons)
+                        {
+                            mappedButtons = [NSMutableSet set];
+                            [touchToButtonMap setObject:mappedButtons
+                                                 forKey:touch];
+
+                        }
+
+                        [mappedButtons addObject:button];
+                    }
+                    else
+                    {
+                        NSMutableSet * mappedButtons = [touchToButtonMap objectForKey:touch];
+
+                        if(mappedButtons)
+                        {
+                            NSMutableArray * removeButtons = [NSMutableArray array];
+                            for (UIButton * mappedButton in mappedButtons)
+                            {
+                                CGRect mappedRect = mappedButton.frame;
+
+                                if(!CGRectContainsPoint(mappedRect, touchPoint))
+                                {
+                                    [removeButtons addObject:mappedButton];
+                                }
+                            }
+
+                            while (removeButtons.count)
+                            {
+                                UIButton  * removeButton = removeButtons.lastObject;
+                                removeButton.highlighted = NO;
+                                [mappedButtons removeObject:removeButton];
+                                [removeButtons removeLastObject];
+                            }
+
+                            if(mappedButtons.count == 0)
+                            {
+                                [touchToButtonMap removeObjectForKey:touch];
+                            }
+                        }
+                    }
+                }
+            }
+
+            if(weakSelf.didAddTrigger && weakSelf.didRemoveTrigger)
+            {
+                for (UIButton * button in buttons)
+                {
+                    if(button.highlighted)
+                    {
+                        weakSelf.didAddTrigger(weakSelf, (Trigger) button.tag);
+                    }
+                    else
+                    {
+                        weakSelf.didRemoveTrigger(weakSelf, (Trigger) button.tag);
+                    }
+                }
+            }
+        };
+
+        shootAndAccelerateContainer.touchesCancelled = shootAndAccelerateContainer.touchesEnded = ^(NSSet *touches, UIEvent *event)
+        {
+            NSMutableSet * removeButtons = [NSMutableSet set];
+
+            for (UITouch * touch in touches)
+            {
+                NSSet * touchedButtons = [touchToButtonMap objectForKey:touch];
+
+                if(touchedButtons)
+                {
+                    for (UIButton * button in touchedButtons)
+                    {
+                        [removeButtons addObject:button];
+                    }
+                }
+
+                [touchToButtonMap removeObjectForKey:touch];
+            }
+
+            for (UITouch * relevantTouch in touchToButtonMap)
+            {
+                NSSet * touchedButtons = [touchToButtonMap objectForKey:relevantTouch];
+
+                if(touchedButtons)
+                {
+                    for (UIButton * button in touchedButtons)
+                    {
+                        [removeButtons removeObject:button];
+                    }
+                }
+            }
+
+            for (UIButton * removeButton in removeButtons)
+            {
+                removeButton.highlighted = NO;
+                if(weakSelf.didRemoveTrigger)
+                {
+                    weakSelf.didRemoveTrigger(weakSelf, (Trigger) removeButton.tag);
+                }
+            }
+        };
+    }
+
+    return self;
+}
+
+@end
 
 @implementation AppDelegate
 {
@@ -28,44 +290,47 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
-    self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
-    // Override point for customization after application launch.
-    [self.window makeKeyAndVisible];
-    _window.backgroundColor = [UIColor blackColor];
-    
-    UIButton * leftButton = [self makeButton:@"Left"];
-    leftButton.tag = TriggerLeft;
-    [_window addSubview:leftButton];
-    UIVIEW_MOVE(leftButton, 0, UIVIEW_GET_HEIGHT(_window) -
-                               UIVIEW_GET_HEIGHT(leftButton));
-    UIButton * rightButton = [self makeButton:@"Right"];
-    rightButton.tag = TriggerRight;
-    [_window addSubview:rightButton];
-    UIVIEW_MOVE(rightButton, UIVIEW_GET_WIDTH(_window) -
-                UIVIEW_GET_WIDTH(rightButton), UIVIEW_GET_HEIGHT(_window) -
-                UIVIEW_GET_HEIGHT(rightButton));
-    UIVIEW_SET_WIDTH(leftButton, UIVIEW_GET_WIDTH(rightButton));
-    
-    UIButton * accelerateButton = [self makeButton:@"Accelerate"];
-    accelerateButton.tag = TriggerAccelerate;
-    
-    [_window addSubview:accelerateButton];
-    UIVIEW_MOVE(accelerateButton, UIVIEW_GET_X(leftButton) + UIVIEW_GET_WIDTH(leftButton) + 40, UIVIEW_GET_HEIGHT(_window) -
-                UIVIEW_GET_HEIGHT(accelerateButton));
-    
-    UIButton * gunButton = [self makeButton:@"Fire"];
-    gunButton.tag = TriggerGun;
-    
-    [_window addSubview:gunButton];
-    UIVIEW_MOVE(gunButton, UIVIEW_GET_X(accelerateButton) + UIVIEW_GET_WIDTH(accelerateButton) + 20, UIVIEW_GET_HEIGHT(_window) -
-                UIVIEW_GET_HEIGHT(gunButton));
-    UIVIEW_SET_WIDTH(gunButton, UIVIEW_GET_WIDTH(accelerateButton) - 6);
-    
-    asteroids = [[Asteroids alloc] initWithContainer:_window
-                                               width:UIVIEW_GET_WIDTH(_window)
-                                              height:UIVIEW_GET_HEIGHT(_window) - 90];
+    application.statusBarHidden = YES;
+    CGRect screenRect = [UIScreen mainScreen].bounds;
+    _window = [[UIWindow alloc] initWithFrame:screenRect];
+    [_window makeKeyAndVisible];
+    _window.rootViewController = [[RootViewController alloc] init];
+    UIView * view = _window.rootViewController.view;
+
+    CGRect rect;
+
+    if(SYSTEM_VERSION_LESS_THAN(@"8"))
+    {
+        rect = CGRectMake(0, 0, CGRectGetWidth(screenRect), CGRectGetHeight(screenRect));
+    }
+    else
+    {
+        rect = CGRectMake(0, 0, CGRectGetHeight(screenRect), CGRectGetWidth(screenRect));
+    }
+
+    CGFloat w = fmaxf(CGRectGetWidth(rect), CGRectGetHeight(rect));
+    CGFloat h = fminf(CGRectGetWidth(rect), CGRectGetHeight(rect));
+
+    view.backgroundColor = [UIColor blackColor];
+
+    TriggerControllerView * rotationControllerView = [[TriggerControllerView alloc] initWithFrame:CGRectMake(0, h - 90, w, 60)];
+
+    asteroids = [[Asteroids alloc] initWithContainer:view
+                                               width:w
+                                              height:h];
     [asteroids start];
-    
+    [view addSubview:rotationControllerView];
+    __weak typeof(asteroids) weakAsteroids = asteroids;
+    rotationControllerView.didAddTrigger = ^(TriggerControllerView *controllerView, Trigger trigger)
+    {
+        [weakAsteroids.triggerPoll addTrigger:trigger];
+    };
+
+    rotationControllerView.didRemoveTrigger = ^(TriggerControllerView *controllerView, Trigger trigger)
+    {
+        [weakAsteroids.triggerPoll removeTrigger:trigger];
+    };
+
     return YES;
 }
 
@@ -94,37 +359,6 @@
 - (void)applicationWillTerminate:(UIApplication *)application
 {
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
-}
-
-- (UIButton *)makeButton:(NSString *)title
-{
-    UIButton * button = [UIButton buttonWithType:UIButtonTypeCustom];
-    [button setTitle:title
-            forState:UIControlStateNormal];
-    [button setTitleColor:[UIColor whiteColor]
-                 forState:UIControlStateNormal];
-    button.tintColor = [UIColor grayColor];
-    [button sizeToFit];
-    
-    [button addTarget:self
-               action:@selector(handleDown:)
-     forControlEvents:UIControlEventTouchDown];
-    
-    [button addTarget:self
-               action:@selector(handleUp:)
-     forControlEvents:UIControlEventTouchUpInside | UIControlEventTouchUpOutside];
-    
-    return button;
-}
-
-- (void)handleDown:(UIButton *)sender
-{
-    [asteroids.triggerPoll addTrigger:(Trigger)sender.tag];
-}
-
-- (void)handleUp:(UIButton *)sender
-{
-    [asteroids.triggerPoll removeTrigger:(Trigger)sender.tag];
 }
 
 @end

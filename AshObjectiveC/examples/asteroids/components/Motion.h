@@ -7,4 +7,10 @@
 @property (nonatomic, assign) float angularVelocity;
 @property (nonatomic, assign) float damping;
 
+- (instancetype)initWithVelocityX:(float)velocityX
+                        velocityY:(float)velocityY
+                  angularVelocity:(float)angularVelocity
+                          damping:(float)damping;
+
+
 @end

@@ -4,7 +4,7 @@
 
 @implementation AnimationSystem
 
-- (id)initSystem
+- (id)init
 {
     self = [super initWithNodeClass:[AnimationNode class]
                  nodeUpdateSelector:@selector(updateNode:time:)];

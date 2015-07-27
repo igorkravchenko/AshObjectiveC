@@ -4,10 +4,13 @@
 #import "Position.h"
 #import "Collision.h"
 
+@class Audio;
+
 @interface AsteroidCollisionNode : ASHNode
 
-@property (nonatomic, strong) Asteroid * asteroid;
-@property (nonatomic, strong) Position * position;
-@property (nonatomic, strong) Collision * collision;
+@property (nonatomic, weak) Asteroid * asteroid;
+@property (nonatomic, weak) Position * position;
+@property (nonatomic, weak) Collision * collision;
+@property (nonatomic, weak) Audio * audio;
 
 @end

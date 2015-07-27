@@ -5,4 +5,7 @@
 
 @property (nonatomic, assign) float countdown;
 
+- (instancetype)initWithCountdown:(float)duration;
+
+
 @end

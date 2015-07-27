@@ -4,6 +4,6 @@
 
 @interface DeathThroesNode : ASHNode
 
-@property (nonatomic, strong) DeathThroes * death;
+@property (nonatomic, weak) DeathThroes * death;
 
 @end
