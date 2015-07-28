@@ -11,6 +11,7 @@ Pod::Spec.new do |s|
   s.homepage     = "http://www.ashframework.org"
   s.license      = 'MIT'
   s.author             = { "Igor Kravchenko" => "igman2005@gmail.com" }
+  s.osx.deployment_target = '10.8'
   s.ios.deployment_target = '6.0'
   s.source       = { :git => "https://github.com/igorkravchenko/AshObjectiveC.git", :tag => "1.0.1" }
   s.source_files = 'AshObjectiveC/library', 'AshObjectiveC/library/**/*.{h,m}'

@@ -16,6 +16,7 @@
     {
         _encodeBlocks = [NSMutableDictionary dictionary];
         _decodeBlocks = [NSMutableDictionary dictionary];
+        /*
         NSString * cgPointObjCType = @(@encode(CGPoint));
         NSString * cgRectObjCType = @(@encode(CGRect));
         NSString * cgSizeObjCType = @(@encode(CGSize));
@@ -168,6 +169,7 @@
         {
             return [NSValue valueWithUIEdgeInsets:UIEdgeInsetsFromString(encodedValue[valueKey])];
         } forObjCType:uiEdgeInsetsObjCType];
+         */
     }
 
     return self;
