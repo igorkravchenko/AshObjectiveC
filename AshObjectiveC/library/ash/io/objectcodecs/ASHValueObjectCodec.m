@@ -2,6 +2,25 @@
 #import "ASHValueObjectCodec.h"
 #import "ASHCodecManager.h"
 #import "ASHTypeAssociations.h"
+#import <QuartzCore/QuartzCore.h>
+
+static inline NSString * ASH_NSStringFromCGPoint(CGPoint aPoint)
+{
+#if TARGET_OS_IPHONE
+    return NSStringFromCGPoint(aPoint);
+#else
+    return NSStringFromPoint(NSPointFromCGPoint(aPoint));
+#endif
+}
+
+static inline CGPoint ASH_CGPointFromString(NSString * stringPoint)
+{
+#if TARGET_OS_IPHONE
+    return CGPointFromString(stringPoint);
+#else
+    return NSPointFromCGPoint(NSPointFromString(stringPoint));
+#endif
+}
 
 @implementation ASHValueObjectCodec
 {
@@ -16,75 +35,125 @@
     {
         _encodeBlocks = [NSMutableDictionary dictionary];
         _decodeBlocks = [NSMutableDictionary dictionary];
-        /*
+
         NSString * cgPointObjCType = @(@encode(CGPoint));
         NSString * cgRectObjCType = @(@encode(CGRect));
         NSString * cgSizeObjCType = @(@encode(CGSize));
         NSString * cgAffineTransformObjCType = @(@encode(CGAffineTransform));
         NSString * caTransform3DObjCType = @(@encode(CATransform3D));
-        NSString * uiOffsetObjCType = @(@encode(UIOffset));
         NSString * nsRangeObjCType = @(@encode(NSRange));
-        NSString * uiEdgeInsetsObjCType = @(@encode(UIEdgeInsets));
 
-        #ifdef CGVECTOR_DEFINED
+#ifdef CGVECTOR_DEFINED
 
         NSString * cgVectorObjCType = @(@encode(CGVector));
         [self addEncodeBlock:^NSString *(NSValue *value)
         {
             CGVector v;
             [value getValue:&v];
-            return NSStringFromCGPoint(CGPointMake(v.dx, v.dy));
+            return ASH_NSStringFromCGPoint(CGPointMake(v.dx, v.dy));
         } forObjCType:cgVectorObjCType];
 
         [self addDecodeBlock:^NSValue *(NSDictionary *encodedValue)
         {
-            CGPoint p = CGPointFromString(encodedValue[valueKey]);
+            CGPoint p = ASH_CGPointFromString(encodedValue[valueKey]);
             CGVector v = CGVectorMake(p.x, p.y);
             return [NSValue value:&v
                      withObjCType:@encode(CGVector)];
         } forObjCType:cgVectorObjCType];
 
-        #endif
+#endif
 
         [self addEncodeBlock:^NSString *(NSValue *value)
         {
+#if TARGET_OS_IPHONE
             return NSStringFromCGPoint(value.CGPointValue);
-        }        forObjCType:cgPointObjCType];
+#else
+            return NSStringFromPoint(value.pointValue);
+#endif
+        }
+                forObjCType:cgPointObjCType];
+
 
         [self addDecodeBlock:^NSValue *(NSDictionary *encodedValue)
         {
+#if TARGET_OS_IPHONE
             return [NSValue valueWithCGPoint:CGPointFromString(encodedValue[valueKey])];
+#else
+            return [NSValue valueWithPoint:NSPointFromString(encodedValue[valueKey])];
+#endif
         } forObjCType:cgPointObjCType];
 
         [self addEncodeBlock:^NSString *(NSValue *value)
         {
+#if TARGET_OS_IPHONE
             return NSStringFromCGRect(value.CGRectValue);
+#else
+            return NSStringFromRect(value.rectValue);
+#endif
         } forObjCType:cgRectObjCType];
 
         [self addDecodeBlock:^NSValue *(NSDictionary *encodedValue)
         {
+#if TARGET_OS_IPHONE
             return [NSValue valueWithCGRect:CGRectFromString(encodedValue[valueKey])];
+#else
+            return [NSValue valueWithRect:NSRectFromString(encodedValue[valueKey])];
+#endif
         } forObjCType:cgRectObjCType];
 
         [self addEncodeBlock:^NSString *(NSValue *value)
         {
+#if TARGET_OS_IPHONE
             return NSStringFromCGSize(value.CGSizeValue);
+#else
+            return NSStringFromSize(value.sizeValue);
+#endif
 
         } forObjCType:cgSizeObjCType];
 
         [self addDecodeBlock:^NSValue *(NSDictionary *encodedValue)
         {
+#if TARGET_OS_IPHONE
             return [NSValue valueWithCGSize:CGSizeFromString(encodedValue[valueKey])];
+#else
+            return [NSValue valueWithSize:NSSizeFromString(encodedValue[valueKey])];
+#endif
         } forObjCType:cgSizeObjCType];
 
         [self addEncodeBlock:^NSString *(NSValue *value)
         {
+#if TARGET_OS_IPHONE
             return NSStringFromCGAffineTransform(value.CGAffineTransformValue);
+#else
+            CGAffineTransform transform;
+            [value getValue:&transform];
+            return [NSString stringWithFormat:@"[%g, %g, %g, %g, %g, %g]",
+                            transform.a,
+                            transform.b,
+                            transform.c,
+                            transform.d,
+                            transform.tx,
+                            transform.ty];
+#endif
         } forObjCType:cgAffineTransformObjCType];
 
         [self addDecodeBlock:^NSValue *(NSDictionary *encodedValue)
         {
+#if TARGET_OS_IPHONE
             return [NSValue valueWithCGAffineTransform:CGAffineTransformFromString(encodedValue[valueKey])];
+#else
+            NSString * string = [encodedValue[valueKey] stringByTrimmingCharactersInSet:[NSCharacterSet characterSetWithCharactersInString:@"[ ]"]];
+            NSArray * components = [string componentsSeparatedByString:@","];
+            CGAffineTransform transform;
+            transform.a = [components[0] floatValue];
+            transform.b = [components[1] floatValue];
+            transform.c = [components[2] floatValue];
+            transform.d = [components[3] floatValue];
+            transform.tx = [components[4] floatValue];
+            transform.ty = [components[5] floatValue];
+            return [NSValue valueWithBytes:&transform
+                                  objCType:@encode(CGAffineTransform)];
+#endif
         } forObjCType:cgAffineTransformObjCType];
 
         [self addEncodeBlock:^NSString *(NSValue *value)
@@ -140,6 +209,8 @@
             return [NSValue valueWithCATransform3D:transform3D];
         }        forObjCType:caTransform3DObjCType];
 
+        #if TARGET_OS_IPHONE
+        NSString * uiOffsetObjCType = @(@encode(UIOffset));
         [self addEncodeBlock:^NSString *(NSValue *value)
         {
             return NSStringFromUIOffset(value.UIOffsetValue);
@@ -149,6 +220,7 @@
         {
             return [NSValue valueWithUIOffset:UIOffsetFromString(encodedValue[valueKey])];
         } forObjCType:uiOffsetObjCType];
+        #endif
 
         [self addEncodeBlock:^NSString *(NSValue *value)
         {
@@ -160,6 +232,8 @@
             return [NSValue valueWithRange:NSRangeFromString(encodedValue[valueKey])];
         } forObjCType:nsRangeObjCType];
 
+        #if TARGET_OS_IPHONE
+        NSString * uiEdgeInsetsObjCType = @(@encode(UIEdgeInsets));
         [self addEncodeBlock:^NSString *(NSValue *value)
         {
             return NSStringFromUIEdgeInsets(value.UIEdgeInsetsValue);
@@ -169,7 +243,8 @@
         {
             return [NSValue valueWithUIEdgeInsets:UIEdgeInsetsFromString(encodedValue[valueKey])];
         } forObjCType:uiEdgeInsetsObjCType];
-         */
+        #endif
+
     }
 
     return self;

@@ -50,6 +50,57 @@
 		5C7AF6E0168F1DD600D58233 /* SignalTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C7AF6CF168F1DD500D58233 /* SignalTest.m */; };
 		5C7AF6E1168F1DD600D58233 /* ComponentPoolTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C7AF6D1168F1DD600D58233 /* ComponentPoolTest.m */; };
 		5C7AF6E2168F1DD600D58233 /* ListIteratingSystemTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C7AF6D2168F1DD600D58233 /* ListIteratingSystemTest.m */; };
+		9AD81BE41B68DDCA00E53007 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 9AD81BE31B68DDCA00E53007 /* AppDelegate.m */; };
+		9AD81BE61B68DDCA00E53007 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 9AD81BE51B68DDCA00E53007 /* main.m */; };
+		9AD81BE81B68DDCA00E53007 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9AD81BE71B68DDCA00E53007 /* Images.xcassets */; };
+		9AD81BEB1B68DDCA00E53007 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9AD81BE91B68DDCA00E53007 /* MainMenu.xib */; };
+		9AD81BFF1B68DF3500E53007 /* ASHComponentMatchingFamily.m in Sources */ = {isa = PBXBuildFile; fileRef = CD03874F97C012B61187057C /* ASHComponentMatchingFamily.m */; };
+		9AD81C011B68DF3500E53007 /* ASHEngine.m in Sources */ = {isa = PBXBuildFile; fileRef = CD0388E852543DD1CFCE95A1 /* ASHEngine.m */; };
+		9AD81C031B68DF3500E53007 /* ASHEntity.m in Sources */ = {isa = PBXBuildFile; fileRef = CD0380E61AA7A869D9535D74 /* ASHEntity.m */; };
+		9AD81C051B68DF3500E53007 /* ASHEntityList.m in Sources */ = {isa = PBXBuildFile; fileRef = CD038FDCB27408D5165D4374 /* ASHEntityList.m */; };
+		9AD81C081B68DF3500E53007 /* ASHNode.m in Sources */ = {isa = PBXBuildFile; fileRef = CD03884582E84FE2E6A056AD /* ASHNode.m */; };
+		9AD81C0A1B68DF3500E53007 /* ASHNodeList.m in Sources */ = {isa = PBXBuildFile; fileRef = CD038685FD3865CA068E9BCA /* ASHNodeList.m */; };
+		9AD81C0C1B68DF3500E53007 /* ASHNodePool.m in Sources */ = {isa = PBXBuildFile; fileRef = CD03875D5B9334EAA605E1D6 /* ASHNodePool.m */; };
+		9AD81C0E1B68DF3500E53007 /* ASHSystem.m in Sources */ = {isa = PBXBuildFile; fileRef = CD038A4995108125E6FD3CCA /* ASHSystem.m */; };
+		9AD81C101B68DF3500E53007 /* ASHSystemList.m in Sources */ = {isa = PBXBuildFile; fileRef = CD0382FCA944A305B0F23CD1 /* ASHSystemList.m */; };
+		9AD81C121B68DF3500E53007 /* ASHComponentInstanceProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = CD038961882B39447FF808EF /* ASHComponentInstanceProvider.m */; };
+		9AD81C151B68DF3500E53007 /* ASHComponentSingletonProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = CD038D5488EE029C08E8E1EE /* ASHComponentSingletonProvider.m */; };
+		9AD81C171B68DF3500E53007 /* ASHComponentTypeProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = CD038D64875A857ACA02BDC6 /* ASHComponentTypeProvider.m */; };
+		9AD81C191B68DF3500E53007 /* ASHEntityState.m in Sources */ = {isa = PBXBuildFile; fileRef = CD03807365B1951740231D1F /* ASHEntityState.m */; };
+		9AD81C1B1B68DF3500E53007 /* ASHEntityStateMachine.m in Sources */ = {isa = PBXBuildFile; fileRef = CD038CA257EABC214FA91F19 /* ASHEntityStateMachine.m */; };
+		9AD81C1D1B68DF3500E53007 /* ASHStateComponentMapping.m in Sources */ = {isa = PBXBuildFile; fileRef = CD0383376362EB2373715356 /* ASHStateComponentMapping.m */; };
+		9AD81C1E1B68DF3500E53007 /* ASHDynamicComponentProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = CD03820F1A80A44C16B77DC3 /* ASHDynamicComponentProvider.m */; };
+		9AD81C211B68DF3500E53007 /* ASHSystemInstanceProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = CD038A355CED74447BC1D7CE /* ASHSystemInstanceProvider.m */; };
+		9AD81C231B68DF3500E53007 /* ASHSystemSingletonProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = CD038978B5DD324663E6B800 /* ASHSystemSingletonProvider.m */; };
+		9AD81C251B68DF3500E53007 /* ASHStateSystemMapping.m in Sources */ = {isa = PBXBuildFile; fileRef = CD03805CE6077CB9D4F62D61 /* ASHStateSystemMapping.m */; };
+		9AD81C271B68DF3500E53007 /* ASHEngineState.m in Sources */ = {isa = PBXBuildFile; fileRef = CD038D71FBA4656765362985 /* ASHEngineState.m */; };
+		9AD81C291B68DF3500E53007 /* ASHDynamicSystemProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = CD0382727D54E92EA39E2E9B /* ASHDynamicSystemProvider.m */; };
+		9AD81C2B1B68DF3500E53007 /* ASHEngineStateMachine.m in Sources */ = {isa = PBXBuildFile; fileRef = CD0382F9CFFC67B43AE0DB50 /* ASHEngineStateMachine.m */; };
+		9AD81C2E1B68DF3500E53007 /* ASHListenerNode.m in Sources */ = {isa = PBXBuildFile; fileRef = CD0388FD083D3BD7F86F6B35 /* ASHListenerNode.m */; };
+		9AD81C301B68DF3500E53007 /* ASHListenerNodePool.m in Sources */ = {isa = PBXBuildFile; fileRef = CD038D456DEB1D6BB152B1F0 /* ASHListenerNodePool.m */; };
+		9AD81C321B68DF3500E53007 /* ASHSignal0.m in Sources */ = {isa = PBXBuildFile; fileRef = CD0382245FC77FC0C9C405AE /* ASHSignal0.m */; };
+		9AD81C341B68DF3500E53007 /* ASHSignal1.m in Sources */ = {isa = PBXBuildFile; fileRef = CD03838015070DA13F0F58F5 /* ASHSignal1.m */; };
+		9AD81C361B68DF3500E53007 /* ASHSignal2.m in Sources */ = {isa = PBXBuildFile; fileRef = CD038F97B6E9DEC292CB00E4 /* ASHSignal2.m */; };
+		9AD81C381B68DF3500E53007 /* ASHSignal3.m in Sources */ = {isa = PBXBuildFile; fileRef = CD0385039BFAE93A2F82AD75 /* ASHSignal3.m */; };
+		9AD81C3A1B68DF3500E53007 /* ASHSignalAny.m in Sources */ = {isa = PBXBuildFile; fileRef = CD038BE0E1D0E9E1356E46A7 /* ASHSignalAny.m */; };
+		9AD81C3C1B68DF3500E53007 /* ASHSignalBase.m in Sources */ = {isa = PBXBuildFile; fileRef = CD0388436B0D6A1DFCF4FC8B /* ASHSignalBase.m */; };
+		9AD81C3E1B68DF3500E53007 /* ASHFixedTickProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = CD038C17BE1051884FEACDF3 /* ASHFixedTickProvider.m */; };
+		9AD81C401B68DF3500E53007 /* ASHFrameTickProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = CD0382CFEAC318A3E4A75BC1 /* ASHFrameTickProvider.m */; };
+		9AD81C431B68DF3500E53007 /* ASHComponentPool.m in Sources */ = {isa = PBXBuildFile; fileRef = CD038147A0C6600C6C419FA2 /* ASHComponentPool.m */; };
+		9AD81C451B68DF3500E53007 /* ASHListIteratingSystem.m in Sources */ = {isa = PBXBuildFile; fileRef = CD03860BC7FA656EE1339FC4 /* ASHListIteratingSystem.m */; };
+		9AD81C471B68DF3500E53007 /* ASHObjectReflection.m in Sources */ = {isa = PBXBuildFile; fileRef = CD038DD3EAF9B86C873A2663 /* ASHObjectReflection.m */; };
+		9AD81C491B68DF3500E53007 /* ASHObjectReflectionFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = CD03863F73F90ECA1156F5FE /* ASHObjectReflectionFactory.m */; };
+		9AD81C4B1B68DF3500E53007 /* ASHNativeObjectCodec.m in Sources */ = {isa = PBXBuildFile; fileRef = CD038B9759A07CCE3353ED0E /* ASHNativeObjectCodec.m */; };
+		9AD81C4D1B68DF3500E53007 /* ASHClassObjectCodec.m in Sources */ = {isa = PBXBuildFile; fileRef = CD038B47CC18B87985B69E70 /* ASHClassObjectCodec.m */; };
+		9AD81C4F1B68DF3500E53007 /* ASHArrayObjectCodec.m in Sources */ = {isa = PBXBuildFile; fileRef = CD038A25D9C426416F3373E7 /* ASHArrayObjectCodec.m */; };
+		9AD81C511B68DF3500E53007 /* ASHReflectionObjectCodec.m in Sources */ = {isa = PBXBuildFile; fileRef = CD0389034DB91F03E70F7419 /* ASHReflectionObjectCodec.m */; };
+		9AD81C531B68DF3500E53007 /* ASHCodecManager.m in Sources */ = {isa = PBXBuildFile; fileRef = CD0380B94F1686FA99823E74 /* ASHCodecManager.m */; };
+		9AD81C551B68DF3500E53007 /* ASHTypeAssociations.m in Sources */ = {isa = PBXBuildFile; fileRef = CD038412AF17DAAA9A2D028E /* ASHTypeAssociations.m */; };
+		9AD81C571B68DF3500E53007 /* ASHValueObjectCodec.m in Sources */ = {isa = PBXBuildFile; fileRef = CD03883DEC2E0AF79D4C5E50 /* ASHValueObjectCodec.m */; };
+		9AD81C591B68DF3500E53007 /* ASHEngineDecoder.m in Sources */ = {isa = PBXBuildFile; fileRef = CD038F4A5D9321CDAC55B6CD /* ASHEngineDecoder.m */; };
+		9AD81C5B1B68DF3500E53007 /* ASHEngineEncoder.m in Sources */ = {isa = PBXBuildFile; fileRef = CD0381EDCFCB52ADE8E895C8 /* ASHEngineEncoder.m */; };
+		9AD81C5E1B68DF3500E53007 /* ASHObjectEngineCodec.m in Sources */ = {isa = PBXBuildFile; fileRef = CD0386DFBFD9FBA10C0D7205 /* ASHObjectEngineCodec.m */; };
+		9AD81C601B68DF3500E53007 /* ASHJsonEngineCodec.m in Sources */ = {isa = PBXBuildFile; fileRef = CD038380606AF6B1599DC9E7 /* ASHJsonEngineCodec.m */; };
 		B149F2863F724DB78C7BD7C7 /* libPods-GHUnitTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 9BE0BD54A62741F08A1D354F /* libPods-GHUnitTests.a */; };
 		CD03803FBB9A9C7610D1D03B /* ASHEngineStateMachine.m in Sources */ = {isa = PBXBuildFile; fileRef = CD0382F9CFFC67B43AE0DB50 /* ASHEngineStateMachine.m */; };
 		CD0380BB9E1A791C53E5E8A2 /* ASHStateComponentMapping.m in Sources */ = {isa = PBXBuildFile; fileRef = CD0383376362EB2373715356 /* ASHStateComponentMapping.m */; };
@@ -214,6 +265,13 @@
 		5C7AF6D1168F1DD600D58233 /* ComponentPoolTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ComponentPoolTest.m; sourceTree = "<group>"; };
 		5C7AF6D2168F1DD600D58233 /* ListIteratingSystemTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ListIteratingSystemTest.m; sourceTree = "<group>"; };
 		7F3311FB8081EC3C0FC26957 /* Pods-GHUnitTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GHUnitTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-GHUnitTests/Pods-GHUnitTests.debug.xcconfig"; sourceTree = "<group>"; };
+		9AD81BDE1B68DDCA00E53007 /* AshObjectiveCMac.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AshObjectiveCMac.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		9AD81BE11B68DDCA00E53007 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		9AD81BE21B68DDCA00E53007 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		9AD81BE31B68DDCA00E53007 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		9AD81BE51B68DDCA00E53007 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		9AD81BE71B68DDCA00E53007 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		9AD81BEA1B68DDCA00E53007 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/MainMenu.xib; sourceTree = "<group>"; };
 		9BE0BD54A62741F08A1D354F /* libPods-GHUnitTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-GHUnitTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		A43828ECF72123161F6A023B /* Pods-GHUnitTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GHUnitTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-GHUnitTests/Pods-GHUnitTests.release.xcconfig"; sourceTree = "<group>"; };
 		CD03801A74136B2C5B617902 /* ASHDynamicComponentProvider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ASHDynamicComponentProvider.h; sourceTree = "<group>"; };
@@ -351,6 +409,13 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		9AD81BDB1B68DDCA00E53007 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -401,6 +466,7 @@
 			children = (
 				5C7AF599168F14B900D58233 /* AshObjectiveC */,
 				5C7AF6A2168F187A00D58233 /* GHUnitTests */,
+				9AD81BDF1B68DDCA00E53007 /* AshObjectiveCMac */,
 				5C7AF592168F14B900D58233 /* Frameworks */,
 				5C7AF590168F14B900D58233 /* Products */,
 				CD03819EBE9E5A9A25466A37 /* LICENSE */,
@@ -414,6 +480,7 @@
 			children = (
 				5C7AF58F168F14B900D58233 /* AshObjectiveC.app */,
 				5C7AF69D168F187A00D58233 /* GHUnitTests.app */,
+				9AD81BDE1B68DDCA00E53007 /* AshObjectiveCMac.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -557,6 +624,27 @@
 				A43828ECF72123161F6A023B /* Pods-GHUnitTests.release.xcconfig */,
 			);
 			name = Pods;
+			sourceTree = "<group>";
+		};
+		9AD81BDF1B68DDCA00E53007 /* AshObjectiveCMac */ = {
+			isa = PBXGroup;
+			children = (
+				9AD81BE21B68DDCA00E53007 /* AppDelegate.h */,
+				9AD81BE31B68DDCA00E53007 /* AppDelegate.m */,
+				9AD81BE71B68DDCA00E53007 /* Images.xcassets */,
+				9AD81BE91B68DDCA00E53007 /* MainMenu.xib */,
+				9AD81BE01B68DDCA00E53007 /* Supporting Files */,
+			);
+			path = AshObjectiveCMac;
+			sourceTree = "<group>";
+		};
+		9AD81BE01B68DDCA00E53007 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				9AD81BE11B68DDCA00E53007 /* Info.plist */,
+				9AD81BE51B68DDCA00E53007 /* main.m */,
+			);
+			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
 		CD038028767411B827063B7A /* enginecodecs */ = {
@@ -786,6 +874,23 @@
 			productReference = 5C7AF69D168F187A00D58233 /* GHUnitTests.app */;
 			productType = "com.apple.product-type.application";
 		};
+		9AD81BDD1B68DDCA00E53007 /* AshObjectiveCMac */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 9AD81BFC1B68DDCA00E53007 /* Build configuration list for PBXNativeTarget "AshObjectiveCMac" */;
+			buildPhases = (
+				9AD81BDA1B68DDCA00E53007 /* Sources */,
+				9AD81BDB1B68DDCA00E53007 /* Frameworks */,
+				9AD81BDC1B68DDCA00E53007 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = AshObjectiveCMac;
+			productName = AshObjectiveCMac;
+			productReference = 9AD81BDE1B68DDCA00E53007 /* AshObjectiveCMac.app */;
+			productType = "com.apple.product-type.application";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -794,6 +899,11 @@
 			attributes = {
 				LastUpgradeCheck = 0450;
 				ORGANIZATIONNAME = "Igor Kravchenko";
+				TargetAttributes = {
+					9AD81BDD1B68DDCA00E53007 = {
+						CreatedOnToolsVersion = 6.4;
+					};
+				};
 			};
 			buildConfigurationList = 5C7AF589168F14B900D58233 /* Build configuration list for PBXProject "AshObjectiveC" */;
 			compatibilityVersion = "Xcode 3.2";
@@ -801,6 +911,7 @@
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
+				Base,
 			);
 			mainGroup = 5C7AF584168F14B900D58233;
 			productRefGroup = 5C7AF590168F14B900D58233 /* Products */;
@@ -809,6 +920,7 @@
 			targets = (
 				5C7AF58E168F14B900D58233 /* AshObjectiveC */,
 				5C7AF69C168F187A00D58233 /* GHUnitTests */,
+				9AD81BDD1B68DDCA00E53007 /* AshObjectiveCMac */,
 			);
 		};
 /* End PBXProject section */
@@ -833,6 +945,15 @@
 				5C7AF6AF168F187A00D58233 /* Default.png in Resources */,
 				5C7AF6B1168F187A00D58233 /* Default@2x.png in Resources */,
 				5C7AF6B3168F187A00D58233 /* Default-568h@2x.png in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9AD81BDC1B68DDCA00E53007 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9AD81BE81B68DDCA00E53007 /* Images.xcassets in Resources */,
+				9AD81BEB1B68DDCA00E53007 /* MainMenu.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1019,6 +1140,62 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		9AD81BDA1B68DDCA00E53007 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9AD81BE61B68DDCA00E53007 /* main.m in Sources */,
+				9AD81BE41B68DDCA00E53007 /* AppDelegate.m in Sources */,
+				9AD81BFF1B68DF3500E53007 /* ASHComponentMatchingFamily.m in Sources */,
+				9AD81C011B68DF3500E53007 /* ASHEngine.m in Sources */,
+				9AD81C031B68DF3500E53007 /* ASHEntity.m in Sources */,
+				9AD81C051B68DF3500E53007 /* ASHEntityList.m in Sources */,
+				9AD81C081B68DF3500E53007 /* ASHNode.m in Sources */,
+				9AD81C0A1B68DF3500E53007 /* ASHNodeList.m in Sources */,
+				9AD81C0C1B68DF3500E53007 /* ASHNodePool.m in Sources */,
+				9AD81C0E1B68DF3500E53007 /* ASHSystem.m in Sources */,
+				9AD81C101B68DF3500E53007 /* ASHSystemList.m in Sources */,
+				9AD81C121B68DF3500E53007 /* ASHComponentInstanceProvider.m in Sources */,
+				9AD81C151B68DF3500E53007 /* ASHComponentSingletonProvider.m in Sources */,
+				9AD81C171B68DF3500E53007 /* ASHComponentTypeProvider.m in Sources */,
+				9AD81C191B68DF3500E53007 /* ASHEntityState.m in Sources */,
+				9AD81C1B1B68DF3500E53007 /* ASHEntityStateMachine.m in Sources */,
+				9AD81C1D1B68DF3500E53007 /* ASHStateComponentMapping.m in Sources */,
+				9AD81C1E1B68DF3500E53007 /* ASHDynamicComponentProvider.m in Sources */,
+				9AD81C211B68DF3500E53007 /* ASHSystemInstanceProvider.m in Sources */,
+				9AD81C231B68DF3500E53007 /* ASHSystemSingletonProvider.m in Sources */,
+				9AD81C251B68DF3500E53007 /* ASHStateSystemMapping.m in Sources */,
+				9AD81C271B68DF3500E53007 /* ASHEngineState.m in Sources */,
+				9AD81C291B68DF3500E53007 /* ASHDynamicSystemProvider.m in Sources */,
+				9AD81C2B1B68DF3500E53007 /* ASHEngineStateMachine.m in Sources */,
+				9AD81C2E1B68DF3500E53007 /* ASHListenerNode.m in Sources */,
+				9AD81C301B68DF3500E53007 /* ASHListenerNodePool.m in Sources */,
+				9AD81C321B68DF3500E53007 /* ASHSignal0.m in Sources */,
+				9AD81C341B68DF3500E53007 /* ASHSignal1.m in Sources */,
+				9AD81C361B68DF3500E53007 /* ASHSignal2.m in Sources */,
+				9AD81C381B68DF3500E53007 /* ASHSignal3.m in Sources */,
+				9AD81C3A1B68DF3500E53007 /* ASHSignalAny.m in Sources */,
+				9AD81C3C1B68DF3500E53007 /* ASHSignalBase.m in Sources */,
+				9AD81C3E1B68DF3500E53007 /* ASHFixedTickProvider.m in Sources */,
+				9AD81C401B68DF3500E53007 /* ASHFrameTickProvider.m in Sources */,
+				9AD81C431B68DF3500E53007 /* ASHComponentPool.m in Sources */,
+				9AD81C451B68DF3500E53007 /* ASHListIteratingSystem.m in Sources */,
+				9AD81C471B68DF3500E53007 /* ASHObjectReflection.m in Sources */,
+				9AD81C491B68DF3500E53007 /* ASHObjectReflectionFactory.m in Sources */,
+				9AD81C4B1B68DF3500E53007 /* ASHNativeObjectCodec.m in Sources */,
+				9AD81C4D1B68DF3500E53007 /* ASHClassObjectCodec.m in Sources */,
+				9AD81C4F1B68DF3500E53007 /* ASHArrayObjectCodec.m in Sources */,
+				9AD81C511B68DF3500E53007 /* ASHReflectionObjectCodec.m in Sources */,
+				9AD81C531B68DF3500E53007 /* ASHCodecManager.m in Sources */,
+				9AD81C551B68DF3500E53007 /* ASHTypeAssociations.m in Sources */,
+				9AD81C571B68DF3500E53007 /* ASHValueObjectCodec.m in Sources */,
+				9AD81C591B68DF3500E53007 /* ASHEngineDecoder.m in Sources */,
+				9AD81C5B1B68DF3500E53007 /* ASHEngineEncoder.m in Sources */,
+				9AD81C5E1B68DF3500E53007 /* ASHObjectEngineCodec.m in Sources */,
+				9AD81C601B68DF3500E53007 /* ASHJsonEngineCodec.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
@@ -1036,6 +1213,14 @@
 				5C7AF6A6168F187A00D58233 /* en */,
 			);
 			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		9AD81BE91B68DDCA00E53007 /* MainMenu.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				9AD81BEA1B68DDCA00E53007 /* Base */,
+			);
+			name = MainMenu.xib;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -1155,6 +1340,74 @@
 			};
 			name = Release;
 		};
+		9AD81BF81B68DDCA00E53007 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CODE_SIGN_IDENTITY = "-";
+				COMBINE_HIDPI_IMAGES = YES;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				INFOPLIST_FILE = AshObjectiveCMac/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 10.8;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+		9AD81BF91B68DDCA00E53007 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CODE_SIGN_IDENTITY = "-";
+				COMBINE_HIDPI_IMAGES = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				INFOPLIST_FILE = AshObjectiveCMac/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 10.8;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -1184,6 +1437,14 @@
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
+		};
+		9AD81BFC1B68DDCA00E53007 /* Build configuration list for PBXNativeTarget "AshObjectiveCMac" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				9AD81BF81B68DDCA00E53007 /* Debug */,
+				9AD81BF91B68DDCA00E53007 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
 		};
 /* End XCConfigurationList section */
 	};

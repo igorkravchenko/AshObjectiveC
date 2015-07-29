@@ -9,7 +9,7 @@
     CGRect screenRect = [UIScreen mainScreen].bounds;
     _window = [[UIWindow alloc] initWithFrame:screenRect];
     [_window makeKeyAndVisible];
-   
+
     return YES;
 }
 
