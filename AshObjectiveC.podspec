@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name         = "AshObjectiveC"
-  s.version      = "1.0.1"
+  s.version      = "1.0.2"
   s.summary      = "Objective-C port of Ash (ActionScript 3 entity system framework for game development)"
   s.description  = <<-DESC
                    Ash is a high-performance entity system framework for game development.
@@ -16,5 +16,6 @@ Pod::Spec.new do |s|
   s.source       = { :git => "https://github.com/igorkravchenko/AshObjectiveC.git", :branch => 'develop' }
   s.source_files = 'AshObjectiveC/library', 'AshObjectiveC/library/**/*.{h,m}'
   s.requires_arc = true
-  s.framework = 'CoreGraphics', 'UIKit', 'QuartzCore'
+  s.ios.framework = 'CoreGraphics', 'UIKit', 'QuartzCore'
+  s.osx.framework = 'CoreGraphics', 'AppKit', 'QuartzCore'
 end
