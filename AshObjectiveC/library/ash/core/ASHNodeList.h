@@ -5,9 +5,10 @@
 
 @interface ASHNodeList : NSObject
 {
-    @package
+@public
     __strong ASHNode * head;
     __strong ASHNode * tail;
+@package
     __strong ASHSignal1 * nodeAdded;
     __strong ASHSignal1 * nodeRemoved;
 }
