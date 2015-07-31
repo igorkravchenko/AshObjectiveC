@@ -40,7 +40,7 @@
 {
     if(entityNames[entity.name] != nil)
     {
-        @throw [NSException exceptionWithName:nil
+        @throw [NSException exceptionWithName:[NSStringFromClass(self.class) stringByAppendingString:@"Exception"]
                                        reason:[NSString stringWithFormat:@"The entity name %@ is already in use by another entity.", entity.name]
                                      userInfo:nil];
     }
