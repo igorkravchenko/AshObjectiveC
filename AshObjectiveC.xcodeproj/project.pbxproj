@@ -274,6 +274,7 @@
 		9AD81BEA1B68DDCA00E53007 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/MainMenu.xib; sourceTree = "<group>"; };
 		9BE0BD54A62741F08A1D354F /* libPods-GHUnitTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-GHUnitTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		A43828ECF72123161F6A023B /* Pods-GHUnitTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GHUnitTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-GHUnitTests/Pods-GHUnitTests.release.xcconfig"; sourceTree = "<group>"; };
+		CD038003FEF224DFB87E5DFB /* ASHFSM.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ASHFSM.h; sourceTree = "<group>"; };
 		CD03801A74136B2C5B617902 /* ASHDynamicComponentProvider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ASHDynamicComponentProvider.h; sourceTree = "<group>"; };
 		CD03805CE6077CB9D4F62D61 /* ASHStateSystemMapping.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ASHStateSystemMapping.m; sourceTree = "<group>"; };
 		CD03807365B1951740231D1F /* ASHEntityState.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ASHEntityState.m; sourceTree = "<group>"; };
@@ -329,6 +330,7 @@
 		CD038660BF85EE2708D2331E /* ASHEngine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ASHEngine.h; sourceTree = "<group>"; };
 		CD038685FD3865CA068E9BCA /* ASHNodeList.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ASHNodeList.m; sourceTree = "<group>"; };
 		CD0386DFBFD9FBA10C0D7205 /* ASHObjectEngineCodec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ASHObjectEngineCodec.m; sourceTree = "<group>"; };
+		CD03870024182F452A2AA5BA /* ASHIO.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ASHIO.h; sourceTree = "<group>"; };
 		CD03870AAB2E131EA609162C /* ASHStateComponentMapping.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ASHStateComponentMapping.h; sourceTree = "<group>"; };
 		CD03874AB622E6DF994CD2F1 /* ASHSignalAny.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ASHSignalAny.h; sourceTree = "<group>"; };
 		CD03874F97C012B61187057C /* ASHComponentMatchingFamily.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ASHComponentMatchingFamily.m; sourceTree = "<group>"; };
@@ -344,6 +346,7 @@
 		CD0389034DB91F03E70F7419 /* ASHReflectionObjectCodec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ASHReflectionObjectCodec.m; sourceTree = "<group>"; };
 		CD03891A30FD6B88FA66E6A6 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		CD038961882B39447FF808EF /* ASHComponentInstanceProvider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ASHComponentInstanceProvider.m; sourceTree = "<group>"; };
+		CD03896AB8A78E2CB39EFDE9 /* ASHCore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ASHCore.h; sourceTree = "<group>"; };
 		CD038978B5DD324663E6B800 /* ASHSystemSingletonProvider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ASHSystemSingletonProvider.m; sourceTree = "<group>"; };
 		CD038998457FD81F3E312C3F /* ASHTypeAssociations.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ASHTypeAssociations.h; sourceTree = "<group>"; };
 		CD038A145661B4C56A778C71 /* ASHCodecManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ASHCodecManager.h; sourceTree = "<group>"; };
@@ -353,11 +356,13 @@
 		CD038A4995108125E6FD3CCA /* ASHSystem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ASHSystem.m; sourceTree = "<group>"; };
 		CD038AF899F05A0D9F99D173 /* ASHReflectionObjectCodec.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ASHReflectionObjectCodec.h; sourceTree = "<group>"; };
 		CD038B47CC18B87985B69E70 /* ASHClassObjectCodec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ASHClassObjectCodec.m; sourceTree = "<group>"; };
+		CD038B4F1D95D1E7DF2D0DCE /* ASHTools.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ASHTools.h; sourceTree = "<group>"; };
 		CD038B5B96B727E33A2419EA /* ASHFixedTickProvider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ASHFixedTickProvider.h; sourceTree = "<group>"; };
 		CD038B6BA877F6B944052D6A /* SystemMethodProviderTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SystemMethodProviderTests.m; sourceTree = "<group>"; };
 		CD038B7BA16B8240B4C867FF /* ASHSystemProvider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ASHSystemProvider.h; sourceTree = "<group>"; };
 		CD038B7E35536F7C10804778 /* ASHNodeList.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ASHNodeList.h; sourceTree = "<group>"; };
 		CD038B9759A07CCE3353ED0E /* ASHNativeObjectCodec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ASHNativeObjectCodec.m; sourceTree = "<group>"; };
+		CD038BD5197EE19DF69126AC /* ASH.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ASH.h; sourceTree = "<group>"; };
 		CD038BE0E1D0E9E1356E46A7 /* ASHSignalAny.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ASHSignalAny.m; sourceTree = "<group>"; };
 		CD038BEF75C4D6B4133EE6AB /* ASHEngineEncoder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ASHEngineEncoder.h; sourceTree = "<group>"; };
 		CD038C17BE1051884FEACDF3 /* ASHFixedTickProvider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ASHFixedTickProvider.m; sourceTree = "<group>"; };
@@ -377,9 +382,11 @@
 		CD038E2914EBF8C764BC7C96 /* ASHEngineState.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ASHEngineState.h; sourceTree = "<group>"; };
 		CD038E4C144C5E82AEAC9A65 /* ASHEngineStateMachine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ASHEngineStateMachine.h; sourceTree = "<group>"; };
 		CD038E75FBDD86FAE58BBCED /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		CD038E7C1EB50A4696802DE9 /* ASHTick.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ASHTick.h; sourceTree = "<group>"; };
 		CD038F1646F4EB961F633F73 /* ASHEntity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ASHEntity.h; sourceTree = "<group>"; };
 		CD038F4A5D9321CDAC55B6CD /* ASHEngineDecoder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ASHEngineDecoder.m; sourceTree = "<group>"; };
 		CD038F680DF2F05B3DF0D5E3 /* ASHValueObjectCodec.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ASHValueObjectCodec.h; sourceTree = "<group>"; };
+		CD038F6FFDB5EEF659997757 /* ASHSignals.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ASHSignals.h; sourceTree = "<group>"; };
 		CD038F729289EE3F1EC392C1 /* ASHJsonEngineCodec.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ASHJsonEngineCodec.h; sourceTree = "<group>"; };
 		CD038F794526F8BADFA42C0D /* SystemStateTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SystemStateTests.m; sourceTree = "<group>"; };
 		CD038F97B6E9DEC292CB00E4 /* ASHSignal2.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ASHSignal2.m; sourceTree = "<group>"; };
@@ -676,6 +683,7 @@
 			children = (
 				CD038BB28344885BB9CE8C09 /* objectcodecs */,
 				CD038028767411B827063B7A /* enginecodecs */,
+				CD03870024182F452A2AA5BA /* ASHIO.h */,
 			);
 			path = io;
 			sourceTree = "<group>";
@@ -698,6 +706,7 @@
 				CD0387ECCA0D25D39E435B2D /* tools */,
 				CD0383E7622A9532745A611B /* io */,
 				CD038644969033FDF264D749 /* macro */,
+				CD038BD5197EE19DF69126AC /* ASH.h */,
 			);
 			path = ash;
 			sourceTree = "<group>";
@@ -721,6 +730,7 @@
 				CD038BE0E1D0E9E1356E46A7 /* ASHSignalAny.m */,
 				CD038DAAF793C284D918D40B /* ASHSignalBase.h */,
 				CD0388436B0D6A1DFCF4FC8B /* ASHSignalBase.m */,
+				CD038F6FFDB5EEF659997757 /* ASHSignals.h */,
 			);
 			path = signals;
 			sourceTree = "<group>";
@@ -732,6 +742,7 @@
 				CD038147A0C6600C6C419FA2 /* ASHComponentPool.m */,
 				CD03829F5C9383E82DCD009B /* ASHListIteratingSystem.h */,
 				CD03860BC7FA656EE1339FC4 /* ASHListIteratingSystem.m */,
+				CD038B4F1D95D1E7DF2D0DCE /* ASHTools.h */,
 			);
 			path = tools;
 			sourceTree = "<group>";
@@ -767,6 +778,7 @@
 				CD038169CA07982A9BA67D07 /* ASHDynamicSystemProvider.h */,
 				CD0382F9CFFC67B43AE0DB50 /* ASHEngineStateMachine.m */,
 				CD038E4C144C5E82AEAC9A65 /* ASHEngineStateMachine.h */,
+				CD038003FEF224DFB87E5DFB /* ASHFSM.h */,
 			);
 			path = fsm;
 			sourceTree = "<group>";
@@ -805,6 +817,7 @@
 				CD03828EAFC4243FE6018566 /* ASHFrameTickProvider.h */,
 				CD0382CFEAC318A3E4A75BC1 /* ASHFrameTickProvider.m */,
 				CD0381EB41834E60C5976BE7 /* ASHTickProvider.h */,
+				CD038E7C1EB50A4696802DE9 /* ASHTick.h */,
 			);
 			path = tick;
 			sourceTree = "<group>";
@@ -831,6 +844,7 @@
 				CD038A4995108125E6FD3CCA /* ASHSystem.m */,
 				CD0385B812CEF92FA5F52DC0 /* ASHSystemList.h */,
 				CD0382FCA944A305B0F23CD1 /* ASHSystemList.m */,
+				CD03896AB8A78E2CB39EFDE9 /* ASHCore.h */,
 			);
 			path = core;
 			sourceTree = "<group>";

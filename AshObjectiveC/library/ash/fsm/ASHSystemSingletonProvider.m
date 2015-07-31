@@ -25,7 +25,7 @@
 {
     if(!_instance)
     {
-        _instance = [[_componentType alloc] init];
+        _instance = (ASHSystem *) [[_componentType alloc] init];
     }
 
     return _instance;
