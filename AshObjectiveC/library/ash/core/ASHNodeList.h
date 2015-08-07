@@ -3,7 +3,7 @@
 #import "ASHSignal1.h"
 #import "ASHNode.h"
 
-@interface ASHNodeList : NSObject
+@interface ASHNodeList : NSObject <NSFastEnumeration>
 {
 @public
     __strong ASHNode * head;

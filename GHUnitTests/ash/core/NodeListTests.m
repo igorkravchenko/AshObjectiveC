@@ -461,7 +461,7 @@
     MockNodeSort * node4 = [[MockNodeSort alloc] init];
     node4.pos = 4;
     MockNodeSort * node5 = [[MockNodeSort alloc] init];
-    node5.pos = 4;
+    node5.pos = 5;
 
     [nodes addNode:node3];
     [nodes addNode:node4];
@@ -486,6 +486,39 @@
              node2:(MockNodeSort *)node2
 {
     return node1.pos - node2.pos;
+}
+
+- (void)testFastEnumaration
+{
+    MockNodeSort * node1 = [[MockNodeSort alloc] init];
+    node1.pos = 1;
+    MockNodeSort * node2 = [[MockNodeSort alloc] init];
+    node2.pos = 2;
+    MockNodeSort * node3 = [[MockNodeSort alloc] init];
+    node3.pos = 3;
+    MockNodeSort * node4 = [[MockNodeSort alloc] init];
+    node4.pos = 4;
+    MockNodeSort * node5 = [[MockNodeSort alloc] init];
+    node5.pos = 5;
+
+    [self.nodes addNode:node1];
+    [self.nodes addNode:node2];
+    [self.nodes addNode:node3];
+    [self.nodes addNode:node4];
+    [self.nodes addNode:node5];
+
+    NSMutableArray * arrayList = @[].mutableCopy;
+
+    for (MockNodeSort * node in self.nodes)
+    {
+        [arrayList addObject:node];
+    }
+
+    assertThat(arrayList[0], equalTo(node1));
+    assertThat(arrayList[1], equalTo(node2));
+    assertThat(arrayList[2], equalTo(node3));
+    assertThat(arrayList[3], equalTo(node4));
+    assertThat(arrayList[4], equalTo(node5));
 }
 
 @end
