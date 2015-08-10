@@ -6,7 +6,7 @@
 
 @implementation ASHStateComponentMapping
 {
-Class componentType;
+    Class componentType;
     ASHEntityState * creatingState;
     id <ASHComponentProvider> provider;
 }
@@ -72,7 +72,7 @@ Class componentType;
 - (void)setProvider:(id<ASHComponentProvider>)aProvider
 {
     provider = aProvider;
-    creatingState.providers[NSStringFromClass(componentType)] = provider;
+    [creatingState.providers setObject:provider forKey:componentType];
 }
 
 - (ASHStateComponentMapping *)add:(Class)type

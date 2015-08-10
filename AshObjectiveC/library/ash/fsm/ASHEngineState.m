@@ -4,7 +4,6 @@
 #import "ASHSystemProvider.h"
 #import "ASHSystemInstanceProvider.h"
 #import "ASHSystemSingletonProvider.h"
-#import "ASHDynamicComponentProvider.h"
 #import "ASHDynamicSystemProvider.h"
 
 @implementation ASHEngineState

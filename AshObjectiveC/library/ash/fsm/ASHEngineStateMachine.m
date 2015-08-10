@@ -11,7 +11,7 @@
 
 @implementation ASHEngineStateMachine
 {
-    NSMutableDictionary * _states;
+    NSMapTable * _states;
     ASHEngineState * _currentState;
 
 }
@@ -22,7 +22,7 @@
     if (self)
     {
         self.engine = engine;
-        _states = [NSMutableDictionary dictionary];
+        _states = [NSMapTable mapTableWithKeyOptions:NSPointerFunctionsObjectPersonality valueOptions:NSPointerFunctionsStrongMemory];
     }
 
     return self;
@@ -31,20 +31,20 @@
 - (ASHEngineStateMachine *)addState:(NSString *)name
                               state:(ASHEngineState *)state
 {
-    _states[name] = state;
+    [_states setObject:state forKey:name];
     return self;
 }
 
 - (ASHEngineState *)createState:(NSString *)name
 {
     ASHEngineState * state = [[ASHEngineState alloc] init];
-    _states[name] = state;
+    [_states setObject:state forKey:name];
     return state;
 }
 
 - (void)changeState:(NSString *)name
 {
-    ASHEngineState * newState = _states[name];
+    ASHEngineState * newState = [_states objectForKey:name];
     if(newState == nil)
     {
         @throw [NSException exceptionWithName:@"ASHEngineStateMachineException"
@@ -58,15 +58,15 @@
         return;
     }
 
-    NSMutableDictionary * toAdd;
+    NSMapTable * toAdd;
     id <ASHSystemProvider> provider;
     id iD;
-    toAdd = [NSMutableDictionary dictionary];
+    toAdd = [NSMapTable mapTableWithKeyOptions:NSPointerFunctionsObjectPersonality valueOptions:NSPointerFunctionsStrongMemory];
 
     for (provider in newState.providers)
     {
         iD = provider.identifier;
-        toAdd[iD] = provider;
+        [toAdd setObject:provider forKey:iD];
     }
 
     if(_currentState)
@@ -74,7 +74,7 @@
         for (provider in _currentState.providers)
         {
             iD = provider.identifier;
-            id <ASHSystemProvider> other = toAdd[iD];
+            id <ASHSystemProvider> other = [toAdd objectForKey:iD];
             if(other)
             {
                 [toAdd removeObjectForKey:iD];
@@ -88,7 +88,7 @@
 
     for (id providerKey in toAdd)
     {
-        provider = toAdd[providerKey];
+        provider = [toAdd objectForKey:providerKey];
         [_engine addSystem:[provider getSystem]
                   priority:provider.priority];
     }

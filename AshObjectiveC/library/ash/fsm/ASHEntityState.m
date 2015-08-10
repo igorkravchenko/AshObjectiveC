@@ -10,7 +10,7 @@
     
     if (self != nil)
     {
-        _providers = [NSMutableDictionary dictionary];
+        _providers = [NSMapTable mapTableWithKeyOptions:NSPointerFunctionsOpaquePersonality valueOptions:NSPointerFunctionsStrongMemory];
     }
     
     return self;
@@ -25,12 +25,12 @@
 
 - (id <ASHComponentProvider>)get:(Class)type
 {
-    return _providers[NSStringFromClass(type)];
+    return [_providers objectForKey:type];
 }
 
 - (BOOL)has:(Class)type
 {
-    return _providers[NSStringFromClass(type)] != nil;
+    return [_providers objectForKey:type] != nil;
 }
 
 @end

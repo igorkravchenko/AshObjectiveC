@@ -39,7 +39,7 @@
 - (void)testAddWithNoQualifierCreatesTypeProvider
 {
     [state add:[MockComponent class]];
-    id <ASHComponentProvider> provider = state.providers[NSStringFromClass([MockComponent class])];
+    id <ASHComponentProvider> provider = [state.providers objectForKey:[MockComponent class]];
     assertThat(provider, instanceOf([ASHComponentTypeProvider class]));
     assertThat([provider getComponent], instanceOf([MockComponent class]));
 }
@@ -47,7 +47,7 @@
 - (void)testAddWithTypeQualifierCreatesTypeProvider
 {
     [[state add:[MockComponent class]] withType:[MockComponent2 class]];
-    id <ASHComponentProvider> provider = state.providers[NSStringFromClass([MockComponent class])];
+    id <ASHComponentProvider> provider = [state.providers objectForKey:[MockComponent class]];
     assertThat(provider, instanceOf([ASHComponentTypeProvider class]));
     assertThat([provider getComponent], instanceOf([MockComponent2 class]));
 }
@@ -56,7 +56,7 @@
 {
     MockComponent * component = [[MockComponent alloc] init];
     [[state add:[MockComponent class]] withInstance:component];
-    id <ASHComponentProvider> provider = state.providers[NSStringFromClass([MockComponent class])];
+    id <ASHComponentProvider> provider = [state.providers objectForKey:[MockComponent class]];
     assertThat(provider, instanceOf([ASHComponentInstanceProvider class]));
     assertThat([provider getComponent], equalTo(component));
 }
@@ -64,7 +64,7 @@
 - (void)testAddWithSingletonQualifierCreatesSingletonProvider
 {
     [[state add:[MockComponent class]] withSingletonForType:[MockComponent class]];
-    id <ASHComponentProvider> provider = state.providers[NSStringFromClass([MockComponent class])];
+    id <ASHComponentProvider> provider = [state.providers objectForKey:[MockComponent class]];
     assertThat(provider, instanceOf([ASHComponentSingletonProvider class]));
     assertThat([provider getComponent], instanceOf([MockComponent class]));
 }
@@ -73,7 +73,7 @@
 {
     [[state add:[MockComponent class]] withTarget:self
                                            method:@selector(dynamicProviderMethod)];
-    id <ASHComponentProvider> provider = state.providers[NSStringFromClass([MockComponent class])];
+    id <ASHComponentProvider> provider = [state.providers objectForKey:[MockComponent class]];
     assertThat(provider, instanceOf([ASHDynamicComponentProvider class]));
     assertThat([provider getComponent], instanceOf([MockComponent class]));
 }

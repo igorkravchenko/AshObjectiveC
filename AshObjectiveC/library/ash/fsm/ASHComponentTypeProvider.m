@@ -25,7 +25,7 @@
 
 - (id)identifier
 {
-    return NSStringFromClass(componentType);
+    return componentType;
 }
 
 @end

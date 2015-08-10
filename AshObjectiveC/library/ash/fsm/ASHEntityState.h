@@ -6,7 +6,7 @@
 
 @interface ASHEntityState : NSObject
 
-@property (nonatomic, strong) NSMutableDictionary * providers;
+@property (nonatomic, readonly) NSMapTable * providers;
 
 - (ASHStateComponentMapping *)add:(Class)type;
 - (id <ASHComponentProvider>)get:(Class)type;

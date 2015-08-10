@@ -5,7 +5,7 @@
 
 @implementation ASHEntityStateMachine
 {
-    NSMutableDictionary * states;
+    NSMapTable * states;
     ASHEntityState * currentState;
     ASHEntity * entity;
 }
@@ -17,7 +17,7 @@
     if (self != nil)
     {
         entity = anEntity;
-        states = [NSMutableDictionary dictionary];
+        states = [NSMapTable mapTableWithKeyOptions:NSPointerFunctionsObjectPersonality valueOptions:NSPointerFunctionsStrongMemory];
     }
     
     return self;
@@ -26,20 +26,20 @@
 - (ASHEntityStateMachine *)addState:(NSString *)name
                            state:(ASHEntityState *)state
 {
-    states[name] = state;
+    [states setObject:state forKey:name];
     return self;
 }
 
 - (ASHEntityState *)createState:(NSString *)name
 {
     ASHEntityState * state = [[ASHEntityState alloc] init];
-    states[name] = state;
+    [states setObject:state forKey:name];
     return state;
 }
 
 - (void)changeState:(NSString *)name
 {
-    ASHEntityState * newState = states[name];
+    ASHEntityState * newState = [states objectForKey:name];
     if (newState == nil)
     {
         @throw [NSException exceptionWithName:@"EntityStateMachineException"
@@ -51,31 +51,31 @@
         newState = nil;
         return;
     }
-    
-    NSMutableDictionary * toAdd = nil;
-    NSString * type = nil;
+
+    NSMapTable * toAdd = nil;
+    Class type = nil;
     id t = nil;
     
     if (currentState != nil)
     {
-        toAdd = [NSMutableDictionary dictionary];
+        toAdd = [NSMapTable mapTableWithKeyOptions:NSPointerFunctionsObjectPersonality valueOptions:NSPointerFunctionsStrongMemory];
         for (t in newState.providers)
         {
             type = t;
-            toAdd[type] = newState.providers[type];
+            [toAdd setObject:[newState.providers objectForKey:type] forKey:type];
         }
         for (t in currentState.providers)
         {
             type = t;
-            id <ASHComponentProvider> other = toAdd[type];
+            id <ASHComponentProvider> other = [toAdd objectForKey:type];
             
-            if (other != nil && other.identifier == [(id <ASHComponentProvider>)currentState.providers[type] identifier])
+            if (other != nil && other.identifier == [(id <ASHComponentProvider>)[currentState.providers objectForKey:type] identifier])
             {
                 [toAdd removeObjectForKey:type];
             }
             else
             {
-                [entity removeComponent:NSClassFromString(type)];
+                [entity removeComponent:type];
             }
         }
     }
@@ -87,8 +87,8 @@
     for (t in toAdd)
     {
         type = t;
-        [entity addComponent:[toAdd[type] getComponent]
-               componentClass:NSClassFromString(type)];
+        [entity addComponent:[[toAdd objectForKey:type] getComponent]
+                componentClass:type];
     }
     
     currentState = newState;
