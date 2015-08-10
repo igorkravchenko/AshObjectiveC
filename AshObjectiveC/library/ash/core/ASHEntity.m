@@ -93,7 +93,7 @@ static NSInteger nameCount = 0;
 
     if(component != nil)
     {
-        [components removeObjectForKey:NSStringFromClass(componentClass)];
+        [components removeObjectForKey:componentClass];
         [componentRemoved dispatchWithObject:self 
                                   withObject:componentClass];
         return component;
