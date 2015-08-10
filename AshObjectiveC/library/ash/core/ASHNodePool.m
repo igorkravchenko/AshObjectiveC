@@ -6,11 +6,11 @@
     ASHNode * _tail;
     Class _nodeClass;
     ASHNode * _cacheTail;
-    NSMutableDictionary * _components;
+    NSMapTable * _components;
 }
 
 - (id)initWithNodeClass:(Class)aNodeClass
-             components:(NSMutableDictionary *)components
+             components:(NSMapTable *)components
 {
     self = [super init];
     
@@ -40,9 +40,9 @@
 
 - (void)disposeNode:(ASHNode *)node
 {
-    for (NSString * componentClass in _components)
+    for (Class componentClass in _components)
     {
-        NSString * propertyName = _components[componentClass];
+        NSString * propertyName = [_components objectForKey:componentClass];
         [node setValue:nil
                 forKey:propertyName];
     }

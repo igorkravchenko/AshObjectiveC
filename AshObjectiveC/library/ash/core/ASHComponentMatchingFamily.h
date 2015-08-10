@@ -6,8 +6,6 @@
 
 @interface ASHComponentMatchingFamily : NSObject <ASHFamily>
 
-@property (nonatomic, strong) NSMutableDictionary * entities;
-
 - (id)initWithNodeClass:(Class)nodeClass 
                          engine:(ASHEngine *)game;
 

@@ -7,13 +7,12 @@
 @implementation ASHComponentMatchingFamily
 {
     Class nodeClass;
-    NSMutableDictionary * components;
+    NSMapTable * components;
     ASHNodePool * nodePool;
     ASHEngine * game;
     ASHNodeList * nodes;
+    NSMapTable * entities;
 }
-
-@synthesize entities;
 
 - (id)initWithNodeClass:(Class)aNodeClass
                    engine:(ASHEngine *)engine
@@ -35,8 +34,8 @@
     nodePool = [[ASHNodePool alloc] initWithNodeClass:nodeClass
                                            components:components];
     nodes = [[ASHNodeList alloc] init];
-    entities = [NSMutableDictionary dictionary];
-    components = [NSMutableDictionary dictionary];
+    entities = [NSMapTable mapTableWithKeyOptions:NSPointerFunctionsOpaquePersonality valueOptions:NSPointerFunctionsStrongMemory];
+    components = [NSMapTable mapTableWithKeyOptions:NSPointerFunctionsOpaquePersonality valueOptions:NSPointerFunctionsStrongMemory];
     u_int count;
     objc_property_t * properties = class_copyPropertyList(nodeClass, &count);
     
@@ -52,8 +51,8 @@
             NSString * stringClass =
             [[[NSString stringWithCString:propType 
                                   encoding:NSUTF8StringEncoding] stringByReplacingOccurrencesOfString:@"T@" 
-              withString:@""] stringByReplacingOccurrencesOfString:@"\"" withString:@""];            
-            components[stringClass] = propertyName;
+              withString:@""] stringByReplacingOccurrencesOfString:@"\"" withString:@""];
+            [components setObject:propertyName forKey:NSClassFromString(stringClass)];
         }
     }
     
@@ -79,7 +78,7 @@
 - (void)componentRemovedFromEntity:(ASHEntity *)entity
                     componentClass:(Class)componentClass
 {
-    if(components[NSStringFromClass(componentClass)] != nil)
+    if([components objectForKey:componentClass] != nil)
     {
         [self removeIfMatch:entity];
     }
@@ -92,40 +91,39 @@
 
 - (void)addIfMatch:(ASHEntity *)entity
 {
-    if(entities[@(entity.hash)] == nil)
+    if([entities objectForKey:entity] == nil)
     {
-        NSString * componentClassString = nil;
+        Class componentClass;
         
-        for (componentClassString in components) 
+        for (componentClass in components)
         {
-            if(![entity hasComponent:NSClassFromString(componentClassString)])
+            if(![entity hasComponent:componentClass])
             {                
                 return;   
             }
         }
                 
         ASHNode * node = [nodePool getNode];
-        node.entity = entity;
+        node->entity = entity;
                 
-        for (componentClassString in components) 
+        for (componentClass in components)
         {
-            [node setValue:[entity getComponent:NSClassFromString(componentClassString)] 
-                    forKey:components[componentClassString]];
+            [node setValue:[entity getComponent:componentClass]
+                    forKey:[components objectForKey:componentClass]];
         }
         
-        entities[@(entity.hash)] = node;
+        [entities setObject:node forKey:entity];
         [nodes addNode:node];        
     }
 }
 
 - (void)removeIfMatch:(ASHEntity *)entity
 {
-    NSNumber * entityID = @(entity.hash);
-    
-    if(entities[entityID] != nil)
+
+    if([entities objectForKey:entity] != nil)
     {
-        ASHNode * node = entities[entityID];
-        [entities removeObjectForKey:entityID];
+        ASHNode * node = [entities objectForKey:entity];
+        [entities removeObjectForKey:entity];
         [nodes removeNode:node];
         if(game.updating)
         {
@@ -149,10 +147,9 @@
 
 - (void)cleanUp
 {
-    for(ASHNode * node = nodes.head; node != nil; node = node.next)
+    for(ASHNode * node = nodes->head; node != nil; node = node->next)
     {
-        [entities removeObjectForKey:@(node.entity.hash)];
-        
+        [entities removeObjectForKey:node->entity];
     }
     
     [nodes removeAll];

@@ -8,10 +8,10 @@
 
 @implementation ASHEngine
 {
-    NSMutableDictionary * entityNames;
+    NSMapTable * entityNames;
     ASHEntityList * entityList;
     ASHSystemList * systemList;
-    NSMutableDictionary * families;
+    NSMapTable * families;
 }
 
 @synthesize updating;
@@ -26,9 +26,9 @@
     if(self != nil)
     {
         entityList = [[ASHEntityList alloc] init];
-        entityNames = [NSMutableDictionary dictionary];
+        entityNames = [NSMapTable mapTableWithKeyOptions:NSPointerFunctionsObjectPersonality valueOptions:NSPointerFunctionsStrongMemory];
         systemList = [[ASHSystemList alloc] init];
-        families = [NSMutableDictionary dictionary];
+        families = [NSMapTable mapTableWithKeyOptions:NSPointerFunctionsOpaquePersonality valueOptions:NSPointerFunctionsStrongMemory];
         updateComplete = [[ASHSignal0 alloc] init];
         familyClass = ASHComponentMatchingFamily.class;
     }
@@ -38,7 +38,7 @@
 
 - (void)addEntity:(ASHEntity *)entity
 {
-    if(entityNames[entity.name] != nil)
+    if([entityNames objectForKey:entity.name] != nil)
     {
         @throw [NSException exceptionWithName:[NSStringFromClass(self.class) stringByAppendingString:@"Exception"]
                                        reason:[NSString stringWithFormat:@"The entity name %@ is already in use by another entity.", entity.name]
@@ -46,16 +46,16 @@
     }
 
     [entityList addEntity:entity];
-    entityNames[ entity.name ] = entity;
+    [entityNames setObject:entity forKey:entity.name];
     [entity.componentAdded addListener:self 
                                 action:@selector(componentAdded:componentClass:)];
     [entity.componentRemoved addListener:self
                                   action:@selector(componentRemoved:componentClass:)];
     [entity.nameChanged addListener:self
                              action:@selector(entityNameChanged:oldName:)];
-    for (NSString * nodeKey in families)
+    for (Class nodeClass in families)
     {
-        id <ASHFamily> family = families[nodeKey];
+        id <ASHFamily> family = [families objectForKey:nodeClass];
         [family newEntity:entity];
     }
 }
@@ -68,9 +68,9 @@
                                      action:@selector(componentRemoved:componentClass:)];
     [entity.nameChanged removeListener:self
                                 action:@selector(entityNameChanged:oldName:)];
-    for (NSString * nodeKey in families) 
+    for (Class nodeClass in families)
     {
-        id <ASHFamily> family = families[nodeKey];
+        id <ASHFamily> family = [families objectForKey:nodeClass];
         [family removeEntity:entity];
     }
     [entityNames removeObjectForKey:entity.name];
@@ -80,16 +80,16 @@
 - (void)entityNameChanged:(ASHEntity *)entity
                   oldName:(NSString *)oldName
 {
-    if(entityNames[oldName] == entity)
+    if([entityNames objectForKey:oldName] == entity)
     {
         [entityNames removeObjectForKey:oldName];
-        entityNames[entity.name] = entity;
+        [entityNames setObject:entity forKey:entity.name];
     }
 }
 
 - (ASHEntity *)getEntityByName:(NSString *)name
 {
-    return entityNames[name];
+    return [entityNames objectForKey:name];
 }
 
 - (void)removeAllEntities
@@ -115,9 +115,9 @@
 - (void)componentAdded:(ASHEntity *)entity
         componentClass:(Class)componentClass
 {
-    for (NSString * nodeKey in families) 
+    for (Class nodeClass in families)
     {
-        id <ASHFamily>  family = families[nodeKey];
+        id <ASHFamily> family = [families objectForKey:nodeClass];
         [family componentAddedToEntity:entity
                         componentClass:componentClass];
     }
@@ -126,9 +126,9 @@
 - (void)componentRemoved:(ASHEntity *)entity
           componentClass:(Class)componentClass
 {
-    for (NSString * nodeKey in families)
+    for (Class nodeClass in families)
     {
-        id <ASHFamily>  family = families[nodeKey];
+        id <ASHFamily> family = [families objectForKey:nodeClass];
         [family componentRemovedFromEntity:entity
                             componentClass:componentClass];
     }
@@ -136,18 +136,17 @@
 
 - (ASHNodeList *)getNodeList:(Class)nodeClass
 {
-    NSString * nodeClassKey = NSStringFromClass(nodeClass);
-    id <ASHFamily> family = families[nodeClassKey];
-    
+    id <ASHFamily> family = [families objectForKey:nodeClass];
+
     if(family != nil)
     {
         return family.nodeList;
     }
     
     family = [(ASHComponentMatchingFamily *)[familyClass alloc] initWithNodeClass:nodeClass
-                                                                        engine:self];
-    
-    families[nodeClassKey] = family;
+                                                                           engine:self];
+
+    [families setObject:family forKey:nodeClass];
 
     ASHEntity * entity = nil;
     
@@ -161,15 +160,14 @@
 
 - (void)releaseNodeList:(Class)nodeClass
 {
-    NSString * nodeClassKey = NSStringFromClass(nodeClass);
-    id <ASHFamily> family = families[nodeClassKey];
-    
+    id <ASHFamily> family = [families objectForKey:nodeClass];
+
     if(family != nil)
     {
         [family cleanUp];
     }
     
-    [families removeObjectForKey:nodeClassKey];
+    [families removeObjectForKey:nodeClass];
 }
 
 - (void)addSystem:(ASHSystem *)system
