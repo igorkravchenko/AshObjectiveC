@@ -23,7 +23,8 @@ static NSInteger nameCount = 0;
     {
         componentAdded = [[ASHSignal2 alloc] init] ;
         componentRemoved = [[ASHSignal2 alloc] init];
-        components = [NSMutableDictionary dictionary];
+        components = [NSMapTable mapTableWithKeyOptions:NSPointerFunctionsObjectPersonality
+                                           valueOptions:NSPointerFunctionsStrongMemory];
         nameChanged = [[ASHSignal2 alloc] init];
         _name = [@"_entity" stringByAppendingFormat:@"%ld", (long)++nameCount];
     }
@@ -39,7 +40,8 @@ static NSInteger nameCount = 0;
     {
         componentAdded = [[ASHSignal2 alloc] init] ;
         componentRemoved = [[ASHSignal2 alloc] init];
-        components = [NSMutableDictionary dictionary];
+        components = [NSMapTable mapTableWithKeyOptions:NSPointerFunctionsObjectPersonality
+                                           valueOptions:NSPointerFunctionsStrongMemory];
         nameChanged = [[ASHSignal2 alloc] init];
         _name = name != nil ? name : [@"_entity" stringByAppendingFormat:@"%ld", (long)++nameCount];
     }
@@ -54,15 +56,14 @@ static NSInteger nameCount = 0;
     {
         componentClass = [component class];
     }
-    
-    NSString * componentClassKey = NSStringFromClass(componentClass);
-    
-    if(components[componentClassKey] != nil)
+
+    if([components objectForKey:componentClass] != nil)
     {
         [self removeComponent:componentClass];
     }
-    
-    components[componentClassKey] = component;
+
+    [components setObject:component
+                   forKey:componentClass];
     
     [componentAdded dispatchWithObject:self
                             withObject:componentClass];
@@ -72,14 +73,14 @@ static NSInteger nameCount = 0;
 - (ASHEntity *)addComponent:(id)component
 {
     Class componentClass = [component class];
-    NSString * componentClassKey = NSStringFromClass(componentClass);
-    
-    if(components[componentClassKey] != nil)
+
+    if([components objectForKey:componentClass] != nil)
     {
         [self removeComponent:componentClass];
     }
     
-    components[componentClassKey] = component;
+    [components setObject:component
+                   forKey:componentClass];
     
     [componentAdded dispatchWithObject:self
                             withObject:componentClass];
@@ -88,8 +89,8 @@ static NSInteger nameCount = 0;
 
 - (id)removeComponent:(Class)componentClass
 {
-    id component = components[NSStringFromClass(componentClass)];
-   
+    id component = [components objectForKey:componentClass];
+
     if(component != nil)
     {
         [components removeObjectForKey:NSStringFromClass(componentClass)];
@@ -103,17 +104,24 @@ static NSInteger nameCount = 0;
 
 - (id)getComponent:(Class)componentClass
 {
-    return components[NSStringFromClass(componentClass)];
+    return [components objectForKey:componentClass];
 }
 
 - (NSArray *)allComponents
 {
-    return components.allValues;
+    NSMutableArray * allComponents = NSMutableArray.array;
+
+    for (Class key in components)
+    {
+        [allComponents addObject:[components objectForKey:key]];
+    }
+
+    return allComponents;
 }
 
 - (BOOL)hasComponent:(Class)componentClass
 {    
-    return components[NSStringFromClass(componentClass)] != nil;
+    return [components objectForKey:componentClass] != nil;
 }
 
 - (NSString *)name

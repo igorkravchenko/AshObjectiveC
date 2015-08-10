@@ -11,7 +11,7 @@
 
 @property (nonatomic, readonly) ASHSignal2 * componentAdded;
 @property (nonatomic, readonly) ASHSignal2 * componentRemoved;
-@property (nonatomic, readonly) NSMutableDictionary * components;
+@property (nonatomic, readonly) NSMapTable * components;
 @property (nonatomic, readonly) ASHSignal2 * nameChanged;
 
 - (id)initWithName:(NSString *)name;
