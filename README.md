@@ -1,9 +1,9 @@
-h1. AshObjectiveC
+AshObjectiveC
 =============
 
 Objective-C port of Ash (ActionScript 3 entity systems framework for game development created and updated by Richard Lord)
 
-h3. Examples
+<b>Examples</b>
 
 * "Asteroids-UIKit-Objective-C":https://github.com/igorkravchenko/Swifteroids
 * "Swifteroids":https://github.com/igorkravchenko/Asteroids-UIKit-Objective-C
