@@ -1,7 +1,7 @@
-AshObjectiveC
+h1. AshObjectiveC
 =============
 
-Objective-C port of Ash (ActionScript 3 entity systems framework for game development created and updated by Richard Lord)<br/>
+Objective-C port of Ash (ActionScript 3 entity systems framework for game development created and updated by Richard Lord)
 
 h3. Examples
 
