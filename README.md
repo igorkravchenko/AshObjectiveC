@@ -5,8 +5,8 @@ Objective-C port of Ash (ActionScript 3 entity systems framework for game develo
 
 <b>Examples</b>
 
-* "Asteroids-UIKit-Objective-C":https://github.com/igorkravchenko/Swifteroids
-* "Swifteroids":https://github.com/igorkravchenko/Asteroids-UIKit-Objective-C
+* [Asteroids-UIKit-Objective-C](https://github.com/igorkravchenko/Swifteroids)
+* [Swifteroids](https://github.com/igorkravchenko/Asteroids-UIKit-Objective-C)
 
 [Original AS3 version](https://github.com/richardlord/Ash)<br/>
 Visit http://www.ashframework.org for more information.
