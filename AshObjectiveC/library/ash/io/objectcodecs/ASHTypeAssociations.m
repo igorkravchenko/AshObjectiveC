@@ -29,6 +29,7 @@
         _typeAssociations = [NSMutableDictionary dictionary];
 
         NSString * immutableArray = @"__NSArrayI";
+        NSString * immutableArray0 = @"__NSArray0";
         NSString * mutableArray = @"__NSArrayM";
         NSString * number = @"__NSCFNumber";
         NSString * immutableString = @"__NSCFConstantString";
@@ -39,6 +40,7 @@
 
         [self addTypeAssociation:[NSArray class] association:immutableArray];
         [self addTypeAssociation:NSClassFromString(immutableArray) association:NSStringFromClass([NSArray class])];
+        [self addTypeAssociation:NSClassFromString(immutableArray0) association:NSStringFromClass([NSArray class])];
 
         [self addTypeAssociation:[NSMutableArray class] association:mutableArray];
         [self addTypeAssociation:NSClassFromString(mutableArray) association:NSStringFromClass([NSMutableArray class])];
