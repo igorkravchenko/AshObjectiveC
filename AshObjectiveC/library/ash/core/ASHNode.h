@@ -10,7 +10,7 @@
     __strong ASHNode * next;
 }
 
-@property (nonatomic, weak) ASHEntity * entity;
+@property (nonatomic, readonly, nonnull) ASHEntity * entity;
 
 @property (nonatomic, weak) ASHNode * previous;
 
