@@ -10,10 +10,10 @@
     __strong ASHNode  * _Nullable next;
 }
 
-@property (nonatomic, readonly, nonnull) ASHEntity * entity;
+@property (nonnull, nonatomic, readonly) ASHEntity * entity;
 
-@property (nonatomic, weak, nullable) ASHNode * previous;
+@property (nullable, nonatomic, weak) ASHNode * previous;
 
-@property (nonatomic, strong, nullable) ASHNode  * next;
+@property (nullable, nonatomic, strong) ASHNode  * next;
 
 @end
