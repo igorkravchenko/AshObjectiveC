@@ -5,9 +5,9 @@
 @interface ASHNode : NSObject
 {
     @public
-    __weak ASHEntity * _Nonnull entity;
-    __weak ASHNode  * _Nullable previous;
-    __strong ASHNode  * _Nullable next;
+    __weak ASHEntity * __nonnull entity;
+    __weak ASHNode  * __nullable previous;
+    __strong ASHNode  * __nullable next;
 }
 
 @property (nonnull, nonatomic, readonly) ASHEntity * entity;
