@@ -14,5 +14,4 @@
 @property (nonnull, nonatomic, readonly) ASHEntity * entity;
 @property (nullable, nonatomic, weak) ASHNode * previous;
 
-
 @end
