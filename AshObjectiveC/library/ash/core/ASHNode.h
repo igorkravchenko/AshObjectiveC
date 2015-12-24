@@ -12,8 +12,8 @@
 
 @property (nonatomic, readonly, nonnull) ASHEntity * entity;
 
-@property (nonatomic, weak) ASHNode * previous;
+@property (nonatomic, weak, nullable) ASHNode * previous;
 
-@property (nonatomic, strong) ASHNode * next;
+@property (nonatomic, strong, nullable) ASHNode * next;
 
 @end
