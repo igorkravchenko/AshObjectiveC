@@ -5,15 +5,15 @@
 @interface ASHNode : NSObject
 {
     @public
-    __weak ASHEntity * entity;
-    __weak ASHNode * previous;
-    __strong ASHNode * next;
+    __weak ASHEntity * _Nonnull entity;
+    __weak ASHNode  * _Nullable previous;
+    __strong ASHNode  * _Nullable next;
 }
 
 @property (nonatomic, readonly, nonnull) ASHEntity * entity;
 
 @property (nonatomic, weak, nullable) ASHNode * previous;
 
-@property (nonatomic, strong, nullable) ASHNode * next;
+@property (nonatomic, strong, nullable) ASHNode  * next;
 
 @end
