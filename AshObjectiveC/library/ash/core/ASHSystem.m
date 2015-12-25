@@ -5,12 +5,12 @@
 
 @synthesize priority;
 
-- (void)addToEngine:(ASHEngine *)engine
+- (void)addToEngine:(nonnull ASHEngine *)engine
 {
     
 }
 
-- (void)removeFromEngine:(ASHEngine *)engine
+- (void)removeFromEngine:(nonnull ASHEngine *)engine
 {
     
 }
