@@ -61,7 +61,7 @@
                                codecManager:_codecManager];
     NSValue * decoded = [_codec decode:encoded
                    codecManager:_codecManager];
-    assertThatBool(CGPointEqualToPoint(point, decoded.CGPointValue), equalToBool(YES));
+    assertThatBool(CGPointEqualToPoint(point, decoded.CGPointValue), isTrue());
 }
 
 - (void)testEncodesAndDecodesValueWithCGRect
@@ -81,7 +81,7 @@
                                codecManager:_codecManager];
     NSValue * decoded = [_codec decode:encoded
                           codecManager:_codecManager];
-    assertThatBool(CGRectEqualToRect(rect, decoded.CGRectValue), equalToBool(YES));
+    assertThatBool(CGRectEqualToRect(rect, decoded.CGRectValue), isTrue());
 }
 
 - (void)testEncodesAndDecodesValueWithCGSize
@@ -101,7 +101,7 @@
                                codecManager:_codecManager];
     NSValue * decoded = [_codec decode:encoded
                           codecManager:_codecManager];
-    assertThatBool(CGSizeEqualToSize(point, decoded.CGSizeValue), equalToBool(YES));
+    assertThatBool(CGSizeEqualToSize(point, decoded.CGSizeValue), isTrue());
 }
 
 - (void)testEncodesAndDecodesValueWithCGAffineTransform
@@ -121,7 +121,7 @@
                                codecManager:_codecManager];
     NSValue * decoded = [_codec decode:encoded
                           codecManager:_codecManager];
-    assertThatBool(CGAffineTransformEqualToTransform(transform, decoded.CGAffineTransformValue), equalToBool(YES));
+    assertThatBool(CGAffineTransformEqualToTransform(transform, decoded.CGAffineTransformValue), isTrue());
 }
 
 - (void)testEncodesAndDecodesValueWithCATransform3D
@@ -164,7 +164,7 @@
     NSValue * decoded = [_codec decode:encoded
                           codecManager:_codecManager];
 
-    assertThatBool(CATransform3DEqualToTransform(transform3D, decoded.CATransform3DValue), equalToBool(YES));
+    assertThatBool(CATransform3DEqualToTransform(transform3D, decoded.CATransform3DValue), isTrue());
 
 }
 
@@ -186,7 +186,7 @@
     NSValue * decoded = [_codec decode:encoded
                           codecManager:_codecManager];
 
-    assertThatBool(UIOffsetEqualToOffset(offset, decoded.UIOffsetValue), equalToBool(YES));
+    assertThatBool(UIOffsetEqualToOffset(offset, decoded.UIOffsetValue), isTrue());
 }
 
 - (void)testEncodesAndDecodesValueWithNSRange
@@ -207,7 +207,7 @@
     NSValue * decoded = [_codec decode:encoded
                           codecManager:_codecManager];
 
-    assertThatBool(NSEqualRanges(range, decoded.rangeValue), equalToBool(YES));
+    assertThatBool(NSEqualRanges(range, decoded.rangeValue), isTrue());
 }
 
 - (void)testEncodesAndDecodesValueWithUIEdgeInsets
@@ -227,7 +227,7 @@
                                codecManager:_codecManager];
     NSValue * decoded = [_codec decode:encoded
                           codecManager:_codecManager];
-    assertThatBool(UIEdgeInsetsEqualToEdgeInsets(edgeInsets, decoded.UIEdgeInsetsValue), equalToBool(YES));
+    assertThatBool(UIEdgeInsetsEqualToEdgeInsets(edgeInsets, decoded.UIEdgeInsetsValue), isTrue());
 }
 
 #ifdef CGVECTOR_DEFINED
@@ -255,7 +255,7 @@
                           codecManager:_codecManager];
     CGVector decodedVector;
     [decoded getValue:&decodedVector];
-    assertThatBool(decodedVector.dx == vector.dx && decodedVector.dy == vector.dy, equalToBool(YES));
+    assertThatBool(decodedVector.dx == vector.dx && decodedVector.dy == vector.dy, isTrue());
 }
 
 #endif

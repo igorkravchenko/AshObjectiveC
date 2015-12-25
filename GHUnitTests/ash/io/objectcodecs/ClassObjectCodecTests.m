@@ -58,7 +58,7 @@
                                codecManager:_codecManager];
     id decoded = [_codec decode:encoded
                    codecManager:_codecManager];
-    assertThatBool(class_isMetaClass(object_getClass(decoded)), equalToBool(YES));
+    assertThatBool(class_isMetaClass(object_getClass(decoded)), isTrue());
 
 }
 

@@ -135,7 +135,7 @@
 
 - (void)testUpdatingIsFalseBeforeUpdate
 {
-    assertThatBool(engine.updating, equalToBool(NO));
+    assertThatBool(engine.updating, isFalse());
 }
 
 - (void)testUpdatingIsTrueDuringUpdate
@@ -152,7 +152,7 @@
 - (void)testUpdatingIsFalseAfterUpdate
 {
     [engine update:0.1];
-    assertThatBool(engine.updating, equalToBool(NO));
+    assertThatBool(engine.updating, isFalse());
 }
 
 - (void)testCompleteSignalIsDispatchedAfterUpdate
@@ -267,7 +267,7 @@
                        action:(NSString *)action
                          time:(NSNumber *)time
 {
-    assertThatBool(engine.updating, equalToBool(YES));
+    assertThatBool(engine.updating, isTrue());
 }
 
 - (void)listensForUpdateComplete:(ASHSystem *)system

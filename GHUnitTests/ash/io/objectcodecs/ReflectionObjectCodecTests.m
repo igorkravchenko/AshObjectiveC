@@ -76,7 +76,7 @@
 
 - (void)testEncodingReturnsBooleanVariable
 {
-    assertThat(_encoded[propertiesKey][@"booleanVariable"][valueKey], equalToBool(_object.booleanVariable));
+    assertThat(_encoded[propertiesKey][@"booleanVariable"][valueKey], _object.booleanVariable ? isTrue() : isFalse());
 }
 
 - (void)testEncodingReturnsStringVariable
@@ -123,7 +123,7 @@
 
 - (void)testDecodingReturnsBooleanVariable
 {
-    assertThatBool([_decoded booleanVariable], equalToBool(_object.booleanVariable));
+    assertThatBool([_decoded booleanVariable], _object.booleanVariable ? isTrue() : isFalse());
 }
 
 - (void)testDecodingReturnsStringVariable

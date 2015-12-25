@@ -101,13 +101,13 @@
 - (void)testHasComponentIsFalseIfComponentTypeNotPresent
 {
     [entity addComponent:[[MockComponent2 alloc] init]];
-    assertThatBool([entity hasComponent:[MockComponent class]], equalToBool(NO));
+    assertThatBool([entity hasComponent:[MockComponent class]], isFalse());
 }
 
 - (void)testHasComponentIsTrueIfComponentTypeIsPresent
 {
     [entity addComponent:[[MockComponent alloc] init]];
-    assertThatBool([entity hasComponent:[MockComponent class]], equalToBool(YES));
+    assertThatBool([entity hasComponent:[MockComponent class]], isTrue());
 }
 
 - (void)testCanRemoveComponent
@@ -115,7 +115,7 @@
     MockComponent * component = [[MockComponent alloc] init];
     [entity addComponent:component];
     [entity removeComponent:[MockComponent class]];
-    assertThatBool([entity hasComponent:[MockComponent class]], equalToBool(NO));
+    assertThatBool([entity hasComponent:[MockComponent class]], isFalse());
 }
 
 - (void)testStoringComponentTriggersAddedSignal

@@ -94,7 +94,7 @@
                                codecManager:_codecManager];
     id decoded = [_codec decode:encoded
                   codecManager:_codecManager];
-    assertThatBool([decoded isEqualToArray:input.copy], equalToBool(YES));
+    assertThatBool([decoded isEqualToArray:input.copy], isTrue());
 }
 
 - (void)testDecodesMutableArrayWithCorrectType
@@ -114,7 +114,7 @@
                                codecManager:_codecManager];
     id decoded = [_codec decode:encoded
                    codecManager:_codecManager];
-    assertThatBool([decoded isEqualToArray:input.mutableCopy], equalToBool(YES));
+    assertThatBool([decoded isEqualToArray:input.mutableCopy], isTrue());
 }
 
 @end

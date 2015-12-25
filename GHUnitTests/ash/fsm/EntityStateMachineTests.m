@@ -80,7 +80,7 @@
     [fsm addState:@"test2"
             state:state2];
     [fsm changeState:@"test2"];
-    assertThatBool([entity hasComponent:[MockComponent class]], equalToBool(NO));
+    assertThatBool([entity hasComponent:[MockComponent class]], isFalse());
 }
 
 - (void)testEnterSecondStateDoesNotRemoveOverlappingComponents

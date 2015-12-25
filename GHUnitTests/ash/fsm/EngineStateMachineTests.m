@@ -103,7 +103,7 @@
     [self.fsm addState:@"test2"
                  state:state2];
     [self.fsm changeState:@"test2"];
-    assertThatBool(system1.wasRemoved, equalToBool(NO));
+    assertThatBool(system1.wasRemoved, isFalse());
     assertThat([self.engine getSystem:[MockSystem class]], sameInstance(system1));
 }
 
