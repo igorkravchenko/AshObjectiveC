@@ -9,7 +9,7 @@
     Class nodeClass;
     NSMapTable * components;
     ASHNodePool * nodePool;
-    ASHEngine * game;
+    __weak ASHEngine * game;
     ASHNodeList * nodes;
     NSMapTable * entities;
 }

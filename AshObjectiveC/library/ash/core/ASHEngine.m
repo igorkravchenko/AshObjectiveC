@@ -19,7 +19,7 @@
 
 @synthesize familyClass;
 
-- (id)init
+- (instancetype)init
 {
     self = [super init];
     
@@ -36,7 +36,7 @@
     return self;
 }
 
-- (void)addEntity:(ASHEntity *)entity
+- (void)addEntity:(ASHEntity * __nonnull)entity
 {
     if([entityNames objectForKey:entity.name] != nil)
     {
@@ -60,7 +60,7 @@
     }
 }
 
-- (void)removeEntity:(ASHEntity *)entity
+- (void)removeEntity:(ASHEntity * __nonnull)entity
 {
     [entity.componentAdded removeListener:self 
                                    action:@selector(componentAdded:componentClass:)];
@@ -87,7 +87,7 @@
     }
 }
 
-- (ASHEntity *)getEntityByName:(NSString *)name
+- (ASHEntity * __nullable)getEntityByName:(NSString * __nonnull)name
 {
     return [entityNames objectForKey:name];
 }
@@ -100,7 +100,7 @@
     }
 }
 
-- (NSArray *)allEntities
+- (NSArray * __nonnull)allEntities
 {
     NSMutableArray * entities = NSMutableArray.array;
     
@@ -134,7 +134,7 @@
     }
 }
 
-- (ASHNodeList *)getNodeList:(Class)nodeClass
+- (ASHNodeList * __nonnull)getNodeList:(Class __nonnull)nodeClass
 {
     id <ASHFamily> family = [families objectForKey:nodeClass];
 
@@ -158,7 +158,7 @@
     return family.nodeList;
 }
 
-- (void)releaseNodeList:(Class)nodeClass
+- (void)releaseNodeList:(Class __nonnull)nodeClass
 {
     id <ASHFamily> family = [families objectForKey:nodeClass];
 
@@ -170,7 +170,7 @@
     [families removeObjectForKey:nodeClass];
 }
 
-- (void)addSystem:(ASHSystem *)system
+- (void)addSystem:(ASHSystem * __nonnull)system
          priority:(NSInteger)priority
 {
     system.priority = priority;
@@ -178,7 +178,7 @@
     [systemList addSystem:system];
 }
 
-- (ASHSystem *)getSystem:(Class)type
+- (ASHSystem * __nullable)getSystem:(Class __nonnull)type
 {
     return [systemList getSystem:type];
 }
@@ -195,7 +195,7 @@
     return systems;
 }
 
-- (void)removeSystem:(ASHSystem *)system
+- (void)removeSystem:(ASHSystem * __nonnull)system
 {
     [systemList removeSystem:system];
     [system removeFromEngine:self];

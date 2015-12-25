@@ -20,7 +20,7 @@
     return self;
 }
 
-- (void)addNode:(ASHNode *)node
+- (void)addNode:(nonnull ASHNode *)node
 {
     if(head == nil)
     {
@@ -40,7 +40,7 @@
     [nodeAdded dispatchWithObject:node];
 }
 
-- (void)removeNode:(ASHNode *)node
+- (void)removeNode:(nonnull ASHNode *)node
 {
     if(head == node)
     {
@@ -81,8 +81,8 @@
     return head == nil;
 }
 
-- (void)swapNode:(ASHNode *)node1
-            node:(ASHNode *)node2
+- (void)swapNode:(nonnull ASHNode *)node1
+            node:(nonnull ASHNode *)node2
 {
     if(node1->previous == node2)
     {
@@ -142,7 +142,7 @@
     }
 }
 
-- (void)insertionSortUsingBlock:(float (^)(ASHNode *, ASHNode *))sortBlock
+- (void)insertionSortUsingBlock:(float (^__nonnull)(ASHNode * __nonnull, ASHNode * __nonnull))sortBlock;
 {
     if (head == tail)
     {
@@ -198,7 +198,7 @@
     }
 }
 
-- (void)mergeSortUsingBlock:(float (^)(ASHNode *, ASHNode *))sortBlock
+- (void)mergeSortUsingBlock:(float (^__nonnull)(ASHNode * __nonnull, ASHNode * __nonnull))sortBlock
 {
     if (head == tail)
     {

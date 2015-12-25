@@ -9,22 +9,22 @@
 @interface ASHEngine : NSObject
 
 @property (nonatomic, assign) BOOL updating;
-@property (nonatomic, readonly) ASHSignal0 * updateComplete;
-@property (nonatomic, assign) Class familyClass;
+@property (nonnull, nonatomic, readonly) ASHSignal0 * updateComplete;
+@property (nonnull, nonatomic, assign) Class familyClass;
 
-- (void)addEntity:(ASHEntity *)entity;
-- (void)removeEntity:(ASHEntity *)entity;
+- (void)addEntity:(ASHEntity * __nonnull)entity;
+- (void)removeEntity:(ASHEntity * __nonnull)entity;
 - (void)removeAllEntities;
-- (NSArray *)allEntities;
-- (ASHNodeList *)getNodeList:(Class)nodeClass;
-- (void)releaseNodeList:(Class)nodeClass;
-- (void)addSystem:(ASHSystem *)system
+- (NSArray * __nonnull)allEntities;
+- (ASHNodeList * __nonnull)getNodeList:(Class __nonnull)nodeClass;
+- (void)releaseNodeList:(Class __nonnull)nodeClass;
+- (void)addSystem:(ASHSystem * __nonnull)system
          priority:(NSInteger)priority;
-- (ASHSystem *)getSystem:(Class)type;
-- (NSArray *)allSystems;
-- (void)removeSystem:(ASHSystem *)system;
+- (ASHSystem * __nullable)getSystem:(Class __nonnull)type;
+- (NSArray * __nonnull)allSystems;
+- (void)removeSystem:(ASHSystem * __nonnull)system;
 - (void)removeAllSystems;
 - (void)update:(double)time;
-- (ASHEntity *)getEntityByName:(NSString *)name;
+- (ASHEntity * __nullable)getEntityByName:(NSString * __nonnull)name;
 
 @end

@@ -9,28 +9,28 @@
     __strong ASHEntity * next;
 }
 
-@property (nonatomic, readonly) ASHSignal2 * componentAdded;
-@property (nonatomic, readonly) ASHSignal2 * componentRemoved;
-@property (nonatomic, readonly) NSMapTable * components;
-@property (nonatomic, readonly) ASHSignal2 * nameChanged;
+@property (nonnull, nonatomic, readonly) ASHSignal2 * componentAdded;
+@property (nonnull, nonatomic, readonly) ASHSignal2 * componentRemoved;
+@property (nonnull, nonatomic, readonly) NSMapTable * components;
+@property (nonnull, nonatomic, readonly) ASHSignal2 * nameChanged;
 
-- (id)initWithName:(NSString *)name;
+- (instancetype __nonnull)initWithName:(NSString * __nullable)name;
 
-- (ASHEntity *)addComponent:(id)component
-          componentClass:(Class)componentClass;
+- (ASHEntity * __nonnull)addComponent:(id __nonnull)component
+          componentClass:(Class __nonnull)componentClass;
 
-- (ASHEntity *)addComponent:(id)component;
+- (ASHEntity * __nonnull)addComponent:(id __nonnull)component;
 
-- (id)removeComponent:(Class)componentClass;
+- (id __nullable)removeComponent:(Class __nonnull)componentClass;
 
-- (id)getComponent:(Class)componentClass;
+- (id __nullable)getComponent:(Class __nonnull)componentClass;
 
-- (NSArray *)allComponents;
+- (NSArray * __nonnull)allComponents;
 
-- (BOOL)hasComponent:(Class)componentClass;
+- (BOOL)hasComponent:(Class __nonnull)componentClass;
 
-- (NSString *)name;
+- (NSString * __nonnull)name;
 
-- (void)setName:(NSString *)value;
+- (void)setName:(NSString * __nonnull)value;
 
 @end

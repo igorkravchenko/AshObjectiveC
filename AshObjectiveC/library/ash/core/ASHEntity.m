@@ -15,7 +15,7 @@ static NSInteger nameCount = 0;
 @synthesize components;
 @synthesize nameChanged;
 
-- (id)init
+- (instancetype)init
 {
     self = [super init];
     
@@ -32,7 +32,7 @@ static NSInteger nameCount = 0;
     return self;
 }
 
-- (id)initWithName:(NSString *)name
+- (instancetype __nonnull)initWithName:(NSString * __nullable)name
 {
     self = [super init];
 
@@ -49,8 +49,8 @@ static NSInteger nameCount = 0;
     return self;
 }
 
-- (ASHEntity *)addComponent:(id)component
-          componentClass:(Class)componentClass
+- (ASHEntity * __nonnull)addComponent:(id __nonnull)component
+                       componentClass:(Class __nonnull)componentClass
 {
     if(componentClass == nil)
     {
@@ -70,7 +70,7 @@ static NSInteger nameCount = 0;
     return self;
 }
 
-- (ASHEntity *)addComponent:(id)component
+- (ASHEntity * __nonnull)addComponent:(id __nonnull)component
 {
     Class componentClass = [component class];
 
@@ -87,7 +87,7 @@ static NSInteger nameCount = 0;
     return self;
 }
 
-- (id)removeComponent:(Class)componentClass
+- (id __nullable)removeComponent:(Class __nonnull)componentClass
 {
     id component = [components objectForKey:componentClass];
 
@@ -102,12 +102,12 @@ static NSInteger nameCount = 0;
     return nil;
 }
 
-- (id)getComponent:(Class)componentClass
+- (id __nullable)getComponent:(Class __nonnull)componentClass
 {
     return [components objectForKey:componentClass];
 }
 
-- (NSArray *)allComponents
+- (NSArray * __nonnull)allComponents
 {
     NSMutableArray * allComponents = NSMutableArray.array;
 
@@ -119,17 +119,17 @@ static NSInteger nameCount = 0;
     return allComponents;
 }
 
-- (BOOL)hasComponent:(Class)componentClass
+- (BOOL)hasComponent:(Class __nonnull)componentClass
 {    
     return [components objectForKey:componentClass] != nil;
 }
 
-- (NSString *)name
+- (NSString * __nonnull)name
 {
     return _name;
 }
 
-- (void)setName:(NSString *)value
+- (void)setName:(NSString * __nonnull)value
 {
     if(_name != value)
     {
