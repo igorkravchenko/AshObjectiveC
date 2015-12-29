@@ -7,13 +7,13 @@
 
 @interface ASHStateSystemMapping : NSObject
 
-- (instancetype)initWithCreatingState:(ASHEngineState *)creatingState
-                             provider:(id <ASHSystemProvider>)provider;
-- (instancetype)withPriority:(NSInteger)priority;
-- (instancetype)addInstance:(ASHSystem *)system1;
-- (instancetype)addSingleton:(Class)type;
-- (instancetype)addMethod:(id)target
-                   action:(SEL)action;
-- (instancetype)addProvider:(id <ASHSystemProvider>)provider;
+- (instancetype __nonnull)initWithCreatingState:(ASHEngineState * __nonnull)creatingState
+                             provider:(id <ASHSystemProvider> __nonnull)provider;
+- (instancetype __nonnull)withPriority:(NSInteger)priority;
+- (instancetype __nonnull)addInstance:(ASHSystem * __nonnull)system1;
+- (instancetype __nonnull)addSingleton:(Class __nonnull)type;
+- (instancetype __nonnull)addMethod:(id __nonnull)target
+                   action:(SEL __nonnull)action;
+- (instancetype __nonnull)addProvider:(id <ASHSystemProvider> __nonnull)provider;
 
 @end

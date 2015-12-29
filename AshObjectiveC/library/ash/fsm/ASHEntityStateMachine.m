@@ -10,7 +10,7 @@
     ASHEntity * entity;
 }
 
-- (id)initWithEntity:(ASHEntity *)anEntity
+- (instancetype __nonnull)initWithEntity:(ASHEntity * __nonnull)anEntity
 {
     self = [super init];
     
@@ -23,21 +23,21 @@
     return self;
 }
 
-- (ASHEntityStateMachine *)addState:(NSString *)name
-                           state:(ASHEntityState *)state
+- (ASHEntityStateMachine * __nonnull)addState:(NSString * __nonnull)name
+                           state:(ASHEntityState * __nonnull)state
 {
     [states setObject:state forKey:name];
     return self;
 }
 
-- (ASHEntityState *)createState:(NSString *)name
+- (ASHEntityState * __nonnull)createState:(NSString * __nonnull)name
 {
     ASHEntityState * state = [[ASHEntityState alloc] init];
     [states setObject:state forKey:name];
     return state;
 }
 
-- (void)changeState:(NSString *)name
+- (void)changeState:(NSString * __nonnull)name
 {
     ASHEntityState * newState = [states objectForKey:name];
     if (newState == nil)

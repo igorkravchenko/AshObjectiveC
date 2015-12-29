@@ -10,8 +10,8 @@
     NSInteger _systemPriority;
 }
 
-- (instancetype)initWithTarget:(id)target
-                        method:(SEL)method
+- (instancetype __nonnull)initWithTarget:(id __nonnull)target
+                        method:(SEL __nonnull)method
 {
     self = [super init];
 
@@ -24,12 +24,12 @@
     return self;
 }
 
-- (ASHSystem *)getSystem
+- (ASHSystem * __nonnull)getSystem
 {
     return ((id(*)(id, SEL))objc_msgSend)(_target, _method);
 }
 
-- (id)identifier
+- (id __nonnull)identifier
 {
     return [NSStringFromSelector(_method) stringByAppendingFormat:@"%ld", (long)[_target hash]];
 }

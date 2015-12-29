@@ -4,7 +4,7 @@
 
 @implementation ASHEntityState
 
-- (id)init
+- (instancetype __nonnull)init
 {
     self = [super init];
     
@@ -16,19 +16,19 @@
     return self;
 }
 
-- (ASHStateComponentMapping *)add:(Class)type
+- (ASHStateComponentMapping * __nonnull)add:(Class __nonnull)type
 {
     return [[ASHStateComponentMapping alloc] initWithCreatingState:self
-                                                           type:type];
+                                                              type:type];
 }
 
 
-- (id <ASHComponentProvider>)get:(Class)type
+- (id <ASHComponentProvider> __nonnull)get:(Class __nonnull)type
 {
     return [_providers objectForKey:type];
 }
 
-- (BOOL)has:(Class)type
+- (BOOL)has:(Class __nonnull)type
 {
     return [_providers objectForKey:type] != nil;
 }

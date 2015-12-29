@@ -4,7 +4,7 @@
 
 @interface ASHDynamicComponentProvider : NSObject <ASHComponentProvider>
 
-- (id)initWithTarget:(id)target
-             closure:(SEL)closure;
+- (instancetype __nonnull)initWithTarget:(id __nonnull)target
+             closure:(SEL __nonnull)closure;
 
 @end

@@ -8,8 +8,8 @@
     SEL _closure;
 }
 
-- (id)initWithTarget:(id)target
-             closure:(SEL)closure
+- (instancetype __nonnull)initWithTarget:(id __nonnull)target
+             closure:(SEL __nonnull)closure
 {
     self = [super init];
 
@@ -22,12 +22,12 @@
     return self;
 }
 
-- (id)getComponent
+- (id __nonnull)getComponent
 {
     return ((id(*)(id, SEL))objc_msgSend)(_target, _closure);
 }
 
-- (id)identifier
+- (id __nonnull)identifier
 {
     return [NSStringFromSelector(_closure) stringByAppendingFormat:@"%ld", (long)[_target hash]];
 }

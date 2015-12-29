@@ -5,10 +5,10 @@
 
 @interface ASHEntityStateMachine : NSObject
 
-- (id)initWithEntity:(ASHEntity *)entity;
-- (ASHEntityStateMachine *)addState:(NSString *)name
-                           state:(ASHEntityState *)state;
-- (ASHEntityState *)createState:(NSString *)name;
-- (void)changeState:(NSString *)name;
+- (instancetype __nonnull)initWithEntity:(ASHEntity * __nonnull)entity;
+- (ASHEntityStateMachine * __nonnull)addState:(NSString * __nonnull)name
+                           state:(ASHEntityState * __nonnull)state;
+- (ASHEntityState * __nonnull)createState:(NSString * __nonnull)name;
+- (void)changeState:(NSString * __nonnull)name;
 
 @end

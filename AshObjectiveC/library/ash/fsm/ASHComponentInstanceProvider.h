@@ -4,6 +4,6 @@
 
 @interface ASHComponentInstanceProvider : NSObject <ASHComponentProvider>
 
-- (id)initWithInstance:(id)instance;
+- (instancetype __nonnull)initWithInstance:(id __nonnull)instance;
 
 @end

@@ -7,12 +7,12 @@
 
 @interface ASHEngineState : NSObject
 
-@property (nonatomic, readonly) NSMutableArray * providers;
+@property (nonnull, nonatomic, readonly) NSMutableArray * providers;
 
-- (ASHStateSystemMapping *)addInstance:(ASHSystem *)system;
-- (ASHStateSystemMapping *)addSingleton:(Class)aClass;
-- (ASHStateSystemMapping *)addMethod:(id)target
-                              action:(SEL)action;
-- (ASHStateSystemMapping *)addProvider:(id <ASHSystemProvider>)provider;
+- (ASHStateSystemMapping * __nonnull)addInstance:(ASHSystem * __nonnull)system;
+- (ASHStateSystemMapping * __nonnull)addSingleton:(Class __nonnull)aClass;
+- (ASHStateSystemMapping * __nonnull)addMethod:(id __nonnull)target
+                              action:(SEL __nonnull)action;
+- (ASHStateSystemMapping * __nonnull)addProvider:(id <ASHSystemProvider> __nonnull)provider;
 
 @end

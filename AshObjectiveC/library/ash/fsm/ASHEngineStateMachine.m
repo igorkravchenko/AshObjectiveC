@@ -1,13 +1,8 @@
-//
-// Created by Igor Kravchenko on 2/21/14.
-// Copyright (c) 2014 Igor Kravchenko. All rights reserved.
-//
 
 #import "ASHEngineStateMachine.h"
 #import "ASHEngine.h"
 #import "ASHEngineState.h"
 #import "ASHSystemProvider.h"
-
 
 @implementation ASHEngineStateMachine
 {

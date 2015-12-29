@@ -4,7 +4,7 @@
 
 @interface ASHDynamicSystemProvider : NSObject <ASHSystemProvider>
 
-- (instancetype)initWithTarget:(id)target
-                        method:(SEL)method;
+- (instancetype __nonnull)initWithTarget:(id __nonnull)target
+                        method:(SEL __nonnull)method;
 
 @end

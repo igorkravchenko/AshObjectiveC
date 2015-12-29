@@ -6,10 +6,10 @@
 
 @interface ASHEntityState : NSObject
 
-@property (nonatomic, readonly) NSMapTable * providers;
+@property (nonnull, nonatomic, readonly) NSMapTable * providers;
 
-- (ASHStateComponentMapping *)add:(Class)type;
-- (id <ASHComponentProvider>)get:(Class)type;
-- (BOOL)has:(Class)type;
+- (ASHStateComponentMapping * __nonnull)add:(Class __nonnull)type;
+- (id <ASHComponentProvider> __nonnull)get:(Class __nonnull)type;
+- (BOOL)has:(Class __nonnull)type;
 
 @end

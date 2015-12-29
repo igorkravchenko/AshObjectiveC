@@ -9,7 +9,7 @@
     NSInteger _systemPriority;
 }
 
-- (instancetype)initWithComponentType:(Class)componentType
+- (instancetype __nonnull)initWithComponentType:(Class __nonnull)componentType
 {
     self = [super init];
     if (self)
@@ -21,7 +21,7 @@
 }
 
 
-- (ASHSystem *)getSystem
+- (ASHSystem * __nonnull)getSystem
 {
     if(!_instance)
     {
@@ -31,7 +31,7 @@
     return _instance;
 }
 
-- (id)identifier
+- (id __nonnull)identifier
 {
     return [self getSystem];
 }

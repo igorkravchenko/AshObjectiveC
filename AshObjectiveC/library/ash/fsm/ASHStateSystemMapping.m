@@ -10,8 +10,8 @@
     id <ASHSystemProvider> _provider;
 }
 
-- (instancetype)initWithCreatingState:(ASHEngineState *)creatingState
-                             provider:(id <ASHSystemProvider>)provider
+- (instancetype __nonnull)initWithCreatingState:(ASHEngineState * __nonnull)creatingState
+                             provider:(id <ASHSystemProvider> __nonnull)provider
 {
     self = [super init];
     if (self)
@@ -23,30 +23,30 @@
     return self;
 }
 
-- (instancetype)withPriority:(NSInteger)priority
+- (instancetype __nonnull)withPriority:(NSInteger)priority
 {
     _provider.priority = priority;
     return self;
 }
 
-- (instancetype)addInstance:(ASHSystem *)system
+- (instancetype __nonnull)addInstance:(ASHSystem * __nonnull)system
 {
     return [_creatingState addInstance:system];
 }
 
-- (instancetype)addSingleton:(Class)type
+- (instancetype __nonnull)addSingleton:(Class __nonnull)type
 {
     return [_creatingState addSingleton:type];
 }
 
-- (instancetype)addMethod:(id)target
-                   action:(SEL)action
+- (instancetype __nonnull)addMethod:(id __nonnull)target
+                   action:(SEL __nonnull)action
 {
     return [_creatingState addMethod:target
                               action:action];
 }
 
-- (instancetype)addProvider:(id <ASHSystemProvider>)provider
+- (instancetype __nonnull)addProvider:(id <ASHSystemProvider> __nonnull)provider
 {
     return [_creatingState addProvider:provider];
 }

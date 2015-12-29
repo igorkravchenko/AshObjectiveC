@@ -8,7 +8,7 @@
     NSInteger _systemPriority;
 }
 
-- (instancetype)initWithInstance:(ASHSystem *)instance
+- (instancetype __nonnull)initWithInstance:(ASHSystem * __nonnull)instance
 {
     self = [super init];
     if (self)
@@ -21,12 +21,12 @@
 }
 
 
-- (ASHSystem *)getSystem
+- (ASHSystem * __nonnull)getSystem
 {
     return _instance;
 }
 
-- (id)identifier
+- (id __nonnull)identifier
 {
     return @(_instance.hash);
 }

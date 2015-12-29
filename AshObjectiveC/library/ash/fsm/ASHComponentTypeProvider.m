@@ -6,7 +6,7 @@
     Class componentType;
 }
 
-- (id)initWithType:(Class)type
+- (instancetype __nonnull)initWithType:(Class __nonnull)type
 {
     self = [super init];
     
@@ -18,12 +18,12 @@
     return self;
 }
 
-- (id)getComponent
+- (id __nonnull)getComponent
 {
     return [[componentType alloc] init];
 }
 
-- (id)identifier
+- (id __nonnull)identifier
 {
     return componentType;
 }

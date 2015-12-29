@@ -6,16 +6,16 @@
 
 @interface ASHStateComponentMapping : NSObject
 
-- (id)initWithCreatingState:(ASHEntityState *)creatingState
-                       type:(Class)type;
+- (instancetype __nonnull)initWithCreatingState:(ASHEntityState * __nonnull)creatingState
+                       type:(Class __nonnull)type;
 
-- (ASHStateComponentMapping *)withInstance:(id)component;
-- (ASHStateComponentMapping *)withType:(Class)type;
-- (ASHStateComponentMapping *)withSingleton;
-- (ASHStateComponentMapping *)withSingletonForType:(Class)type;
-- (ASHStateComponentMapping *)withTarget:(id)target
-                                  method:(SEL)method;
-- (ASHStateComponentMapping *)withProvider:(id <ASHComponentProvider>)provider;
-- (ASHStateComponentMapping *)add:(Class)type;
+- (ASHStateComponentMapping * __nonnull)withInstance:(id __nonnull)component;
+- (ASHStateComponentMapping * __nonnull)withType:(Class __nonnull)type;
+- (ASHStateComponentMapping * __nonnull)withSingleton;
+- (ASHStateComponentMapping * __nonnull)withSingletonForType:(Class __nonnull)type;
+- (ASHStateComponentMapping * __nonnull)withTarget:(id __nonnull)target
+                                  method:(SEL __nonnull)method;
+- (ASHStateComponentMapping * __nonnull)withProvider:(id <ASHComponentProvider> __nonnull)provider;
+- (ASHStateComponentMapping * __nonnull)add:(Class __nonnull)type;
 
 @end

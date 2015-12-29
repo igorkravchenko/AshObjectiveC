@@ -4,6 +4,6 @@
 
 @interface ASHSystemSingletonProvider : NSObject <ASHSystemProvider>
 
-- (instancetype)initWithComponentType:(Class)componentType;
+- (instancetype __nonnull)initWithComponentType:(Class __nonnull)componentType;
 
 @end

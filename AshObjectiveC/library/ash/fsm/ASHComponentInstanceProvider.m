@@ -6,7 +6,7 @@
     id _instance;
 }
 
-- (id)initWithInstance:(id)instance
+- (instancetype __nonnull)initWithInstance:(id __nonnull)instance
 {
     self = [super init];
     
@@ -18,12 +18,12 @@
     return self;
 }
 
-- (id)getComponent
+- (id __nonnull)getComponent
 {
     return _instance;
 }
 
-- (id)identifier
+- (id __nonnull)identifier
 {
     return _instance;
 }

@@ -7,7 +7,7 @@
     id instance;
 }
 
-- (id)initWithType:(Class)type
+- (instancetype __nonnull)initWithType:(Class __nonnull)type
 {
     self = [super init];
     
@@ -19,7 +19,7 @@
     return self;
 }
 
-- (id)getComponent
+- (id __nonnull)getComponent
 {
     if(instance == nil)
     {
@@ -29,7 +29,7 @@
     return instance;
 }
 
-- (id)identifier
+- (id __nonnull)identifier
 {
     return [self getComponent];
 }

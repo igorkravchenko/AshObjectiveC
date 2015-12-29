@@ -4,6 +4,6 @@
 
 @interface ASHSystemInstanceProvider : NSObject <ASHSystemProvider>
 
-- (instancetype)initWithInstance:(ASHSystem *)instance;
+- (instancetype __nonnull)initWithInstance:(ASHSystem * __nonnull)instance;
 
 @end

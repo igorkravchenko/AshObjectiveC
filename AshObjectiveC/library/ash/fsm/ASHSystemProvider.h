@@ -5,8 +5,8 @@
 
 @protocol ASHSystemProvider <NSObject>
 
-- (ASHSystem *)getSystem;
-- (id)identifier;
+- (ASHSystem * __nonnull)getSystem;
+- (id __nonnull)identifier;
 - (NSInteger)priority;
 - (void)setPriority:(NSInteger)value;
 

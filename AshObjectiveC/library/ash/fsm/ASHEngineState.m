@@ -10,7 +10,7 @@
 {
 }
 
-- (id)init
+- (instancetype __nonnull)init
 {
     self = [super init];
     if (self)
@@ -22,24 +22,24 @@
 }
 
 
-- (ASHStateSystemMapping *)addInstance:(ASHSystem *)system
+- (ASHStateSystemMapping * __nonnull)addInstance:(ASHSystem * __nonnull)system
 {
     return [self addProvider:[[ASHSystemInstanceProvider alloc] initWithInstance:system]];
 }
 
-- (ASHStateSystemMapping *)addSingleton:(Class)aClass
+- (ASHStateSystemMapping * __nonnull)addSingleton:(Class __nonnull)aClass
 {
     return [self addProvider:[[ASHSystemSingletonProvider alloc] initWithComponentType:aClass]];
 }
 
-- (ASHStateSystemMapping *)addMethod:(id)target
-                              action:(SEL)action
+- (ASHStateSystemMapping * __nonnull)addMethod:(id __nonnull)target
+                              action:(SEL __nonnull)action
 {
     return [self addProvider:[[ASHDynamicSystemProvider alloc] initWithTarget:target
                                                                        method:action]];
 }
 
-- (ASHStateSystemMapping *)addProvider:(id <ASHSystemProvider>)provider
+- (ASHStateSystemMapping * __nonnull)addProvider:(id <ASHSystemProvider> __nonnull)provider
 {
     ASHStateSystemMapping * mapping = [[ASHStateSystemMapping alloc] initWithCreatingState:self
                                                                                   provider:provider];

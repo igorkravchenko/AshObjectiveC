@@ -11,7 +11,7 @@
     id <ASHComponentProvider> provider;
 }
 
-- (id)initWithCreatingState:(ASHEntityState *)aCreatingState
+- (instancetype __nonnull)initWithCreatingState:(ASHEntityState * __nonnull)aCreatingState
                        type:(Class)type
 {
     self = [super init];
@@ -26,25 +26,25 @@
     return self;
 }
 
-- (ASHStateComponentMapping *)withInstance:(id)component
+- (ASHStateComponentMapping * __nonnull)withInstance:(id __nonnull)component
 {
     [self setProvider:[[ASHComponentInstanceProvider alloc] initWithInstance:component]];
     return self;
 }
 
-- (ASHStateComponentMapping *)withType:(Class)type
+- (ASHStateComponentMapping * __nonnull)withType:(Class __nonnull)type
 {
     [self setProvider:[[ASHComponentTypeProvider alloc] initWithType:type]];
     return self;
 }
 
-- (ASHStateComponentMapping *)withSingleton
+- (ASHStateComponentMapping * __nonnull)withSingleton
 {
     [self setProvider:[[ASHComponentSingletonProvider alloc] initWithType:componentType]];
     return self;
 }
 
-- (ASHStateComponentMapping *)withSingletonForType:(Class)type
+- (ASHStateComponentMapping * __nonnull)withSingletonForType:(Class __nonnull)type
 {
     if(type == nil)
     {
@@ -55,27 +55,27 @@
     return self;
 }
 
-- (ASHStateComponentMapping *)withTarget:(id)target
-                                  method:(SEL)method
+- (ASHStateComponentMapping * __nonnull)withTarget:(id __nonnull)target
+                                  method:(SEL __nonnull)method
 {
     [self setProvider:[[ASHDynamicComponentProvider alloc] initWithTarget:target
                                                                   closure:method]];
     return self;
 }
 
-- (ASHStateComponentMapping *)withProvider:(id<ASHComponentProvider>)aProvider
+- (ASHStateComponentMapping * __nonnull)withProvider:(id<ASHComponentProvider> __nonnull)aProvider
 {
     [self setProvider:aProvider];
     return self;
 }
 
-- (void)setProvider:(id<ASHComponentProvider>)aProvider
+- (void)setProvider:(id<ASHComponentProvider> __nonnull)aProvider
 {
     provider = aProvider;
     [creatingState.providers setObject:provider forKey:componentType];
 }
 
-- (ASHStateComponentMapping *)add:(Class)type
+- (ASHStateComponentMapping * __nonnull)add:(Class __nonnull)type
 {
     return [creatingState add:type];
 }

@@ -3,7 +3,7 @@
 
 @protocol ASHComponentProvider <NSObject>
 
-- (id)getComponent;
-- (id)identifier;
+- (__nonnull id)getComponent;
+- (__nonnull id)identifier;
 
 @end
