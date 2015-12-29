@@ -4,7 +4,7 @@
 
 @implementation ASHObjectReflectionFactory
 {
-    NSMutableDictionary * _reflections;
+    NSMapTable * _reflections;
 }
 
 + (instancetype)sharedFactory
@@ -24,7 +24,7 @@
     self = [super init];
     if (self)
     {
-        _reflections = [NSMutableDictionary dictionary];
+        _reflections = [NSMapTable mapTableWithKeyOptions:NSPointerFunctionsOpaquePersonality valueOptions:NSPointerFunctionsStrongMemory];
     }
 
     return self;
@@ -32,14 +32,17 @@
 
 - (ASHObjectReflection *)reflection:(NSObject *)component
 {
-    NSString * type = NSStringFromClass(component.class);
+    Class type = component.class;
 
-    if(_reflections[type] == nil)
+    ASHObjectReflection * reflection = [_reflections objectForKey:type];
+
+    if(reflection == nil)
     {
-        _reflections[type] = [[ASHObjectReflection alloc] initWithComponent:component];
+        reflection = [[ASHObjectReflection alloc] initWithComponent:component];
+        [_reflections setObject:reflection forKey:type];
     }
 
-    return _reflections[type];
+    return reflection;
 }
 
 @end
