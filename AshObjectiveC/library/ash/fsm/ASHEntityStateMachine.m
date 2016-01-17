@@ -7,7 +7,7 @@
 {
     NSMapTable * states;
     ASHEntityState * currentState;
-    ASHEntity * entity;
+    __weak ASHEntity * entity;
 }
 
 - (instancetype __nonnull)initWithEntity:(ASHEntity * __nonnull)anEntity
