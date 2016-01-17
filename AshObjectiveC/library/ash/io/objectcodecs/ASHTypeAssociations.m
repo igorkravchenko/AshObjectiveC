@@ -1,21 +1,18 @@
 
 #import "ASHTypeAssociations.h"
 
+static ASHTypeAssociations *_instance = nil;
+
 @implementation ASHTypeAssociations
 {
-
     NSMutableDictionary *_typeAssociations;
 }
+
 + (ASHTypeAssociations *)instance
 {
-    static ASHTypeAssociations *_instance = nil;
-
-    @synchronized (self)
+    if (_instance == nil)
     {
-        if (_instance == nil)
-        {
-            _instance = [[self alloc] init];
-        }
+        _instance = [[self alloc] init];
     }
 
     return _instance;
@@ -40,8 +37,12 @@
 
         [self addTypeAssociation:[NSArray class] association:immutableArray];
         [self addTypeAssociation:NSClassFromString(immutableArray) association:NSStringFromClass([NSArray class])];
-        [self addTypeAssociation:NSClassFromString(immutableArray0) association:NSStringFromClass([NSArray class])];
-
+        
+        if(NSClassFromString(immutableArray0))
+        {
+            [self addTypeAssociation:NSClassFromString(immutableArray0) association:NSStringFromClass([NSArray class])];
+        }
+        
         [self addTypeAssociation:[NSMutableArray class] association:mutableArray];
         [self addTypeAssociation:NSClassFromString(mutableArray) association:NSStringFromClass([NSMutableArray class])];
 
