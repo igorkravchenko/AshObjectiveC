@@ -17,7 +17,7 @@
     if (self != nil)
     {
         entity = anEntity;
-        states = [NSMapTable mapTableWithKeyOptions:NSPointerFunctionsObjectPersonality valueOptions:NSPointerFunctionsStrongMemory];
+        states = [NSMapTable mapTableWithKeyOptions:NSPointerFunctionsCopyIn valueOptions:NSPointerFunctionsStrongMemory];
     }
     
     return self;

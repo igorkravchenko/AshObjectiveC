@@ -26,7 +26,7 @@
     if(self != nil)
     {
         entityList = [[ASHEntityList alloc] init];
-        entityNames = [NSMapTable mapTableWithKeyOptions:NSPointerFunctionsObjectPersonality valueOptions:NSPointerFunctionsStrongMemory];
+        entityNames = [NSMapTable mapTableWithKeyOptions:NSPointerFunctionsCopyIn valueOptions:NSPointerFunctionsWeakMemory];
         systemList = [[ASHSystemList alloc] init];
         families = [NSMapTable mapTableWithKeyOptions:NSPointerFunctionsOpaquePersonality valueOptions:NSPointerFunctionsStrongMemory];
         updateComplete = [[ASHSignal0 alloc] init];

@@ -7,7 +7,7 @@
 
 @implementation ASHSignalBase
 {
-    NSMutableDictionary * nodes;
+    NSMapTable * nodes;
     ASHListenerNodePool * listenerNodePool;
     ASHListenerNode * toAddHead;
     ASHListenerNode * toAddTail;
@@ -23,7 +23,7 @@
     
     if(self != nil)
     {
-        nodes = [NSMutableDictionary dictionary];
+        nodes = [NSMapTable mapTableWithKeyOptions:NSPointerFunctionsCopyIn valueOptions:NSPointerFunctionsWeakMemory];
         listenerNodePool = [[ASHListenerNodePool alloc] init];
         _numListeners = 0;
     }
@@ -64,7 +64,8 @@
              action:(SEL)action
 {
     NSString * const key = GET_TARGET_ACTION_KEY(target, action);
-    if (nodes[key] != nil)
+    
+    if ([nodes objectForKey:key] != nil)
     {
         return;
     }
@@ -72,7 +73,7 @@
     ASHListenerNode * node = [listenerNodePool get];
     node->target = target;
     node->listener = action;
-    nodes[key] = node;
+    [nodes setObject:node forKey:key];
     [self addNode:node];
 }
 
@@ -80,7 +81,7 @@
                  action:(SEL)action
 {
     NSString * const key = GET_TARGET_ACTION_KEY(target, action);
-    if(nodes[key] != nil)
+    if([nodes objectForKey:key] != nil)
     {
         return;
     }
@@ -89,7 +90,7 @@
     node->target = target;
     node->listener = action;
     node->once = YES;
-    nodes[key] = node;
+    [nodes setObject:node forKey:key];
     [self addNode:node];
 }
 
@@ -131,7 +132,7 @@
 {
     NSString * const listenerKey = GET_TARGET_ACTION_KEY(target, action);
     
-    ASHListenerNode * node = nodes[listenerKey];
+    ASHListenerNode * node = [nodes objectForKey:listenerKey];
         
     if(node != nil)
     {
