@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name         = "AshObjectiveC"
-  s.version      = "1.1.4"
+  s.version      = "1.1.5"
   s.summary      = "Objective-C port of Ash (ActionScript 3 entity system framework for game development)"
   s.description  = <<-DESC
                    Ash is a high-performance entity system framework for game development.
