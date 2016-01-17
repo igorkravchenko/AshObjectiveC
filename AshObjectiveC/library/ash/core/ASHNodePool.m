@@ -6,7 +6,7 @@
     ASHNode * _tail;
     Class _nodeClass;
     ASHNode * _cacheTail;
-    __weak NSMapTable * _components;
+    NSMapTable * _components;
 }
 
 - (id)initWithNodeClass:(Class)aNodeClass
