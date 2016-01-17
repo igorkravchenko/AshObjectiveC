@@ -31,11 +31,11 @@
 
 - (void)create
 {
-    nodePool = [[ASHNodePool alloc] initWithNodeClass:nodeClass
-                                           components:components];
     nodes = [[ASHNodeList alloc] init];
     entities = [NSMapTable mapTableWithKeyOptions:NSPointerFunctionsOpaquePersonality valueOptions:NSPointerFunctionsWeakMemory];
-    components = [NSMapTable mapTableWithKeyOptions:NSPointerFunctionsOpaquePersonality valueOptions:NSPointerFunctionsWeakMemory];
+    components = [NSMapTable mapTableWithKeyOptions:NSPointerFunctionsOpaquePersonality valueOptions:NSPointerFunctionsStrongMemory];
+    nodePool = [[ASHNodePool alloc] initWithNodeClass:nodeClass
+                                           components:components];
     u_int count;
     objc_property_t * properties = class_copyPropertyList(nodeClass, &count);
     
