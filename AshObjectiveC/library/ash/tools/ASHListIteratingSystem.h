@@ -4,13 +4,13 @@
 
 @interface ASHListIteratingSystem : ASHSystem
 
-@property (nonatomic, retain) ASHNodeList * nodeList;
+@property (nonatomic, weak) ASHNodeList * nodeList;
 @property (nonatomic, assign) Class nodeClass;
-@property (nonatomic, retain) id nodeUpdateTarget;
+@property (nonatomic, weak) id nodeUpdateTarget;
 @property (nonatomic, assign) SEL nodeUpdateSelector;
-@property (nonatomic, retain) id nodeAddedTarget;
+@property (nonatomic, weak) id nodeAddedTarget;
 @property (nonatomic, assign) SEL nodeAddedSelector;
-@property (nonatomic, retain) id nodeRemovedTarget;
+@property (nonatomic, weak) id nodeRemovedTarget;
 @property (nonatomic, assign) SEL nodeRemovedSelector;
 
 - (id)initWithNodeClass:(Class)nodeClass 
