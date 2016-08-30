@@ -14,7 +14,7 @@ Pod::Spec.new do |s|
   s.osx.deployment_target = '10.8'
   s.ios.deployment_target = '6.0'
   s.tvos.deployment_target = '9.0'
-  s.source       = { :git => "https://github.com/igorkravchenko/AshObjectiveC.git", :tag => '1.1.9' }
+  s.source       = { :git => "https://github.com/igorkravchenko/AshObjectiveC.git", :tag => '1.2.0' }
   s.source_files = 'AshObjectiveC/library', 'AshObjectiveC/library/**/*.{h,m}'
   s.requires_arc = true
   s.ios.framework = 'CoreGraphics', 'UIKit', 'QuartzCore'
