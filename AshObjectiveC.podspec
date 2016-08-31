@@ -17,7 +17,4 @@ Pod::Spec.new do |s|
   s.source       = { :git => "https://github.com/igorkravchenko/AshObjectiveC.git", :tag => '1.2.0' }
   s.source_files = 'AshObjectiveC/library', 'AshObjectiveC/library/**/*.{h,m}'
   s.requires_arc = true
-  s.ios.framework = 'CoreGraphics', 'UIKit', 'QuartzCore'
-  s.osx.framework = 'CoreGraphics', 'AppKit', 'QuartzCore'
-  s.tvos.framework = 'CoreGraphics', 'UIKit', 'QuartzCore'
 end
