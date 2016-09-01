@@ -14,8 +14,8 @@
     NSMapTable * entities;
 }
 
-- (id)initWithNodeClass:(Class)aNodeClass
-                   engine:(ASHEngine *)engine
+- (instancetype __nonnull)initWithNodeClass:(Class __nonnull)aNodeClass
+                           engine:(ASHEngine * __nonnull)engine
 {
     self = [super init];
     

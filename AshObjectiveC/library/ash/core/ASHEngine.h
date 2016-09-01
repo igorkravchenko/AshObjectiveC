@@ -15,13 +15,13 @@
 - (void)addEntity:(ASHEntity * __nonnull)entity;
 - (void)removeEntity:(ASHEntity * __nonnull)entity;
 - (void)removeAllEntities;
-- (NSArray * __nonnull)allEntities;
+- (NSArray <ASHEntity *> * __nonnull)allEntities;
 - (ASHNodeList * __nonnull)getNodeList:(Class __nonnull)nodeClass;
 - (void)releaseNodeList:(Class __nonnull)nodeClass;
 - (void)addSystem:(ASHSystem * __nonnull)system
          priority:(NSInteger)priority;
 - (ASHSystem * __nullable)getSystem:(Class __nonnull)type;
-- (NSArray * __nonnull)allSystems;
+- (NSArray <ASHSystem *> * __nonnull)allSystems;
 - (void)removeSystem:(ASHSystem * __nonnull)system;
 - (void)removeAllSystems;
 - (void)update:(double)time;

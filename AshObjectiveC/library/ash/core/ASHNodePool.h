@@ -4,11 +4,11 @@
 
 @interface ASHNodePool : NSObject
 
-- (id)initWithNodeClass:(Class)nodeClass
-             components:(NSMapTable *)components;
-- (ASHNode *)getNode;
-- (void)disposeNode:(ASHNode *)node;
-- (void)cacheNode:(ASHNode *)node;
+- (instancetype __nonnull)initWithNodeClass:(Class __nonnull)nodeClass
+             components:(NSMapTable * __nonnull)components;
+- (ASHNode * __nullable)getNode;
+- (void)disposeNode:(ASHNode * __nonnull)node;
+- (void)cacheNode:(ASHNode * __nonnull)node;
 - (void)releaseCache;
 
 @end

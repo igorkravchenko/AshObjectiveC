@@ -9,7 +9,7 @@
     __weak NSMapTable * _components;
 }
 
-- (id)initWithNodeClass:(Class)aNodeClass
+- (instancetype)initWithNodeClass:(Class)aNodeClass
              components:(NSMapTable *)components
 {
     self = [super init];

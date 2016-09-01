@@ -6,7 +6,7 @@
 
 @interface ASHComponentMatchingFamily : NSObject <ASHFamily>
 
-- (id)initWithNodeClass:(Class)nodeClass 
-                         engine:(ASHEngine *)game;
+- (instancetype __nonnull)initWithNodeClass:(Class __nonnull)nodeClass
+                           engine:(ASHEngine * __nonnull)game;
 
 @end

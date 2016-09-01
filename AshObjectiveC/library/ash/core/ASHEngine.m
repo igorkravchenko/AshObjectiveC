@@ -100,7 +100,7 @@
     }
 }
 
-- (NSArray * __nonnull)allEntities
+- (NSArray <ASHEntity *> * __nonnull)allEntities;
 {
     NSMutableArray * entities = NSMutableArray.array;
     
@@ -183,7 +183,7 @@
     return [systemList getSystem:type];
 }
 
-- (NSArray *)allSystems
+- (NSArray <ASHSystem *> * __nonnull)allSystems;
 {
     NSMutableArray * systems = [NSMutableArray array];
     
